@@ -1,6 +1,6 @@
-# django-survey-and-report's i18n file
+# django-survey-and-report's japanese i18n file
 # This file is distributed under the MIT license.
-# Pierre SASSOULAS <pierre.sassoulas@gmail.com>, 2018.
+# Nobukuni Suzue <nsuzue@me.com>, 2018.
 #
 #, fuzzy
 msgid ""

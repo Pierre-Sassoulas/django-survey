@@ -1,0 +1,315 @@
+# django-survey-and-report's japanese i18n file
+# This file is distributed under the MIT license.
+# Nobukuni Suzue <nsuzue@me.com>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-06 01:43-0700\n"
+"PO-Revision-Date: 2018-04-09 00:52+0000\n"
+"Last-Translator: b'  <nsuzue@me.com>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
+
+#: .\dev\templates\base.html:3
+msgid "en"
+msgstr "ja"
+
+#: .\dev\templates\base.html:5
+msgid "DEVELOPMENT django-Survey"
+msgstr "django-Surveyの開発"
+
+#: .\survey\actions.py:20
+#, python-format
+msgid "%(count)d survey was successfully marked as published."
+msgid_plural "%(count)d surveys were successfully marked as published"
+msgstr[0] "%(count)d つの調査が「公開」に設定されました"
+msgstr[1] "%(count)d つの調査が「公開」に設定されました"
+
+#: .\survey\actions.py:25
+msgid "Mark selected surveys as published"
+msgstr "選択した調査を公開する"
+
+#: .\survey\exporter\csv\survey2csv.py:43
+msgid "Anonymous"
+msgstr "匿名"
+
+#: .\survey\exporter\tex\question2tex.py:70
+msgid "with"
+msgstr "と一緒に"
+
+#: .\survey\exporter\tex\question2tex.py:72
+#, python-format
+msgid "%(min_cardinality)d respondants or more"
+msgid_plural "%(min_cardinality)d respondant or more"
+msgstr[0] "%(min_cardinality)d 回答者数またはそれ以上"
+msgstr[1] "%(min_cardinality)d 回答者数またはそれ以上"
+
+#: .\survey\exporter\tex\question2tex.py:83
+msgid "excluding"
+msgstr "除く"
+
+#: .\survey\exporter\tex\question2tex.py:88
+#: .\survey\exporter\tex\question2tex.py:125
+#: .\survey\exporter\tex\question2tex.py:128
+msgid "and"
+msgstr "かつ"
+
+#: .\survey\exporter\tex\question2tex.py:122
+#: .\survey\exporter\tex\question2tex.py:123
+msgid "or"
+msgstr "または"
+
+#: .\survey\exporter\tex\question2tex.py:137
+msgid "Repartition of answers"
+msgstr "回答の再分割"
+
+#: .\survey\exporter\tex\question2tex_chart.py:80
+msgid "Left blank"
+msgstr "空白のまま"
+
+#: .\survey\exporter\tex\question2tex_chart.py:127
+#: .\survey\exporter\tex\question2tex_sankey.py:39
+msgid "for the question"
+msgstr "質問の為に"
+
+#: .\survey\exporter\tex\question2tex_chart.py:138
+msgid "No answers for this question."
+msgstr "この質問に答えない"
+
+#: .\survey\exporter\tex\question2tex_raw.py:34
+msgid "Participant"
+msgstr "参加者"
+
+#: .\survey\exporter\tex\question2tex_sankey.py:40
+msgid "left"
+msgstr "左"
+
+#: .\survey\exporter\tex\question2tex_sankey.py:43
+msgid "in relation with the question"
+msgstr "質問に関連して"
+
+#: .\survey\exporter\tex\question2tex_sankey.py:44
+msgid "right"
+msgstr "右"
+
+#: .\survey\exporter\tex\survey2tex.py:75
+msgid "We could not render a chart because the type"
+msgstr "チャートを描画できません。何故ならタイプ"
+
+#: .\survey\exporter\tex\survey2tex.py:77
+msgid ""
+"is not a standard type nor the path to an importable valid Question2Tex "
+"child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', "
+"'polar' or 'package.path.MyQuestion2TexCustomClass'"
+msgstr ""
+"は標準タイプでもインポート可能で有効なQuestion2Tex子クラスへのパスでもありません。 "
+"「raw」、「sankey」、「pie」、「cloud」、 "
+"「square」、「polar」または「package.path.MyQuestion2TexCustomClass」の中から選択してください。"
+
+#: .\survey\models\answer.py:32
+msgid "Question"
+msgstr "質問"
+
+#: .\survey\models\answer.py:34
+msgid "Response"
+msgstr "反応"
+
+#: .\survey\models\answer.py:36 .\survey\models\response.py:35
+msgid "Creation date"
+msgstr "作成日"
+
+#: .\survey\models\answer.py:37 .\survey\models\response.py:36
+msgid "Update date"
+msgstr "更新日"
+
+#: .\survey\models\answer.py:38
+msgid "Content"
+msgstr "内容"
+
+#: .\survey\models\category.py:21 .\survey\models\survey.py:18
+msgid "Name"
+msgstr "名前"
+
+#: .\survey\models\category.py:22 .\survey\models\question.py:81
+#: .\survey\models\response.py:37
+msgid "Survey"
+msgstr "調査"
+
+#: .\survey\models\category.py:24
+msgid "Display order"
+msgstr "表示順"
+
+#: .\survey\models\category.py:25 .\survey\models\survey.py:19
+msgid "Description"
+msgstr "定義"
+
+#: .\survey\models\category.py:30
+msgid "category"
+msgstr "分類"
+
+#: .\survey\models\category.py:31
+msgid "categories"
+msgstr "分類"
+
+#: .\survey\models\question.py:29
+msgid ""
+"The choices field is only used if the question type\n"
+"if the question type is 'radio', 'select', or\n"
+"'select multiple' provide a comma-separated list of\n"
+"options for this question ."
+msgstr ""
+"選択肢フィールドは、質問のタイプが「ラジオボタン」、「リスト（単一選択）」、「リスト（複数選択）」の場合のみ有効です。選択肢はカンマで区切ってください。"
+
+#: .\survey\models\question.py:66
+msgid "text (multiple line)"
+msgstr "テキスト（複数行）"
+
+#: .\survey\models\question.py:67
+msgid "short text (one line)"
+msgstr "テキスト（一行）"
+
+#: .\survey\models\question.py:68
+msgid "radio"
+msgstr "ラジオボタン"
+
+#: .\survey\models\question.py:69
+msgid "select"
+msgstr "リスト（単一選択）"
+
+#: .\survey\models\question.py:70
+msgid "Select Multiple"
+msgstr "リスト（複数選択）"
+
+#: .\survey\models\question.py:71
+msgid "Select Image"
+msgstr "イメージ選択"
+
+#: .\survey\models\question.py:72
+msgid "integer"
+msgstr "整数"
+
+#: .\survey\models\question.py:75
+msgid "Text"
+msgstr "テキスト"
+
+#: .\survey\models\question.py:76
+msgid "Order"
+msgstr "順序"
+
+#: .\survey\models\question.py:77
+msgid "Required"
+msgstr "必須"
+
+#: .\survey\models\question.py:78
+msgid "Category"
+msgstr "分類"
+
+#: .\survey\models\question.py:83
+msgid "Type"
+msgstr "タイプ"
+
+#: .\survey\models\question.py:85
+msgid "Choices"
+msgstr "選択肢"
+
+#: .\survey\models\question.py:89
+msgid "question"
+msgstr "質問"
+
+#: .\survey\models\question.py:90
+msgid "questions"
+msgstr "質問"
+
+#: .\survey\models\response.py:39
+msgid "User"
+msgstr "ユーザー"
+
+#: .\survey\models\response.py:41
+msgid "Interview unique identifier"
+msgstr "インタービューのユニークな識別子"
+
+#: .\survey\models\response.py:45
+msgid "Set of answers to surveys"
+msgstr "調査に対する回答集"
+
+#: .\survey\models\response.py:46
+msgid "Sets of answers to surveys"
+msgstr "調査に対する回答セット"
+
+#: .\survey\models\survey.py:20
+msgid "Users can see it and answer it"
+msgstr "すべてのユーザーが閲覧・回答できる"
+
+#: .\survey\models\survey.py:21
+msgid "Only authenticated users can see it and answer it"
+msgstr "認証されたユーザーのみ閲覧・回答できる"
+
+#: .\survey\models\survey.py:22
+msgid "Display by question"
+msgstr "1問ずつ表示する"
+
+#: .\survey\models\survey.py:23
+msgid "Template"
+msgstr "テンプレート"
+
+#: .\survey\models\survey.py:26
+msgid "survey"
+msgstr "調査"
+
+#: .\survey\models\survey.py:27
+msgid "surveys"
+msgstr "調査"
+
+#: .\survey\templates\survey\completed.html:4
+#: .\survey\templates\survey\completed.html:7
+msgid "Survey completed"
+msgstr "調査終了"
+
+#: .\survey\templates\survey\completed.html:8
+msgid "Sorry! Your already replied to our survey"
+msgstr "申し訳ありません。あなたは既に回答済みです。"
+
+#: .\survey\templates\survey\completed.html:9
+msgid "Back to survey list"
+msgstr "調査一覧に戻る"
+
+#: .\survey\templates\survey\confirm.html:4
+#: .\survey\templates\survey\confirm.html:7
+msgid "Survey submitted"
+msgstr "調査が終了しました"
+
+#: .\survey\templates\survey\confirm.html:10
+msgid "Thanks! Your answers have been saved"
+msgstr "ありがとうございました。回答内容が保存されました。"
+
+#: .\survey\templates\survey\confirm.html:13
+msgid "You can always come back and change them."
+msgstr "あとで回答内容を変更することが出来ます。"
+
+#: .\survey\templates\survey\list.html:6
+msgid "Welcome to the Django Survey app"
+msgstr "Django Surveyアプリケーションにようこそ"
+
+#: .\survey\templates\survey\list.html:10
+msgid "Take the Survey"
+msgstr "この調査に回答する"
+
+#: .\survey\templates\survey\survey.html:26
+msgid "Answer this part"
+msgstr "この質問に回答する"
+
+#: .\survey\templates\survey\survey.html:39
+msgid "Questions"
+msgstr "質問"
+
+#: .\survey\templates\survey\survey.html:48
+msgid "I'm done!"
+msgstr "回答を終了する"

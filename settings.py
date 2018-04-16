@@ -122,6 +122,7 @@ LANGUAGE_CODE = 'en'
 LANGUAGES = (
     ('en', 'english'),
     ('fr', 'french'),
+    ('ja', 'Japanese'),
 )
 
 LOGIN_REDIRECT_URL = '/'

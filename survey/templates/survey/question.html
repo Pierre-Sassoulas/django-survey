@@ -19,9 +19,7 @@
 	            <span class="help-inline" style="color:red">
 	                <strong> {% for error in  form.errors %}{{ error }}{% endfor %} </strong>
 	            </span> <br>
-	            {% for field in form %}
-                    {{ field }}
-                {% endfor%}
+                {{ form }}
             </td>
         </tr>
 	{% endif %}

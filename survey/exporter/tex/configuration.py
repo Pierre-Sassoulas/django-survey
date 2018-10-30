@@ -14,7 +14,7 @@ LOGGER = logging.getLogger(__name__)
 
 class Configuration(object):
 
-    DEFAULT_PATH = os.path.join(settings.ROOT, "survey", "exporter", "tex",
+    DEFAULT_PATH = os.path.join(settings.BASE_DIR, "survey", "exporter", "tex",
                                 "default_conf.yaml")
 
     def __init__(self, configuration_file=None):

@@ -52,10 +52,16 @@ adipiscing elit."
         """ We can get a list of choices for a widget from choices text. """
         self.questions[0].choices = "A éa,B éb"
         self.assertEqual(self.questions[0].get_choices(),
-                         (('a-ea', 'A éa'), ('b-eb', 'B éb')))
+                         (('a-éa', 'A éa'), ('b-éb', 'B éb')))
         self.questions[0].choices = "A()a,  ,C()c"
         self.assertEqual(self.questions[0].get_choices(),
                          (('aa', 'A()a'), ('cc', 'C()c')))
+        self.questions[0].choices = "Женщина,Мужчина"
+        self.assertEqual(self.questions[0].get_choices(),
+                         (('женщина', 'Женщина'), ('мужчина', 'Мужчина')))
+        self.questions[0].choices = "聖黎,はじむ"
+        self.assertEqual(self.questions[0].get_choices(),
+                         (('聖黎', '聖黎'), ('はじむ', 'はじむ')))
 
     def test_validate_choices(self):
         """  List are validated for comma. """

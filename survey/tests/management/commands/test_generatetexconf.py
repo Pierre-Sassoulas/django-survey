@@ -4,6 +4,7 @@ import os
 
 from django.core.management import call_command
 
+from survey.models.survey import Survey
 from survey.tests.management.test_management import TestManagement
 
 
@@ -17,9 +18,10 @@ class TestGenerateTexConfiguration(TestManagement):
             if os.path.exists(file):
                 os.remove(file)
         else:
-            call_command("generatetexconf", file + "1", file + "2",
-                         file + "3", "--survey-all")
-            for path in [file + "1", file + "2", file + "3"]:
+            surveys = Survey.objects.all()
+            output_files = [file + str(i) for i, _ in enumerate(surveys)]
+            call_command("generatetexconf", "--survey-all", *output_files)
+            for path in output_files:
                 self.assertTrue(os.path.exists(path))
                 if os.path.exists(path):
                     os.remove(path)

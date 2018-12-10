@@ -36,19 +36,21 @@
  }
 },
 {
- "model": "sessions.session",
- "pk": "94uzvee76vhqf147b15a4lf8x25mm3pl",
+ "model": "auth.user",
+ "pk": 3,
  "fields": {
-  "session_data": "NTI3YWUwYzY1YzRiMDBlZTQxZTQzNzY5MDgzYTY3NDQyZmIwYmNjNDp7Il9hdXRoX3VzZXJfaGFzaCI6IjI2ZTI0NjYzOTM5Mjk1YTAwOGFmOGNlYTgzMzJiYjRjYmQwYzNiOTIiLCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=",
-  "expire_date": "2017-04-03T05:23:00.417Z"
- }
-},
-{
- "model": "sessions.session",
- "pk": "wuf9qp15ba9upw0skklxlnudw8czlhn8",
- "fields": {
-  "session_data": "MTE5YmJiYTBhYzAyMmEwY2U0OGIwZjg2YTVjMzcwY2NhMmM1ZTQyNjp7InJvc2V0dGFfY2FjaGVfc3RvcmFnZV9rZXlfcHJlZml4IjoiNGY1Yjk4MWJjYjg3NTA5OWI0MTVmMmVhMWFlMGM1MTYwNmQxNjY4OSIsIl9hdXRoX3VzZXJfaGFzaCI6IjRjZTIzM2ZjMDM5YzNlZmU2ZjIxMTM5ODgzYTQxZmIzYzhhOTFiNDciLCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=",
-  "expire_date": "2017-05-09T04:56:10.535Z"
+  "password": "pbkdf2_sha256$120000$ZyPtmKmTQ7dQ$iIrgpOV5gKvjx4fOdzTzNx0v6/GwebY+4GetticBKec=",
+  "last_login": "2018-12-10T15:05:40.209Z",
+  "is_superuser": true,
+  "username": "zhu",
+  "first_name": "",
+  "last_name": "",
+  "email": "",
+  "is_staff": true,
+  "is_active": true,
+  "date_joined": "2018-12-05T09:06:24Z",
+  "groups": [],
+  "user_permissions": []
  }
 },
 {
@@ -73,6 +75,18 @@
   "need_logged_user": false,
   "display_by_question": false,
   "template": ""
+ }
+},
+{
+ "model": "survey.survey",
+ "pk": 3,
+ "fields": {
+  "name": "Unicode\u95ee\u5377",
+  "description": "\u8fd9\u662f\u4e00\u4e2a\u7528\u4e8e\u6d4b\u8bd5\u9009\u9879\u4e2d\u542b\u6709 Unicode \u5b57\u7b26\u7684 Survey",
+  "is_published": true,
+  "need_logged_user": false,
+  "display_by_question": false,
+  "template": null
  }
 },
 {
@@ -210,6 +224,32 @@
  }
 },
 {
+ "model": "survey.question",
+ "pk": 9,
+ "fields": {
+  "text": "\u65e0\u5584\u65e0\u6076\u5fc3\u4e4b\u4f53\uff0c\u6709\u5584\u6709\u6076\u610f\u4e4b\u52a8",
+  "order": 1,
+  "required": true,
+  "category": null,
+  "survey": 3,
+  "type": "radio",
+  "choices": "\u826f\u77e5,\u683c\u7269"
+ }
+},
+{
+ "model": "survey.question",
+ "pk": 10,
+ "fields": {
+  "text": "\u77e5\u5584\u77e5\u6076\u662f\u826f\u77e5\uff0c\u4e3a\u5584\u53bb\u6076\u662f\u683c\u7269",
+  "order": 2,
+  "required": true,
+  "category": null,
+  "survey": 3,
+  "type": "radio",
+  "choices": "\u9633\u660e,\u8056\u9ece"
+ }
+},
+{
  "model": "survey.response",
  "pk": 8,
  "fields": {
@@ -259,6 +299,19 @@
    "ps250112"
   ],
   "interview_uuid": "e9b616a8adc24902aa4bc2fa2d57d4bb"
+ }
+},
+{
+ "model": "survey.response",
+ "pk": 13,
+ "fields": {
+  "created": "2018-12-05T09:11:21.884Z",
+  "updated": "2018-12-10T15:00:46.463Z",
+  "survey": 3,
+  "user": [
+   "zhu"
+  ],
+  "interview_uuid": "f41ed01a4a33473fb99cd8618ee60c05"
  }
 },
 {
@@ -379,7 +432,7 @@
   "response": 12,
   "created": "2017-03-22T08:24:43.546Z",
   "updated": "2017-07-10T15:07:35.298Z",
-  "body": "Yës"
+  "body": "Y\u00ebs"
  }
 },
 {
@@ -424,6 +477,28 @@
   "created": "2017-03-22T08:24:43.617Z",
   "updated": "2017-07-10T15:07:35.301Z",
   "body": ""
+ }
+},
+{
+ "model": "survey.answer",
+ "pk": 46,
+ "fields": {
+  "question": 9,
+  "response": 13,
+  "created": "2018-12-05T09:11:21.897Z",
+  "updated": "2018-12-10T15:00:46.479Z",
+  "body": "\u683c\u7269"
+ }
+},
+{
+ "model": "survey.answer",
+ "pk": 47,
+ "fields": {
+  "question": 10,
+  "response": 13,
+  "created": "2018-12-10T15:00:46.495Z",
+  "updated": "2018-12-10T15:00:46.495Z",
+  "body": "\u9633\u660e"
  }
 }
 ]

@@ -9,11 +9,6 @@ from pandas.core.frame import DataFrame
 from survey.exporter.tex.question2tex import Question2Tex
 from survey.models.question import Question
 
-if platform.system() == "Windows":
-    from pySankey.sankey import sankey
-else:
-    from pysankey.sankey import sankey
-
 LOGGER = logging.getLogger(__name__)
 
 
@@ -78,13 +73,26 @@ class Question2TexSankey(Question2Tex):
                     q2.append(answer_to_q2)
         df = DataFrame(data={self.question.text: q1, other_question.text: q2})
         name = "tex/q{}_vs_q{}".format(self.question.pk, other_question.pk)
-        sankey(
-            df[self.question.text],
-            df[other_question.text],
-            aspect=20,
-            fontsize=10,
-            figure_name=name,
-        )
+        if platform.system() == "Windows":
+            from pySankey.sankey import sankey
+
+            sankey(
+                df[self.question.text],
+                df[other_question.text],
+                aspect=20,
+                fontsize=10,
+                figure_name=name,
+            )
+        else:
+            from pysankey.sankey import sankey
+
+            sankey(
+                df[self.question.text],
+                df[other_question.text],
+                aspect=20,
+                fontsize=10,
+                figureName=name,
+            )
         return Question2TexSankey.TEX_SKELETON % (
             name[4:],
             self.question.pk,

@@ -1,13 +1,18 @@
 # -*- coding: utf-8 -*-
 
 import logging
+import platform
 
 from django.utils.translation import ugettext_lazy as _
 from pandas.core.frame import DataFrame
-from pySankey.sankey import sankey
 
 from survey.exporter.tex.question2tex import Question2Tex
 from survey.models.question import Question
+
+if platform.system() == "Windows":
+    from pySankey.sankey import sankey
+else:
+    from pysankey.sankey import sankey
 
 LOGGER = logging.getLogger(__name__)
 

@@ -4,7 +4,7 @@ import logging
 
 from django.utils.translation import ugettext_lazy as _
 from pandas.core.frame import DataFrame
-from pysankey import sankey
+from pySankey.sankey import sankey
 
 from survey.exporter.tex.question2tex import Question2Tex
 from survey.models.question import Question
@@ -78,7 +78,7 @@ class Question2TexSankey(Question2Tex):
             df[other_question.text],
             aspect=20,
             fontsize=10,
-            figureName=name,
+            figure_name=name,
         )
         return Question2TexSankey.TEX_SKELETON % (
             name[4:],

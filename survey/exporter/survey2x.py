@@ -87,7 +87,7 @@ class Survey2X(object):
 
         LOGGER.debug("Exporting survey '%s' to %s", self.survey, self._get_X())
         try:
-            with open(self.file_name(), "w") as f:
+            with open(self.file_name(), "w", encoding="UTF-8") as f:
                 f.write(self.survey_to_x())
             LOGGER.info("Wrote %s in %s", self._get_X(), self.file_name())
         except IOError as exc:

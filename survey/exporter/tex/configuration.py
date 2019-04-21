@@ -69,7 +69,7 @@ class Configuration(object):
 
         :param String filepath: The path of the yaml configuration file.
         :rtype: Dict """
-        with open(filepath, "r") as f:
+        with open(filepath, "r", encoding="UTF-8") as f:
             configuration = yaml.load(f)
         for survey_name in list(configuration.keys()):
             self.check_survey_exists(survey_name)

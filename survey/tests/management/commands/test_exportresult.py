@@ -18,7 +18,7 @@ class TestExportresult(TestManagement):
         return os.path.join(settings.CSV_DIR, csv_name)
 
     def get_file_content(self, path):
-        file_ = open(path)
+        file_ = open(path, encoding="UTF-8")
         content = file_.read()
         file_.close()
         return content

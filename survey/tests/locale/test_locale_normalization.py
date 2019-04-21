@@ -1,6 +1,7 @@
 import os
 import subprocess
 import unittest
+import platform
 
 
 class TestLocaleNormalization(unittest.TestCase):
@@ -9,15 +10,27 @@ class TestLocaleNormalization(unittest.TestCase):
 
     def test_normalization(self):
         """ We test if the messages were properly created with makemessages --no-obsolete --no-wrap. """
-        makemessages_command = [
-            "python3",
-            "manage.py",
-            "makemessages",
-            "--no-obsolete",
-            "--no-wrap",
-            "--ignore",
-            "venv",
-        ]
+        if platform.system() == "Windows":
+            makemessages_command = [
+                "py",
+                "-3",
+                "manage.py",
+                "makemessages",
+                "--no-obsolete",
+                "--no-wrap",
+                "--ignore",
+                "venv",
+            ]
+        else:
+            makemessages_command = [
+                "python3",
+                "manage.py",
+                "makemessages",
+                "--no-obsolete",
+                "--no-wrap",
+                "--ignore",
+                "venv",
+            ]
         number_of_language = len(os.listdir(self.LOCALE_PATH))
         subprocess.check_call(makemessages_command)
         git_diff_command = ["git", "diff", self.LOCALE_PATH]

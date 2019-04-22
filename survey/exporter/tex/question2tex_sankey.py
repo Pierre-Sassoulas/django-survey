@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import logging
-import platform
 
 from django.utils.translation import ugettext_lazy as _
 from pandas.core.frame import DataFrame

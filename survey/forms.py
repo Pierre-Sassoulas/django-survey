@@ -4,6 +4,7 @@ import logging
 import uuid
 
 from django import forms
+from django.conf import settings
 from django.forms import models
 from django.urls import reverse
 from django.utils.text import slugify
@@ -99,7 +100,9 @@ class ResponseForm(models.ModelForm):
                 elif "[" in answer.body and "]" in answer.body:
                     initial = []
                     unformated_choices = answer.body[1:-1].strip()
-                    for unformated_choice in unformated_choices.split(","):
+                    for unformated_choice in unformated_choices.split(
+                        getattr(settings, "CHOICES_SEPARATOR", ",")
+                    ):
                         choice = unformated_choice.split("'")[1]
                         initial.append(slugify(choice))
                 else:

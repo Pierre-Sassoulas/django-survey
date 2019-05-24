@@ -3,6 +3,7 @@
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.test import override_settings
 from django.utils.translation import ugettext_lazy as _
 
 from survey.models import Answer, Question, Response, Survey
@@ -71,6 +72,32 @@ adipiscing elit."
             self.questions[0].get_choices(), (("聖黎", "聖黎"), ("はじむ", "はじむ"))
         )
 
+    @override_settings(CHOICES_SEPARATOR="|")
+    def test_get_choices_with_other_separator(self):
+        """ We can get a list of choices for a widget from choices text. """
+        self.questions[0].choices = "A éa|B éb"
+        self.assertEqual(
+            self.questions[0].get_choices(), (("a-éa", "A éa"), ("b-éb", "B éb"))
+        )
+        self.questions[0].choices = "A()a|  |C()c"
+        self.assertEqual(
+            self.questions[0].get_choices(), (("aa", "A()a"), ("cc", "C()c"))
+        )
+        self.questions[0].choices = "Yes, I do| No, I don't"
+        self.assertEqual(
+            self.questions[0].get_choices(),
+            (("yes-i-do", "Yes, I do"), ("no-i-dont", "No, I don't")),
+        )
+        self.questions[0].choices = "Женщина|Мужчина"
+        self.assertEqual(
+            self.questions[0].get_choices(),
+            (("женщина", "Женщина"), ("мужчина", "Мужчина")),
+        )
+        self.questions[0].choices = "聖黎|はじむ"
+        self.assertEqual(
+            self.questions[0].get_choices(), (("聖黎", "聖黎"), ("はじむ", "はじむ"))
+        )
+
     def test_validate_choices(self):
         """  List are validated for comma. """
         question = Question.objects.create(
@@ -88,6 +115,26 @@ adipiscing elit."
         question.choices = "a,"
         self.assertRaises(ValidationError, question.save)
         question.choices = ",a,  ,"
+        self.assertRaises(ValidationError, question.save)
+
+    @override_settings(CHOICES_SEPARATOR="|")
+    def test_validate_choices_with_other_separator(self):
+        """  List are validated for comma. """
+        question = Question.objects.create(
+            text="Q?",
+            choices="a|b|c",
+            order=1,
+            required=True,
+            survey=self.survey,
+            type=Question.SELECT_MULTIPLE,
+        )
+        question.choices = "a"
+        self.assertRaises(ValidationError, question.save)
+        question.choices = "|a"
+        self.assertRaises(ValidationError, question.save)
+        question.choices = "a,"
+        self.assertRaises(ValidationError, question.save)
+        question.choices = "|a|  |"
         self.assertRaises(ValidationError, question.save)
 
     def test_answers_as_text(self):

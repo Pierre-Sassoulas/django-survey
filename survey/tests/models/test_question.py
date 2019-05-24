@@ -73,8 +73,8 @@ adipiscing elit."
         )
 
     @override_settings(CHOICES_SEPARATOR="|")
-    def test_get_choices_with_other_separator(self):
-        """ We can get a list of choices for a widget from choices text. """
+    def test_get_choices_with_pipe(self):
+        """ We can get a list of choices for a widget from choices text with_pipe. """
         self.questions[0].choices = "A éa|B éb"
         self.assertEqual(
             self.questions[0].get_choices(), (("a-éa", "A éa"), ("b-éb", "B éb"))
@@ -118,8 +118,8 @@ adipiscing elit."
         self.assertRaises(ValidationError, question.save)
 
     @override_settings(CHOICES_SEPARATOR="|")
-    def test_validate_choices_with_other_separator(self):
-        """  List are validated for comma. """
+    def test_validate_choices_with_pipe(self):
+        """  List are validated for pipe. """
         question = Question.objects.create(
             text="Q?",
             choices="a|b|c",

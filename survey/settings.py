@@ -18,6 +18,7 @@ TEX_CONFIGURATION_FILE = getattr(
 )
 SURVEY_DEFAULT_PIE_COLOR = getattr(settings, "SURVEY_DEFAULT_PIE_COLOR", "red!50")
 
+CHOICES_SEPARATOR = getattr(settings, "CHOICES_SEPARATOR", ",")
 
 MEDIA_URL = "/media/"
 STATIC_URL = "/static/"

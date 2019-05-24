@@ -46,6 +46,8 @@ USER_DID_NOT_ANSWER = "Left blank"
 TEX_CONFIGURATION_FILE = os.path.join(ROOT, "doc", "example_conf.yaml")
 SURVEY_DEFAULT_PIE_COLOR = "red!50"
 
+CHOICES_SEPARATOR = ","
+
 LANGUAGE_CODE = "en-us"
 SITE_ID = 1
 TIME_ZONE = "UTC"

@@ -101,7 +101,7 @@ class ResponseForm(models.ModelForm):
                     initial = []
                     unformated_choices = answer.body[1:-1].strip()
                     for unformated_choice in unformated_choices.split(
-                        getattr(settings, "CHOICES_SEPARATOR", ",")
+                        settings.CHOICES_SEPARATOR
                     ):
                         choice = unformated_choice.split("'")[1]
                         initial.append(slugify(choice))

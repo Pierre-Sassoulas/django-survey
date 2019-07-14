@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from django.urls.base import reverse
-from django.contrib.messages import get_messages
 
 from survey.tests.management.test_management import TestManagement
 

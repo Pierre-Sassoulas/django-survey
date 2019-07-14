@@ -20,10 +20,12 @@ dist/
 csv/short-survey.csv
 csv/test-management-survey.csv
 csv/test-survey.csv
+csv/test-survey2.csv
 tex/q9_vs_q9.png
 tex/short-survey.tex
 tex/test-management-survey.tex
 tex/test-survey.tex
+tex/test-survey2.tex
 tex/q1_vs_q6.png
 tex/test-survey.pdf
 csv/unicode.csv

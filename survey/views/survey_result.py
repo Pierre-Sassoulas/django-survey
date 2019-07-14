@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.conf import settings
 from django.http.response import HttpResponse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 
 from survey.exporter.csv.survey2csv import Survey2Csv
 from survey.models import Survey
@@ -32,7 +34,8 @@ def serve_result_csv(request, primary_key):
     :param int primary_key: The primary key of the survey. """
     survey = get_object_or_404(Survey, pk=primary_key)
     if not survey.is_published:
-        return HttpResponse(status=302)
+        messages.error(request, "This survey has not been published")
+        return redirect("%s?next=%s" % (settings.LOGIN_URL, request.path))
     if survey.need_logged_user:
         return serve_protected_result(request, survey)
     return serve_unprotected_result_csv(survey)

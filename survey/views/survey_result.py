@@ -31,6 +31,8 @@ def serve_result_csv(request, primary_key):
 
     :param int primary_key: The primary key of the survey. """
     survey = get_object_or_404(Survey, pk=primary_key)
+    if not survey.is_published:
+        return HttpResponse(status=302)
     if survey.need_logged_user:
         return serve_protected_result(request, survey)
     return serve_unprotected_result_csv(survey)

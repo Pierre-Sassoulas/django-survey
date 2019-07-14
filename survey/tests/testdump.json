@@ -90,6 +90,18 @@
  }
 },
 {
+ "model": "survey.survey",
+ "pk": 4,
+ "fields": {
+  "name": "Test surv\u00eby2",
+  "description": "Survey",
+  "is_published": false,
+  "need_logged_user": false,
+  "display_by_question": false,
+  "template": null
+ }
+},
+{
  "model": "survey.category",
  "pk": 1,
  "fields": {

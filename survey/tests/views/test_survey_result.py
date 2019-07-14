@@ -13,6 +13,8 @@ class TestSurveyResult(TestManagement):
         self.assertEqual(response.status_code, 200)
         response = self.client.get(reverse("survey-result", args=(1,)))
         self.assertEqual(response.status_code, 302)
+        response = self.client.get(reverse("survey-result", args=(4,)))
+        self.assertEqual(response.status_code, 302)
         self.login()
         response = self.client.get(reverse("survey-result", args=(2,)))
         self.assertEqual(response.status_code, 200)

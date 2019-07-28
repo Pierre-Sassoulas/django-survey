@@ -21,6 +21,6 @@ class TestDefaultSettings(BaseTest):
         del settings.ROOT
         set_default_settings()
         try:
-            Survey2Tex.generate(self, "/")
+            getattr(settings, "ROOT")
         except AttributeError:
             self.fail("AttributeError: survey failed to set ROOT")

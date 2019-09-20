@@ -19,9 +19,15 @@
 	            <span class="help-inline" style="color:red">
 	                <strong> {% for error in  form.errors %}{{ error }}{% endfor %} </strong>
 	            </span> <br>
+                {% if form.field.widget.input_type == 'select' %}
+                <select name="{{form.name}}">
+                {% endif %}
 	            {% for field in form %}
                     {{ field }}
                 {% endfor%}
+                {% if form.field.widget.input_type == 'select' %}
+                </select>
+                {% endif %}
             </td>
         </tr>
 	{% endif %}

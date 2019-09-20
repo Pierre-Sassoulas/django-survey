@@ -24,11 +24,12 @@ version < 1.3.0.
   * [Advanced example](https://github.com/Pierre-Sassoulas/django-survey#advanced-example)
   * [Implementing a custom treatment](https://github.com/Pierre-Sassoulas/django-survey#implementing-a-custom-treatment)
 * [Contributing as a developper](https://github.com/Pierre-Sassoulas/django-survey#contributing-as-a-developper)
-  * [Development environement](https://github.com/Pierre-Sassoulas/django-survey#development-environement)
-  * [Test](https://github.com/Pierre-Sassoulas/django-survey#test)
-  * [Coverage](https://github.com/Pierre-Sassoulas/django-survey#coverage)
-  * [Sorting imports](https://github.com/Pierre-Sassoulas/django-survey#sorting-imports)
-  * [Lint](https://github.com/Pierre-Sassoulas/django-survey#lint-)
+  * [Development environment](https://github.com/Pierre-Sassoulas/django-survey#development-environment)
+  * [Committing code](https://github.com/Pierre-Sassoulas/django-survey#committing-code)
+    * [Launching tests](https://github.com/Pierre-Sassoulas/django-survey#launching-tests)
+    * [Adding test data](https://github.com/Pierre-Sassoulas/django-survey#adding-test-data)
+    * [Launching coverage](https://github.com/Pierre-Sassoulas/django-survey#launching-coverage)
+    * [Applying Lint](https://github.com/Pierre-Sassoulas/django-survey#applying-Lint)
 * [Translating the project](https://github.com/Pierre-Sassoulas/django-survey#translating-the-project)
   * [Language available](https://github.com/Pierre-Sassoulas/django-survey#language-available)
   * [As a developper](https://github.com/Pierre-Sassoulas/django-survey#as-a-developper)
@@ -231,21 +232,21 @@ you can also generate your configuration file with
 `python manage.py generatetexconf -h`, it will create the default skeleton
 for every survey and question.
 
-## Contributing as a developer
+## Contributing as a developper
 
 ### Development environment
 
 This is the typical command you should do to get started:
 
 ~~~~bash
-python3 -m venv venv/ # Create virtualenv
+python -m venv venv/ # Create virtualenv
 source venv/bin/activate # Activate virtualenv
-pip3 install -e ".[dev]" # Install dev requirements
+pip install -e ".[dev]" # Install dev requirements
 pre-commit install # Install pre-commit hook framework
-python3 manage.py migrate # Create database
-python3 manage.py createsuperuser
-python3 manage.py loaddata survey/tests/testdump.json # Load test data
-python3 manage.py runserver # Launch server
+python manage.py migrate # Create database
+python manage.py loaddata survey/tests/testdump.json # Load test data
+python manage.py createsuperuser
+python manage.py runserver # Launch server
 ~~~~
 
 ### Committing code
@@ -253,7 +254,7 @@ python3 manage.py runserver # Launch server
 #### Launching tests
 
 ~~~~bash
-python3 manage.py test survey
+python manage.py test survey
 ~~~~
 
 #### Adding test data
@@ -262,7 +263,7 @@ If you want to dump a test database after adding data to it, this is
 the command to have a minimal diff :
 
 ~~~~bash
-python3 manage.py dumpdata --format json -e contenttypes -e admin -e auth.Permission
+python manage.py dumpdata --format json -e contenttypes -e admin -e auth.Permission
 -e sessions.session -e sites.site --natural-foreign --indent 1
 -o survey/tests/testdump.json
 ~~~~
@@ -305,12 +306,12 @@ Do not forget to credit yourself like in the header seen
 Then you can translate with :
 
 ~~~~bash
-python3 manage.py makemessages
+python manage.py makemessages
 # python manage.py createsuperuser ? (You need to login for rosetta)
-python3 manage.py runserver
+python manage.py runserver
 # Access http://localhost:8000/admin to login
 # Then go to http://localhost:8000/rosetta to translate
-python3 manage.py makemessages --no-obsolete --no-wrap
+python manage.py makemessages --no-obsolete --no-wrap
 git add survey/locale/
 ...
 ~~~~

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging
 
 from django.conf import settings
 from django.shortcuts import get_object_or_404, redirect, render, reverse
@@ -6,6 +7,8 @@ from django.views.generic import View
 
 from survey.forms import ResponseForm
 from survey.models import Category, Survey
+
+LOGGER = logging.getLogger(__name__)
 
 
 class SurveyDetail(View):
@@ -41,6 +44,10 @@ class SurveyDetail(View):
             request.POST, survey=survey, user=request.user, step=kwargs.get("step", 0)
         )
         if not survey.editable_answers and form.response is not None:
+            LOGGER.info(
+                """Redirects to survey list after trying
+                             to edit non editable answer."""
+            )
             return redirect(reverse("survey-list"))
         context = {"response_form": form, "survey": survey, "categories": categories}
         if form.is_valid():
@@ -78,6 +85,8 @@ class SurveyDetail(View):
                         return redirect(
                             "survey-confirmation", uuid=response.interview_uuid
                         )
+        else:
+            LOGGER.info("""Non valid form.""")
         if survey.template is not None and len(survey.template) > 4:
             template_name = survey.template
         else:

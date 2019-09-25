@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-02 13:05+0000\n"
+"POT-Creation-Date: 2019-09-25 16:45+0200\n"
 "PO-Revision-Date: 2018-10-06 20:42+0000\n"
 "Last-Translator: Javier Ordóñez <>\n"
 "Language-Team: \n"
@@ -253,19 +253,23 @@ msgstr "Los usuarios pueden ver y responder"
 msgid "Only authenticated users can see it and answer it"
 msgstr "Solo usuarios autenticados pueden ver y responder"
 
-#: survey/models/survey.py:16
+#: survey/models/survey.py:17
+msgid "Users can edit their answers afterwards"
+msgstr "Los usuarios pueden editar sus respuestas"
+
+#: survey/models/survey.py:19
 msgid "Display by question"
 msgstr "Muestra por pregunta"
 
-#: survey/models/survey.py:17
+#: survey/models/survey.py:20
 msgid "Template"
 msgstr "Plantilla"
 
-#: survey/models/survey.py:20
+#: survey/models/survey.py:23
 msgid "survey"
 msgstr "encuesta"
 
-#: survey/models/survey.py:21
+#: survey/models/survey.py:24
 msgid "surveys"
 msgstr "encuestas"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-02 13:05+0000\n"
+"POT-Creation-Date: 2019-09-25 16:45+0200\n"
 "PO-Revision-Date: 2018-04-01 11:49+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -245,19 +245,23 @@ msgstr "Les utilisateurs peuvent le voir et y répondre"
 msgid "Only authenticated users can see it and answer it"
 msgstr "Seuls les utilisateurs authentifiés peuvent le voir et y répondre"
 
-#: survey/models/survey.py:16
+#: survey/models/survey.py:17
+msgid "Users can edit their answers afterwards"
+msgstr "Les utilisateurs peuvent modifier leur réponse"
+
+#: survey/models/survey.py:19
 msgid "Display by question"
 msgstr "Affichage par question"
 
-#: survey/models/survey.py:17
+#: survey/models/survey.py:20
 msgid "Template"
 msgstr "Modèle"
 
-#: survey/models/survey.py:20
+#: survey/models/survey.py:23
 msgid "survey"
 msgstr "sondage"
 
-#: survey/models/survey.py:21
+#: survey/models/survey.py:24
 msgid "surveys"
 msgstr "sondages"
 

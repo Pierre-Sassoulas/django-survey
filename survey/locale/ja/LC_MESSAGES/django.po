@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-02 13:05+0000\n"
+"POT-Creation-Date: 2019-09-25 16:45+0200\n"
 "PO-Revision-Date: 2018-04-09 00:52+0000\n"
 "Last-Translator: b'  <nsuzue@me.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -245,19 +245,23 @@ msgstr "すべてのユーザーが閲覧・回答できる"
 msgid "Only authenticated users can see it and answer it"
 msgstr "認証されたユーザーのみ閲覧・回答できる"
 
-#: survey/models/survey.py:16
+#: survey/models/survey.py:17
+msgid "Users can edit their answers afterwards"
+msgstr "ユーザーは後で回答を編集できます"
+
+#: survey/models/survey.py:19
 msgid "Display by question"
 msgstr "1問ずつ表示する"
 
-#: survey/models/survey.py:17
+#: survey/models/survey.py:20
 msgid "Template"
 msgstr "テンプレート"
 
-#: survey/models/survey.py:20
+#: survey/models/survey.py:23
 msgid "survey"
 msgstr "調査"
 
-#: survey/models/survey.py:21
+#: survey/models/survey.py:24
 msgid "surveys"
 msgstr "調査"
 

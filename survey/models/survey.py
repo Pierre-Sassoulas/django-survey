@@ -13,6 +13,9 @@ class Survey(models.Model):
     need_logged_user = models.BooleanField(
         _("Only authenticated users can see it and answer it")
     )
+    editable_answers = models.BooleanField(
+        _("Users can edit their answers afterwards"), default=True
+    )
     display_by_question = models.BooleanField(_("Display by question"))
     template = models.CharField(_("Template"), max_length=255, null=True, blank=True)
 

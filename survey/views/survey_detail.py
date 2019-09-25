@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.conf import settings
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.views.generic import View
 
 from survey.forms import ResponseForm
@@ -40,6 +40,8 @@ class SurveyDetail(View):
         form = ResponseForm(
             request.POST, survey=survey, user=request.user, step=kwargs.get("step", 0)
         )
+        if not survey.editable_answers and form.response is not None:
+            return redirect(reverse("survey-list"))
         context = {"response_form": form, "survey": survey, "categories": categories}
         if form.is_valid():
             session_key = "survey_%s" % (kwargs["id"],)

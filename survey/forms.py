@@ -56,6 +56,12 @@ class ResponseForm(models.ModelForm):
             else:
                 self.add_question(question, data)
 
+        self._get_preexisting_response()
+
+        if not self.survey.editable_answers and self.response is not None:
+            for name in self.fields.keys():
+                self.fields[name].widget.attrs["disabled"] = True
+
     def _get_preexisting_response(self):
         """ Recover a pre-existing response in database.
 
@@ -237,6 +243,10 @@ class ResponseForm(models.ModelForm):
         # Recover an existing response from the database if any
         #  There is only one response by logged user.
         response = self._get_preexisting_response()
+
+        if not self.survey.editable_answers and response is not None:
+            return None
+
         if response is None:
             response = super(ResponseForm, self).save(commit=False)
         response.survey = self.survey

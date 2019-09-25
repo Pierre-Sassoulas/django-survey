@@ -20,7 +20,7 @@
 	                <strong> {% for error in  form.errors %}{{ error }}{% endfor %} </strong>
 	            </span> <br>
                 {% if form.field.widget.input_type == 'select' %}
-                <select name="{{form.name}}">
+                <select name="{{form.name}}"{% if form.field.widget.attrs.disabled %} disabled{% endif %}>
                 {% endif %}
 	            {% for field in form %}
                     {{ field }}

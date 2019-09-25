@@ -42,7 +42,6 @@ class ResponseForm(models.ModelForm):
         super(ResponseForm, self).__init__(*args, **kwargs)
         self.uuid = uuid.uuid4().hex
         self.steps_count = len(self.survey.questions.all())
-
         # will contain prefetched data to avoid multiple db calls
         self.response = False
         self.answers = False
@@ -69,13 +68,16 @@ class ResponseForm(models.ModelForm):
 
         if not self.user.is_authenticated:
             self.response = None
-        try:
-            self.response = Response.objects.get(user=self.user, survey=self.survey)
-        except Response.DoesNotExist:
-            LOGGER.debug(
-                "No saved response for '%s' for user %s", self.survey, self.user
-            )
-            self.response = None
+        else:
+            try:
+                self.response = Response.objects.prefetch_related("user", "survey").get(
+                    user=self.user, survey=self.survey
+                )
+            except Response.DoesNotExist:
+                LOGGER.debug(
+                    "No saved response for '%s' for user %s", self.survey, self.user
+                )
+                self.response = None
         return self.response
 
     def _get_preexisting_answers(self):

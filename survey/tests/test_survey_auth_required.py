@@ -39,7 +39,7 @@ class TestSurveyAuthRequired(BaseTest):
             self.assertEqual(response.status_code, 200)
             self.logout()
 
-    def test_accesible(self):
+    def test_accessible(self):
         """ If need_logged_user=False user do not need to authenticate. """
         urls = [
             reverse("survey-list"),

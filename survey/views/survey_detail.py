@@ -10,7 +10,11 @@ from survey.models import Category, Survey
 
 class SurveyDetail(View):
     def get(self, request, *args, **kwargs):
-        survey = get_object_or_404(Survey, is_published=True, id=kwargs["id"])
+        survey = get_object_or_404(
+            Survey.objects.prefetch_related("questions", "questions__category"),
+            is_published=True,
+            id=kwargs["id"],
+        )
         if survey.template is not None and len(survey.template) > 4:
             template_name = survey.template
         else:

@@ -42,6 +42,11 @@ class ResponseForm(models.ModelForm):
         super(ResponseForm, self).__init__(*args, **kwargs)
         self.uuid = uuid.uuid4().hex
         self.steps_count = len(self.survey.questions.all())
+
+        # will contain prefetched data to avoid multiple db calls
+        self.response = False
+        self.answers = False
+
         # add a field for each survey question, corresponding to the question
         # type as appropriate.
         data = kwargs.get("data")
@@ -55,17 +60,47 @@ class ResponseForm(models.ModelForm):
     def _get_preexisting_response(self):
         """ Recover a pre-existing response in database.
 
-        The user must be logged.
+        The user must be logged. Will store the response retrieved in an attribute
+        to avoid multiple db calls.
+
         :rtype: Response or None"""
+        if self.response:
+            return self.response
+
         if not self.user.is_authenticated:
-            return None
+            self.response = None
         try:
-            return Response.objects.get(user=self.user, survey=self.survey)
+            self.response = Response.objects.get(user=self.user, survey=self.survey)
         except Response.DoesNotExist:
             LOGGER.debug(
                 "No saved response for '%s' for user %s", self.survey, self.user
             )
-            return None
+            self.response = None
+        return self.response
+
+    def _get_preexisting_answers(self):
+        """ Recover pre-existing answers in database.
+
+        The user must be logged. A Response containing the Answer must exists.
+        Will create an attribute containing the answers retrieved to avoid multiple
+        db calls.
+
+        :rtype: dict of Answer or None"""
+        if self.answers:
+            return self.answers
+
+        response = self._get_preexisting_response()
+        if response is None:
+            self.answers = None
+        try:
+            answers = Answer.objects.filter(response=response).prefetch_related(
+                "question"
+            )
+            self.answers = {answer.question.id: answer for answer in answers.all()}
+        except Answer.DoesNotExist:
+            self.answers = None
+
+        return self.answers
 
     def _get_preexisting_answer(self, question):
         """ Recover a pre-existing answer in database.
@@ -75,13 +110,8 @@ class ResponseForm(models.ModelForm):
         :param Question question: The question we want to recover in the
         response.
         :rtype: Answer or None"""
-        response = self._get_preexisting_response()
-        if response is None:
-            return None
-        try:
-            return Answer.objects.get(question=question, response=response)
-        except Answer.DoesNotExist:
-            return None
+        answers = self._get_preexisting_answers()
+        return answers.get(question.id, None)
 
     def get_question_initial(self, question, data):
         """ Get the initial value that we should use in the Form

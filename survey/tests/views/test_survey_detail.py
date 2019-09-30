@@ -29,7 +29,6 @@ class TestSurveyDetail(BaseTest):
         response = self.client.post(
             reverse("survey-detail", args=[1]),
             data={
-                "question_1": "no",
                 "question_1": "maybe",
                 "question_2": "no",
                 "question_3": "This is a test of text",

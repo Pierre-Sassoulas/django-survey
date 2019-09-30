@@ -85,7 +85,7 @@ class SurveyDetail(View):
                             "survey-confirmation", uuid=response.interview_uuid
                         )
         else:
-LOGGER.info("Non valid form: <%s>", form)
+            LOGGER.info("Non valid form: <%s>", form)
         if survey.template is not None and len(survey.template) > 4:
             template_name = survey.template
         else:

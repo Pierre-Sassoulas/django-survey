@@ -45,8 +45,7 @@ class SurveyDetail(View):
         )
         if not survey.editable_answers and form.response is not None:
             LOGGER.info(
-                """Redirects to survey list after trying
-                             to edit non editable answer."""
+                "Redirects to survey list after trying to edit non editable answer."
             )
             return redirect(reverse("survey-list"))
         context = {"response_form": form, "survey": survey, "categories": categories}

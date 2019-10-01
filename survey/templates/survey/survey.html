@@ -12,7 +12,7 @@
 	<h1> {{survey.name}} </h1>
 	<div class="survey-description"> {{survey.description|safe}} </div>
 	<div>
-	{% if step != 0 and step != "" and step is not None %}
+      {% if step and step != 0 %}
 		<form action="{% url 'survey-detail-step' id=survey.id step=step %}" method="post">
 	{% else %}
 		<form action="{% url 'survey-detail' id=survey.id %}" method="post">

@@ -69,7 +69,6 @@ class SurveyDetail(View):
                     save_form = ResponseForm(
                         request.session[session_key], survey=survey, user=request.user
                     )
-                    # checks that the form created is valid
                     if save_form.is_valid():
                         response = save_form.save()
                     else:

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 16:45+0200\n"
+"POT-Creation-Date: 2019-10-01 11:49+0200\n"
 "PO-Revision-Date: 2019-03-10 22:53+0230\n"
 "Last-Translator: b'  <vladm.ru@gmail.com>'\n"
 "Language-Team: \n"
@@ -310,14 +310,14 @@ msgstr "Добро пожаловать в Опросник"
 msgid "Take the Survey"
 msgstr "Принять участие в опросе"
 
-#: survey/templates/survey/survey.html:26
+#: survey/templates/survey/survey.html:31
 msgid "Answer this part"
 msgstr "Ответьте на эту часть"
 
-#: survey/templates/survey/survey.html:39
+#: survey/templates/survey/survey.html:44
 msgid "Questions"
 msgstr "Ответы"
 
-#: survey/templates/survey/survey.html:48
+#: survey/templates/survey/survey.html:53
 msgid "I'm done!"
 msgstr "Я завершил!"

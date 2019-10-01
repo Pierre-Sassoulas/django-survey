@@ -11,7 +11,12 @@
 {% block body %}
 	<h1> {{survey.name}} </h1>
 	<div class="survey-description"> {{survey.description|safe}} </div>
-	<div><form action="{% url 'survey-detail' id=survey.id %}" method="post">
+	<div>
+	{% if step != 0 and step != "" and step is not None %}
+		<form action="{% url 'survey-detail-step' id=survey.id step=step %}" method="post">
+	{% else %}
+		<form action="{% url 'survey-detail' id=survey.id %}" method="post">
+	{% endif %}
 	    {% csrf_token %}
         {% for category in categories %}
             <h3> {{category}} </h3>

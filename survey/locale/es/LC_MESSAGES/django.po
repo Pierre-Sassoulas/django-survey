@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 16:45+0200\n"
+"POT-Creation-Date: 2019-10-01 11:49+0200\n"
 "PO-Revision-Date: 2018-10-06 20:42+0000\n"
 "Last-Translator: Javier Ordóñez <>\n"
 "Language-Team: \n"
@@ -307,14 +307,14 @@ msgstr "Bienvenido a Django Survey"
 msgid "Take the Survey"
 msgstr "Toma la encuesta"
 
-#: survey/templates/survey/survey.html:26
+#: survey/templates/survey/survey.html:31
 msgid "Answer this part"
 msgstr "Reponde esta sección"
 
-#: survey/templates/survey/survey.html:39
+#: survey/templates/survey/survey.html:44
 msgid "Questions"
 msgstr "Preguntas"
 
-#: survey/templates/survey/survey.html:48
+#: survey/templates/survey/survey.html:53
 msgid "I'm done!"
 msgstr "¡Terminé!"

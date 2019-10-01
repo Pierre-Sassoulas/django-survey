@@ -18,6 +18,7 @@ class SurveyDetail(View):
             is_published=True,
             id=kwargs["id"],
         )
+        step = kwargs.get("step", 0)
         if survey.template is not None and len(survey.template) > 4:
             template_name = survey.template
         else:
@@ -28,10 +29,13 @@ class SurveyDetail(View):
         if survey.need_logged_user and not request.user.is_authenticated:
             return redirect("%s?next=%s" % (settings.LOGIN_URL, request.path))
         categories = Category.objects.filter(survey=survey).order_by("order")
-        form = ResponseForm(
-            survey=survey, user=request.user, step=kwargs.get("step", 0)
-        )
-        context = {"response_form": form, "survey": survey, "categories": categories}
+        form = ResponseForm(survey=survey, user=request.user, step=step)
+        context = {
+            "response_form": form,
+            "survey": survey,
+            "categories": categories,
+            "step": step,
+        }
 
         return render(request, template_name, context)
 
@@ -60,14 +64,23 @@ class SurveyDetail(View):
             next_url = form.next_step_url()
             response = None
             if survey.display_by_question:
+                # when it's the last step
                 if not form.has_next_step():
                     save_form = ResponseForm(
                         request.session[session_key], survey=survey, user=request.user
                     )
-                    response = save_form.save()
+                    # checks that the form created is valid
+                    if save_form.is_valid():
+                        response = save_form.save()
+                    else:
+                        LOGGER.warning(
+                            "A step of the multipage form failed \
+                            but should have been discovered before."
+                        )
             else:
                 response = form.save()
 
+            # if there is a next step
             if next_url is not None:
                 return redirect(next_url)
             else:

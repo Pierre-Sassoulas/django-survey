@@ -94,11 +94,23 @@
  "model": "survey.survey",
  "pk": 4,
  "fields": {
-  "name": "Test surv\u00eby2",
+  "name": "Test",
   "description": "Survey",
   "is_published": false,
   "need_logged_user": false,
   "display_by_question": false,
+  "template": null
+ }
+},
+{
+ "model": "survey.survey",
+ "pk": 5,
+ "fields": {
+  "name": "Multipage",
+  "description": "Multipage survey",
+  "is_published": true,
+  "need_logged_user": true,
+  "display_by_question": true,
   "template": null
  }
 },
@@ -260,6 +272,32 @@
   "survey": 3,
   "type": "radio",
   "choices": "\u9633\u660e,\u8056\u9ece"
+ }
+},
+{
+ "model": "survey.question",
+ "pk": 11,
+ "fields": {
+  "text": "First question on multipage.",
+  "order": 1,
+  "required": true,
+  "category": 1,
+  "survey": 5,
+  "type": "integer",
+  "choices": ""
+ }
+},
+{
+ "model": "survey.question",
+ "pk": 12,
+ "fields": {
+  "text": "Second question on multipage.",
+  "order": 2,
+  "required": true,
+  "category": 1,
+  "survey": 5,
+  "type": "radio",
+  "choices": "yes, no"
  }
 },
 {

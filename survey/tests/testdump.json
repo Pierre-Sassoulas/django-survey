@@ -94,7 +94,7 @@
  "model": "survey.survey",
  "pk": 4,
  "fields": {
-  "name": "Test",
+  "name": "Test surv\u00eby2",
   "description": "Survey",
   "is_published": false,
   "need_logged_user": false,

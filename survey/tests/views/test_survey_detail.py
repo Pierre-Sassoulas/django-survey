@@ -6,7 +6,7 @@ from django.conf import settings
 from django.urls.base import reverse
 
 from survey.tests import BaseTest
-from survey.models import Response, Survey, Answer
+from survey.models import Response, Answer
 
 LOGGER = logging.getLogger(__name__)
 

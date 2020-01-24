@@ -134,6 +134,7 @@ LANGUAGES = (
     ("fr", "french"),
     ("ja", "Japanese"),
     ("zh", "Chinese"),
+    ("de", "German"),
 )
 
 LOGIN_REDIRECT_URL = "/"

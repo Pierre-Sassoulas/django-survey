@@ -2,7 +2,7 @@
 
 import sys
 
-from operator import itemgetter 
+from operator import itemgetter
 
 
 from django.core.management.base import BaseCommand
@@ -20,7 +20,9 @@ class SurveyCommand(BaseCommand):
         parser.add_argument("--survey-all", action="store_true", help="Use to generate all surveys. Default is False.")
         parser.add_argument("--survey-id", nargs="+", type=int, help=help_text.format("primary key", "survey"))
         parser.add_argument("--survey-name", nargs="+", type=str, help=help_text.format("name", "survey"))
-        parser.add_argument("--survey-latest", action="store_true", help="Use to generate the latest survey. Default is False.")
+        parser.add_argument(
+            "--survey-latest", action="store_true", help="Use to generate the latest survey. Default is False."
+        )
         parser.add_argument(
             "--question-all", action="store_true", help="Use to generate all questions. Default is False."
         )
@@ -58,7 +60,7 @@ class SurveyCommand(BaseCommand):
         all_questions = opts.get("question_all")
         some_questions = opts.get("question_text") or opts.get("question_id")
         all_surveys = opts.get("survey_all")
-        some_surveys = opts.get("survey_name") or opts.get("survey_id") 
+        some_surveys = opts.get("survey_name") or opts.get("survey_id")
         error_msg = "You cannot generate only some {} to generate everything. Use one or the other."
         if all_questions and some_questions:
             sys.exit(
@@ -69,7 +71,8 @@ class SurveyCommand(BaseCommand):
 
     def check_nothing_at_all(self, options):
         at_least_a_question = options.get("question_all") or options.get("question_text") or options.get("question_id")
-        at_least_a_survey = options.get("survey_all") or options.get("survey_name") or options.get("survey_id") or options.get("survey_latest")
+        at_least_a_survey = options.get("survey_all") or options.get(
+            "survey_name") or options.get("survey_id") or options.get("survey_latest")
         if not at_least_a_question and not at_least_a_survey:
             sys.exit(
                 "Nothing to do, add at least one of the following options :\n"
@@ -102,7 +105,7 @@ class SurveyCommand(BaseCommand):
                         self.raise_value_error("survey-id", survey_id)
             if options.get("survey_latest"):
                 valids = [(s.pk, s.name) for s in Survey.objects.all()]
-                survey_id = max(valids, key = itemgetter(0))[0]
+                survey_id = max(valids, key=itemgetter(0))[0]
                 try:
                     self.surveys.append(Survey.objects.get(pk=survey_id))
                 except Survey.DoesNotExist:

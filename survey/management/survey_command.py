@@ -60,7 +60,7 @@ class SurveyCommand(BaseCommand):
         all_questions = opts.get("question_all")
         some_questions = opts.get("question_text") or opts.get("question_id")
         all_surveys = opts.get("survey_all")
-        some_surveys = opts.get("survey_name") or opts.get("survey_id")
+        some_surveys = opts.get("survey_name") or opts.get("survey_id") or opts.get("survey_latest")
         error_msg = "You cannot generate only some {} to generate everything. Use one or the other."
         if all_questions and some_questions:
             sys.exit(

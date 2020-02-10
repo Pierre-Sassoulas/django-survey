@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import logging
+from datetime import date
 
 from django.conf import settings
-from django.shortcuts import get_object_or_404, redirect, render, reverse
+from django.shortcuts import Http404, get_object_or_404, redirect, render, reverse
 from django.views.generic import View
 
 from survey.forms import ResponseForm
@@ -16,6 +17,12 @@ class SurveyDetail(View):
         survey = get_object_or_404(
             Survey.objects.prefetch_related("questions", "questions__category"), is_published=True, id=kwargs["id"]
         )
+        if not survey.is_published:
+            raise Http404
+        if survey.expire_date < date.today():
+            raise Http404
+        if survey.publish_date > date.today():
+            raise Http404
         step = kwargs.get("step", 0)
         if survey.template is not None and len(survey.template) > 4:
             template_name = survey.template

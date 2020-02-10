@@ -119,6 +119,79 @@
  }
 },
 {
+ "model": "survey.survey",
+ "pk": 6,
+ "fields": {
+  "name": "Expired",
+  "description": "expired survey",
+  "is_published": true,
+  "need_logged_user": false,
+  "editable_answers": true,
+  "display_by_question": false,
+  "template": "",
+  "expire_date": "2018-12-05",
+  "publish_date": "2018-12-05"
+ }
+},
+{
+ "model": "survey.survey",
+ "pk": 7,
+ "fields": {
+  "name": "Not already visible",
+  "description": "Publication date is in future",
+  "is_published": true,
+  "need_logged_user": false,
+  "editable_answers": true,
+  "display_by_question": false,
+  "template": "",
+  "expire_date": "2055-12-05",
+  "publish_date": "2055-12-05"
+ }
+},
+{
+ "model": "survey.survey",
+ "pk": 8,
+ "fields": {
+  "name": "In Time Range",
+  "description": "This Survey is visible",
+  "is_published": true,
+  "need_logged_user": false,
+  "editable_answers": true,
+  "display_by_question": false,
+  "template": "",
+  "expire_date": "2021-12-05",
+  "publish_date": "2018-12-05"
+ }
+},
+{
+ "model": "survey.survey",
+ "pk": 9,
+ "fields": {
+  "name": "no expire date survey",
+  "description": "This Survey is visible",
+  "is_published": true,
+  "need_logged_user": false,
+  "editable_answers": true,
+  "display_by_question": false,
+  "template": "",
+  "publish_date": "2018-12-05"
+ }
+},
+{
+ "model": "survey.survey",
+ "pk": 10,
+ "fields": {
+  "name": "no publication date survey",
+  "description": "This Survey is visible",
+  "is_published": true,
+  "need_logged_user": false,
+  "editable_answers": true,
+  "display_by_question": false,
+  "template": "",
+  "expire_date": "2055-12-05"
+ }
+},
+{
  "model": "survey.category",
  "pk": 1,
  "fields": {

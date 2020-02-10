@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+from datetime import date, timedelta
 
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -14,6 +16,14 @@ class Survey(models.Model):
     editable_answers = models.BooleanField(_("Users can edit their answers afterwards"), default=True)
     display_by_question = models.BooleanField(_("Display by question"))
     template = models.CharField(_("Template"), max_length=255, null=True, blank=True)
+    publish_date = models.DateField(_("Publication date"), blank=True, null=False, default=date.today())
+    default_survey_publishing_duration = settings.DEFAULT_SURVEY_PUBLISHING_DURATION
+    expire_date = models.DateField(
+        _("Expiration date"),
+        blank=True,
+        null=False,
+        default=date.today() + timedelta(days=default_survey_publishing_duration),
+    )
 
     class Meta:
         verbose_name = _("survey")

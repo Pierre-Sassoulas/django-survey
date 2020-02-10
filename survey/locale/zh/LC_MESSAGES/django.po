@@ -5,18 +5,18 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION/nReport-Msgid-Bugs-To:\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-23 14:40+0000\n"
-"PO-Revision-Date: 2020-02-22 22:19+0000\n"
-"Last-Translator: b'  <>'\n"
+"POT-Creation-Date: 2020-02-24 22:55+0000\n"
+"PO-Revision-Date: 2018-04-09 00:52+0000\n"
+"Last-Translator: Zhu Sheng Li <digglife@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Translated-Using: django-rosetta 0.9.3\n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
 
 #: dev/templates/base.html:3
 msgid "en"
@@ -157,7 +157,7 @@ msgstr "更新日期"
 msgid "Content"
 msgstr "内容"
 
-#: survey/models/category.py:12 survey/models/survey.py:10
+#: survey/models/category.py:12 survey/models/survey.py:12
 msgid "Name"
 msgstr "名字"
 
@@ -170,7 +170,7 @@ msgstr "问卷"
 msgid "Display order"
 msgstr "显示顺序"
 
-#: survey/models/category.py:15 survey/models/survey.py:11
+#: survey/models/category.py:15 survey/models/survey.py:13
 msgid "Description"
 msgstr "描述"
 
@@ -266,31 +266,43 @@ msgstr "问卷的几组回答"
 msgid "Sets of answers to surveys"
 msgstr "问卷的几组回答"
 
-#: survey/models/survey.py:12
+#: survey/models/survey.py:14
 msgid "Users can see it and answer it"
 msgstr "用户可以浏览和回答"
 
-#: survey/models/survey.py:13
+#: survey/models/survey.py:15
 msgid "Only authenticated users can see it and answer it"
 msgstr "只有认证用户可以浏览和回答"
 
-#: survey/models/survey.py:14
+#: survey/models/survey.py:16
 msgid "Users can edit their answers afterwards"
 msgstr "用户可以随后编辑他们的答案"
 
-#: survey/models/survey.py:15
+#: survey/models/survey.py:17
 msgid "Display by question"
 msgstr "每页一个问题"
 
-#: survey/models/survey.py:16
+#: survey/models/survey.py:18
 msgid "Template"
 msgstr "模板"
 
 #: survey/models/survey.py:19
+#, fuzzy
+#| msgid "Creation date"
+msgid "Publication date"
+msgstr "创建日期"
+
+#: survey/models/survey.py:22
+#, fuzzy
+#| msgid "Creation date"
+msgid "Expiration date"
+msgstr "创建日期"
+
+#: survey/models/survey.py:29
 msgid "survey"
 msgstr "问卷"
 
-#: survey/models/survey.py:20
+#: survey/models/survey.py:30
 msgid "surveys"
 msgstr "问卷"
 

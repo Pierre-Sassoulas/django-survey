@@ -3,6 +3,7 @@
 *.swo
 *.swn
 *.pyc
+__pycache__
 survey.db
 django_survey_and_report.egg-info/
 survey_test/static/
@@ -35,3 +36,14 @@ csv/multipage.csv
 tex/multipage.tex
 tex/q13_vs_q13.png
 tex/q20_vs_q21.png
+tex/q20_vs_q21.png
+csv/expired.csv
+csv/in-time-range.csv
+csv/no-expire-date-survey.csv
+csv/no-publication-date-survey.csv
+csv/not-already-visible.csv
+tex/expired.tex
+tex/in-time-range.tex
+tex/no-expire-date-survey.tex
+tex/no-publication-date-survey.tex
+tex/not-already-visible.tex

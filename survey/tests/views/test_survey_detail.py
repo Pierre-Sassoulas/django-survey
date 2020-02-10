@@ -117,3 +117,31 @@ class TestSurveyDetail(BaseTest):
         )
         self.assertEqual(len(answer_saved.all()), 1)
         self.assertEqual(answer_saved[0].body, "yes")
+
+    def test_when_expiration_date_is_in_past_survey_is_not_visible(self):
+        """ when expiration_date is in the past the survey should be hidden """
+        response = self.client.get(reverse("survey-detail", args=(6,)))
+        self.assertEqual(response.status_code, 404)
+
+    def test_when_publication_date_is_in_future_survey_is_not_visible(self):
+        """ when publish_date is in the future the survey should be hidden """
+        response = self.client.get(reverse("survey-detail", args=(7,)))
+        self.assertEqual(response.status_code, 404)
+
+    def test_the_survey_should_be_visible(self):
+        """ when publish_date is in the past and expiration in the future
+        the survey should be visible """
+        response = self.client.get(reverse("survey-detail", args=(8,)))
+        self.assertEqual(response.status_code, 200)
+
+    def test_the_survey_should_be_visible_while_no_expiration(self):
+        """ when publish_date is in the past and no expiration date is set
+        the survey should be visible """
+        response = self.client.get(reverse("survey-detail", args=(9,)))
+        self.assertEqual(response.status_code, 200)
+
+    def test_the_survey_should_be_visible_while_no_publication_date(self):
+        """ when expiration_date is in the future and no publication_date is set
+        the survey should be visible """
+        response = self.client.get(reverse("survey-detail", args=(10,)))
+        self.assertEqual(response.status_code, 200)

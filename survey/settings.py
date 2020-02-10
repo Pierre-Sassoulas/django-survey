@@ -16,6 +16,7 @@ SURVEY_DEFAULT_PIE_COLOR = getattr(settings, "SURVEY_DEFAULT_PIE_COLOR", "red!50
 CHOICES_SEPARATOR = getattr(settings, "CHOICES_SEPARATOR", ",")
 EXCEL_COMPATIBLE_CSV = False
 
+
 MEDIA_URL = "/media/"
 STATIC_URL = "/static/"
 

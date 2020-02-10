@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-23 14:40+0000\n"
+"POT-Creation-Date: 2020-02-24 22:55+0000\n"
 "PO-Revision-Date: 2020-01-24 17:05+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -158,7 +158,7 @@ msgstr "Datum der letzten Bearbeitung"
 msgid "Content"
 msgstr "Inhalt"
 
-#: survey/models/category.py:12 survey/models/survey.py:10
+#: survey/models/category.py:12 survey/models/survey.py:12
 msgid "Name"
 msgstr "Name"
 
@@ -171,7 +171,7 @@ msgstr "Umfrage"
 msgid "Display order"
 msgstr "Anordnung"
 
-#: survey/models/category.py:15 survey/models/survey.py:11
+#: survey/models/category.py:15 survey/models/survey.py:13
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -267,31 +267,43 @@ msgstr "Satz an Antworten zu Umfragen"
 msgid "Sets of answers to surveys"
 msgstr "Sätze von Antworten zu Umfragen"
 
-#: survey/models/survey.py:12
+#: survey/models/survey.py:14
 msgid "Users can see it and answer it"
 msgstr "Benutzer können sie sehen und beantworten"
 
-#: survey/models/survey.py:13
+#: survey/models/survey.py:15
 msgid "Only authenticated users can see it and answer it"
 msgstr "Nur autentifizierte Benutzer können sie sehen und beantworten"
 
-#: survey/models/survey.py:14
+#: survey/models/survey.py:16
 msgid "Users can edit their answers afterwards"
 msgstr "Benutzer können ihre Antworten im nachhinein verändern"
 
-#: survey/models/survey.py:15
+#: survey/models/survey.py:17
 msgid "Display by question"
 msgstr "Anzeigen anhand der Frage"
 
-#: survey/models/survey.py:16
+#: survey/models/survey.py:18
 msgid "Template"
 msgstr "Vorlage"
 
 #: survey/models/survey.py:19
+#, fuzzy
+#| msgid "Creation date"
+msgid "Publication date"
+msgstr "Datum der Erstellung"
+
+#: survey/models/survey.py:22
+#, fuzzy
+#| msgid "Creation date"
+msgid "Expiration date"
+msgstr "Datum der Erstellung"
+
+#: survey/models/survey.py:29
 msgid "survey"
 msgstr "Umfrage"
 
-#: survey/models/survey.py:20
+#: survey/models/survey.py:30
 msgid "surveys"
 msgstr "Umfragen"
 

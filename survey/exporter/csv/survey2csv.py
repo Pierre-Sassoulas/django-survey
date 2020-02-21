@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-
+import csv
+import codecs
 import logging
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import gettext_lazy as _
+from django.http import HttpResponse
 
 from survey.exporter.survey2x import Survey2X
 
@@ -57,13 +59,14 @@ class Survey2Csv(Survey2X):
                 user_line.append("")
         return user_line
 
-    def get_header_and_order(self):
+    @staticmethod
+    def get_header_and_order(survey):
         """ Creating header.
 
         :param Survey survey: The survey we're treating. """
-        header = ["user"]  # , u"entity"]
+        header = [_("user")]  # , u"entity"]
         question_order = ["user"]  # , u"entity" ]
-        for question in self.survey.questions.all():
+        for question in survey.questions.all():
             header.append(question.text)
             question_order.append(question.pk)
         return header, question_order
@@ -72,9 +75,34 @@ class Survey2Csv(Survey2X):
         csv = []
         if settings.EXCEL_COMPATIBLE_CSV:
             csv.append('"sep=,"')
-        header, question_order = self.get_header_and_order()
+        header, question_order = Survey2Csv.get_header_and_order(self.survey)
         csv.append(Survey2Csv.line_list_to_string(header))
         for response in self.survey.responses.all():
             line = Survey2Csv.get_user_line(question_order, response)
             csv.append(Survey2Csv.line_list_to_string(line))
         return "\n".join(csv)
+
+    @staticmethod
+    def export_as_csv(self, request, queryset):
+        """
+        action function used in admin site
+        """
+        # get the first survey in selection
+        survey = queryset.first()
+
+        response = HttpResponse(content_type="text/csv")
+        response["Content-Disposition"] = "attachment; filename={}.csv".format(
+            survey.name.encode("utf-8").decode("ISO-8859-1")  # make filename support unicode
+        )
+        # BOM
+        response.write(codecs.BOM_UTF8)
+        writer = csv.writer(response, delimiter=",")
+
+        header, question_order = Survey2Csv.get_header_and_order(survey)
+        writer.writerow(header)
+        for rsp in survey.responses.all():
+            line = Survey2Csv.get_user_line(question_order, rsp)
+            writer.writerow(line)
+        return response
+
+    export_as_csv.short_description = _("export to csv")

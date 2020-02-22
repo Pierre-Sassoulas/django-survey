@@ -15,4 +15,6 @@ def make_published(modeladmin, request, queryset):
         count,
     ) % {"count": count}
     modeladmin.message_user(request, message)
-    make_published.short_description = _("Mark selected surveys as published")
+
+
+make_published.short_description = _("Mark selected surveys as published")

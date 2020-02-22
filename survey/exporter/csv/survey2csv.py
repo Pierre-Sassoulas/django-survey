@@ -106,4 +106,5 @@ class Survey2Csv(Survey2X):
             writer.writerow(line)
         return response
 
-    export_as_csv.short_description = _("export to csv")
+
+Survey2Csv.export_as_csv.short_description = _("export to csv")

@@ -9,7 +9,7 @@ class Survey(models.Model):
 
     name = models.CharField(_("Name"), max_length=400)
     description = models.TextField(_("Description"))
-    is_published = models.BooleanField(_("Users can see it and answer it"))
+    is_published = models.BooleanField(_("Users can see it and answer it"), default=True)
     need_logged_user = models.BooleanField(_("Only authenticated users can see it and answer it"))
     editable_answers = models.BooleanField(_("Users can edit their answers afterwards"), default=True)
     display_by_question = models.BooleanField(_("Display by question"))

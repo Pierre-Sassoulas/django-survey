@@ -247,7 +247,7 @@ msgstr "问卷的几组回答"
 
 #: survey/models/survey.py:12
 msgid "Users can see it and answer it"
-msgstr "所有用户都可以浏览和回答"
+msgstr "用户可以浏览和回答"
 
 #: survey/models/survey.py:13
 msgid "Only authenticated users can see it and answer it"
@@ -259,7 +259,7 @@ msgstr "用户可以随后编辑他们的答案"
 
 #: survey/models/survey.py:15
 msgid "Display by question"
-msgstr "显示回答"
+msgstr "每页一个问题"
 
 #: survey/models/survey.py:16
 msgid "Template"

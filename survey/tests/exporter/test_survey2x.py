@@ -5,7 +5,6 @@ from datetime import datetime
 from pathlib import Path
 from unittest.mock import patch
 
-from django.conf import settings
 from django.test.utils import override_settings
 
 from survey.exporter.survey2x import Survey2X
@@ -16,7 +15,7 @@ ROOT = Path(__file__).parent.parent.parent
 
 
 class Survey2Survey(Survey2X):
-    def survey_to_x(self):
+    def __str__(self):
         pass
 
 
@@ -39,8 +38,8 @@ class TestSurvey2X(TestManagement):
         msg += "\nFile modification time : {}".format(survey2x.file_modification_time)
         return msg
 
-    def test_survey_2_x(self):
-        self.assertRaises(NotImplementedError, self.virtual_survey2x.survey_to_x)
+    def test_str(self):
+        self.assertRaises(NotImplementedError, self.virtual_survey2x.__str__)
 
     @override_settings(X_DIRECTORY=Path(ROOT, "x"))
     def test_file_name(self):

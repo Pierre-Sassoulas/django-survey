@@ -1,19 +1,22 @@
+[MASTER]
+# Python code to execute, usually for sys.path manipulation such as pygtk.require().
+init-hook=import sys; sys.path.insert(0, 'survey');sys.path.insert(0, 'venv/lib/python3.7/site-packages/');
+
 [MESSAGES CONTROL]
 # I0011 Warning locally suppressed using disable-msg
 disable=
     I0011,
     no-member,
-    C0111, # We don't want docstring everywhere
+    missing-docstring, # We don't want docstring everywhere
     C0330, # black handle this
+    too-few-public-methods, # More harmful than beneficial in django project
+    too-many-arguments,
 
-[MASTER]
-# We don't want to document the tests, thank you very much.
-# We don't want to format the migrations properly either.
 ignore=migrations
 
 [BASIC]
-# Good variable names which should always be accepted, separated by a comma
-good-names=i,j,k,l,m,n,x,y,z
+# Good variable names which should always be accepted, separated by a comma.
+good-names=i,j,k,ex,Run,_,f,e,maxDiff
 
 [FORMAT]
 max-line-length=120

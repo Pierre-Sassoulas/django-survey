@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-09 21:35+0000\n"
+"POT-Creation-Date: 2020-02-22 12:24+0000\n"
 "PO-Revision-Date: 2018-04-09 00:52+0000\n"
 "Last-Translator: b'  <nsuzue@me.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,9 +37,17 @@ msgstr[1] "%(count)d つの調査が「公開」に設定されました"
 msgid "Mark selected surveys as published"
 msgstr "選択した調査を公開する"
 
-#: survey/exporter/csv/survey2csv.py:35
+#: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
 msgstr "匿名"
+
+#: survey/exporter/csv/survey2csv.py:70
+msgid "user"
+msgstr ""
+
+#: survey/exporter/csv/survey2csv.py:105
+msgid "export as csv"
+msgstr ""
 
 #: survey/exporter/tex/question2tex.py:64
 msgid "with"
@@ -75,12 +83,12 @@ msgstr "回答の再分割"
 msgid "Left blank"
 msgstr "空白のまま"
 
-#: survey/exporter/tex/question2tex_chart.py:118
+#: survey/exporter/tex/question2tex_chart.py:117
 #: survey/exporter/tex/question2tex_sankey.py:30
 msgid "for the question"
 msgstr "質問の為に"
 
-#: survey/exporter/tex/question2tex_chart.py:128
+#: survey/exporter/tex/question2tex_chart.py:127
 msgid "No answers for this question."
 msgstr "この質問に答えない"
 

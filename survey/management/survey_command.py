@@ -93,25 +93,33 @@ class SurveyCommand(BaseCommand):
             self.surveys = Survey.objects.all()
         else:
             self.surveys = []
-            if options.get("survey_name"):
-                for survey_name in options["survey_name"]:
-                    try:
-                        self.surveys.append(Survey.objects.get(name=survey_name))
-                    except Survey.DoesNotExist:
-                        self.raise_value_error("survey-name", survey_name)
-            if options.get("survey_id"):
-                for survey_id in options["survey_id"]:
-                    try:
-                        self.surveys.append(Survey.objects.get(pk=survey_id))
-                    except Survey.DoesNotExist:
-                        self.raise_value_error("survey-id", survey_id)
+            names = options.get("survey_name")
+            names = names or []
+            for survey_name in names:
+                self.__add_survey_by_name(survey_name)
+            ids = options.get("survey_id")
+            ids = ids or []
+            for survey_id in ids:
+                self.__add_survey_by_id(survey_id)
             if options.get("survey_latest"):
-                valids = [(s.pk, s.name) for s in Survey.objects.all()]
-                survey_id = max(valids, key=itemgetter(0))[0]
-                try:
-                    self.surveys.append(Survey.objects.get(pk=survey_id))
-                except Survey.DoesNotExist:
-                    self.raise_value_error("survey-id", survey_id)
+                survey_id = self.__get_latest_id()
+                self.__add_survey_by_id(survey_id)
+
+    def __get_latest_id(self):
+        valids = [(s.pk, s.name) for s in Survey.objects.all()]
+        return max(valids, key=itemgetter(0))[0]
+
+    def __add_survey_by_id(self, survey_id):
+        try:
+            self.surveys.append(Survey.objects.get(pk=survey_id))
+        except Survey.DoesNotExist:
+            self.raise_value_error("survey-id", survey_id)
+
+    def __add_survey_by_name(self, survey_name):
+        try:
+            self.surveys.append(Survey.objects.get(name=survey_name))
+        except Survey.DoesNotExist:
+            self.raise_value_error("survey-name", survey_name)
 
     def set_questions(self, options):
         if options.get("question_all"):

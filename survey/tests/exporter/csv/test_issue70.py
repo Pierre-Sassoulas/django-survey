@@ -30,10 +30,10 @@ class TestIssue70(TestCase):
             "Left blank,100,"
         )
         self.expected_content = "{}\n{}".format(header, content)
-        self.assertEqual(self.s2csv.survey_to_x(), self.expected_content)
+        self.assertEqual(str(self.s2csv), self.expected_content)
 
     @override_settings(USER_DID_NOT_ANSWER=None)
     def test_get_survey_as_csv_wrong_settings(self):
         with self.assertRaises(ImproperlyConfigured) as e:
-            self.s2csv.survey_to_x()
+            str(self.s2csv)
         self.assertIn("USER_DID_NOT_ANSWER need to be set", str(e.exception))

@@ -135,7 +135,10 @@ class Survey2Tex(Survey2X):
         mtime = mtime.replace(tzinfo=pytz.timezone("UTC"))
         return mtime
 
-    def survey_to_x(self, questions=None):
+    def __str__(self):
+        return self.create_tex()
+
+    def create_tex(self, questions=None):
         if questions is None:
             questions = self.survey.questions.all()
         document_class = self.tconf.get("document_class", survey_name=self.survey.name)

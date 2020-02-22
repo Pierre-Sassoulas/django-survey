@@ -18,7 +18,7 @@ class TestSurvey2Tex(TestManagement):
 
     def test_get_survey_as_tex(self):
         """ The content of the tex is correct. """
-        generic = self.generic.survey_to_x()
+        generic = str(self.generic)
         should_contain = [
             "documentclass[11pt]{article}",
             "title{My title}",
@@ -30,7 +30,7 @@ class TestSurvey2Tex(TestManagement):
         ]
         for text in should_contain:
             self.assertIn(text, generic)
-        specific = self.specific.survey_to_x()
+        specific = str(self.specific)
         should_contain = [
             "documentclass[11pt]{report}",
             "title{My title}",
@@ -47,7 +47,7 @@ class TestSurvey2Tex(TestManagement):
         """ We have an error message if the type is impossible to import. """
         conf = Configuration(Path(self.conf_dir, "custom_class_doesnt_exists.yaml"))
         self.test_survey = Survey.objects.get(name="Test survëy")
-        fail_import = Survey2Tex(self.test_survey, conf).survey_to_x()
+        fail_import = str(Survey2Tex(self.test_survey, conf))
         should_contain = [
             "could not render",
             "not a standard type",

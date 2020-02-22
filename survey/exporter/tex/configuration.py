@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import collections
 import copy
 import logging
 from pathlib import Path
@@ -81,41 +82,38 @@ class Configuration:
             # There is not configuration file for key, only the default one
             pass
 
-    def recursive_update(self, d, u):
+    def recursive_update(self, dict_, update_dict):
         """ Update a dict recursively. It permit to keep the default value by
         default and to be able to replace them by dictionaries.
         """
-        import collections
-
-        # print("d", d, "u", u)
-        if d is None:
-            return u
-        for k, v in list(u.items()):
-            # print("k", k, "v", v)
-            if isinstance(v, collections.Mapping):
-                r = self.recursive_update(d.get(k, {}), v)
-                # print("Recursive value for {} :{}".format(k, v))
-                d[k] = r
+        if dict_ is None:
+            return update_dict
+        for key, value in update_dict.items():
+            if isinstance(value, collections.Mapping):
+                result = self.recursive_update(dict_.get(key, {}), value)
+                dict_[key] = result
             else:
-                d[k] = u[k]
-        return d
+                dict_[key] = update_dict[key]
+        return dict_
 
-    def get_multiple_charts(self, d):
+    @staticmethod
+    def get_multiple_charts(dict_):
         """ Permit to get a dict while the default value is None. """
-        multiple_charts = d.get("multiple_charts")
+        multiple_charts = dict_.get("multiple_charts")
         return {} if multiple_charts is None else multiple_charts
 
-    def update(self, d, u):
+    def update(self, dict_, update):
         """ Update a dictionary and handle the multiple charts values. """
-        self.recursive_update(d, u)
-        multiple_charts = self.get_multiple_charts(d)
+        self.recursive_update(dict_, update)
+        multiple_charts = self.get_multiple_charts(dict_)
         for chart, chart_conf in list(multiple_charts.items()):
-            chart_conf = copy.deepcopy(d["chart"])
-            umc = self.get_multiple_charts(u).get(chart, {})
+            chart_conf = copy.deepcopy(dict_["chart"])
+            umc = self.get_multiple_charts(update).get(chart, {})
             self.recursive_update(chart_conf, umc)
-            d["multiple_charts"][chart] = chart_conf
+            dict_["multiple_charts"][chart] = chart_conf
 
-    def get_default_question_conf(self, conf):
+    @staticmethod
+    def get_default_question_conf(conf):
         """ A deepcopy of what we deem necessary in the question config.
 
         We want to avoid copying everything in the conf. For example we do not
@@ -164,12 +162,16 @@ class Configuration:
         try:
             return conf[key]
         except KeyError:
-            msg = ""
-            if survey_name:
-                msg += "for survey '{}', ".format(survey_name)
-            if question_text:
-                msg += "and question '{}', ".format(question_text)
-            msg += "key '{}' does not exists. ".format(key)
-            msg += "Possible values : {}".format(list(conf.keys()))
-            LOGGER.error(msg)
-            raise ValueError(msg)
+            self.__raise_get_error(conf, key, question_text, survey_name)
+
+    @staticmethod
+    def __raise_get_error(conf, key, question_text, survey_name):
+        msg = ""
+        if survey_name:
+            msg += "for survey '{}', ".format(survey_name)
+        if question_text:
+            msg += "and question '{}', ".format(question_text)
+        msg += "key '{}' does not exists. ".format(key)
+        msg += "Possible values : {}".format(list(conf.keys()))
+        LOGGER.error(msg)
+        raise ValueError(msg)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-09 21:35+0000\n"
+"POT-Creation-Date: 2020-02-22 12:24+0000\n"
 "PO-Revision-Date: 2020-01-24 17:05+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,9 +38,17 @@ msgstr[1] "%(count)d Umfragen erfolgreich als veröffentlicht markiert."
 msgid "Mark selected surveys as published"
 msgstr "Markiere ausgewählte Umfragen als veröffentlicht"
 
-#: survey/exporter/csv/survey2csv.py:35
+#: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
 msgstr "Anonym"
+
+#: survey/exporter/csv/survey2csv.py:70
+msgid "user"
+msgstr ""
+
+#: survey/exporter/csv/survey2csv.py:105
+msgid "export as csv"
+msgstr ""
 
 #: survey/exporter/tex/question2tex.py:64
 msgid "with"
@@ -76,12 +84,12 @@ msgstr "Neueinteilung von Antworten"
 msgid "Left blank"
 msgstr "Frei gelassen"
 
-#: survey/exporter/tex/question2tex_chart.py:118
+#: survey/exporter/tex/question2tex_chart.py:117
 #: survey/exporter/tex/question2tex_sankey.py:30
 msgid "for the question"
 msgstr "für die Frage"
 
-#: survey/exporter/tex/question2tex_chart.py:128
+#: survey/exporter/tex/question2tex_chart.py:127
 msgid "No answers for this question."
 msgstr "Keine Antwort auf diese Frage."
 

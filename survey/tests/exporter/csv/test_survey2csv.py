@@ -29,11 +29,11 @@ class TestSurvey2Csv(TestManagement):
 
     def test_get_survey_as_csv(self):
         """ The content of the CSV is correct. """
-        self.assertEqual(self.s2csv.survey_to_x(), self.expected_content)
+        self.assertEqual(str(self.s2csv), self.expected_content)
 
     @override_settings(EXCEL_COMPATIBLE_CSV=True)
     def test_get_survey_excel_compatible(self):
-        self.assertEqual(self.s2csv.survey_to_x(), '"sep=,"\n' + self.expected_content)
+        self.assertEqual(str(self.s2csv), '"sep=,"\n' + self.expected_content)
 
     @patch.object(Survey2Csv, "file_name", raise_io_exc)
     def test_dir_not_exists(self):

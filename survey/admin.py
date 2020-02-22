@@ -3,8 +3,8 @@
 from django.contrib import admin
 
 from survey.actions import make_published
-from survey.models import Answer, Category, Question, Response, Survey
 from survey.exporter.csv import Survey2Csv
+from survey.models import Answer, Category, Question, Response, Survey
 
 
 class QuestionInline(admin.TabularInline):

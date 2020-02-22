@@ -20,7 +20,7 @@ def set_default_settings():
             if setting in DEFAULT_SETTINGS:
                 if not hasattr(settings, setting):
                     setattr(settings, setting, getattr(app_settings, setting))
-                LOGGER.info("Settings '{}' as the default ('{}')".format(setting, getattr(settings, setting)))
+                LOGGER.info("Settings '%s' as the default ('%s')", setting, getattr(settings, setting))
     except ImportError:
         pass
 

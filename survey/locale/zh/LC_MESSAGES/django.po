@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION/n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-22 21:34+0800\n"
+"POT-Creation-Date: 2020-02-22 12:24+0000\n"
 "PO-Revision-Date: 2018-04-09 00:52+0000\n"
 "Last-Translator: Zhu Sheng Li <digglife@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,16 +37,16 @@ msgstr[1] "%(count)d 件问卷成功标记为「已发布」"
 msgid "Mark selected surveys as published"
 msgstr "标记选择的问卷为「已发布」"
 
-#: survey/exporter/csv/survey2csv.py:38
+#: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
 msgstr "匿名"
 
-#: survey/exporter/csv/survey2csv.py:68
+#: survey/exporter/csv/survey2csv.py:70
 msgid "user"
 msgstr "用户"
 
-#: survey/exporter/csv/survey2csv.py:109
-msgid "export to csv"
+#: survey/exporter/csv/survey2csv.py:105
+msgid "export as csv"
 msgstr "导出为CSV"
 
 #: survey/exporter/tex/question2tex.py:64
@@ -83,12 +83,12 @@ msgstr "回答的重构"
 msgid "Left blank"
 msgstr "留空"
 
-#: survey/exporter/tex/question2tex_chart.py:118
+#: survey/exporter/tex/question2tex_chart.py:117
 #: survey/exporter/tex/question2tex_sankey.py:30
 msgid "for the question"
 msgstr "为此问题"
 
-#: survey/exporter/tex/question2tex_chart.py:128
+#: survey/exporter/tex/question2tex_chart.py:127
 msgid "No answers for this question."
 msgstr "该问题尚无回答"
 

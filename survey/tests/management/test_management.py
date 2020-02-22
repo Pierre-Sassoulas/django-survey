@@ -2,7 +2,6 @@
 
 from pathlib import Path
 
-from django.conf import settings
 from django.contrib.auth.models import User
 
 from survey.models import Answer, Question, Response, Survey

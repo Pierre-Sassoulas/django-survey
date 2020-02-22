@@ -5,7 +5,7 @@ import os
 
 try:
     import colorama
-except:
+except ImportError:
     from pip._vendor import colorama
 
 colorama.init()

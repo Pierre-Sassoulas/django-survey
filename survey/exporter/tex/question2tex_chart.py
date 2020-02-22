@@ -80,20 +80,19 @@ class Question2TexChart(Question2Tex):
                 final_answers.append(answer)
         return "            {}".format(",\n            ".join(final_answers))
 
-    def get_pie_options(self):
+    def get_pie_options(self):  # noqa: C901
         r"""Return the options of the pie for: \pie[options]{data}"""
         options = ""
         if self.pos:
-            value = "{%s}" % self.pos
-            options += "pos={},".format(value)
+            options += "pos={%s}," % self.pos
+        if self.explode:
+            options += "explode={%s}," % self.explode
         if self.rotate:
             options += "rotate={},".format(self.rotate)
         if self.radius:
             options += "radius={},".format(self.radius)
         if self.color:
             options += "color={},".format(self.get_colors())
-        if self.explode:
-            options += "explode={%s}," % self.explode
         if self.sum:
             options += "sum={},".format(self.sum)
         if self.after_number:

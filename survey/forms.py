@@ -164,7 +164,8 @@ class ResponseForm(models.ModelForm):
         except KeyError:
             return None
 
-    def get_question_choices(self, question):
+    @staticmethod
+    def get_question_choices(question):
         """ Return the choices we should use for a question.
 
         :param Question question: The question

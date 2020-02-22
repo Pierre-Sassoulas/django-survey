@@ -3,7 +3,7 @@
 # pylint: disable=invalid-name
 
 from django.conf.urls import include, url
-from django.contrib import admin, auth
+from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls.base import reverse
 

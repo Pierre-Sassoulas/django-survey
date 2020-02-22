@@ -7,6 +7,7 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import gettext_lazy as _
 from django.http import HttpResponse
+from django.utils.encoding import escape_uri_path
 
 from survey.exporter.survey2x import Survey2X
 
@@ -92,7 +93,7 @@ class Survey2Csv(Survey2X):
 
         response = HttpResponse(content_type="text/csv")
         response["Content-Disposition"] = "attachment; filename={}.csv".format(
-            survey.name.encode("utf-8").decode("ISO-8859-1")  # make filename support unicode
+            escape_uri_path(survey.name)  # make filename support unicode
         )
         # BOM
         response.write(codecs.BOM_UTF8)

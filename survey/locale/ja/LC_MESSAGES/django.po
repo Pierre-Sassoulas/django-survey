@@ -157,7 +157,7 @@ msgstr "更新日"
 msgid "Content"
 msgstr "内容"
 
-#: survey/models/category.py:12 survey/models/survey.py:12
+#: survey/models/category.py:12 survey/models/survey.py:17
 msgid "Name"
 msgstr "名前"
 
@@ -170,7 +170,7 @@ msgstr "調査"
 msgid "Display order"
 msgstr "表示順"
 
-#: survey/models/category.py:15 survey/models/survey.py:13
+#: survey/models/category.py:15 survey/models/survey.py:18
 msgid "Description"
 msgstr "定義"
 
@@ -266,23 +266,23 @@ msgstr "調査に対する回答集"
 msgid "Sets of answers to surveys"
 msgstr "調査に対する回答セット"
 
-#: survey/models/survey.py:14
+#: survey/models/survey.py:19
 msgid "Users can see it and answer it"
 msgstr "すべてのユーザーが閲覧・回答できる"
 
-#: survey/models/survey.py:15
+#: survey/models/survey.py:20
 msgid "Only authenticated users can see it and answer it"
 msgstr "認証されたユーザーのみ閲覧・回答できる"
 
-#: survey/models/survey.py:16
+#: survey/models/survey.py:21
 msgid "Users can edit their answers afterwards"
 msgstr "ユーザーは後で回答を編集できます"
 
-#: survey/models/survey.py:17
+#: survey/models/survey.py:22
 msgid "Display by question"
 msgstr "1問ずつ表示する"
 
-#: survey/models/survey.py:18
+#: survey/models/survey.py:23
 msgid "Template"
 msgstr "テンプレート"
 
@@ -294,11 +294,11 @@ msgstr ""
 msgid "Expiration date"
 msgstr ""
 
-#: survey/models/survey.py:29
+#: survey/models/survey.py:28
 msgid "survey"
 msgstr "調査"
 
-#: survey/models/survey.py:30
+#: survey/models/survey.py:29
 msgid "surveys"
 msgstr "調査"
 

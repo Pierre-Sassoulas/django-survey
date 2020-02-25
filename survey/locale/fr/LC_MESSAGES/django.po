@@ -157,7 +157,7 @@ msgstr "Date de mise à jour"
 msgid "Content"
 msgstr "Contenu"
 
-#: survey/models/category.py:12 survey/models/survey.py:12
+#: survey/models/category.py:12 survey/models/survey.py:17
 msgid "Name"
 msgstr "Nom"
 
@@ -170,7 +170,7 @@ msgstr "Sondage"
 msgid "Display order"
 msgstr "Ordre d'affichage"
 
-#: survey/models/category.py:15 survey/models/survey.py:13
+#: survey/models/category.py:15 survey/models/survey.py:18
 msgid "Description"
 msgstr "Description"
 
@@ -266,23 +266,23 @@ msgstr "Ensemble de réponse aux sondages"
 msgid "Sets of answers to surveys"
 msgstr "Ensembles de réponse aux sondages"
 
-#: survey/models/survey.py:14
+#: survey/models/survey.py:19
 msgid "Users can see it and answer it"
 msgstr "Les utilisateurs peuvent le voir et y répondre"
 
-#: survey/models/survey.py:15
+#: survey/models/survey.py:20
 msgid "Only authenticated users can see it and answer it"
 msgstr "Seuls les utilisateurs authentifiés peuvent le voir et y répondre"
 
-#: survey/models/survey.py:16
+#: survey/models/survey.py:21
 msgid "Users can edit their answers afterwards"
 msgstr "Les utilisateurs peuvent modifier leur réponse"
 
-#: survey/models/survey.py:17
+#: survey/models/survey.py:22
 msgid "Display by question"
 msgstr "Affichage par question"
 
-#: survey/models/survey.py:18
+#: survey/models/survey.py:23
 msgid "Template"
 msgstr "Modèle"
 
@@ -294,11 +294,11 @@ msgstr "Date de publication"
 msgid "Expiration date"
 msgstr "Date de suppression"
 
-#: survey/models/survey.py:29
+#: survey/models/survey.py:28
 msgid "survey"
 msgstr "sondage"
 
-#: survey/models/survey.py:30
+#: survey/models/survey.py:29
 msgid "surveys"
 msgstr "sondages"
 

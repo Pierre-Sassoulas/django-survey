@@ -157,7 +157,7 @@ msgstr "更新日期"
 msgid "Content"
 msgstr "内容"
 
-#: survey/models/category.py:12 survey/models/survey.py:12
+#: survey/models/category.py:12 survey/models/survey.py:17
 msgid "Name"
 msgstr "名字"
 
@@ -170,7 +170,7 @@ msgstr "问卷"
 msgid "Display order"
 msgstr "显示顺序"
 
-#: survey/models/category.py:15 survey/models/survey.py:13
+#: survey/models/category.py:15 survey/models/survey.py:18
 msgid "Description"
 msgstr "描述"
 
@@ -266,43 +266,39 @@ msgstr "问卷的几组回答"
 msgid "Sets of answers to surveys"
 msgstr "问卷的几组回答"
 
-#: survey/models/survey.py:14
+#: survey/models/survey.py:19
 msgid "Users can see it and answer it"
 msgstr "用户可以浏览和回答"
 
-#: survey/models/survey.py:15
+#: survey/models/survey.py:20
 msgid "Only authenticated users can see it and answer it"
 msgstr "只有认证用户可以浏览和回答"
 
-#: survey/models/survey.py:16
+#: survey/models/survey.py:21
 msgid "Users can edit their answers afterwards"
 msgstr "用户可以随后编辑他们的答案"
 
-#: survey/models/survey.py:17
+#: survey/models/survey.py:22
 msgid "Display by question"
 msgstr "每页一个问题"
 
-#: survey/models/survey.py:18
+#: survey/models/survey.py:23
 msgid "Template"
 msgstr "模板"
 
-#: survey/models/survey.py:19
-#, fuzzy
-#| msgid "Creation date"
+#: survey/models/survey.py:24
 msgid "Publication date"
-msgstr "创建日期"
+msgstr ""
 
-#: survey/models/survey.py:22
-#, fuzzy
-#| msgid "Creation date"
+#: survey/models/survey.py:25
 msgid "Expiration date"
-msgstr "创建日期"
+msgstr ""
 
-#: survey/models/survey.py:29
+#: survey/models/survey.py:28
 msgid "survey"
 msgstr "问卷"
 
-#: survey/models/survey.py:30
+#: survey/models/survey.py:29
 msgid "surveys"
 msgstr "问卷"
 

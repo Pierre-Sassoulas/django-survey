@@ -161,7 +161,7 @@ msgstr "Дата обновления"
 msgid "Content"
 msgstr "Содержание"
 
-#: survey/models/category.py:12 survey/models/survey.py:12
+#: survey/models/category.py:12 survey/models/survey.py:17
 msgid "Name"
 msgstr "Название"
 
@@ -174,7 +174,7 @@ msgstr "Тест"
 msgid "Display order"
 msgstr "Порядок отображения"
 
-#: survey/models/category.py:15 survey/models/survey.py:13
+#: survey/models/category.py:15 survey/models/survey.py:18
 msgid "Description"
 msgstr "Описание"
 
@@ -275,25 +275,23 @@ msgstr "Набор ответов на опросы"
 msgid "Sets of answers to surveys"
 msgstr "Наборы ответов на опросы"
 
-#: survey/models/survey.py:14
+#: survey/models/survey.py:19
 msgid "Users can see it and answer it"
 msgstr "Пользователи могут увидеть его и ответить на него"
 
-#: survey/models/survey.py:15
+#: survey/models/survey.py:20
 msgid "Only authenticated users can see it and answer it"
 msgstr "Только прошедшие проверку пользователи могут видеть его и отвечать на него"
 
-#: survey/models/survey.py:16
-#, fuzzy
-#| msgid "Users can see it and answer it"
+#: survey/models/survey.py:21
 msgid "Users can edit their answers afterwards"
 msgstr "Пользователи могут редактировать свои ответы впоследствии"
 
-#: survey/models/survey.py:17
+#: survey/models/survey.py:22
 msgid "Display by question"
 msgstr "Отображение по вопросу"
 
-#: survey/models/survey.py:18
+#: survey/models/survey.py:23
 msgid "Template"
 msgstr "Шаблон"
 
@@ -305,11 +303,11 @@ msgstr "Дата публикации"
 msgid "Expiration date"
 msgstr "дата удаления"
 
-#: survey/models/survey.py:29
+#: survey/models/survey.py:28
 msgid "survey"
 msgstr "опрос"
 
-#: survey/models/survey.py:30
+#: survey/models/survey.py:29
 msgid "surveys"
 msgstr "опросы"
 

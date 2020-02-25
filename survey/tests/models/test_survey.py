@@ -2,6 +2,8 @@
 
 from datetime import date
 
+from django.utils.timezone import now
+
 from survey.tests.models import BaseModelTest
 
 
@@ -31,10 +33,6 @@ class TestSurvey(BaseModelTest):
         """ expirationdate must be datetime date instance or None """
         self.assertIsInstance(self.survey.expire_date, date)
 
-    def test_expirationdate_is_in_future(self):
+    def test_expiration_date_is_in_future(self):
         """ by default the expiration should be a week in the future """
-        self.assertGreater(self.survey.expire_date, date.today())
-
-    def test_default_survey_publishing_duration(self):
-        """ test for being an interger """
-        self.assertIsInstance(self.survey.default_survey_publishing_duration, int)
+        self.assertGreater(self.survey.expire_date, now())

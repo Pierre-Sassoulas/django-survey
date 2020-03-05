@@ -128,6 +128,16 @@ class TestSurveyDetail(BaseTest):
         response = self.client.get(reverse("survey-detail", args=(7,)))
         self.assertEqual(response.status_code, 404)
 
+    def test_when_expiration_date_is_in_past_survey_is_not_visible_via_post(self):
+        """ when expiration_date is in the past the survey should be hidden for post requests """
+        response = self.client.post(reverse("survey-detail", args=(6,)))
+        self.assertEqual(response.status_code, 404)
+
+    def test_when_publication_date_is_in_future_survey_is_not_visible_via_post(self):
+        """ when publish_date is in the future the survey should be hidden for post requests """
+        response = self.client.post(reverse("survey-detail", args=(7,)))
+        self.assertEqual(response.status_code, 404)
+
     def test_the_survey_should_be_visible(self):
         """ when publish_date is in the past and expiration in the future
         the survey should be visible """

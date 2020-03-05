@@ -1,28 +1,21 @@
 # -*- coding: utf-8 -*-
 import logging
-from datetime import date
 
 from django.conf import settings
-from django.shortcuts import Http404, get_object_or_404, redirect, render, reverse
+from django.shortcuts import redirect, render, reverse
 from django.views.generic import View
 
+from survey.decorators import survey_available
 from survey.forms import ResponseForm
-from survey.models import Category, Survey
+from survey.models import Category
 
 LOGGER = logging.getLogger(__name__)
 
 
 class SurveyDetail(View):
+    @survey_available
     def get(self, request, *args, **kwargs):
-        survey = get_object_or_404(
-            Survey.objects.prefetch_related("questions", "questions__category"), is_published=True, id=kwargs["id"]
-        )
-        if not survey.is_published:
-            raise Http404
-        if survey.expire_date < date.today():
-            raise Http404
-        if survey.publish_date > date.today():
-            raise Http404
+        survey = kwargs.get("survey")
         step = kwargs.get("step", 0)
         if survey.template is not None and len(survey.template) > 4:
             template_name = survey.template
@@ -39,8 +32,9 @@ class SurveyDetail(View):
 
         return render(request, template_name, context)
 
+    @survey_available
     def post(self, request, *args, **kwargs):
-        survey = get_object_or_404(Survey, is_published=True, id=kwargs["id"])
+        survey = kwargs.get("survey")
         if survey.need_logged_user and not request.user.is_authenticated:
             return redirect("%s?next=%s" % (settings.LOGIN_URL, request.path))
         categories = Category.objects.filter(survey=survey).order_by("order")

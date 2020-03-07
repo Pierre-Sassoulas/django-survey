@@ -161,7 +161,7 @@ msgstr "内容"
 msgid "Name"
 msgstr "名字"
 
-#: survey/models/category.py:13 survey/models/question.py:78
+#: survey/models/category.py:13 survey/models/question.py:80
 #: survey/models/response.py:29
 msgid "Survey"
 msgstr "问卷"
@@ -190,67 +190,71 @@ msgid ""
 "options for this question ."
 msgstr "选项栏仅在问题类型为「单选按钮」、「单项选择」和「多项选择」时有效。选项请用逗号隔开。"
 
-#: survey/models/question.py:62
+#: survey/models/question.py:63
 msgid "text (multiple line)"
 msgstr "文本（多行）"
 
-#: survey/models/question.py:63
+#: survey/models/question.py:64
 msgid "short text (one line)"
 msgstr "短文本（单行）"
 
-#: survey/models/question.py:64
+#: survey/models/question.py:65
 msgid "radio"
 msgstr "单选按钮"
 
-#: survey/models/question.py:65
+#: survey/models/question.py:66
 msgid "select"
 msgstr "单选框"
 
-#: survey/models/question.py:66
+#: survey/models/question.py:67
 msgid "Select Multiple"
 msgstr "复选框"
 
-#: survey/models/question.py:67
+#: survey/models/question.py:68
 msgid "Select Image"
 msgstr "选择图片"
 
-#: survey/models/question.py:68
+#: survey/models/question.py:69
 msgid "integer"
 msgstr "整数"
 
-#: survey/models/question.py:69
+#: survey/models/question.py:70
 msgid "float"
 msgstr ""
 
-#: survey/models/question.py:72
+#: survey/models/question.py:71
+msgid "date"
+msgstr ""
+
+#: survey/models/question.py:74
 msgid "Text"
 msgstr "文本"
 
-#: survey/models/question.py:73
+#: survey/models/question.py:75
 msgid "Order"
 msgstr "顺序"
 
-#: survey/models/question.py:74
+#: survey/models/question.py:76
 msgid "Required"
 msgstr "必填"
 
-#: survey/models/question.py:76
+#: survey/models/question.py:78
 msgid "Category"
 msgstr "分类"
 
-#: survey/models/question.py:79
+#: survey/models/question.py:81
 msgid "Type"
 msgstr "类型"
 
-#: survey/models/question.py:80
+#: survey/models/question.py:82
 msgid "Choices"
 msgstr "选择"
 
-#: survey/models/question.py:83
+#: survey/models/question.py:85
 msgid "question"
 msgstr "问题"
 
-#: survey/models/question.py:84
+#: survey/models/question.py:86
 msgid "questions"
 msgstr "问题"
 
@@ -340,14 +344,14 @@ msgstr "欢迎来到 Django 问卷APP"
 msgid "Take the Survey"
 msgstr "开始本问卷"
 
-#: survey/templates/survey/survey.html:31
+#: survey/templates/survey/survey.html:44
 msgid "Answer this part"
 msgstr "回答本部分"
 
-#: survey/templates/survey/survey.html:44
+#: survey/templates/survey/survey.html:57
 msgid "Questions"
 msgstr "问题"
 
-#: survey/templates/survey/survey.html:53
+#: survey/templates/survey/survey.html:66
 msgid "I'm done!"
 msgstr "完成！"

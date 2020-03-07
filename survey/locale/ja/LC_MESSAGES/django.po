@@ -161,7 +161,7 @@ msgstr "内容"
 msgid "Name"
 msgstr "名前"
 
-#: survey/models/category.py:13 survey/models/question.py:78
+#: survey/models/category.py:13 survey/models/question.py:80
 #: survey/models/response.py:29
 msgid "Survey"
 msgstr "調査"
@@ -190,67 +190,71 @@ msgid ""
 "options for this question ."
 msgstr "選択肢フィールドは、質問のタイプが「ラジオボタン」、「リスト（単一選択）」、「リスト（複数選択）」の場合のみ有効です。選択肢はカンマで区切ってください。"
 
-#: survey/models/question.py:62
+#: survey/models/question.py:63
 msgid "text (multiple line)"
 msgstr "テキスト（複数行）"
 
-#: survey/models/question.py:63
+#: survey/models/question.py:64
 msgid "short text (one line)"
 msgstr "テキスト（一行）"
 
-#: survey/models/question.py:64
+#: survey/models/question.py:65
 msgid "radio"
 msgstr "ラジオボタン"
 
-#: survey/models/question.py:65
+#: survey/models/question.py:66
 msgid "select"
 msgstr "リスト（単一選択）"
 
-#: survey/models/question.py:66
+#: survey/models/question.py:67
 msgid "Select Multiple"
 msgstr "リスト（複数選択）"
 
-#: survey/models/question.py:67
+#: survey/models/question.py:68
 msgid "Select Image"
 msgstr "イメージ選択"
 
-#: survey/models/question.py:68
+#: survey/models/question.py:69
 msgid "integer"
 msgstr "整数"
 
-#: survey/models/question.py:69
+#: survey/models/question.py:70
 msgid "float"
 msgstr ""
 
-#: survey/models/question.py:72
+#: survey/models/question.py:71
+msgid "date"
+msgstr ""
+
+#: survey/models/question.py:74
 msgid "Text"
 msgstr "テキスト"
 
-#: survey/models/question.py:73
+#: survey/models/question.py:75
 msgid "Order"
 msgstr "順序"
 
-#: survey/models/question.py:74
+#: survey/models/question.py:76
 msgid "Required"
 msgstr "必須"
 
-#: survey/models/question.py:76
+#: survey/models/question.py:78
 msgid "Category"
 msgstr "分類"
 
-#: survey/models/question.py:79
+#: survey/models/question.py:81
 msgid "Type"
 msgstr "タイプ"
 
-#: survey/models/question.py:80
+#: survey/models/question.py:82
 msgid "Choices"
 msgstr "選択肢"
 
-#: survey/models/question.py:83
+#: survey/models/question.py:85
 msgid "question"
 msgstr "質問"
 
-#: survey/models/question.py:84
+#: survey/models/question.py:86
 msgid "questions"
 msgstr "質問"
 
@@ -340,14 +344,14 @@ msgstr "Django Surveyアプリケーションにようこそ"
 msgid "Take the Survey"
 msgstr "この調査に回答する"
 
-#: survey/templates/survey/survey.html:31
+#: survey/templates/survey/survey.html:44
 msgid "Answer this part"
 msgstr "この質問に回答する"
 
-#: survey/templates/survey/survey.html:44
+#: survey/templates/survey/survey.html:57
 msgid "Questions"
 msgstr "質問"
 
-#: survey/templates/survey/survey.html:53
+#: survey/templates/survey/survey.html:66
 msgid "I'm done!"
 msgstr "回答を終了する"

@@ -165,7 +165,7 @@ msgstr "Contenido"
 msgid "Name"
 msgstr "Nombre"
 
-#: survey/models/category.py:13 survey/models/question.py:78
+#: survey/models/category.py:13 survey/models/question.py:80
 #: survey/models/response.py:29
 msgid "Survey"
 msgstr "Encuesta"
@@ -198,67 +198,71 @@ msgstr ""
 "es 'radio', 'select', o 'select multiple'. Proporciona una lista de opciones\n"
 "separadas por comas para esta pregunta."
 
-#: survey/models/question.py:62
+#: survey/models/question.py:63
 msgid "text (multiple line)"
 msgstr "texto (multilínea)"
 
-#: survey/models/question.py:63
+#: survey/models/question.py:64
 msgid "short text (one line)"
 msgstr "texto corto (una línea)"
 
-#: survey/models/question.py:64
+#: survey/models/question.py:65
 msgid "radio"
 msgstr "radio"
 
-#: survey/models/question.py:65
+#: survey/models/question.py:66
 msgid "select"
 msgstr "selecciona"
 
-#: survey/models/question.py:66
+#: survey/models/question.py:67
 msgid "Select Multiple"
 msgstr "Selección múltiple"
 
-#: survey/models/question.py:67
+#: survey/models/question.py:68
 msgid "Select Image"
 msgstr "Selecciona imagen"
 
-#: survey/models/question.py:68
+#: survey/models/question.py:69
 msgid "integer"
 msgstr "entero"
 
-#: survey/models/question.py:69
+#: survey/models/question.py:70
 msgid "float"
 msgstr ""
 
-#: survey/models/question.py:72
+#: survey/models/question.py:71
+msgid "date"
+msgstr ""
+
+#: survey/models/question.py:74
 msgid "Text"
 msgstr "Texto"
 
-#: survey/models/question.py:73
+#: survey/models/question.py:75
 msgid "Order"
 msgstr "Orden"
 
-#: survey/models/question.py:74
+#: survey/models/question.py:76
 msgid "Required"
 msgstr "Obligatorio"
 
-#: survey/models/question.py:76
+#: survey/models/question.py:78
 msgid "Category"
 msgstr "Categoría"
 
-#: survey/models/question.py:79
+#: survey/models/question.py:81
 msgid "Type"
 msgstr "Tipo"
 
-#: survey/models/question.py:80
+#: survey/models/question.py:82
 msgid "Choices"
 msgstr "Opciones"
 
-#: survey/models/question.py:83
+#: survey/models/question.py:85
 msgid "question"
 msgstr "pregunta"
 
-#: survey/models/question.py:84
+#: survey/models/question.py:86
 msgid "questions"
 msgstr "preguntas"
 
@@ -348,14 +352,14 @@ msgstr "Bienvenido a Django Survey"
 msgid "Take the Survey"
 msgstr "Toma la encuesta"
 
-#: survey/templates/survey/survey.html:31
+#: survey/templates/survey/survey.html:44
 msgid "Answer this part"
 msgstr "Reponde esta sección"
 
-#: survey/templates/survey/survey.html:44
+#: survey/templates/survey/survey.html:57
 msgid "Questions"
 msgstr "Preguntas"
 
-#: survey/templates/survey/survey.html:53
+#: survey/templates/survey/survey.html:66
 msgid "I'm done!"
 msgstr "¡Terminé!"

@@ -23,6 +23,7 @@ class ResponseForm(models.ModelForm):
         Question.SHORT_TEXT: forms.CharField,
         Question.SELECT_MULTIPLE: forms.MultipleChoiceField,
         Question.INTEGER: forms.IntegerField,
+        Question.FLOAT: forms.FloatField,
     }
 
     WIDGETS = {
@@ -171,7 +172,7 @@ class ResponseForm(models.ModelForm):
         :param Question question: The question
         :rtype: List of String or None """
         qchoices = None
-        if question.type not in [Question.TEXT, Question.SHORT_TEXT, Question.INTEGER]:
+        if question.type not in [Question.TEXT, Question.SHORT_TEXT, Question.INTEGER, Question.FLOAT]:
             qchoices = question.get_choices()
             # add an empty option at the top so that the user has to explicitly
             # select one of the options

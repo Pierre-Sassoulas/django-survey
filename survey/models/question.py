@@ -56,6 +56,7 @@ class Question(models.Model):
     SELECT_IMAGE = "select_image"
     SELECT_MULTIPLE = "select-multiple"
     INTEGER = "integer"
+    FLOAT = "float"
 
     QUESTION_TYPES = (
         (TEXT, _("text (multiple line)")),
@@ -65,6 +66,7 @@ class Question(models.Model):
         (SELECT_MULTIPLE, _("Select Multiple")),
         (SELECT_IMAGE, _("Select Image")),
         (INTEGER, _("integer")),
+        (FLOAT, _("float")),
     )
 
     text = models.TextField(_("Text"))

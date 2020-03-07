@@ -24,6 +24,7 @@ class ResponseForm(models.ModelForm):
         Question.SELECT_MULTIPLE: forms.MultipleChoiceField,
         Question.INTEGER: forms.IntegerField,
         Question.FLOAT: forms.FloatField,
+        Question.DATE: forms.DateField,
     }
 
     WIDGETS = {
@@ -172,7 +173,7 @@ class ResponseForm(models.ModelForm):
         :param Question question: The question
         :rtype: List of String or None """
         qchoices = None
-        if question.type not in [Question.TEXT, Question.SHORT_TEXT, Question.INTEGER, Question.FLOAT]:
+        if question.type not in [Question.TEXT, Question.SHORT_TEXT, Question.INTEGER, Question.FLOAT, Question.DATE]:
             qchoices = question.get_choices()
             # add an empty option at the top so that the user has to explicitly
             # select one of the options
@@ -213,6 +214,8 @@ class ResponseForm(models.ModelForm):
             field.widget.attrs["category"] = question.category.name
         else:
             field.widget.attrs["category"] = ""
+        if question.type == Question.DATE:
+            field.widget.attrs["class"] = "date"
         # logging.debug("Field for %s : %s", question, field.__dict__)
         self.fields["question_%d" % question.pk] = field
 

@@ -28,7 +28,17 @@ class SurveyDetail(View):
             return redirect("%s?next=%s" % (settings.LOGIN_URL, request.path))
         categories = Category.objects.filter(survey=survey).order_by("order")
         form = ResponseForm(survey=survey, user=request.user, step=step)
-        context = {"response_form": form, "survey": survey, "categories": categories, "step": step}
+        asset_context = {
+            # If any of the widgets of the current form has a "date" class, flatpickr will be loaded into the template
+            "flatpickr": any([field.widget.attrs.get("class") == "date" for _, field in form.fields.items()])
+        }
+        context = {
+            "response_form": form,
+            "survey": survey,
+            "categories": categories,
+            "step": step,
+            "asset_context": asset_context,
+        }
 
         return render(request, template_name, context)
 

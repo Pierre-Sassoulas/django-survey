@@ -1,12 +1,25 @@
 {% extends 'survey/base.html' %}
 {% load i18n %}
 {% load survey_extras %}
+{% load static %}
 
 {% block title %} {{survey.name}} {% endblock title %}
 
 {% block extrajs %}
-    {{response_form.media}}
+  {{response_form.media}}
+  {% if asset_context.flatpickr %}
+    <script type="text/javascript" src="{% static 'survey/js/flatpickr.min.js' %}"></script>
+  {% endif %}
 {% endblock %}
+
+{% block extracss %}
+  {% if asset_context.flatpickr %}
+    {{ block.super }}
+    <link href="{% static 'survey/css/flatpickr.min.css'%}" rel="stylesheet" type="text/css"/>
+  {% endif %}
+{% endblock %}
+
+
 
 {% block body %}
 	<h1> {{survey.name}} </h1>

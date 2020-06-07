@@ -9,7 +9,7 @@ from django.forms import models
 from django.urls import reverse
 from django.utils.text import slugify
 
-from survey.models import Answer, Question, Response
+from survey.models import Answer, Category, Question, Response, Survey
 from survey.signals import survey_completed
 from survey.widgets import ImageSelectWidget
 
@@ -50,25 +50,56 @@ class ResponseForm(models.ModelForm):
             self.step = None
         super(ResponseForm, self).__init__(*args, **kwargs)
         self.uuid = uuid.uuid4().hex
-        self.steps_count = len(self.survey.questions.all())
+
+        self.categories = self.survey.non_empty_categories()
+        self.qs_with_no_cat = self.survey.questions.filter(category__isnull=True).order_by("order", "id")
+
+        if self.survey.display_method == Survey.BY_CATEGORY:
+            self.steps_count = len(self.categories) + (1 if self.qs_with_no_cat else 0)
+        else:
+            self.steps_count = len(self.survey.questions.all())
         # will contain prefetched data to avoid multiple db calls
         self.response = False
         self.answers = False
 
-        # add a field for each survey question, corresponding to the question
-        # type as appropriate.
-        data = kwargs.get("data")
-        for i, question in enumerate(self.survey.questions.all()):
-            is_current_step = i != self.step and self.step is not None
-            if self.survey.display_by_question and is_current_step:
-                continue
-            self.add_question(question, data)
+        self.add_questions(kwargs.get("data"))
 
         self._get_preexisting_response()
 
         if not self.survey.editable_answers and self.response is not None:
             for name in self.fields.keys():
                 self.fields[name].widget.attrs["disabled"] = True
+
+    def add_questions(self, data):
+        # add a field for each survey question, corresponding to the question
+        # type as appropriate.
+
+        if self.survey.display_method == Survey.BY_CATEGORY and self.step is not None:
+            if self.step == len(self.categories):
+                qs_for_step = self.survey.questions.filter(category__isnull=True).order_by("order", "id")
+            else:
+                qs_for_step = self.survey.questions.filter(category=self.categories[self.step])
+
+            for question in qs_for_step:
+                self.add_question(question, data)
+        else:
+            for i, question in enumerate(self.survey.questions.all()):
+                not_to_keep = i != self.step and self.step is not None
+                if self.survey.display_method == Survey.BY_QUESTION and not_to_keep:
+                    continue
+                self.add_question(question, data)
+
+    def current_categories(self):
+        if self.survey.display_method == Survey.BY_CATEGORY:
+            if self.step is not None and self.step < len(self.categories):
+                return [self.categories[self.step]]
+            return [Category(name="No category", description="No cat desc")]
+        else:
+            extras = []
+            if self.qs_with_no_cat:
+                extras = [Category(name="No category", description="No cat desc")]
+
+            return self.categories + extras
 
     def _get_preexisting_response(self):
         """ Recover a pre-existing response in database.
@@ -210,17 +241,15 @@ class ResponseForm(models.ModelForm):
         if widget:
             kwargs["widget"] = widget
         field = self.get_question_field(question, **kwargs)
-        if question.category:
-            field.widget.attrs["category"] = question.category.name
-        else:
-            field.widget.attrs["category"] = ""
+        field.widget.attrs["category"] = question.category.name if question.category else ""
+
         if question.type == Question.DATE:
             field.widget.attrs["class"] = "date"
         # logging.debug("Field for %s : %s", question, field.__dict__)
         self.fields["question_%d" % question.pk] = field
 
     def has_next_step(self):
-        if self.survey.display_by_question:
+        if not self.survey.is_all_in_one_page():
             if self.step < self.steps_count - 1:
                 return True
         return False

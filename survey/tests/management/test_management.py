@@ -27,7 +27,10 @@ class TestManagement(BaseTest):
     def create_survey(self):
         self.test_managament_survey_name = "Test Management Survëy"
         self.survey = Survey.objects.create(
-            name=self.test_managament_survey_name, is_published=True, need_logged_user=True, display_by_question=True
+            name=self.test_managament_survey_name,
+            is_published=True,
+            need_logged_user=True,
+            display_method=Survey.BY_QUESTION,
         )
         self.qst1 = Question.objects.create(text="Aèbc?", order=1, required=True, survey=self.survey)
         self.qst2 = Question.objects.create(text="Bècd?", order=2, required=False, survey=self.survey)
@@ -54,7 +57,7 @@ class TestManagement(BaseTest):
         number_of_question = 10
         number_of_participant = 100
         ranking_survey = Survey.objects.create(
-            name=ranking_survey_name, is_published=True, need_logged_user=False, display_by_question=True
+            name=ranking_survey_name, is_published=True, need_logged_user=False, display_method=Survey.BY_QUESTION
         )
         questions = []
         question_choices = ["1,2,3,4,5"]

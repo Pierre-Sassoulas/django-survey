@@ -14,12 +14,24 @@ def in_duration_day():
 
 class Survey(models.Model):
 
+    ALL_IN_ONE_PAGE = 0
+    BY_QUESTION = 1
+    BY_CATEGORY = 2
+
+    DISPLAY_METHOD_CHOICES = [
+        (BY_QUESTION, _("By question")),
+        (BY_CATEGORY, _("By category")),
+        (ALL_IN_ONE_PAGE, _("All in one page")),
+    ]
+
     name = models.CharField(_("Name"), max_length=400)
     description = models.TextField(_("Description"))
     is_published = models.BooleanField(_("Users can see it and answer it"), default=True)
     need_logged_user = models.BooleanField(_("Only authenticated users can see it and answer it"))
     editable_answers = models.BooleanField(_("Users can edit their answers afterwards"), default=True)
-    display_by_question = models.BooleanField(_("Display by question"))
+    display_method = models.SmallIntegerField(
+        _("Display method"), choices=DISPLAY_METHOD_CHOICES, default=ALL_IN_ONE_PAGE
+    )
     template = models.CharField(_("Template"), max_length=255, null=True, blank=True)
     publish_date = models.DateField(_("Publication date"), blank=True, null=False, default=now)
     expire_date = models.DateField(_("Expiration date"), blank=True, null=False, default=in_duration_day)
@@ -29,7 +41,7 @@ class Survey(models.Model):
         verbose_name_plural = _("surveys")
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
     @property
     def safe_name(self):
@@ -47,3 +59,9 @@ class Survey(models.Model):
 
     def get_absolute_url(self):
         return reverse("survey-detail", kwargs={"id": self.pk})
+
+    def non_empty_categories(self):
+        return [x for x in list(self.categories.order_by("order", "id")) if x.questions.count() > 0]
+
+    def is_all_in_one_page(self):
+        return self.display_method == self.ALL_IN_ONE_PAGE

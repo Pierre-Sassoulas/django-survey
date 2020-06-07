@@ -1,13 +1,14 @@
 # django-survey-and-report's Chinese i18n file
 # This file is distributed under the MIT license.
 # Zhu Sheng Li <digglife@gmail.com>, 2018.
+# Anton Melser <melser.anton@gmail.com>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-24 22:55+0000\n"
+"POT-Creation-Date: 2020-06-09 04:01+0000\n"
 "PO-Revision-Date: 2018-04-09 00:52+0000\n"
 "Last-Translator: Zhu Sheng Li <digglife@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,7 +111,7 @@ msgstr "右"
 
 #: survey/exporter/tex/survey2tex.py:32
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
-msgstr ""
+msgstr "无法生成PDF，我们需要安装“ xelatex”。"
 
 #: survey/exporter/tex/survey2tex.py:80
 msgid "We could not render a chart because the type"
@@ -126,12 +127,12 @@ msgstr ""
 
 #: survey/exporter/tex/survey2tex.py:187
 msgid "Cannot export multiple PDF, choose only one."
-msgstr ""
+msgstr "无法导出多个PDF，只能选择一个。"
 
 #: survey/exporter/tex/survey2tex.py:196
 #, python-format
 msgid "Error during PDF generation: %s"
-msgstr ""
+msgstr "PDF生成期间发生错误：%s"
 
 #: survey/exporter/tex/survey2tex.py:203
 msgid "Export to PDF"
@@ -157,7 +158,7 @@ msgstr "更新日期"
 msgid "Content"
 msgstr "内容"
 
-#: survey/models/category.py:12 survey/models/survey.py:17
+#: survey/models/category.py:12 survey/models/survey.py:27
 msgid "Name"
 msgstr "名字"
 
@@ -170,7 +171,7 @@ msgstr "问卷"
 msgid "Display order"
 msgstr "显示顺序"
 
-#: survey/models/category.py:15 survey/models/survey.py:18
+#: survey/models/category.py:15 survey/models/survey.py:28
 msgid "Description"
 msgstr "描述"
 
@@ -224,7 +225,7 @@ msgstr ""
 
 #: survey/models/question.py:71
 msgid "date"
-msgstr ""
+msgstr "日期"
 
 #: survey/models/question.py:74
 msgid "Text"
@@ -274,39 +275,51 @@ msgstr "问卷的几组回答"
 msgid "Sets of answers to surveys"
 msgstr "问卷的几组回答"
 
-#: survey/models/survey.py:19
+#: survey/models/survey.py:22
+msgid "By question"
+msgstr "按问题显示"
+
+#: survey/models/survey.py:23
+msgid "By category"
+msgstr "按类别显示"
+
+#: survey/models/survey.py:24
+msgid "All in one page"
+msgstr "综合显示"
+
+#: survey/models/survey.py:29
 msgid "Users can see it and answer it"
 msgstr "用户可以浏览和回答"
 
-#: survey/models/survey.py:20
+#: survey/models/survey.py:30
 msgid "Only authenticated users can see it and answer it"
 msgstr "只有认证用户可以浏览和回答"
 
-#: survey/models/survey.py:21
+#: survey/models/survey.py:31
 msgid "Users can edit their answers afterwards"
 msgstr "用户可以随后编辑他们的答案"
 
-#: survey/models/survey.py:22
-msgid "Display by question"
-msgstr "每页一个问题"
+#: survey/models/survey.py:33
+msgid "Display method"
+msgstr "显示方式"
 
-#: survey/models/survey.py:23
+#: survey/models/survey.py:35
 msgid "Template"
 msgstr "模板"
 
-#: survey/models/survey.py:24
+#: survey/models/survey.py:36
 msgid "Publication date"
-msgstr ""
+msgstr "发布日期"
 
-#: survey/models/survey.py:25
+#: survey/models/survey.py:37
 msgid "Expiration date"
-msgstr ""
+msgstr "截止日期"
 
-#: survey/models/survey.py:28
+#: survey/models/survey.py:40
 msgid "survey"
 msgstr "问卷"
 
-#: survey/models/survey.py:29
+#: survey/models/survey.py:41
 msgid "surveys"
 msgstr "问卷"
 

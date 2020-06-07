@@ -24,7 +24,7 @@ class TestQuestion(BaseModelTest):
         self.questions[0].choices = choices
         self.questions[2].choices = choices
         self.survey = Survey.objects.create(
-            name="Test", is_published=True, need_logged_user=False, display_by_question=False
+            name="Test", is_published=True, need_logged_user=False, display_method=Survey.ALL_IN_ONE_PAGE
         )
         user_number = len(self.questions[0].choices.split(", "))
         for i in range(user_number):
@@ -191,7 +191,9 @@ class TestQuestion(BaseModelTest):
     def test_answers_cardinality_linked_without_link(self):
         """ When we want to link to another question and there is no link at
         all, we still have a dict. """
-        survey = Survey.objects.create(name="name", is_published=True, need_logged_user=False, display_by_question=True)
+        survey = Survey.objects.create(
+            name="name", is_published=True, need_logged_user=False, display_method=Survey.BY_QUESTION
+        )
         questions = []
         question_choices = "1,2,3"
         for i in range(3):

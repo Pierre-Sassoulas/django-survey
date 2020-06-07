@@ -26,7 +26,7 @@
   "is_published": true,
   "need_logged_user": false,
   "editable_answers": true,
-  "display_by_question": false,
+  "display_method": 0,
   "template": null
  }
 },

@@ -62,7 +62,7 @@
   "is_published": true,
   "editable_answers": false,
   "need_logged_user": true,
-  "display_by_question": false,
+  "display_method": 0,
   "template": ""
  }
 },
@@ -75,7 +75,7 @@
   "is_published": true,
   "need_logged_user": false,
   "editable_answers": true,
-  "display_by_question": false,
+  "display_method": 0,
   "template": ""
  }
 },
@@ -88,7 +88,7 @@
   "is_published": true,
   "need_logged_user": false,
   "editable_answers": true,
-  "display_by_question": false,
+  "display_method": 0,
   "template": null
  }
 },
@@ -101,7 +101,7 @@
   "is_published": false,
   "need_logged_user": false,
   "editable_answers": true,
-  "display_by_question": false,
+  "display_method": 0,
   "template": null
  }
 },
@@ -114,7 +114,7 @@
   "is_published": true,
   "need_logged_user": true,
   "editable_answers": true,
-  "display_by_question": true,
+  "display_method": 1,
   "template": null
  }
 },
@@ -127,7 +127,7 @@
   "is_published": true,
   "need_logged_user": false,
   "editable_answers": true,
-  "display_by_question": false,
+  "display_method": 0,
   "template": "",
   "expire_date": "2018-12-05",
   "publish_date": "2018-12-05"
@@ -142,7 +142,7 @@
   "is_published": true,
   "need_logged_user": false,
   "editable_answers": true,
-  "display_by_question": false,
+  "display_method": 0,
   "template": "",
   "expire_date": "2055-12-05",
   "publish_date": "2055-12-05"
@@ -157,7 +157,7 @@
   "is_published": true,
   "need_logged_user": false,
   "editable_answers": true,
-  "display_by_question": false,
+  "display_method": 0,
   "template": "",
   "expire_date": "2021-12-05",
   "publish_date": "2018-12-05"
@@ -172,7 +172,7 @@
   "is_published": true,
   "need_logged_user": false,
   "editable_answers": true,
-  "display_by_question": false,
+  "display_method": 0,
   "template": "",
   "publish_date": "2018-12-05"
  }
@@ -186,9 +186,24 @@
   "is_published": true,
   "need_logged_user": false,
   "editable_answers": true,
-  "display_by_question": false,
+  "display_method": 0,
   "template": "",
   "expire_date": "2055-12-05"
+ }
+},
+{
+ "model": "survey.survey",
+ "pk": 11,
+ "fields": {
+  "name": "Multipage Category",
+  "description": "Multipage category test survey",
+  "is_published": true,
+  "need_logged_user": true,
+  "editable_answers": true,
+  "display_method": 2,
+  "template": null,
+  "publish_date": "2020-06-06",
+  "expire_date": "2020-06-13"
  }
 },
 {
@@ -219,6 +234,26 @@
   "survey": 1,
   "order": 3,
   "description": "Dolor description"
+ }
+},
+{
+ "model": "survey.category",
+ "pk": 4,
+ "fields": {
+  "name": "First Multipage Category",
+  "survey": 11,
+  "order": 1,
+  "description": "A first multipage category"
+ }
+},
+{
+ "model": "survey.category",
+ "pk": 5,
+ "fields": {
+  "name": "Second Multipage Category",
+  "survey": 11,
+  "order": 2,
+  "description": "A second multipage category"
  }
 },
 {
@@ -378,15 +413,52 @@
  }
 },
 {
+ "model": "survey.question",
+ "pk": 13,
+ "fields": {
+  "text": "First question on category multipage.",
+  "order": 1,
+  "required": true,
+  "category": 4,
+  "survey": 11,
+  "type": "text",
+  "choices": ""
+ }
+},
+{
+ "model": "survey.question",
+ "pk": 14,
+ "fields": {
+  "text": "Second question on category multipage.",
+  "order": 2,
+  "required": true,
+  "category": 5,
+  "survey": 11,
+  "type": "text",
+  "choices": ""
+ }
+},
+{
+ "model": "survey.question",
+ "pk": 15,
+ "fields": {
+  "text": "Third question on category multipage.",
+  "order": 1,
+  "required": true,
+  "category": 4,
+  "survey": 11,
+  "type": "text",
+  "choices": ""
+ }
+},
+{
  "model": "survey.response",
  "pk": 8,
  "fields": {
   "created": "2017-03-19T11:33:22.379Z",
   "updated": "2017-03-19T12:04:11.997Z",
   "survey": 2,
-  "user": [
-   "pierre"
-  ],
+  "user": 2,
   "interview_uuid": "5bc13b731b7a41599c6cbacd7f7b54f3"
  }
 },
@@ -397,9 +469,7 @@
   "created": "2017-03-19T11:59:00.802Z",
   "updated": "2017-03-19T12:20:11.501Z",
   "survey": 1,
-  "user": [
-   "pierre"
-  ],
+  "user": 2,
   "interview_uuid": "37fe2707287743dcbe6d5de6cbec7407"
  }
 },
@@ -410,9 +480,7 @@
   "created": "2017-03-20T05:12:03.007Z",
   "updated": "2017-03-23T03:34:32.340Z",
   "survey": 2,
-  "user": [
-   "ps250112"
-  ],
+  "user": 1,
   "interview_uuid": "663b61b63fdc485080450add65a8a324"
  }
 },
@@ -423,9 +491,7 @@
   "created": "2017-03-22T08:24:43.468Z",
   "updated": "2017-03-22T10:27:59.183Z",
   "survey": 1,
-  "user": [
-   "ps250112"
-  ],
+  "user": 1,
   "interview_uuid": "e9b616a8adc24902aa4bc2fa2d57d4bb"
  }
 },
@@ -436,9 +502,7 @@
   "created": "2018-12-05T09:11:21.884Z",
   "updated": "2018-12-10T15:00:46.463Z",
   "survey": 3,
-  "user": [
-   "zhu"
-  ],
+  "user": 3,
   "interview_uuid": "f41ed01a4a33473fb99cd8618ee60c05"
  }
 },

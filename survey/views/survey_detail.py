@@ -7,7 +7,6 @@ from django.views.generic import View
 
 from survey.decorators import survey_available
 from survey.forms import ResponseForm
-from survey.models import Category
 
 LOGGER = logging.getLogger(__name__)
 
@@ -20,14 +19,16 @@ class SurveyDetail(View):
         if survey.template is not None and len(survey.template) > 4:
             template_name = survey.template
         else:
-            if survey.display_by_question:
-                template_name = "survey/survey.html"
-            else:
+            if survey.is_all_in_one_page():
                 template_name = "survey/one_page_survey.html"
+            else:
+                template_name = "survey/survey.html"
         if survey.need_logged_user and not request.user.is_authenticated:
             return redirect("%s?next=%s" % (settings.LOGIN_URL, request.path))
-        categories = Category.objects.filter(survey=survey).order_by("order")
+
         form = ResponseForm(survey=survey, user=request.user, step=step)
+        categories = form.current_categories()
+
         asset_context = {
             # If any of the widgets of the current form has a "date" class, flatpickr will be loaded into the template
             "flatpickr": any([field.widget.attrs.get("class") == "date" for _, field in form.fields.items()])
@@ -47,8 +48,10 @@ class SurveyDetail(View):
         survey = kwargs.get("survey")
         if survey.need_logged_user and not request.user.is_authenticated:
             return redirect("%s?next=%s" % (settings.LOGIN_URL, request.path))
-        categories = Category.objects.filter(survey=survey).order_by("order")
+
         form = ResponseForm(request.POST, survey=survey, user=request.user, step=kwargs.get("step", 0))
+        categories = form.current_categories()
+
         if not survey.editable_answers and form.response is not None:
             LOGGER.info("Redirects to survey list after trying to edit non editable answer.")
             return redirect(reverse("survey-list"))
@@ -63,10 +66,10 @@ class SurveyDetail(View):
         if survey.template is not None and len(survey.template) > 4:
             template_name = survey.template
         else:
-            if survey.display_by_question:
-                template_name = "survey/survey.html"
-            else:
+            if survey.is_all_in_one_page():
                 template_name = "survey/one_page_survey.html"
+            else:
+                template_name = "survey/survey.html"
         return render(request, template_name, context)
 
     def treat_valid_form(self, form, kwargs, request, survey):
@@ -78,7 +81,9 @@ class SurveyDetail(View):
             request.session.modified = True
         next_url = form.next_step_url()
         response = None
-        if survey.display_by_question:
+        if survey.is_all_in_one_page():
+            response = form.save()
+        else:
             # when it's the last step
             if not form.has_next_step():
                 save_form = ResponseForm(request.session[session_key], survey=survey, user=request.user)
@@ -86,8 +91,6 @@ class SurveyDetail(View):
                     response = save_form.save()
                 else:
                     LOGGER.warning("A step of the multipage form failed but should have been discovered before.")
-        else:
-            response = form.save()
         # if there is a next step
         if next_url is not None:
             return redirect(next_url)

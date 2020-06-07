@@ -24,7 +24,7 @@ class TestConfiguration(TestManagement):
         path = Path(self.conf_dir, "name_doesnt_exists.yaml")
         conf = Configuration(path)
         self.assertIsNotNone(conf.get(survey_name=name))
-        Survey.objects.create(name=name, is_published=True, need_logged_user=True, display_by_question=True)
+        Survey.objects.create(name=name, is_published=True, need_logged_user=True, display_method=Survey.BY_QUESTION)
         conf = Configuration(path)
         self.assertIsNotNone(conf.get(survey_name=name))
 

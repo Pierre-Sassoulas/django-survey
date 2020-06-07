@@ -155,3 +155,55 @@ class TestSurveyDetail(BaseTest):
         the survey should be visible """
         response = self.client.get(reverse("survey-detail", args=(10,)))
         self.assertEqual(response.status_code, 200)
+
+    def test_multipage_category_survey(self):
+        """
+        Checks that multipage survey is working.
+        """
+        self.login()
+        response = self.client.post(reverse("survey-detail", args=(11,)), data={"question_13": 42, "question_15": 43})
+        self.assertEqual(response.status_code, 302)
+
+        response_saved = Response.objects.filter(user__username=settings.DEBUG_ADMIN_NAME, survey__id=11)
+        self.assertEqual(len(response_saved.all()), 0)
+
+        self.assertRedirects(response, reverse("survey-detail-step", args=(11, 1)))
+
+        response = self.client.post(reverse("survey-detail-step", args=(11, 1)), data={"question_14": "yes"})
+        self.assertEqual(response.status_code, 302)
+
+        response_saved = Response.objects.filter(user__username=settings.DEBUG_ADMIN_NAME, survey__id=11)
+        self.assertEqual(len(response_saved.all()), 1)
+        self.assertRedirects(response, reverse("survey-confirmation", args=(response_saved[0].interview_uuid,)))
+
+    def test_multipage_category_survey_edit(self):
+        """
+        Checks that a multipage category survey can be rightfully edited.
+        """
+        self.login()
+        # first creates the initial response
+        response = self.client.post(reverse("survey-detail", args=(11,)), data={"question_13": 42, "question_15": 43})
+        response = self.client.post(reverse("survey-detail-step", args=(11, 1)), data={"question_14": "yes"})
+        response_saved = Response.objects.filter(user__username=settings.DEBUG_ADMIN_NAME, survey__id=11)
+        self.assertEqual(len(response_saved.all()), 1)
+
+        # tries normal edit
+        response = self.client.post(reverse("survey-detail", args=(11,)), data={"question_13": 56, "question_15": 57})
+        response = self.client.post(reverse("survey-detail-step", args=(11, 1)), data={"question_14": "yes"})
+        response_saved = Response.objects.filter(user__username=settings.DEBUG_ADMIN_NAME, survey__id=11)
+        self.assertEqual(len(response_saved.all()), 1)
+        answer_saved = Answer.objects.filter(
+            response__user__username=settings.DEBUG_ADMIN_NAME, response__survey__id=11, question__id=13
+        )
+        self.assertEqual(len(answer_saved.all()), 1)
+        self.assertEqual(answer_saved[0].body, "56")
+
+        # tries forbidden edit (only a part of the form)
+        response = self.client.post(reverse("survey-detail-step", args=(11, 1)), data={"question_14": "no"})
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("survey-list"))
+        answer_saved = Answer.objects.filter(
+            response__user__username=settings.DEBUG_ADMIN_NAME, response__survey__id=11, question__id=14
+        )
+        self.assertEqual(len(answer_saved.all()), 1)
+        self.assertEqual(answer_saved[0].body, "yes")

@@ -1,13 +1,14 @@
 # django-survey-and-report's i18n file
 # This file is distributed under the MIT license.
 # Pierre SASSOULAS <pierre.sassoulas@gmail.com>, 2018.
+# Anton Melser <melser.anton@gmail.com>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-24 22:55+0000\n"
+"POT-Creation-Date: 2020-06-09 04:01+0000\n"
 "PO-Revision-Date: 2020-02-23 14:44+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,7 +158,7 @@ msgstr "Date de mise à jour"
 msgid "Content"
 msgstr "Contenu"
 
-#: survey/models/category.py:12 survey/models/survey.py:17
+#: survey/models/category.py:12 survey/models/survey.py:27
 msgid "Name"
 msgstr "Nom"
 
@@ -170,7 +171,7 @@ msgstr "Sondage"
 msgid "Display order"
 msgstr "Ordre d'affichage"
 
-#: survey/models/category.py:15 survey/models/survey.py:18
+#: survey/models/category.py:15 survey/models/survey.py:28
 msgid "Description"
 msgstr "Description"
 
@@ -274,39 +275,55 @@ msgstr "Ensemble de réponse aux sondages"
 msgid "Sets of answers to surveys"
 msgstr "Ensembles de réponse aux sondages"
 
-#: survey/models/survey.py:19
+#: survey/models/survey.py:22
+#, fuzzy
+#| msgid "question"
+msgid "By question"
+msgstr "Par question"
+
+#: survey/models/survey.py:23
+#, fuzzy
+#| msgid "category"
+msgid "By category"
+msgstr "Par catégorie"
+
+#: survey/models/survey.py:24
+msgid "All in one page"
+msgstr "Tout dans une même page"
+
+#: survey/models/survey.py:29
 msgid "Users can see it and answer it"
 msgstr "Les utilisateurs peuvent le voir et y répondre"
 
-#: survey/models/survey.py:20
+#: survey/models/survey.py:30
 msgid "Only authenticated users can see it and answer it"
 msgstr "Seuls les utilisateurs authentifiés peuvent le voir et y répondre"
 
-#: survey/models/survey.py:21
+#: survey/models/survey.py:31
 msgid "Users can edit their answers afterwards"
 msgstr "Les utilisateurs peuvent modifier leur réponse"
 
-#: survey/models/survey.py:22
-msgid "Display by question"
-msgstr "Affichage par question"
+#: survey/models/survey.py:33
+msgid "Display method"
+msgstr "Méthode d'affichage"
 
-#: survey/models/survey.py:23
+#: survey/models/survey.py:35
 msgid "Template"
 msgstr "Modèle"
 
-#: survey/models/survey.py:24
+#: survey/models/survey.py:36
 msgid "Publication date"
 msgstr "Date de publication"
 
-#: survey/models/survey.py:25
+#: survey/models/survey.py:37
 msgid "Expiration date"
 msgstr "Date de suppression"
 
-#: survey/models/survey.py:28
+#: survey/models/survey.py:40
 msgid "survey"
 msgstr "sondage"
 
-#: survey/models/survey.py:29
+#: survey/models/survey.py:41
 msgid "surveys"
 msgstr "sondages"
 

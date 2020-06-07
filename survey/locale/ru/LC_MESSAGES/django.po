@@ -1,12 +1,13 @@
 # django-survey-and-report's i18n file
 # This file is distributed under the MIT license.
 # Vlad M. <vladm.ru@gmail.com>, 2019.
+# Anton Melser <melser.anton@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-24 22:55+0000\n"
+"POT-Creation-Date: 2020-06-09 04:01+0000\n"
 "PO-Revision-Date: 2019-03-10 22:53+0230\n"
 "Last-Translator: b'  <vladm.ru@gmail.com>'\n"
 "Language-Team: \n"
@@ -161,7 +162,7 @@ msgstr "Дата обновления"
 msgid "Content"
 msgstr "Содержание"
 
-#: survey/models/category.py:12 survey/models/survey.py:17
+#: survey/models/category.py:12 survey/models/survey.py:27
 msgid "Name"
 msgstr "Название"
 
@@ -174,7 +175,7 @@ msgstr "Тест"
 msgid "Display order"
 msgstr "Порядок отображения"
 
-#: survey/models/category.py:15 survey/models/survey.py:18
+#: survey/models/category.py:15 survey/models/survey.py:28
 msgid "Description"
 msgstr "Описание"
 
@@ -283,39 +284,53 @@ msgstr "Набор ответов на опросы"
 msgid "Sets of answers to surveys"
 msgstr "Наборы ответов на опросы"
 
-#: survey/models/survey.py:19
+#: survey/models/survey.py:22
+msgid "By question"
+msgstr "По вопросам"
+
+#: survey/models/survey.py:23
+msgid "By category"
+msgstr "По категориям"
+
+#: survey/models/survey.py:24
+msgid "All in one page"
+msgstr "Все в одной странице"
+
+#: survey/models/survey.py:29
 msgid "Users can see it and answer it"
 msgstr "Пользователи могут увидеть его и ответить на него"
 
-#: survey/models/survey.py:20
+#: survey/models/survey.py:30
 msgid "Only authenticated users can see it and answer it"
 msgstr "Только прошедшие проверку пользователи могут видеть его и отвечать на него"
 
-#: survey/models/survey.py:21
+#: survey/models/survey.py:31
 msgid "Users can edit their answers afterwards"
 msgstr "Пользователи могут редактировать свои ответы впоследствии"
 
-#: survey/models/survey.py:22
-msgid "Display by question"
-msgstr "Отображение по вопросу"
+#: survey/models/survey.py:33
+#, fuzzy
+#| msgid "Display order"
+msgid "Display method"
+msgstr "Порядок отображения"
 
-#: survey/models/survey.py:23
+#: survey/models/survey.py:35
 msgid "Template"
 msgstr "Шаблон"
 
-#: survey/models/survey.py:24
+#: survey/models/survey.py:36
 msgid "Publication date"
 msgstr "Дата публикации"
 
-#: survey/models/survey.py:25
+#: survey/models/survey.py:37
 msgid "Expiration date"
 msgstr "дата удаления"
 
-#: survey/models/survey.py:28
+#: survey/models/survey.py:40
 msgid "survey"
 msgstr "опрос"
 
-#: survey/models/survey.py:29
+#: survey/models/survey.py:41
 msgid "surveys"
 msgstr "опросы"
 

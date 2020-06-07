@@ -8,7 +8,10 @@ class BaseModelTest(BaseTest):
     def setUp(self):
         BaseTest.setUp(self)
         self.survey = Survey.objects.create(
-            name="Internal Test Survey", is_published=True, need_logged_user=False, display_by_question=False
+            name="Internal Test Survey",
+            is_published=True,
+            need_logged_user=False,
+            display_method=Survey.ALL_IN_ONE_PAGE,
         )
         self.response = Response.objects.create(survey=self.survey)
         self.questions = []

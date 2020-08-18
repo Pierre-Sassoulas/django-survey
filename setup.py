@@ -57,7 +57,6 @@ setuptools.setup(
         "pytz>=2018.9",
         "ordereddict>=1.1",
         "pyyaml>=4.2b1",
-        "pySankeyBeta~=1.2.2",
     ],
     extras_require={
         "dev": [
@@ -69,6 +68,9 @@ setuptools.setup(
             "pylint",
             "flake8",
             "pre-commit",
+        ],
+        "sankey": [
+            "pySankeyBeta~=1.2.2",
         ]
     },
 )

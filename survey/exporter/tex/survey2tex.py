@@ -20,8 +20,14 @@ from survey.exporter.tex.latex_file import LatexFile
 from survey.exporter.tex.question2tex import Question2Tex
 from survey.exporter.tex.question2tex_chart import Question2TexChart
 from survey.exporter.tex.question2tex_raw import Question2TexRaw
-from survey.exporter.tex.question2tex_sankey import Question2TexSankey
 from survey.models.question import Question
+
+try:
+    from survey.exporter.tex.question2tex_sankey import Question2TexSankey
+    SANKEY = True
+except ImportError:
+    SANKEY = False
+
 
 LOGGER = logging.getLogger(__name__)
 STATIC = Path(__file__).parent.parent.parent.joinpath("static")
@@ -30,6 +36,11 @@ STATIC = Path(__file__).parent.parent.parent.joinpath("static")
 class XelatexNotInstalled(Exception):
     def __init__(self):
         super(XelatexNotInstalled, self).__init__(_("Cannot generate PDF, we need 'xelatex' to be installed."))
+
+
+class SankeyNotInstalled(Exception):
+    def __init__(self):
+        super(SankeyNotInstalled, self).__init__(_("Cannot generate PDF, we need 'pySankeyBeta' to be installed."))
 
 
 class Survey2Tex(Survey2X):
@@ -68,6 +79,8 @@ class Survey2Tex(Survey2X):
             if tex_type == "raw":
                 question_synthesis += Question2TexRaw(question, **opts).tex()
             elif tex_type == "sankey":
+                if not SANKEY:
+                    raise SankeyNotInstalled()
                 other_question_text = opts["question"]
                 other_question = Question.objects.get(text=other_question_text)
                 q2tex = Question2TexSankey(question, other_question=other_question)

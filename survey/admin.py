@@ -8,7 +8,7 @@ from survey.exporter.tex import Survey2Tex
 from survey.models import Answer, Category, Question, Response, Survey
 
 
-class QuestionInline(admin.TabularInline):
+class QuestionInline(admin.StackedInline):
     model = Question
     ordering = ("order", "category")
     extra = 1

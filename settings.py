@@ -134,6 +134,7 @@ LANGUAGES = (
     ("de", "German"),
     ("id", "Indonesian"),
     ("pt-br", "Brazilian Portuguese"),
+    ("pl", "Polish"),
 )
 
 LOGIN_REDIRECT_URL = "/"

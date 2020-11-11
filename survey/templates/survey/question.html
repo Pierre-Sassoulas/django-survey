@@ -23,7 +23,7 @@
                 <select name="{{form.name}}"{% if form.field.widget.attrs.disabled %} disabled{% endif %}>
                 {% endif %}
 	            {% for field in form %}
-                    {{ field }}
+		    {{ field }} <br>
                 {% endfor%}
                 {% if form.field.widget.input_type == 'select' %}
                 </select>

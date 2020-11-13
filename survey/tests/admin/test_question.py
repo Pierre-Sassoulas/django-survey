@@ -11,28 +11,15 @@ from survey.models.survey import Survey
 class TestQuestionInlineAdmin(TestCase):
     def setUp(self):
         self.survey = Survey.objects.create(
-            name="Survey One",
-            description="Survey's Description",
-            need_logged_user=False
+            name="Survey One", description="Survey's Description", need_logged_user=False
         )
         another_survey = Survey.objects.create(
-            name="Another Survey",
-            description="Another Survey's Description",
-            need_logged_user=False
+            name="Another Survey", description="Another Survey's Description", need_logged_user=False
         )
-        self.category_1 = Category.objects.create(
-            name="First Category",
-            survey=self.survey
-        )
-        self.category_2 = Category.objects.create(
-            name="Second Category",
-            survey=self.survey
-        )
+        self.category_1 = Category.objects.create(name="First Category", survey=self.survey)
+        self.category_2 = Category.objects.create(name="Second Category", survey=self.survey)
 
-        self.another_survey_category = Category.objects.create(
-            name="Another Survey Category",
-            survey=another_survey
-        )
+        self.another_survey_category = Category.objects.create(name="Another Survey Category", survey=another_survey)
 
         self.site = AdminSite()
         self.request = mock.Mock()

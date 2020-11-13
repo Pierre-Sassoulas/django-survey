@@ -45,3 +45,13 @@ class TestQuestionInlineAdmin(TestCase):
         self.assertEqual(qs.count(), 2)
         self.assertNotIn(self.another_survey_category, qs)
 
+    def test_question_admin_inline_filter_no_surveys_yet(self):
+        self.survey.delete()
+        self.another_survey_category.delete()
+        self.survey = None
+
+        question_admin = QuestionInline(Survey, self.site)
+        formset = question_admin.get_formset(self.request, self.survey)
+        qs = formset.form.base_fields["category"].queryset
+
+        self.assertEqual(qs.count(), 0)

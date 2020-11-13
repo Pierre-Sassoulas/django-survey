@@ -14,7 +14,7 @@ class QuestionInline(admin.StackedInline):
     extra = 1
 
     def get_formset(self, request, obj, *args, **kwargs):
-        formset = super().get_formset(request, obj, *args, **kwargs)
+        formset = super(QuestionInline, self).get_formset(request, obj, *args, **kwargs)
         if obj:
             formset.form.base_fields["category"].queryset = obj.categories.all()
         return formset

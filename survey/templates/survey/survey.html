@@ -25,14 +25,14 @@
 				<div class="panel panel-default">
 				    <div class="panel-heading">
 				        <h3 class="panel-title"> <a
-				        data-toggle="collapse"
+				        data-toggle="collapse show"
 				        data-parent="#accordion"
 				        href="#collapse{{category.slugify}}">
 				            {% trans "Answer this part" %}
 			            </a></h3>
 				    </div>
                     <div class="category-container">
-				        <div id="collapse{{category.slugify}}" class="panel-collapse collapse {% if not survey.editable_answers and response_form.response is not None %}in{% endif %}
+				        <div id="collapse{{category.slugify}}" class="panel-collapse collapse show {% if not survey.editable_answers and response_form.response is not None %}in{% endif %}
 				        {{ response_form|collapse_form:category }}">
 				            <div class="panel-body">
 	                           {% include "survey/question.html" %}

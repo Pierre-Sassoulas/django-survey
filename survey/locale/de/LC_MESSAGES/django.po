@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-24 22:55+0000\n"
-"PO-Revision-Date: 2020-01-24 17:05+0000\n"
+"PO-Revision-Date: 2021-01-22 23:17+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Translated-Using: django-rosetta 0.9.3\n"
+"X-Translated-Using: django-rosetta 0.9.5\n"
 
 #: dev/templates/base.html:3
 msgid "en"
@@ -44,11 +44,11 @@ msgstr "Anonym"
 
 #: survey/exporter/csv/survey2csv.py:71
 msgid "user"
-msgstr ""
+msgstr "Benutzer"
 
 #: survey/exporter/csv/survey2csv.py:115
 msgid "Export to CSV"
-msgstr ""
+msgstr "Exportiere als CSV"
 
 #: survey/exporter/tex/question2tex.py:64
 msgid "with"
@@ -111,32 +111,38 @@ msgstr "rechts"
 
 #: survey/exporter/tex/survey2tex.py:32
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
-msgstr ""
+msgstr "Kann kein pdf erstellen, da 'xelatex' nicht installiert ist."
 
 #: survey/exporter/tex/survey2tex.py:80
 msgid "We could not render a chart because the type"
 msgstr "Wir konnten eine Grafik nicht erstellen, weil der Typ"
 
 #: survey/exporter/tex/survey2tex.py:83
-msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
-msgstr "kein Standard Typ und auch kein Pfad zu einer importierbaren Question2Tex child class ist. Wähle zwischen  'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' oder 'package.path.MyQuestion2TexCustomClass'"
+msgid ""
+"is not a standard type nor the path to an importable valid Question2Tex "
+"child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', "
+"'polar' or 'package.path.MyQuestion2TexCustomClass'"
+msgstr ""
+"kein Standard Typ und auch kein Pfad zu einer importierbaren Question2Tex "
+"child class ist. Wähle zwischen  'raw', 'sankey', 'pie', 'cloud', 'square', "
+"'polar' oder 'package.path.MyQuestion2TexCustomClass'"
 
 #: survey/exporter/tex/survey2tex.py:157
 msgid "No questions to display in this survey."
-msgstr ""
+msgstr "Keine Fragen in dieser Umfrage die angezeigt werden können."
 
 #: survey/exporter/tex/survey2tex.py:187
 msgid "Cannot export multiple PDF, choose only one."
-msgstr ""
+msgstr "Kann nicht mehrere PDFs auf einmal exportieren, wähle nur eins."
 
 #: survey/exporter/tex/survey2tex.py:196
 #, python-format
 msgid "Error during PDF generation: %s"
-msgstr ""
+msgstr "Fehler bei erstellung des PDF: %s"
 
 #: survey/exporter/tex/survey2tex.py:203
 msgid "Export to PDF"
-msgstr ""
+msgstr "Exportiere als PDF"
 
 #: survey/models/answer.py:23
 msgid "Question"
@@ -189,7 +195,10 @@ msgid ""
 "if the question type is 'radio', 'select', or\n"
 "'select multiple' provide a comma-separated list of\n"
 "options for this question ."
-msgstr "Das Auswahlfeld wird nur benutzt, wenn der Fragetyp 'radio', 'select' oder 'select multiple' ist. Geben Sie eine durch Kommas getrennte Liste von Optionen an."
+msgstr ""
+"Das Auswahlfeld wird nur benutzt, wenn der Fragetyp 'radio', 'select' oder "
+"'select multiple' ist. Geben Sie eine durch Kommas getrennte Liste von "
+"Optionen an."
 
 #: survey/models/question.py:61
 msgid "text (multiple line)"
@@ -289,11 +298,11 @@ msgstr "Vorlage"
 
 #: survey/models/survey.py:24
 msgid "Publication date"
-msgstr ""
+msgstr "Datum der Veröffentlichung"
 
 #: survey/models/survey.py:25
 msgid "Expiration date"
-msgstr ""
+msgstr "Ablaufdatum"
 
 #: survey/models/survey.py:28
 msgid "survey"

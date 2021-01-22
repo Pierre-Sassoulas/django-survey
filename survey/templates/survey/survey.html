@@ -60,11 +60,19 @@
 
         <br>
 		{% if survey.editable_answers or response_form.response is None %}
-	    <input
-            class="btn btn-default btn-lg"
-	        type="submit"
-	        value="{% trans "I'm done!" %}"
-        >
+	    {% if response_form.has_next_step %}
+				    <input
+  			          class="btn btn-default btn-lg"
+				        type="submit"
+				        value="{% trans "Next!" %}"
+        			>
+				{% else %}
+				    <input
+  			          class="btn btn-default btn-lg"
+				        type="submit"
+				        value="{% trans "I'm done!" %}"
+        			>
+				{% endif %}
 		{% endif %}
 	</form></div>
 {% endblock %}

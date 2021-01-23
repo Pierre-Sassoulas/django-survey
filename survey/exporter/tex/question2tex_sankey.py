@@ -4,10 +4,10 @@ import logging
 
 from django.utils.translation import gettext_lazy as _
 from pandas.core.frame import DataFrame
-try: 
-    from pysankey import sankey
-except ModuleNotFoundError:
-    from pySankey import sankey
+#try: 
+from pysankey import sankey
+#except ModuleNotFoundError:
+#    from pySankey import sankey
 
 from survey.exporter.tex.question2tex import Question2Tex
 from survey.models.question import Question

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-13 07:04+0000\n"
-"PO-Revision-Date: 2020-01-24 17:05+0000\n"
+"POT-Creation-Date: 2021-01-23 11:47+0000\n"
+"PO-Revision-Date: 2021-01-23 11:45+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Translated-Using: django-rosetta 0.9.3\n"
+"X-Translated-Using: django-rosetta 0.9.5\n"
 
 #: dev/templates/base.html:3
 msgid "en"
@@ -44,11 +44,11 @@ msgstr "Anonym"
 
 #: survey/exporter/csv/survey2csv.py:68
 msgid "user"
-msgstr ""
+msgstr "Benutzer"
 
 #: survey/exporter/csv/survey2csv.py:112
 msgid "Export to CSV"
-msgstr ""
+msgstr "Exportiere als CSV"
 
 #: survey/exporter/tex/question2tex.py:64
 msgid "with"
@@ -85,7 +85,7 @@ msgid "Left blank"
 msgstr "Frei gelassen"
 
 #: survey/exporter/tex/question2tex_chart.py:113
-#: survey/exporter/tex/question2tex_sankey.py:40
+#: survey/exporter/tex/question2tex_sankey.py:43
 msgid "for the question"
 msgstr "für die Frage"
 
@@ -97,25 +97,25 @@ msgstr "Keine Antwort auf diese Frage."
 msgid "Participant"
 msgstr "Teilnehmer"
 
-#: survey/exporter/tex/question2tex_sankey.py:40
+#: survey/exporter/tex/question2tex_sankey.py:43
 msgid "left"
 msgstr "links"
 
-#: survey/exporter/tex/question2tex_sankey.py:42
+#: survey/exporter/tex/question2tex_sankey.py:45
 msgid "in relation with the question"
 msgstr "in Zusammenhang mit der Frage"
 
-#: survey/exporter/tex/question2tex_sankey.py:44
+#: survey/exporter/tex/question2tex_sankey.py:47
 msgid "right"
 msgstr "rechts"
 
 #: survey/exporter/tex/survey2tex.py:39
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
-msgstr ""
+msgstr "Kann PDF nicht exportieren, denn 'xelatex' muss installiert sein!"
 
 #: survey/exporter/tex/survey2tex.py:44
 msgid "Cannot generate PDF, we need 'pySankeyBeta' to be installed."
-msgstr ""
+msgstr "Kann PDF nicht exportieren, denn 'pySankeyBeta' muss installiert sein!"
 
 #: survey/exporter/tex/survey2tex.py:94
 msgid "We could not render a chart because the type"
@@ -127,20 +127,20 @@ msgstr "kein Standard Typ und auch kein Pfad zu einer importierbaren Question2Te
 
 #: survey/exporter/tex/survey2tex.py:171
 msgid "No questions to display in this survey."
-msgstr ""
+msgstr "In dieser Umfrage sind keine Fragen die angezeigt werden können."
 
 #: survey/exporter/tex/survey2tex.py:201
 msgid "Cannot export multiple PDF, choose only one."
-msgstr ""
+msgstr "Kann nicht mehrere PDFs exportieren. Es kann nur eins ausgewählt werden."
 
 #: survey/exporter/tex/survey2tex.py:210
 #, python-format
 msgid "Error during PDF generation: %s"
-msgstr ""
+msgstr "Fehler beim erstellen des PDFs: %s"
 
 #: survey/exporter/tex/survey2tex.py:217
 msgid "Export to PDF"
-msgstr ""
+msgstr "Exportiere als PDF"
 
 #: survey/models/answer.py:23
 msgid "Question"
@@ -225,11 +225,11 @@ msgstr "Ganzzahl"
 
 #: survey/models/question.py:70
 msgid "float"
-msgstr ""
+msgstr "Gleitkommazahl"
 
 #: survey/models/question.py:71
 msgid "date"
-msgstr ""
+msgstr "Datum"
 
 #: survey/models/question.py:74
 msgid "Text"
@@ -280,20 +280,16 @@ msgid "Sets of answers to surveys"
 msgstr "Sätze von Antworten zu Umfragen"
 
 #: survey/models/survey.py:22
-#, fuzzy
-#| msgid "question"
 msgid "By question"
-msgstr "Frage"
+msgstr "Nach Frage"
 
 #: survey/models/survey.py:23
-#, fuzzy
-#| msgid "category"
 msgid "By category"
-msgstr "Kategorie"
+msgstr "Nach Kategorie"
 
 #: survey/models/survey.py:24
 msgid "All in one page"
-msgstr ""
+msgstr "Alle auf einer Seite"
 
 #: survey/models/survey.py:29
 msgid "Users can see it and answer it"
@@ -308,10 +304,8 @@ msgid "Users can edit their answers afterwards"
 msgstr "Benutzer können ihre Antworten im nachhinein verändern"
 
 #: survey/models/survey.py:33
-#, fuzzy
-#| msgid "Display order"
 msgid "Display method"
-msgstr "Anordnung"
+msgstr "Darstellungsart"
 
 #: survey/models/survey.py:35
 msgid "Template"
@@ -319,11 +313,11 @@ msgstr "Vorlage"
 
 #: survey/models/survey.py:36
 msgid "Publication date"
-msgstr ""
+msgstr "Datum der Veröffentlichung"
 
 #: survey/models/survey.py:37
 msgid "Expiration date"
-msgstr ""
+msgstr "Ablaufdatum"
 
 #: survey/models/survey.py:40
 msgid "survey"
@@ -375,6 +369,10 @@ msgstr "Diesen Teil beantworten"
 msgid "Questions"
 msgstr "Fragen"
 
-#: survey/templates/survey/survey.html:66
+#: survey/templates/survey/survey.html:67
+msgid "Next!"
+msgstr ""
+
+#: survey/templates/survey/survey.html:73
 msgid "I'm done!"
 msgstr "Fertig!"

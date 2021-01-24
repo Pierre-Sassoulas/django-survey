@@ -24,8 +24,8 @@ def survey_available(func):
             logging.warning(msg)
             raise Http404
         if survey.publish_date > date.today():
-            msg = "Survey is not yet published. It is due: {} ".format(survey.publish_date)
-            logging.warning(msg)
+            msg = "Survey is not yet published. It is due: '%s'."
+            logging.warning(msg, survey.publish_date)
             raise Http404
         return func(self, request, *args, **kwargs, survey=survey)
 

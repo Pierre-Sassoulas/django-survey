@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
 
 import logging
+import warnings
 
 from django.utils.translation import gettext_lazy as _
 from pandas.core.frame import DataFrame
-#try: 
-from pysankey import sankey
-#except ModuleNotFoundError:
-#    from pySankey import sankey
+try:
+    from pysankey import sankey
+except ModuleNotFoundError:
+    warnings.warn(
+        "Cannot import 'sankey', please install the package using
+        "the sankey extra. (pip install django-survey-and-report[sankey])"
+    )
 
 from survey.exporter.tex.question2tex import Question2Tex
 from survey.models.question import Question

@@ -9,7 +9,7 @@ try:
     from pysankey import sankey
 except ModuleNotFoundError:
     warnings.warn(
-        "Cannot import 'sankey', please install the package using
+        "Cannot import 'sankey', please install the package using"
         "the sankey extra. (pip install django-survey-and-report[sankey])"
     )
 

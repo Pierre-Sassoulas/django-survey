@@ -2,6 +2,7 @@ from datetime import date
 from functools import wraps
 
 from django.shortcuts import Http404, get_object_or_404
+import logging
 
 from survey.models import Survey
 
@@ -19,8 +20,12 @@ def survey_available(func):
         if not survey.is_published:
             raise Http404
         if survey.expire_date < date.today():
+            msg = "Survey is not published anymore. It was published until: {} ".format(survey.expire_date)
+            logging.warning(msg)
             raise Http404
         if survey.publish_date > date.today():
+            msg = "Survey is not yet published. It is due: {} ".format(survey.publish_date)
+            logging.warning(msg)
             raise Http404
         return func(self, request, *args, **kwargs, survey=survey)
 

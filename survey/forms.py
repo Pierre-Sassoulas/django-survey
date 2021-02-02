@@ -304,6 +304,7 @@ class ResponseForm(models.ModelForm):
         value = self.cleaned_data
         print(value)
         for q in s.questions.all():
+            # TODO check for type of question!
             question = q
             max = question.maximum_choices
             print("Max: %d" % max)
@@ -313,5 +314,6 @@ class ResponseForm(models.ModelForm):
                 print("Ausgewaehlte Antworten: %d" % number_of_choices)
                 if number_of_choices > max:
                     LOGGER.info("Selected more Answers than allowed! Maximum is %d.", max)
+                    # TODO create a meaningful dialog for the user!
                     return None
         return value

@@ -17,6 +17,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 class ResponseForm(models.ModelForm):
+
     FIELDS = {
         Question.TEXT: forms.CharField,
         Question.SHORT_TEXT: forms.CharField,

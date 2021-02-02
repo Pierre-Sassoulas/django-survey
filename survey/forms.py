@@ -17,7 +17,6 @@ LOGGER = logging.getLogger(__name__)
 
 
 class ResponseForm(models.ModelForm):
-
     FIELDS = {
         Question.TEXT: forms.CharField,
         Question.SHORT_TEXT: forms.CharField,
@@ -25,6 +24,7 @@ class ResponseForm(models.ModelForm):
         Question.INTEGER: forms.IntegerField,
         Question.FLOAT: forms.FloatField,
         Question.DATE: forms.DateField,
+        Question.MAX: forms.IntegerField,
     }
 
     WIDGETS = {
@@ -301,3 +301,19 @@ class ResponseForm(models.ModelForm):
                 answer.save()
         survey_completed.send(sender=Response, instance=response, data=data)
         return response
+
+    def clean_choices(self, s):
+        value = self.cleaned_data
+        print(value)
+        for q in s.questions.all():
+            question = q
+            max = question.maximum_choices
+            print('Max: %d' % max)
+            if value.get('question_%s' % question.id):
+                """ Only if some answers are checked. """
+                number_of_choices = len(value.get('question_%s' % question.id))
+                print('Ausgewaehlte Antworten: %d' % number_of_choices)
+                if number_of_choices > max:
+                    LOGGER.info("Selected more Answers than allowed! Maximum is %d.", max)
+                    return None
+        return value

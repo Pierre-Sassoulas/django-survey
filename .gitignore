@@ -52,3 +52,5 @@ csv/multipage-category.csv
 tex/multipage-category.tex
 tex/q16_vs_q16.png
 tex/q15_vs_q15.png
+requirements.txt
+survey/migrations/0014_question_maximum_choices.py

@@ -305,8 +305,8 @@ class ResponseForm(models.ModelForm):
         value = self.cleaned_data
         print(value)
         for q in s.questions.all():
-            if q.type in ["select-multiple"]:
-                # Only for SELECT_MULTIPlE
+            if q.type in ["select-multiple"] and q.maximum_choices:
+                # Only for SELECT_MULTIPlE and if maximum_choices is set
                 question = q
                 max = question.maximum_choices
                 if value.get(f"question_{question.id}"):

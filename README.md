@@ -55,7 +55,7 @@ The software is developed in english. Other available languages are :
 Add `django-survey-and-report` to your requirements and get it with pip.
 
 ~~~~bash
-echo 'django-survey-and-report' > requirements.txt
+echo 'django-survey-and-report' >> requirements.txt
 pip install -r requirements.txt
 ~~~~
 

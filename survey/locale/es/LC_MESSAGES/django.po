@@ -48,7 +48,7 @@ msgstr "usuario"
 
 #: survey/exporter/csv/survey2csv.py:112
 msgid "Export to CSV"
-msgstr "Exportación al formato CSV"
+msgstr "Exporta como CSV"
 
 #: survey/exporter/tex/question2tex.py:64
 msgid "with"
@@ -58,8 +58,8 @@ msgstr "con"
 # Entrevistado reffers to all surveyed.
 #: survey/exporter/tex/question2tex.py:66
 #, python-format
-msgid "%(min_cardinality)d respondents or more"
-msgid_plural "%(min_cardinality)d respondent or more"
+msgid "%(min_cardinality)d respondent or more"
+msgid_plural "%(min_cardinality)d respondents or more"
 msgstr[0] "%(min_cardinality)d entrevistado o más"
 msgstr[1] "%(min_cardinality)d entrevistados o más."
 
@@ -101,7 +101,7 @@ msgstr "Participante"
 
 #: survey/exporter/tex/question2tex_sankey.py:29
 msgid "Cannot generate PDF, we need 'pySankeyBeta' to be installed."
-msgstr ""
+msgstr "No podemos generar el PDF, necesitamos instalar 'pySankeyBeta'"
 
 #  as in "opposite of right"
 #: survey/exporter/tex/question2tex_sankey.py:57
@@ -119,11 +119,11 @@ msgstr "derecha"
 
 #: survey/exporter/tex/survey2tex.py:32
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
-msgstr ""
+msgstr "No podemos generar el PDF, necesitamos instalar 'xelatex'"
 
 #: survey/exporter/tex/survey2tex.py:82
 msgid "We could not render a chart because the type"
-msgstr "no pudimos generar un gráfico porque el tipo"
+msgstr "No pudimos generar un gráfico porque el tipo"
 
 #: survey/exporter/tex/survey2tex.py:85
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
@@ -135,7 +135,7 @@ msgstr "No hay preguntas para mostrar en esta encuesta."
 
 #: survey/exporter/tex/survey2tex.py:189
 msgid "Cannot export multiple PDF, choose only one."
-msgstr "No se pueden exportar varios PDF, elija solo uno."
+msgstr "No se pueden exportar varios PDF, elije solo uno."
 
 #: survey/exporter/tex/survey2tex.py:198
 #, python-format
@@ -200,24 +200,24 @@ msgid ""
 "options for this question ."
 msgstr ""
 "El campo de opciones solo se usa si el tipo de pregunta\n"
-"es 'radio', 'select', o 'select multiple'. Proporciona una lista de opciones\n"
+"es 'radio', 'selección simple', o 'selección múltiple'. Proporciona una lista de opciones\n"
 "separadas por comas para esta pregunta."
 
 #: survey/models/question.py:63
 msgid "text (multiple line)"
-msgstr "texto (multilínea)"
+msgstr "Texto (multilínea)"
 
 #: survey/models/question.py:64
 msgid "short text (one line)"
-msgstr "texto corto (una línea)"
+msgstr "Texto corto (una línea)"
 
 #: survey/models/question.py:65
 msgid "radio"
-msgstr "radio"
+msgstr "Radio"
 
 #: survey/models/question.py:66
 msgid "select"
-msgstr "selecciona"
+msgstr "Selección simple"
 
 #: survey/models/question.py:67
 msgid "Select Multiple"
@@ -229,15 +229,15 @@ msgstr "Selecciona imagen"
 
 #: survey/models/question.py:69
 msgid "integer"
-msgstr "entero"
+msgstr "Entero"
 
 #: survey/models/question.py:70
 msgid "float"
-msgstr ""
+msgstr "Coma flotante"
 
 #: survey/models/question.py:71
 msgid "date"
-msgstr ""
+msgstr "Fecha"
 
 #: survey/models/question.py:74
 msgid "Text"
@@ -325,7 +325,7 @@ msgstr "Fecha de publication"
 
 #: survey/models/survey.py:37
 msgid "Expiration date"
-msgstr "Fecha de borrado"
+msgstr "Fecha de caducidad"
 
 #: survey/models/survey.py:40
 msgid "survey"
@@ -346,7 +346,7 @@ msgstr "Lo sentimos, pero ya has respondido a nuestra encuesta"
 
 #: survey/templates/survey/completed.html:9
 msgid "Back to survey list"
-msgstr "Regresa a la lista de encuesta"
+msgstr "Regresa a la lista de encuestas"
 
 #: survey/templates/survey/confirm.html:4
 #: survey/templates/survey/confirm.html:7

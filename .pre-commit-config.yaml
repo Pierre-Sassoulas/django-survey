@@ -13,12 +13,12 @@ repos:
           - --remove-duplicate-keys
           - --remove-unused-variables
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.18.2
+    rev: v2.19.0
     hooks:
       - id: pyupgrade
         args: [--py36-plus]
-  - repo: https://github.com/ambv/black
-    rev: 21.5b1
+  - repo: https://github.com/psf/black
+    rev: 21.5b2
     hooks:
       - id: black
         args: [--line-length, "120"]
@@ -29,7 +29,7 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-json
-  - repo: https://gitlab.com/pycqa/flake8
+  - repo: https://github.com/PyCQA/flake8
     rev: 3.9.2
     hooks:
       - id: flake8

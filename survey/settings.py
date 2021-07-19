@@ -49,7 +49,7 @@ TEMPLATES = [
 
 INSTALLED_APPS = ("survey", "bootstrapform")
 
-DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 LOCALE_PATHS = (Path(ROOT, "survey", "locale"),)
 LANGUAGE_CODE = "en"

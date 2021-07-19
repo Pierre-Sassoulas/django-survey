@@ -121,7 +121,7 @@ INSTALLED_APPS = (
     "rosetta",
 )
 
-DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 LOCALE_PATHS = (os.path.join(ROOT, "survey", "locale"),)
 LANGUAGE_CODE = "en-us"

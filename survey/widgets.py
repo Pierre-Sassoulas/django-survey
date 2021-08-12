@@ -4,6 +4,7 @@ from django.template.loader import render_to_string
 
 class ImageSelectWidget(forms.widgets.Widget):
     template_name = "survey/forms/image_select.html"
+
     class Media:
         js = (
             "http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js",

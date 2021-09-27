@@ -25,7 +25,7 @@ RIGHT_NOW = datetime(2010, 1, 1, 0, 0, 0)
 @override_settings(SURVEY_DIRECTORY=Path(ROOT, "survey"))
 class TestSurvey2X(TestManagement):
     def setUp(self):
-        TestManagement.setUp(self)
+        super().setUp()
         self.virtual_survey2x = Survey2X(self.survey)
         self.actual_survey2x = Survey2Survey(self.survey)
         self.expected_actual = Path(ROOT, "survey", "test-management-survey.survey")

@@ -7,7 +7,7 @@ from survey.tests.management.test_management import TestManagement
 
 class TestConfiguration(TestManagement):
     def setUp(self):
-        TestManagement.setUp(self)
+        super().setUp()
         self.conf = Configuration(self.test_conf_path)
         self.default = Configuration()
         self.ts_conf = self.conf.get(survey_name="Test survëy")

@@ -15,7 +15,7 @@ except ImportError:
 
 class TestQuestion(BaseModelTest):
     def setUp(self):
-        BaseModelTest.setUp(self)
+        super().setUp()
         text = "Lorem ipsum dolor sit amët, <strong> consectetur </strong> adipiscing elit."
         self.question = Question.objects.get(text=text)
         choices = "abé cé, Abë-cè, Abé Cé, dé, Dé, dë"

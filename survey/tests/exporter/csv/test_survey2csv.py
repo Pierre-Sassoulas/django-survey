@@ -9,7 +9,7 @@ class TestSurvey2Csv(TestManagement):
     """Permit to check if export result is working as intended."""
 
     def setUp(self):
-        TestManagement.setUp(self)
+        super().setUp()
         self.maxDiff = None
         self.s2csv = Survey2Csv(self.survey)
 

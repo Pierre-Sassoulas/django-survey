@@ -5,7 +5,7 @@ from survey.tests.management.test_management import TestManagement
 
 class TestConfigurationBuilder(TestManagement):
     def setUp(self):
-        TestManagement.setUp(self)
+        super().setUp()
 
     def test_init_surveys(self):
         """Only one survey if we init with a survey, all surveys otherwise"""

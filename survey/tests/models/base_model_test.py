@@ -4,7 +4,7 @@ from survey.tests import BaseTest
 
 class BaseModelTest(BaseTest):
     def setUp(self):
-        BaseTest.setUp(self)
+        super().setUp()
         self.survey = Survey.objects.create(
             name="Internal Test Survey",
             is_published=True,

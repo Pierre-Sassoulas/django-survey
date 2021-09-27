@@ -81,7 +81,7 @@ class TestManagement(BaseTest):
                 Answer.objects.create(response=response, question=question, body=answer)
 
     def setUp(self):
-        BaseTest.setUp(self)
+        super().setUp()
         self.create_survey()
         self.expected_content = """\
 user,Aèbc?,Bècd?,Cède?,Dèef?

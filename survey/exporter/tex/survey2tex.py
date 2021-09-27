@@ -37,7 +37,7 @@ class Survey2Tex(Survey2X):
     PGF_PLOT_STY = Path(STATIC, "survey", "sty", "pgfplots.sty")
 
     def __init__(self, survey, configuration=None):
-        Survey2X.__init__(self, survey)
+        super().__init__(survey)
         if configuration is None:
             configuration = Configuration()
         self.tconf = configuration

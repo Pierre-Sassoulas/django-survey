@@ -42,6 +42,7 @@ The software is developed in english. Other available languages are :
 - [x] Russian thanks to [Vlad M.](https://github.com/manchos/)
 - [x] Polish thanks to [Daniel Horner](https://github.com/d-horner/)
 - [x] Dutch thanks to [John Guyver](https://github.com/JohnGuyver117)
+- [x] Turkish thanks to [Hüseyin Emre Armağan](https://github.com/Telomeraz)
 
 ## Getting started
 

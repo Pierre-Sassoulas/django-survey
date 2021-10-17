@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-31 06:42+0000\n"
+"POT-Creation-Date: 2021-10-17 20:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,10 @@ msgstr[1] ""
 
 #: survey/actions.py:21
 msgid "Mark selected surveys as published"
+msgstr ""
+
+#: survey/decorators.py:27
+msgid "This survey has expired for new submissions."
 msgstr ""
 
 #: survey/exporter/csv/survey2csv.py:37
@@ -356,7 +360,7 @@ msgstr ""
 msgid "Welcome to the Django Survey app"
 msgstr ""
 
-#: survey/templates/survey/list.html:10
+#: survey/templates/survey/list.html:19
 msgid "Take the Survey"
 msgstr ""
 

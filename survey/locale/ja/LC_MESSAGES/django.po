@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-31 06:42+0000\n"
+"POT-Creation-Date: 2021-10-17 20:10+0000\n"
 "PO-Revision-Date: 2018-04-09 00:52+0000\n"
 "Last-Translator: b'  <nsuzue@me.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,6 +36,10 @@ msgstr[1] "%(count)d つの調査が「公開」に設定されました"
 #: survey/actions.py:21
 msgid "Mark selected surveys as published"
 msgstr "選択した調査を公開する"
+
+#: survey/decorators.py:27
+msgid "This survey has expired for new submissions."
+msgstr ""
 
 #: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
@@ -362,7 +366,7 @@ msgstr "あとで回答内容を変更することが出来ます。"
 msgid "Welcome to the Django Survey app"
 msgstr "Django Surveyアプリケーションにようこそ"
 
-#: survey/templates/survey/list.html:10
+#: survey/templates/survey/list.html:19
 msgid "Take the Survey"
 msgstr "この調査に回答する"
 

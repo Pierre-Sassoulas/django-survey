@@ -1,0 +1,381 @@
+# Turkish translations.
+# Copyright (C) 2021
+# This file is distributed under the same license as the django-survey-and-report package.
+# Hüseyin Emre Armağan <huseyinemre_armagan@hotmail.com>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-17 13:46+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: dev/templates/base.html:3
+msgid "en"
+msgstr "tr"
+
+#: dev/templates/base.html:5
+msgid "DEVELOPMENT django-Survey"
+msgstr "GELİŞTİRME django-survey"
+
+#: survey/actions.py:12
+#, python-format
+msgid "%(count)d survey was successfully marked as published."
+msgid_plural "%(count)d surveys were successfully marked as published"
+msgstr[0] "%(count)d anketi başarıyla yayınlandı olarak işaretlendi."
+msgstr[1] "%(count)d anketleri başarıyla yayınlandı olarak işaretlendi."
+
+#: survey/actions.py:21
+msgid "Mark selected surveys as published"
+msgstr "Seçili anketleri yayınlandı olarak işaretle"
+
+#: survey/exporter/csv/survey2csv.py:37
+msgid "Anonymous"
+msgstr "Anonim"
+
+#: survey/exporter/csv/survey2csv.py:67
+msgid "user"
+msgstr "kullanıcı"
+
+#: survey/exporter/csv/survey2csv.py:111
+msgid "Export to CSV"
+msgstr "CSV'ye aktar"
+
+#: survey/exporter/tex/question2tex.py:62
+msgid "with"
+msgstr "ile"
+
+#: survey/exporter/tex/question2tex.py:64
+#, python-format
+msgid "%(min_cardinality)d respondents or more"
+msgid_plural "%(min_cardinality)d respondent or more"
+msgstr[0] "%(min_cardinality)d veya daha fazla katılımcı"
+msgstr[1] "%(min_cardinality)d veya daha fazla katılımcı"
+
+#: survey/exporter/tex/question2tex.py:76
+msgid "excluding"
+msgstr "hariç"
+
+#: survey/exporter/tex/question2tex.py:81
+#: survey/exporter/tex/question2tex.py:115
+#: survey/exporter/tex/question2tex.py:118
+msgid "and"
+msgstr "ve"
+
+#: survey/exporter/tex/question2tex.py:112
+#: survey/exporter/tex/question2tex.py:113
+msgid "or"
+msgstr "veya"
+
+#: survey/exporter/tex/question2tex.py:127
+msgid "Repartition of answers"
+msgstr "Yanıtların yeniden bölümlendirilmesi"
+
+#: survey/exporter/tex/question2tex_chart.py:66
+msgid "Left blank"
+msgstr "Boşluk bırak"
+
+#: survey/exporter/tex/question2tex_chart.py:111
+#: survey/exporter/tex/question2tex_sankey.py:55
+msgid "for the question"
+msgstr "soru için"
+
+#: survey/exporter/tex/question2tex_chart.py:121
+msgid "No answers for this question."
+msgstr "Bu soru için hiç yanıt yok."
+
+#: survey/exporter/tex/question2tex_raw.py:24
+msgid "Participant"
+msgstr "Katılımcı"
+
+#: survey/exporter/tex/question2tex_sankey.py:27
+msgid "Cannot generate PDF, we need 'pySankeyBeta' to be installed."
+msgstr "PDF oluşturulamıyor, 'pySankeyBeta'nın indilmesine ihtiyacımız var."
+
+#: survey/exporter/tex/question2tex_sankey.py:55
+msgid "left"
+msgstr "sol"
+
+#: survey/exporter/tex/question2tex_sankey.py:57
+msgid "in relation with the question"
+msgstr "soru ile ilgili olarak"
+
+#: survey/exporter/tex/question2tex_sankey.py:59
+msgid "right"
+msgstr "sağ"
+
+#: survey/exporter/tex/survey2tex.py:30
+msgid "Cannot generate PDF, we need 'xelatex' to be installed."
+msgstr "PDF oluşturulamıyor, 'xelatex'in indilmesine ihtiyacımız var."
+
+#: survey/exporter/tex/survey2tex.py:80
+msgid "We could not render a chart because the type"
+msgstr "Tipi nedeniyle bir grafik oluşturamadık"
+
+#: survey/exporter/tex/survey2tex.py:83
+msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
+msgstr "standart bir tip veya içe aktarılabilir geçerli bir Question2Tex alt sınıfının yolu değil.'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' veya 'package.path.MyQuestion2TexCustomClass'tan birini seç"
+
+#: survey/exporter/tex/survey2tex.py:157
+msgid "No questions to display in this survey."
+msgstr "Bu ankette görüntülenecek bir soru yok."
+
+#: survey/exporter/tex/survey2tex.py:187
+msgid "Cannot export multiple PDF, choose only one."
+msgstr "Birden fazla PDF dışa aktarılamıyor, yalnızca birini seçin."
+
+#: survey/exporter/tex/survey2tex.py:196
+#, python-format
+msgid "Error during PDF generation: %s"
+msgstr "PDF oluşturma sırasında hata: %s"
+
+#: survey/exporter/tex/survey2tex.py:203
+msgid "Export to PDF"
+msgstr "PDF'e aktar"
+
+#: survey/models/answer.py:21
+msgid "Question"
+msgstr "Soru"
+
+#: survey/models/answer.py:22
+msgid "Response"
+msgstr "Yanıt"
+
+#: survey/models/answer.py:23 survey/models/response.py:25
+msgid "Creation date"
+msgstr "Oluşturulma tarihi"
+
+#: survey/models/answer.py:24 survey/models/response.py:26
+msgid "Update date"
+msgstr "Güncelleme tarihi"
+
+#: survey/models/answer.py:25
+msgid "Content"
+msgstr "İçerik"
+
+#: survey/models/category.py:10 survey/models/survey.py:26
+msgid "Name"
+msgstr "İsim"
+
+#: survey/models/category.py:11 survey/models/question.py:78
+#: survey/models/response.py:27
+msgid "Survey"
+msgstr "Anket"
+
+#: survey/models/category.py:12
+msgid "Display order"
+msgstr "Görüntüleme sırası"
+
+#: survey/models/category.py:13 survey/models/survey.py:27
+msgid "Description"
+msgstr "Açıklama"
+
+#: survey/models/category.py:17
+msgid "category"
+msgstr "kategori"
+
+#: survey/models/category.py:18
+msgid "categories"
+msgstr "kategoriler"
+
+#: survey/models/question.py:21
+msgid ""
+"The choices field is only used if the question type\n"
+"if the question type is 'radio', 'select', or\n"
+"'select multiple' provide a comma-separated list of\n"
+"options for this question ."
+msgstr ""
+"Seçenekler alanı yalnızca, soru tipi 'radio',\n"
+"'select' veya 'select_multiple' ise kullanılır, bu\n"
+"soru için virgülle ayrılmış bir seçenekler listesi\n"
+"giriniz."
+
+#: survey/models/question.py:61
+msgid "text (multiple line)"
+msgstr "metin (çoklu satır)"
+
+#: survey/models/question.py:62
+msgid "short text (one line)"
+msgstr "kısa metin (tek satır)"
+
+#: survey/models/question.py:63
+msgid "radio"
+msgstr "radio"
+
+#: survey/models/question.py:64
+msgid "select"
+msgstr "select"
+
+#: survey/models/question.py:65
+msgid "Select Multiple"
+msgstr "Çoklu Seç"
+
+#: survey/models/question.py:66
+msgid "Select Image"
+msgstr "Görsel Seç"
+
+#: survey/models/question.py:67
+msgid "integer"
+msgstr "integer"
+
+#: survey/models/question.py:68
+msgid "float"
+msgstr "float"
+
+#: survey/models/question.py:69
+msgid "date"
+msgstr "tarih"
+
+#: survey/models/question.py:72
+msgid "Text"
+msgstr "Metin"
+
+#: survey/models/question.py:73
+msgid "Order"
+msgstr "Sıralama"
+
+#: survey/models/question.py:74
+msgid "Required"
+msgstr "Zorunlu"
+
+#: survey/models/question.py:76
+msgid "Category"
+msgstr "Kategori"
+
+#: survey/models/question.py:79
+msgid "Type"
+msgstr "Tip"
+
+#: survey/models/question.py:80
+msgid "Choices"
+msgstr "Seçenekler"
+
+#: survey/models/question.py:83
+msgid "question"
+msgstr "soru"
+
+#: survey/models/question.py:84
+msgid "questions"
+msgstr "sorular"
+
+#: survey/models/response.py:28
+msgid "User"
+msgstr "Kullanıcı"
+
+#: survey/models/response.py:29
+msgid "Interview unique identifier"
+msgstr "Görüşmenin benzersiz tanımlayıcısı"
+
+#: survey/models/response.py:32
+msgid "Set of answers to surveys"
+msgstr "Anketlere verilen yanıt seti"
+
+#: survey/models/response.py:33
+msgid "Sets of answers to surveys"
+msgstr "Anketlere verilen yanıt setleri"
+
+#: survey/models/survey.py:21
+msgid "By question"
+msgstr "Soru ile"
+
+#: survey/models/survey.py:22
+msgid "By category"
+msgstr "Kategori ile"
+
+#: survey/models/survey.py:23
+msgid "All in one page"
+msgstr "Hepsi tek sayfada"
+
+#: survey/models/survey.py:28
+msgid "Users can see it and answer it"
+msgstr "Kullanıcılar görebilir ve yanıtlayabilir"
+
+#: survey/models/survey.py:29
+msgid "Only authenticated users can see it and answer it"
+msgstr "Yalnızca kimliği doğrulanmış kullanıcılar görebilir ve yanıtlayabilir"
+
+#: survey/models/survey.py:30
+msgid "Users can edit their answers afterwards"
+msgstr "Kullanıcılar daha sonra yanıtlarını düzenleyebilir"
+
+#: survey/models/survey.py:32
+msgid "Display method"
+msgstr "Görüntüleme yöntemi"
+
+#: survey/models/survey.py:34
+msgid "Template"
+msgstr "Şablon"
+
+#: survey/models/survey.py:35
+msgid "Publication date"
+msgstr "Yayın tarihi"
+
+#: survey/models/survey.py:36
+msgid "Expiration date"
+msgstr "Bitiş tarihi"
+
+#: survey/models/survey.py:39
+msgid "survey"
+msgstr "anket"
+
+#: survey/models/survey.py:40
+msgid "surveys"
+msgstr "anketler"
+
+#: survey/templates/survey/completed.html:4
+#: survey/templates/survey/completed.html:7
+msgid "Survey completed"
+msgstr "Anket tamamlandı"
+
+#: survey/templates/survey/completed.html:8
+msgid "Sorry! Your already replied to our survey"
+msgstr "Üzgünüm! Anketimizi zaten yanıtladınız"
+
+#: survey/templates/survey/completed.html:9
+msgid "Back to survey list"
+msgstr "Anket listesine dön"
+
+#: survey/templates/survey/confirm.html:4
+#: survey/templates/survey/confirm.html:7
+msgid "Survey submitted"
+msgstr "Anket gönderildi"
+
+#: survey/templates/survey/confirm.html:10
+msgid "Thanks! Your answers have been saved"
+msgstr "Teşekkürler! Yanıtlarınız kaydedildi"
+
+#: survey/templates/survey/confirm.html:14
+msgid "You can always come back and change them."
+msgstr "Her zaman geri gelip değiştirebilirsiniz."
+
+#: survey/templates/survey/list.html:6
+msgid "Welcome to the Django Survey app"
+msgstr "Django Survey uygulamasına hoş geldiniz"
+
+#: survey/templates/survey/list.html:10
+msgid "Take the Survey"
+msgstr "Ankete katılın"
+
+#: survey/templates/survey/survey.html:44
+msgid "Answer this part"
+msgstr "Bu bölümü yanıtlayın"
+
+#: survey/templates/survey/survey.html:57
+msgid "Questions"
+msgstr "Sorular"
+
+#: survey/templates/survey/survey.html:67
+msgid "Next!"
+msgstr "Sonraki!"
+
+#: survey/templates/survey/survey.html:73
+msgid "I'm done!"
+msgstr "Bitti!"

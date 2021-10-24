@@ -38,6 +38,10 @@ msgstr[1] "%(count)d survei berhasil ditandai sebagai diterbitkan"
 msgid "Mark selected surveys as published"
 msgstr "Tandai survei yang dipilih sebagai diterbitkan"
 
+#: survey/decorators.py:27
+msgid "This survey has expired for new submissions."
+msgstr ""
+
 #: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
 msgstr "Anonim"
@@ -364,7 +368,7 @@ msgstr "Anda dapat kembali dan mengubahnya kapanpun."
 msgid "Welcome to the Django Survey app"
 msgstr "Selamat datang di aplikasi Django Survey"
 
-#: survey/templates/survey/list.html:10
+#: survey/templates/survey/list.html:19
 msgid "Take the Survey"
 msgstr "Ambil bagian pada survei"
 

@@ -37,6 +37,10 @@ msgstr[1] "%(count)d つの調査が「公開」に設定されました"
 msgid "Mark selected surveys as published"
 msgstr "選択した調査を公開する"
 
+#: survey/decorators.py:27
+msgid "This survey has expired for new submissions."
+msgstr ""
+
 #: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
 msgstr "匿名"
@@ -366,7 +370,7 @@ msgstr "あとで回答内容を変更することが出来ます。"
 msgid "Welcome to the Django Survey app"
 msgstr "Django Surveyアプリケーションにようこそ"
 
-#: survey/templates/survey/list.html:10
+#: survey/templates/survey/list.html:19
 msgid "Take the Survey"
 msgstr "この調査に回答する"
 

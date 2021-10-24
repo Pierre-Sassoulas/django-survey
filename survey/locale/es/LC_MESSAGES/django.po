@@ -38,6 +38,10 @@ msgstr[1] "encuestas %(count)d se marcaron exitosamente como publicadas."
 msgid "Mark selected surveys as published"
 msgstr "Marca las encuestas seleccionadas como publicadas"
 
+#: survey/decorators.py:27
+msgid "This survey has expired for new submissions."
+msgstr ""
+
 #: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
 msgstr "Anónimo"
@@ -369,7 +373,7 @@ msgstr "Siempre puedes regresar y hacer cambios."
 msgid "Welcome to the Django Survey app"
 msgstr "Bienvenido a Django Survey"
 
-#: survey/templates/survey/list.html:10
+#: survey/templates/survey/list.html:19
 msgid "Take the Survey"
 msgstr "Toma la encuesta"
 

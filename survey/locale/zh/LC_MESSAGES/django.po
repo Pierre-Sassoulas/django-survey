@@ -38,6 +38,10 @@ msgstr[1] "%(count)d 件问卷成功标记为「已发布」"
 msgid "Mark selected surveys as published"
 msgstr "标记选择的问卷为「已发布」"
 
+#: survey/decorators.py:27
+msgid "This survey has expired for new submissions."
+msgstr ""
+
 #: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
 msgstr "匿名"
@@ -363,7 +367,7 @@ msgstr "您可以随时回来修改它们"
 msgid "Welcome to the Django Survey app"
 msgstr "欢迎来到 Django 问卷APP"
 
-#: survey/templates/survey/list.html:10
+#: survey/templates/survey/list.html:19
 msgid "Take the Survey"
 msgstr "开始本问卷"
 

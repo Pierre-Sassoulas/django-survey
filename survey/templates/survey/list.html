@@ -4,6 +4,15 @@
 {% block body %}
 <div id="intro">
 	<h1>{% trans "Welcome to the Django Survey app"%}</h1>
+    {% if messages %}
+        <p>
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </p>
+    {% endif %}
 
 	<ul>
 		{% for survey in surveys %}

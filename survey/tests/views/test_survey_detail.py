@@ -119,7 +119,8 @@ class TestSurveyDetail(BaseTest):
     def test_when_expiration_date_is_in_past_survey_is_not_visible(self):
         """when expiration_date is in the past the survey should be hidden"""
         response = self.client.get(reverse("survey-detail", args=(6,)))
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("survey-list"))
 
     def test_when_publication_date_is_in_future_survey_is_not_visible(self):
         """when publish_date is in the future the survey should be hidden"""
@@ -129,7 +130,8 @@ class TestSurveyDetail(BaseTest):
     def test_when_expiration_date_is_in_past_survey_is_not_visible_via_post(self):
         """when expiration_date is in the past the survey should be hidden for post requests"""
         response = self.client.post(reverse("survey-detail", args=(6,)))
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("survey-list"))
 
     def test_when_publication_date_is_in_future_survey_is_not_visible_via_post(self):
         """when publish_date is in the future the survey should be hidden for post requests"""

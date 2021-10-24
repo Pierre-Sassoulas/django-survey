@@ -37,6 +37,10 @@ msgstr[1] "%(count)d ankiety zostały skutecznie oznaczone jako publiczne"
 msgid "Mark selected surveys as published"
 msgstr "Oznacz wybrane ankiety jako publiczne"
 
+#: survey/decorators.py:27
+msgid "This survey has expired for new submissions."
+msgstr ""
+
 #: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
 msgstr "Anonimowy"
@@ -364,7 +368,7 @@ msgstr "Zawsze możesz powrócić i je zmienić."
 msgid "Welcome to the Django Survey app"
 msgstr "Witamy w Django Survey app"
 
-#: survey/templates/survey/list.html:10
+#: survey/templates/survey/list.html:19
 msgid "Take the Survey"
 msgstr "Rozpocznij ankietę"
 

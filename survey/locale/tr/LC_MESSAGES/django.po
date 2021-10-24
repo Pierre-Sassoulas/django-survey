@@ -37,6 +37,10 @@ msgstr[1] "%(count)d anketleri başarıyla yayınlandı olarak işaretlendi."
 msgid "Mark selected surveys as published"
 msgstr "Seçili anketleri yayınlandı olarak işaretle"
 
+#: survey/decorators.py:27
+msgid "This survey has expired for new submissions."
+msgstr "Bu anketin yeni gönderimler için süresi dolmuştur."
+
 #: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
 msgstr "Anonim"
@@ -364,7 +368,7 @@ msgstr "Her zaman geri gelip değiştirebilirsiniz."
 msgid "Welcome to the Django Survey app"
 msgstr "Django Survey uygulamasına hoş geldiniz"
 
-#: survey/templates/survey/list.html:10
+#: survey/templates/survey/list.html:19
 msgid "Take the Survey"
 msgstr "Ankete katılın"
 

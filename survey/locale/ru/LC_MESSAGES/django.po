@@ -38,6 +38,10 @@ msgstr[1] "опросы %(count)d помечены как опубликован
 msgid "Mark selected surveys as published"
 msgstr "Помечено как опублиовано"
 
+#: survey/decorators.py:27
+msgid "This survey has expired for new submissions."
+msgstr ""
+
 #: survey/exporter/csv/survey2csv.py:37
 msgid "Anonymous"
 msgstr "Анонимно"
@@ -372,7 +376,7 @@ msgstr "Вы всегда можете вернуться и изменить и
 msgid "Welcome to the Django Survey app"
 msgstr "Добро пожаловать в Опросник"
 
-#: survey/templates/survey/list.html:10
+#: survey/templates/survey/list.html:19
 msgid "Take the Survey"
 msgstr "Принять участие в опросе"
 

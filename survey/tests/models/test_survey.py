@@ -1,5 +1,6 @@
 from datetime import date
 
+from django.core.validators import URLValidator
 from django.utils.timezone import now
 
 from survey.tests.models import BaseModelTest
@@ -34,3 +35,6 @@ class TestSurvey(BaseModelTest):
     def test_expiration_date_is_in_future(self):
         """by default the expiration should be a week in the future"""
         self.assertGreater(self.survey.expire_date, now())
+
+    def test_redirect_url(self):
+        self.assertIsNone(URLValidator()(self.survey.redirect_url))

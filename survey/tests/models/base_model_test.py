@@ -10,6 +10,7 @@ class BaseModelTest(BaseTest):
             is_published=True,
             need_logged_user=False,
             display_method=Survey.ALL_IN_ONE_PAGE,
+            redirect_url="https://www.google.com",
         )
         self.response = Response.objects.create(survey=self.survey)
         self.questions = []

@@ -331,7 +331,7 @@ msgstr "Date de suppression"
 
 #: survey/models/survey.py:37
 msgid "Redirect URL"
-msgstr ""
+msgstr "URL de redirection"
 
 #: survey/models/survey.py:40
 msgid "survey"

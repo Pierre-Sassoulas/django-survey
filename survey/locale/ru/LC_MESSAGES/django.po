@@ -336,7 +336,7 @@ msgstr "дата удаления"
 
 #: survey/models/survey.py:37
 msgid "Redirect URL"
-msgstr ""
+msgstr "URL перенаправления"
 
 #: survey/models/survey.py:40
 msgid "survey"

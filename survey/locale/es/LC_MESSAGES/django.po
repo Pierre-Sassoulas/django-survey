@@ -333,7 +333,7 @@ msgstr "Fecha de caducidad"
 
 #: survey/models/survey.py:37
 msgid "Redirect URL"
-msgstr ""
+msgstr "Redireccionar URL"
 
 #: survey/models/survey.py:40
 msgid "survey"

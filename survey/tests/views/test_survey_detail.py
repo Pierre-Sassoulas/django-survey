@@ -3,7 +3,7 @@ import logging
 from django.conf import settings
 from django.urls.base import reverse
 
-from survey.models import Answer, Response
+from survey.models import Answer, Response, Survey
 from survey.tests import BaseTest
 
 LOGGER = logging.getLogger(__name__)
@@ -153,6 +153,17 @@ class TestSurveyDetail(BaseTest):
         the survey should be visible"""
         response = self.client.get(reverse("survey-detail", args=(10,)))
         self.assertEqual(response.status_code, 200)
+
+    def test_when_the_survey_has_redirect_url(self):
+        """when a survey has redirect url, should redirect to redirect_url"""
+        response = self.client.post(
+            reverse("survey-detail", args=(12,)),
+            data={
+                "question_16": "test answer",
+            },
+        )
+        redirect_url = Survey.objects.get(pk=12).redirect_url
+        self.assertRedirects(response, redirect_url, status_code=302, fetch_redirect_response=False)
 
     # def test_multipage_category_survey(self):
     #     """

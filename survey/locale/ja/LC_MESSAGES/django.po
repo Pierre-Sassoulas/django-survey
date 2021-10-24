@@ -330,7 +330,7 @@ msgstr ""
 
 #: survey/models/survey.py:37
 msgid "Redirect URL"
-msgstr ""
+msgstr "リダイレクトURL"
 
 #: survey/models/survey.py:40
 msgid "survey"

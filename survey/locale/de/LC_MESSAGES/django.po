@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-31 06:42+0000\n"
+"POT-Creation-Date: 2021-10-24 12:17+0000\n"
 "PO-Revision-Date: 2021-01-23 11:53+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -319,11 +319,15 @@ msgstr "Datum der Veröffentlichung"
 msgid "Expiration date"
 msgstr "Ablaufdatum"
 
-#: survey/models/survey.py:39
+#: survey/models/survey.py:37
+msgid "Redirect URL"
+msgstr ""
+
+#: survey/models/survey.py:40
 msgid "survey"
 msgstr "Umfrage"
 
-#: survey/models/survey.py:40
+#: survey/models/survey.py:41
 msgid "surveys"
 msgstr "Umfragen"
 

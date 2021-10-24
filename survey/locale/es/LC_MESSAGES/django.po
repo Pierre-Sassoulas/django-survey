@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-31 06:42+0000\n"
+"POT-Creation-Date: 2021-10-24 12:17+0000\n"
 "PO-Revision-Date: 2018-10-06 20:42+0000\n"
 "Last-Translator: Javier Ordóñez <>\n"
 "Language-Team: \n"
@@ -327,11 +327,15 @@ msgstr "Fecha de publication"
 msgid "Expiration date"
 msgstr "Fecha de caducidad"
 
-#: survey/models/survey.py:39
+#: survey/models/survey.py:37
+msgid "Redirect URL"
+msgstr ""
+
+#: survey/models/survey.py:40
 msgid "survey"
 msgstr "encuesta"
 
-#: survey/models/survey.py:40
+#: survey/models/survey.py:41
 msgid "surveys"
 msgstr "encuestas"
 

@@ -34,6 +34,7 @@ class Survey(models.Model):
     template = models.CharField(_("Template"), max_length=255, null=True, blank=True)
     publish_date = models.DateField(_("Publication date"), blank=True, null=False, default=now)
     expire_date = models.DateField(_("Expiration date"), blank=True, null=False, default=in_duration_day)
+    redirect_url = models.URLField(_("Redirect URL"), blank=True)
 
     class Meta:
         verbose_name = _("survey")

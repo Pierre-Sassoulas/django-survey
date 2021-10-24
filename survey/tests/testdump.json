@@ -207,6 +207,22 @@
  }
 },
 {
+  "model": "survey.survey",
+  "pk": 12,
+  "fields": {
+   "name": "Survey with Redirect URL",
+   "description": "Test survey with redirect url",
+   "is_published": true,
+   "need_logged_user": false,
+   "editable_answers": true,
+   "display_method": 2,
+   "template": null,
+   "publish_date": "2020-06-06",
+   "expire_date": "2055-06-13",
+   "redirect_url": "https://www.google.com"
+  }
+},
+{
  "model": "survey.category",
  "pk": 1,
  "fields": {
@@ -450,6 +466,19 @@
   "type": "text",
   "choices": ""
  }
+},
+{
+ "model": "survey.question",
+ "pk": 16,
+ "fields": {
+  "text": "First question of Survey with Redirect URL.",
+  "order": 1,
+  "required": true,
+  "category": null,
+  "survey": 12,
+  "type": "text",
+  "choices": ""
+}
 },
 {
  "model": "survey.response",

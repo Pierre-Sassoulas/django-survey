@@ -52,3 +52,6 @@ csv/multipage-category.csv
 tex/multipage-category.tex
 tex/q16_vs_q16.png
 tex/q15_vs_q15.png
+csv/survey-with-redirect-url.csv
+tex/q17_vs_q17.png
+tex/survey-with-redirect-url.tex

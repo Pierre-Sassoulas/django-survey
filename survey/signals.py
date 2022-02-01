@@ -1,3 +1,4 @@
 import django.dispatch
 
-survey_completed = django.dispatch.Signal(providing_args=["instance", "data"])
+# providing_args=["instance", "data"]
+survey_completed = django.dispatch.Signal()

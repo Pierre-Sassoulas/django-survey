@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-24 12:17+0000\n"
+"POT-Creation-Date: 2022-02-01 12:17+0000\n"
 "PO-Revision-Date: 2021-01-23 11:53+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,14 +27,14 @@ msgstr "de"
 msgid "DEVELOPMENT django-Survey"
 msgstr "Entwicklung django-survey"
 
-#: survey/actions.py:12
+#: survey/actions.py:11
 #, python-format
 msgid "%(count)d survey was successfully marked as published."
 msgid_plural "%(count)d surveys were successfully marked as published"
 msgstr[0] "%(count)d Umfrage erfolgreich als veröffentlicht markiert."
 msgstr[1] "%(count)d Umfragen erfolgreich als veröffentlicht markiert."
 
-#: survey/actions.py:21
+#: survey/actions.py:18
 msgid "Mark selected surveys as published"
 msgstr "Markiere ausgewählte Umfragen als veröffentlicht"
 

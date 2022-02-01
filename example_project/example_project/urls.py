@@ -13,7 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import include, url
+from django.conf.urls import include
+
+try:
+    from django.conf.urls import url
+except ImportError:
+    # Django 4.0 replaced url by something else
+    # See https://stackoverflow.com/a/70319607/2519059
+    from django.urls import re_path as url
 from django.contrib import admin
 
 urlpatterns = [url(r"^admin/", admin.site.urls), url(r"^survey/", include("survey.urls"))]

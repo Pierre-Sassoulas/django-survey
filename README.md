@@ -2,7 +2,7 @@
 
 A django survey app, based on and compatible with "django-survey". You will be able to
 migrate your data from an ancient version of django-survey, but it has been ported to
-python 3 and you can export results as CSV or PDF using your native language.
+python 3, and you can export results as CSV or PDF using your native language.
 
 If you want the latest version still compatible with python 2.7 you need a version <
 1.3.0.
@@ -71,7 +71,7 @@ INSTALLED_APPS += [
 ]
 ```
 
-Add an URL entry to your project’s urls.py, for example:
+Add a URL entry to your project’s urls.py, for example:
 
 ```python
 from django.conf import settings
@@ -92,7 +92,7 @@ Note: you can use whatever you wish as the URL prefix.
 You can also change some options:
 
 ```python
-# Permit to open the csv in excel without problem with separator
+# Permit to open the csv in Excel without problem with separator
 # Using this trick : https://superuser.com/a/686415/567417
 EXCEL_COMPATIBLE_CSV = True
 

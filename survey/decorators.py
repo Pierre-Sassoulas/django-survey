@@ -4,7 +4,7 @@ from functools import wraps
 
 from django.contrib import messages
 from django.shortcuts import Http404, get_object_or_404, redirect, reverse
-from django.utils.translation import ugettext
+from django.utils.translation import gettext_lazy as _
 
 from survey.models import Survey
 
@@ -24,7 +24,7 @@ def survey_available(func):
         if survey.expire_date < date.today():
             msg = "Survey is not published anymore. It was published until: '%s'."
             logging.warning(msg, survey.expire_date)
-            messages.warning(request, ugettext("This survey has expired for new submissions."))
+            messages.warning(request, _("This survey has expired for new submissions."))
             return redirect(reverse("survey-list"))
         if survey.publish_date > date.today():
             msg = "Survey is not yet published. It is due: '%s'."

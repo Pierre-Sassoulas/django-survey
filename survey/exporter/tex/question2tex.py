@@ -2,7 +2,7 @@ import logging
 
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
-from django.utils.translation import ungettext
+from django.utils.translation import ngettext
 
 from survey.models import Question
 
@@ -60,7 +60,7 @@ class Question2Tex:
         if self.min_cardinality > 0:
             caption += "{} {} ".format(
                 _("with"),
-                ungettext(
+                ngettext(
                     "%(min_cardinality)d respondents or more",
                     "%(min_cardinality)d respondent or more",
                     self.min_cardinality,

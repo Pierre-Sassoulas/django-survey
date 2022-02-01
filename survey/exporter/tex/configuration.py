@@ -1,6 +1,6 @@
-import collections
 import copy
 import logging
+from collections.abc import Mapping
 from pathlib import Path
 
 import yaml
@@ -77,17 +77,17 @@ class Configuration:
         try:
             self.recursive_update(dict_, update_dict[key])
         except KeyError:
-            # There is not configuration file for key, only the default one
+            # There is no configuration file for key, only the default one
             pass
 
     def recursive_update(self, dict_, update_dict):
-        """Update a dict recursively. It permit to keep the default value by
+        """Update a dict recursively. It permits to keep the default value by
         default and to be able to replace them by dictionaries.
         """
         if dict_ is None:
             return update_dict
         for key, value in update_dict.items():
-            if isinstance(value, collections.Mapping):
+            if isinstance(value, Mapping):
                 result = self.recursive_update(dict_.get(key, {}), value)
                 dict_[key] = result
             else:
@@ -114,7 +114,7 @@ class Configuration:
     def get_default_question_conf(conf):
         """A deepcopy of what we deem necessary in the question config.
 
-        We want to avoid copying everything in the conf. For example we do not
+        We want to avoid copying everything in the conf. For example, we do not
         need the document type in a question configuration.
 
         :param dict conf: Full configuration with useless element for questions

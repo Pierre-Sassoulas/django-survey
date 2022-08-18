@@ -18,7 +18,7 @@ with open(path.join(THIS_DIRECTORY, "README.md"), encoding="utf-8") as f:
     LONG_DESCRIPTION = f.read()
 
 DEPENDENCIES = [
-    "django>=2.2",
+    "django>=2.2,<4.1",
     "django-bootstrap-form>=3.4",
     "django-tastypie>=0.14.2",
     "django-registration>=3.0",

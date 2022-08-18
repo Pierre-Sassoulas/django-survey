@@ -2,6 +2,13 @@
 #  skip: [pylint]
 
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-json
   - repo: https://github.com/myint/autoflake
     rev: v1.4
     hooks:
@@ -26,13 +33,6 @@ repos:
     rev: v1.1.1
     hooks:
       - id: black-disable-checker
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
-    hooks:
-      - id: check-merge-conflict
-      - id: trailing-whitespace
-      - id: end-of-file-fixer
-      - id: check-json
   - repo: https://github.com/PyCQA/flake8
     rev: 5.0.4
     hooks:

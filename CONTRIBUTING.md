@@ -1,20 +1,4 @@
-# Django survey
-
-A django survey app, based on and compatible with "django-survey". You will be able to
-migrate your data from an ancient version of django-survey, but it has been ported to
-python 3 and you can export results as CSV or PDF using your native language.
-
-If you want the latest version still compatible with python 2.7 you need a version <
-1.3.0.
-
-Professional support for django-survey-and-report is available as part of the
-[Tidelift Subscription](https://tidelift.com/subscription/pkg/pypi-django-survey-and-report?utm_source=pypi-django-survey-and-report&utm_medium=referral&utm_campaign=enterprise)
-
-[![Build Status](https://travis-ci.org/Pierre-Sassoulas/django-survey.svg?branch=master)](https://travis-ci.org/Pierre-Sassoulas/django-survey)
-[![Coverage Status](https://coveralls.io/repos/github/Pierre-Sassoulas/django-survey/badge.svg?branch=master)](https://coveralls.io/github/Pierre-Sassoulas/django-survey?branch=master)
-[![PyPI version](https://badge.fury.io/py/django-survey-and-report.svg)](https://badge.fury.io/py/django-survey-and-report)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+# Contributing to Django survey
 
 ## Table of contents
 

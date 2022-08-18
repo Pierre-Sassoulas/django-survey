@@ -1,40 +1,40 @@
 # This file containt default values for tex configuration
 
 generic:
-    document_class: article
-    document_option: 12pt
-    date:
-    header: |
-        \usepackage{pgf-pie}
-        \usepackage{pgfplots}
-        \usepackage{pgfplotstable}
-        \usetikzlibrary{patterns}
-        \usepackage[section]{placeins}
-        \usepackage[utf8]{inputenc}
-    intro:
-    footer:
-    categories_type: section
-    question_type: subsection
-    multiple_chart_type: subsubsection
+  document_class: article
+  document_option: 12pt
+  date:
+  header: |
+    \usepackage{pgf-pie}
+    \usepackage{pgfplots}
+    \usepackage{pgfplotstable}
+    \usetikzlibrary{patterns}
+    \usepackage[section]{placeins}
+    \usepackage[utf8]{inputenc}
+  intro:
+  footer:
+  categories_type: section
+  question_type: subsection
+  multiple_chart_type: subsubsection
 
-    questions: {}
+  questions: {}
 
-    multiple_charts:
-    chart:
-        min_cardinality: 0
-        group_together:
-        group_by_slugify:
-        group_by_letter_case:
-        sort_answer:
-        pos:
-        rotate:
-        radius: 4
-        color:
-        explode:
-        sum: auto
-        after_number:
-        before_number:
-        scale_font:
-        text: legend
-        style:
-        type: pie
+  multiple_charts:
+  chart:
+    min_cardinality: 0
+    group_together:
+    group_by_slugify:
+    group_by_letter_case:
+    sort_answer:
+    pos:
+    rotate:
+    radius: 4
+    color:
+    explode:
+    sum: auto
+    after_number:
+    before_number:
+    scale_font:
+    text: legend
+    style:
+    type: pie

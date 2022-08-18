@@ -1,84 +1,80 @@
 generic: # Apply to every survey unless overriden
-    document_class: article
-    document_option: 12pt # If left empty, no option will be passed
-    date: # If left empty, current date will be used
-    header: | # Text just before \begin{document}
-        \usepackage{pgf-pie}
-        \usepackage{pgfplots}
-        \pgfplotsset{compat=1.13}
-        \usepackage{pgfplotstable}
-        \usetikzlibrary{patterns}
-        \usepackage[section]{placeins}
-        \usepackage[utf8]{inputenc}
-    intro: # The text just after \begin{document}
-    footer: # The text just before \end{document}
-    categories_type: section
-    question_type: subsection
+  document_class: article
+  document_option: 12pt # If left empty, no option will be passed
+  date: # If left empty, current date will be used
+  header: | # Text just before \begin{document}
+    \usepackage{pgf-pie}
+    \usepackage{pgfplots}
+    \pgfplotsset{compat=1.13}
+    \usepackage{pgfplotstable}
+    \usetikzlibrary{patterns}
+    \usepackage[section]{placeins}
+    \usepackage[utf8]{inputenc}
+  intro: # The text just after \begin{document}
+  footer: # The text just before \end{document}
+  categories_type: section
+  question_type: subsection
 
-    chart: # This config is applied to all surveys
-        min_cardinality: 0 # Display only answer with more this number of occurence
-        group_together: # Permit to group answers together and replace them by a placeholder, for example :
-            Agree:
-              Yes, Rather yes
-            Disagree:
-              No, Rather No
-        # It will group "yes" and "rather yes" under the placeholder "Agree" and
-        # "No" and "Rather No" under the placeholder "Disagree"
-        group_by_slugify: # Permit to group answer if their slugified value is the same
-        group_by_letter_case: # Permit to group answer regardless of their capitalization
-        sort_answer:
-        # Permit to sort answers. Possible values are:
-        # - None (Default to cardinal if we need to colorize in pgf-pie)
-        # - "alphanumeric" (Alphanumeric)
-        # - "cardinal" (Cardinality then alphanumeric)
-        # - user defined ie { "Answer": "rank1", "OtherAnswer": "rank2"} will
-        #   be sorted by value of the keys
+  chart: # This config is applied to all surveys
+    min_cardinality: 0 # Display only answer with more this number of occurence
+    group_together: # Permit to group answers together and replace them by a placeholder, for example :
+      Agree: Yes, Rather yes
+      Disagree: No, Rather No
+    # It will group "yes" and "rather yes" under the placeholder "Agree" and
+    # "No" and "Rather No" under the placeholder "Disagree"
+    group_by_slugify: # Permit to group answer if their slugified value is the same
+    group_by_letter_case: # Permit to group answer regardless of their capitalization
+    sort_answer:
+    # Permit to sort answers. Possible values are:
+    # - None (Default to cardinal if we need to colorize in pgf-pie)
+    # - "alphanumeric" (Alphanumeric)
+    # - "cardinal" (Cardinality then alphanumeric)
+    # - user defined ie { "Answer": "rank1", "OtherAnswer": "rank2"} will
+    #   be sorted by value of the keys
 
-        # The following option refer to pgfpie
-        # See http://mirrors.ircam.fr/pub/CTAN/graphics/pgf/contrib/pgf-pie/pgf-pie-manual.pdf
-        pos: 0,0 # Sets the centre of the chart to the value {⟨x⟩,⟨y⟩}.
-        rotate: 0 # Rotates the chart by the given number of degrees.
-        radius: 4 # Sets the radius of the chart.
-        color: # Sets the colours for each segment.
-        # The value should be a comma-separated list of colours corresponding
-        # to each segment or a single colour, which indicates the colour for
-        # the entire chart.
-        explode: 0 # Offset the segments. The value may be a single number,
-        # in which case all segments are offset by that amount, or the value
-        # may be a comma-separated list of numbers where each value is the
-        # offset amount for the corresponding segment.
-        sum: 100 # The sum of all the data. This can be calculated automatically if
-        # the auto option is set. If the auto option is off
-        # and the actual data sum is less that this value there will be a
-        # missing segment in the chart.
-        auto: # A boolean key. If true, the sum of the data is calculated automatically.
-        after number: \% # Indicates the text to place after the number shown in the segment. The default is \%.
-        before number: # Indicates the text to place before the number shown in the segment.
-        scale font: # A boolean key. If true, this scales the font used for the
-        # inner label according to the size of the segment, so large segments
-        # will have large inner labels and small segments will have small inner labels.
-        text: legend # Indicates how to position the text (outer label). The value may
-        # be one of
-        # - label (place the text label outside the segment),
-        # - pin (as label but also draws a line from the segment arc to the label),
-        # - inside (place the text label inside the segment above the value)
-        # - legend (create a legend). The default is label.
-        style: drop shadow # Apply a shadow on the pie chart
-        type: pie # a custom class name, sankey, raw, pie, cloud, square or polar
-        # raw permit to read all the answers as quote. Useful for long unique answer
-        # The polar area diagram is similar to a usual pie chart, except sectors
-        # are equal angles and differ rather in how far each sector extends from
-        # the center of the circle. Explode has no affects in square chart.
-        # "sankey" permit to create a sankey chart linked to another question
-        # A custom class name permit to provide your own Question2Tex() child
-        # class and do everything you want as long as we can import it
-
+    # The following option refer to pgfpie
+    # See http://mirrors.ircam.fr/pub/CTAN/graphics/pgf/contrib/pgf-pie/pgf-pie-manual.pdf
+    pos: 0,0 # Sets the centre of the chart to the value {⟨x⟩,⟨y⟩}.
+    rotate: 0 # Rotates the chart by the given number of degrees.
+    radius: 4 # Sets the radius of the chart.
+    color: # Sets the colours for each segment.
+    # The value should be a comma-separated list of colours corresponding
+    # to each segment or a single colour, which indicates the colour for
+    # the entire chart.
+    explode: 0 # Offset the segments. The value may be a single number,
+    # in which case all segments are offset by that amount, or the value
+    # may be a comma-separated list of numbers where each value is the
+    # offset amount for the corresponding segment.
+    sum: 100 # The sum of all the data. This can be calculated automatically if
+    # the auto option is set. If the auto option is off
+    # and the actual data sum is less that this value there will be a
+    # missing segment in the chart.
+    auto: # A boolean key. If true, the sum of the data is calculated automatically.
+    after number: \% # Indicates the text to place after the number shown in the segment. The default is \%.
+    before number: # Indicates the text to place before the number shown in the segment.
+    scale font: # A boolean key. If true, this scales the font used for the
+    # inner label according to the size of the segment, so large segments
+    # will have large inner labels and small segments will have small inner labels.
+    text: legend # Indicates how to position the text (outer label). The value may
+    # be one of
+    # - label (place the text label outside the segment),
+    # - pin (as label but also draws a line from the segment arc to the label),
+    # - inside (place the text label inside the segment above the value)
+    # - legend (create a legend). The default is label.
+    style: drop shadow # Apply a shadow on the pie chart
+    type: pie # a custom class name, sankey, raw, pie, cloud, square or polar
+    # raw permit to read all the answers as quote. Useful for long unique answer
+    # The polar area diagram is similar to a usual pie chart, except sectors
+    # are equal angles and differ rather in how far each sector extends from
+    # the center of the circle. Explode has no affects in square chart.
+    # "sankey" permit to create a sankey chart linked to another question
+    # A custom class name permit to provide your own Question2Tex() child
+    # class and do everything you want as long as we can import it
 
 Fake exemple survëy:
+  document_class: report # Override what is in generic
 
-    document_class: report # Override what is in generic
-
-    questions:
-        Do you understand this is the full text of an example survey's question ?:
-            chart: # the text for this pie chart will be "inside"
-                text: inside
+  questions:
+    Do you understand this is the full text of an example survey's question ?:
+      chart: # the text for this pie chart will be "inside"
+        text: inside

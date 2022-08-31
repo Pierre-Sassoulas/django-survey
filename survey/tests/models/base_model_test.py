@@ -24,6 +24,7 @@ class BaseModelTest(BaseTest):
             [Question.SELECT_MULTIPLE, "Yes", "Yes, No, Maybe"],
             [Question.INTEGER, 42, None],
             [Question.SELECT_MULTIPLE, "[u'2', u'4']", "2, 4, 6"],
+            [Question.FLOAT, 28.5, None],
         ]
         for i, data in enumerate(self.data):
             qtype, answer_body, answer_choices = data

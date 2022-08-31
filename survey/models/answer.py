@@ -57,19 +57,34 @@ class Answer(models.Model):
     def check_answer_body(self, question, body):
         if question.type in [Question.RADIO, Question.SELECT, Question.SELECT_MULTIPLE]:
             choices = question.get_clean_choices()
-            if body:
-                if body[0] == "[":
-                    answers = []
-                    for i, part in enumerate(body.split("'")):
-                        if i % 2 == 1:
-                            answers.append(part)
-                else:
-                    answers = [body]
-            for answer in answers:
-                if answer not in choices:
-                    msg = f"Impossible answer '{body}'"
-                    msg += f" should be in {choices} "
-                    raise ValidationError(msg)
+            self.check_answer_for_select(choices, body)
+        if question.type == Question.INTEGER and body and body != '':
+            try:
+                body = int(body)
+            except ValueError:
+                msg = 'Answer is not an integer'
+                raise ValidationError(msg)
+        if question.type == Question.FLOAT and body and body != '':
+            try:
+                body = float(body)
+            except ValueError:
+                msg = 'Answer is not a number'
+                raise ValidationError(msg)
+
+    def check_answer_for_select(self, choices, body):
+        answers = []
+        if body:
+            if body[0] == "[":
+                for i, part in enumerate(body.split("'")):
+                    if i % 2 == 1:
+                        answers.append(part)
+            else:
+                answers = [body]
+        for answer in answers:
+            if answer not in choices:
+                msg = f"Impossible answer '{body}'"
+                msg += f" should be in {choices} "
+                raise ValidationError(msg)
 
     def __str__(self):
         return f"{self.__class__.__name__} to '{self.question}' : '{self.body}'"

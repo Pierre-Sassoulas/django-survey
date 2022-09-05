@@ -58,17 +58,17 @@ class Answer(models.Model):
         if question.type in [Question.RADIO, Question.SELECT, Question.SELECT_MULTIPLE]:
             choices = question.get_clean_choices()
             self.check_answer_for_select(choices, body)
-        if question.type == Question.INTEGER and body and body != '':
+        if question.type == Question.INTEGER and body and body != "":
             try:
                 body = int(body)
             except ValueError:
-                msg = 'Answer is not an integer'
+                msg = "Answer is not an integer"
                 raise ValidationError(msg)
-        if question.type == Question.FLOAT and body and body != '':
+        if question.type == Question.FLOAT and body and body != "":
             try:
                 body = float(body)
             except ValueError:
-                msg = 'Answer is not a number'
+                msg = "Answer is not a number"
                 raise ValidationError(msg)
 
     def check_answer_for_select(self, choices, body):

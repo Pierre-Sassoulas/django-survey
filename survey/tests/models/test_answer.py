@@ -12,12 +12,13 @@ class TestAnswer(BaseModelTest):
 
     def test_init(self):
         """We raise validation error if the answer is not a possible choice"""
-        self.assertRaises(ValidationError, Answer, response=self.response,
-                          question=self.questions[4], body="Dd")
-        self.assertRaises(ValidationError, Answer, response=self.response,
-                          question=self.questions[5], body="not an int")
-        self.assertRaises(ValidationError, Answer, response=self.response,
-                          question=self.questions[7], body="not a float")
+        self.assertRaises(ValidationError, Answer, response=self.response, question=self.questions[4], body="Dd")
+        self.assertRaises(
+            ValidationError, Answer, response=self.response, question=self.questions[5], body="not an int"
+        )
+        self.assertRaises(
+            ValidationError, Answer, response=self.response, question=self.questions[7], body="not a float"
+        )
 
     def test_values(self):
         """We can have multiple nasty values ans it will be detected."""

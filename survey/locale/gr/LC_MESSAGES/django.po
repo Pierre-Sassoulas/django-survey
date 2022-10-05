@@ -1,0 +1,387 @@
+# This file is distributed under the MIT license.
+# Sotirios Zogos <sotgeo2008@hotmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-10 12:17+0000\n"
+"PO-Revision-Date: 2022-04-10 22:53+0000\n"
+"Last-Translator: b'  <>'\n"
+"Language-Team: \n"
+"Language: gr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.5\n"
+
+#: dev/templates/base.html:3
+msgid "en"
+msgstr "gr"
+
+#: dev/templates/base.html:5
+msgid "DEVELOPMENT django-Survey"
+msgstr "ΑΝΑΠΤΥΞΗ django-survey"
+
+#: survey/actions.py:11
+#, python-format
+msgid "%(count)d survey was successfully marked as published."
+msgid_plural "%(count)d surveys were successfully marked as published"
+msgstr[0] "%(count)d έρευνα επισημάνθηκαν επιτυχώς ως δημοσιευμένες."
+msgstr[1] "%(count)d έρευνες επισημάνθηκαν επιτυχώς ως δημοσιευμένες."
+
+#: survey/actions.py:18
+msgid "Mark selected surveys as published"
+msgstr "Επισήμανση επιλεγμένων ερευνών ως δημοσιευμένων"
+
+#: survey/decorators.py:27
+msgid "This survey has expired for new submissions."
+msgstr "Αυτή η έρευνα έχει λήξει για νέες υποβολές."
+
+#: survey/exporter/csv/survey2csv.py:37
+msgid "Anonymous"
+msgstr "Ανώνυμος"
+
+#: survey/exporter/csv/survey2csv.py:67
+msgid "user"
+msgstr "χρήστης"
+
+#: survey/exporter/csv/survey2csv.py:111
+msgid "Export to CSV"
+msgstr "Εξαγωγή ως CSV"
+
+#: survey/exporter/tex/question2tex.py:62
+msgid "with"
+msgstr "με"
+
+#: survey/exporter/tex/question2tex.py:64
+#, python-format
+msgid "%(min_cardinality)d respondents or more"
+msgid_plural "%(min_cardinality)d respondent or more"
+msgstr[0] "%(min_cardinality)d ερωτώμενους ή περισσότερους"
+msgstr[1] "%(min_cardinality)d ερωτώμενους ή περισσότερους"
+
+#: survey/exporter/tex/question2tex.py:76
+msgid "excluding"
+msgstr "εξαιρουμένων"
+
+#: survey/exporter/tex/question2tex.py:81
+#: survey/exporter/tex/question2tex.py:115
+#: survey/exporter/tex/question2tex.py:118
+msgid "and"
+msgstr "και"
+
+#: survey/exporter/tex/question2tex.py:112
+#: survey/exporter/tex/question2tex.py:113
+msgid "or"
+msgstr "ή"
+
+#: survey/exporter/tex/question2tex.py:127
+msgid "Repartition of answers"
+msgstr "Ανακατανομή των απαντήσεων"
+
+#: survey/exporter/tex/question2tex_chart.py:66
+msgid "Left blank"
+msgstr "Έμεινε κενό"
+
+#: survey/exporter/tex/question2tex_chart.py:111
+#: survey/exporter/tex/question2tex_sankey.py:55
+msgid "for the question"
+msgstr "για την ερώτηση"
+
+#: survey/exporter/tex/question2tex_chart.py:121
+msgid "No answers for this question."
+msgstr "Καμία απάντηση για αυτήν την ερώτηση."
+
+#: survey/exporter/tex/question2tex_raw.py:24
+msgid "Participant"
+msgstr "Συμμετέχων"
+
+#: survey/exporter/tex/question2tex_sankey.py:27
+msgid "Cannot generate PDF, we need 'pySankeyBeta' to be installed."
+msgstr "Το PDF δεν μπορεί να δημιουργηθεί, χρειαζόμαστε το 'pySankeyBeta' να εγκατασταθεί!"
+
+#: survey/exporter/tex/question2tex_sankey.py:55
+msgid "left"
+msgstr "αριστερά"
+
+#: survey/exporter/tex/question2tex_sankey.py:57
+msgid "in relation with the question"
+msgstr "σε σχέση με την ερώτηση"
+
+#: survey/exporter/tex/question2tex_sankey.py:59
+msgid "right"
+msgstr "δεξιά"
+
+#: survey/exporter/tex/survey2tex.py:30
+msgid "Cannot generate PDF, we need 'xelatex' to be installed."
+msgstr "Το PDF δεν μπορεί να δημιουργηθεί, χρειαζόμαστε το 'xelatex' να εγκατασταθεί!"
+
+#: survey/exporter/tex/survey2tex.py:80
+msgid "We could not render a chart because the type"
+msgstr "Δεν μπορέσαμε να αποδώσουμε το γράφημα λόγω του τύπου"
+
+#: survey/exporter/tex/survey2tex.py:83
+msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
+msgstr "δεν είναι κανονικός τύπος ούτε η διαδρομή προς μια εισαγόμενη έγκυρη Question2Tex κλάση παιδί. Επιλέξτε μεταξύ 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' oder 'package.path.MyQuestion2TexCustomClass'"
+
+#: survey/exporter/tex/survey2tex.py:157
+msgid "No questions to display in this survey."
+msgstr "Δεν υπάρχουν ερωτήσεις για εμφάνιση σε αυτήν την έρευνα."
+
+#: survey/exporter/tex/survey2tex.py:187
+msgid "Cannot export multiple PDF, choose only one."
+msgstr "Δεν είναι δυνατή η εξαγωγή πολλών PDF, επιλέξτε μόνο ένα."
+
+#: survey/exporter/tex/survey2tex.py:196
+#, python-format
+msgid "Error during PDF generation: %s"
+msgstr "Σφάλμα κατά τη δημιουργία PDF: %s"
+
+#: survey/exporter/tex/survey2tex.py:203
+msgid "Export to PDF"
+msgstr "Εξαγωγή ως PDF"
+
+#: survey/models/answer.py:21
+msgid "Question"
+msgstr "Ερώτηση"
+
+#: survey/models/answer.py:22
+msgid "Response"
+msgstr "Απάντηση"
+
+#: survey/models/answer.py:23 survey/models/response.py:25
+msgid "Creation date"
+msgstr "Ημερομηνία δημιουργίας"
+
+#: survey/models/answer.py:24 survey/models/response.py:26
+msgid "Update date"
+msgstr "Ημερομηνία ενημέρωσης"
+
+#: survey/models/answer.py:25
+msgid "Content"
+msgstr "Περιεχόμενο"
+
+#: survey/models/category.py:10 survey/models/survey.py:26
+msgid "Name"
+msgstr "Όνομα"
+
+#: survey/models/category.py:11 survey/models/question.py:78
+#: survey/models/response.py:27
+msgid "Survey"
+msgstr "Έρευνα"
+
+#: survey/models/category.py:12
+msgid "Display order"
+msgstr "Σειρά εμφάνισης"
+
+#: survey/models/category.py:13 survey/models/survey.py:27
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: survey/models/category.py:17
+msgid "category"
+msgstr "Κατηγορία"
+
+#: survey/models/category.py:18
+msgid "categories"
+msgstr "Κατηγορίες"
+
+#: survey/models/question.py:21
+msgid ""
+"The choices field is only used if the question type\n"
+"if the question type is 'radio', 'select', or\n"
+"'select multiple' provide a comma-separated list of\n"
+"options for this question ."
+msgstr ""
+"Το πεδίο επιλογών χρησιμοποιείται μόνο εάν η ερώτηση τύπου\n"
+"εάν ο τύπος ερώτησης είναι 'radio', 'select', or\n"
+"'select multiple' παρέχει μια λίστα διαχωρισμένη με κόμματα\n"
+"επιλογές για αυτήν την ερώτηση."
+
+#: survey/models/question.py:61
+msgid "text (multiple line)"
+msgstr "κείμενο (πολλαπλών γραμμών)"
+
+#: survey/models/question.py:62
+msgid "short text (one line)"
+msgstr "σύντομο κείμενο (μιας γραμμής)"
+
+#: survey/models/question.py:63
+msgid "radio"
+msgstr "κουμπί ραδιοφώνου"
+
+#: survey/models/question.py:64
+msgid "select"
+msgstr "Επιλέξτε"
+
+#: survey/models/question.py:65
+msgid "Select Multiple"
+msgstr "Επιλέξτε Πολλαπλά"
+
+#: survey/models/question.py:66
+msgid "Select Image"
+msgstr "Επιλέξτε Εικόνα"
+
+#: survey/models/question.py:67
+msgid "integer"
+msgstr "ακέραιος αριθμός"
+
+#: survey/models/question.py:68
+msgid "float"
+msgstr "δεκαδικός αριθμός"
+
+#: survey/models/question.py:69
+msgid "date"
+msgstr "ημερομηνία"
+
+#: survey/models/question.py:72
+msgid "Text"
+msgstr "Κείμενο"
+
+#: survey/models/question.py:73
+msgid "Order"
+msgstr "Σειρά"
+
+#: survey/models/question.py:74
+msgid "Required"
+msgstr "Υποχρεωτικό"
+
+#: survey/models/question.py:76
+msgid "Category"
+msgstr "Κατηγορία"
+
+#: survey/models/question.py:79
+msgid "Type"
+msgstr "Τύπος"
+
+#: survey/models/question.py:80
+msgid "Choices"
+msgstr "Επιλογές"
+
+#: survey/models/question.py:83
+msgid "question"
+msgstr "ερώτηση"
+
+#: survey/models/question.py:84
+msgid "questions"
+msgstr "ερωτήσεις"
+
+#: survey/models/response.py:28
+msgid "User"
+msgstr "Χρήστης"
+
+#: survey/models/response.py:29
+msgid "Interview unique identifier"
+msgstr "Μοναδικό αναγνωριστικό της συνέντευξης"
+
+#: survey/models/response.py:32
+msgid "Set of answers to surveys"
+msgstr "Σύνολο απαντήσεων σε έρευνες"
+
+#: survey/models/response.py:33
+msgid "Sets of answers to surveys"
+msgstr "Σύνολα απαντήσεων σε έρευνες"
+
+#: survey/models/survey.py:21
+msgid "By question"
+msgstr "Ανά ερώτηση"
+
+#: survey/models/survey.py:22
+msgid "By category"
+msgstr "Ανά κατηγορία"
+
+#: survey/models/survey.py:23
+msgid "All in one page"
+msgstr "Όλα σε μια σελίδα"
+
+#: survey/models/survey.py:28
+msgid "Users can see it and answer it"
+msgstr "Οι χρήστες μπορούν να το δουν και να απαντήσουν"
+
+#: survey/models/survey.py:29
+msgid "Only authenticated users can see it and answer it"
+msgstr "Μόνο εγκεκριμένοι χρήστες μπορούν να το δουν και να το απαντήσουν"
+
+#: survey/models/survey.py:30
+msgid "Users can edit their answers afterwards"
+msgstr "Οι χρήστες μπορούν να επεξεργαστούν τις απαντήσεις τους στη συνέχεια"
+
+#: survey/models/survey.py:32
+msgid "Display method"
+msgstr "Μέθοδος εμφάνισης"
+
+#: survey/models/survey.py:34
+msgid "Template"
+msgstr "Πρότυπο"
+
+#: survey/models/survey.py:35
+msgid "Publication date"
+msgstr "Ημερομηνία έκδοσης"
+
+#: survey/models/survey.py:36
+msgid "Expiration date"
+msgstr "Ημερομηνία λήξης"
+
+#: survey/models/survey.py:37
+msgid "Redirect URL"
+msgstr "URL ανακατεύθυνσης"
+
+#: survey/models/survey.py:40
+msgid "survey"
+msgstr "έρευνα"
+
+#: survey/models/survey.py:41
+msgid "surveys"
+msgstr "έρευνες"
+
+#: survey/templates/survey/completed.html:4
+#: survey/templates/survey/completed.html:7
+msgid "Survey completed"
+msgstr "Η έρευνα ολοκληρώθηκε"
+
+#: survey/templates/survey/completed.html:8
+msgid "Sorry! Your already replied to our survey"
+msgstr "Με συγχωρείτε! Απαντήσατε ήδη στην έρευνα μας"
+
+#: survey/templates/survey/completed.html:9
+msgid "Back to survey list"
+msgstr "Επιστροφή στη λίστα ερευνών"
+
+#: survey/templates/survey/confirm.html:4
+#: survey/templates/survey/confirm.html:7
+msgid "Survey submitted"
+msgstr "Η έρευνα υποβλήθηκε"
+
+#: survey/templates/survey/confirm.html:10
+msgid "Thanks! Your answers have been saved"
+msgstr "Ευχαριστούμε! Οι απαντήσεις σας έχουν αποθηκευτεί"
+
+#: survey/templates/survey/confirm.html:14
+msgid "You can always come back and change them."
+msgstr "Μπορείτε πάντα να επιστρέψετε και να τα αλλάξετε."
+
+#: survey/templates/survey/list.html:6
+msgid "Welcome to the Django Survey app"
+msgstr "Καλωσήρθατε στο Django Survey app"
+
+#: survey/templates/survey/list.html:19
+msgid "Take the Survey"
+msgstr "Λάβετε μέρος στην έρευνα"
+
+#: survey/templates/survey/survey.html:44
+msgid "Answer this part"
+msgstr "Απαντήστε σε αυτό το κομμάτι"
+
+#: survey/templates/survey/survey.html:57
+msgid "Questions"
+msgstr "Ερωτήσεις"
+
+#: survey/templates/survey/survey.html:67
+msgid "Next!"
+msgstr "Επόμενο!"
+
+#: survey/templates/survey/survey.html:73
+msgid "I'm done!"
+msgstr "Τέλος!"

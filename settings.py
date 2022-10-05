@@ -138,6 +138,7 @@ LANGUAGES = (
     ("pt", "Portuguese"),
     ("pl", "Polish"),
     ("tr", "Turkish"),
+    ("gr", "Greek"),
 )
 
 LOGIN_REDIRECT_URL = "/"

@@ -43,6 +43,7 @@ The software is developed in english. Other available languages are :
 - [x] Polish thanks to [Daniel Horner](https://github.com/d-horner/)
 - [x] Dutch thanks to [John Guyver](https://github.com/JohnGuyver117)
 - [x] Turkish thanks to [Hüseyin Emre Armağan](https://github.com/Telomeraz)
+- [x] Greek thanks to [Sotirios Zogos](https://github.com/sotiriszogos)
 
 ## Getting started
 

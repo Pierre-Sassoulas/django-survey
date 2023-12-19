@@ -11,16 +11,13 @@ class TestQuestion2TexSankey(TestManagement):
         q2s = Question2TexSankey(question, other_question=other_question)
         self.assertIsNotNone(q2s.tex())
 
-
-"""
-    def test_big_ranking_survey(self):
-        # Creating a big ranking survey with user takes a long time
-        self.create_big_ranking_survey(with_user=True)
-        qtext = "How much do you like question {} ?"
-        from survey.models import Question
-
-        q4 = Question.objects.get(text=qtext.format(4))
-        q5 = Question.objects.get(text=qtext.format(5))
-        q2tex_sankey = Question2TexSankey(q4, filter=["1"], other_question=q5, group_together={"A": ["2", "3"]})
-        q2tex_sankey.tex()
-"""
+    # def test_big_ranking_survey(self):
+    #     # Creating a big ranking survey with user takes a long time
+    #     self.create_big_ranking_survey(with_user=True)
+    #     qtext = "How much do you like question {} ?"
+    #     from survey.models import Question
+    #
+    #     q4 = Question.objects.get(text=qtext.format(4))
+    #     q5 = Question.objects.get(text=qtext.format(5))
+    #     q2tex_sankey = Question2TexSankey(q4, filter=["1"], other_question=q5, group_together={"A": ["2", "3"]})
+    #     q2tex_sankey.tex()

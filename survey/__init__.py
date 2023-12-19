@@ -14,6 +14,7 @@ DEFAULT_SETTINGS = [
 
 def set_default_settings():
     try:
+        # pylint: disable=import-outside-toplevel
         from django.conf import settings
 
         from . import settings as app_settings

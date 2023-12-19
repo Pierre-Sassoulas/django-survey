@@ -50,6 +50,7 @@ dev = [
     "coveralls",
     "colorama",
     "pylint",
+    "pylint-django",
     "pre-commit"
 ]
 sankey = [
@@ -58,8 +59,6 @@ sankey = [
 
 [tool.setuptools.dynamic]
 dependencies = {file = "requirements.txt"}
-
-
 
 [tool.ruff]
 
@@ -78,3 +77,36 @@ select = [
 ignore = [
     "RUF012",  # mutable default values in class attributes
 ]
+
+[tool.pylint.main]
+load-plugins ="pylint_django"
+
+disable=[
+    # I0011 Warning locally suppressed using disable-msg
+    "I0011",
+    "no-member",
+    "missing-docstring", # We don't want docstring everywhere
+    "too-few-public-methods", # More harmful than beneficial in django project
+    "too-many-arguments",
+    "too-many-instance-attributes",
+    # TODO Fix
+    "unspecified-encoding",
+    "inconsistent-return-statements",
+    "consider-using-with",
+    "fixme",
+    "no-else-return",
+    "imported-auth-user",
+    "unused-argument",
+    "arguments-differ",
+    "consider-using-f-string",
+    "too-many-branches",
+    "redefined-builtin",
+    "superfluous-parens",
+    "useless-parent-delegation",
+    "unused-private-member",
+    "duplicate-code",
+    "attribute-defined-outside-init",
+]
+ignore="migrations"
+good-names="i,j,k,ex,Run,_,f,e,maxDiff"
+max-line-length = 120

@@ -268,6 +268,7 @@ class Question(models.Model):
 
         The ordering is reversed for same cardinality value so we have aa
         before zz."""
+        # pylint: disable=too-many-locals
         cardinality = self.answers_cardinality(
             min_cardinality, group_together, group_by_letter_case, group_by_slugify, filter, other_question
         )
@@ -344,7 +345,7 @@ class Question(models.Model):
         filter,
         standardized_filter,
     ):
-        found_answer = False
+        values = [_(settings.USER_DID_NOT_ANSWER)]
         for other_answer in other_question.answers.all():
             if user is None:
                 break
@@ -352,12 +353,8 @@ class Question(models.Model):
                 # We suppose there is only a response per user
                 # Why would you want this info if it is
                 # possible to answer multiple time ?
-                found_answer = True
+                values = other_answer.values
                 break
-        if found_answer:
-            values = other_answer.values
-        else:
-            values = [_(settings.USER_DID_NOT_ANSWER)]
         for other_value in values:
             other_value = self.__get_cardinality_value(
                 other_value, group_by_letter_case, group_by_slugify, group_together

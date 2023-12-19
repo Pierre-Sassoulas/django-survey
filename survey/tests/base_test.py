@@ -24,7 +24,7 @@ class BaseTest(TestCase):
         """Log the user in."""
         is_logged = self.client.login(username=settings.DEBUG_ADMIN_NAME, password=settings.DEBUG_ADMIN_PASSWORD)
         if not is_logged:  # pragma: no cover
-            raise Exception("Login failed for test user! Tests won't work.")
+            raise ValueError("Login failed for test user! Tests won't work.")
 
     def logout(self):
         """Log the user out."""

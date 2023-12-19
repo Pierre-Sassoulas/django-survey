@@ -1,5 +1,5 @@
-#ci:
-#  skip: [pylint]
+ci:
+  skip: [pylint]
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -29,3 +29,20 @@ repos:
       - id: prettier
         args: [--prose-wrap=always, --print-width=88]
         exclude: "survey/static/|dev/templates/|survey/templates/|survey/locale/|survey/tests/"
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
+        args:
+          [
+            "-rn",
+            "-sn",
+            "--rcfile=pyproject.toml",
+            "--django-settings-module=settings",
+            "--load-plugins=pylint_django",
+            "--fail-on=I",
+          ]
+        exclude: "survey/migrations/"

@@ -48,6 +48,7 @@ class Survey2Tex(Survey2X):
             latex_file.text += function_(survey)
 
     def treat_question(self, question):
+        # pylint: disable=too-many-locals
         LOGGER.info("Treating, %s %s", question.pk, question.text)
         options = self.tconf.get(survey_name=self.survey.name, question_text=question.text)
         multiple_charts = options.get("multiple_charts")

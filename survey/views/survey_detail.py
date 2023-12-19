@@ -30,7 +30,7 @@ class SurveyDetail(View):
 
         asset_context = {
             # If any of the widgets of the current form has a "date" class, flatpickr will be loaded into the template
-            "flatpickr": any([field.widget.attrs.get("class") == "date" for _, field in form.fields.items()])
+            "flatpickr": any(field.widget.attrs.get("class") == "date" for _, field in form.fields.items())
         }
         context = {
             "response_form": form,

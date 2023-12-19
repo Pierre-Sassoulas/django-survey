@@ -32,3 +32,6 @@ jobs:
           coverage run --source=survey --omit=survey/migrations/* ./manage.py test
           coverage html
           coveralls debug --service=github
+      - name: pylint
+        run: |
+          pre-commit run pylint --all-files

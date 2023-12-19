@@ -86,7 +86,7 @@ python manage.py runserver
 # Then go to http://localhost:8000/rosetta to translate
 python manage.py makemessages --no-obsolete --no-wrap --ignore venv --locale de \
   --locale es --locale fr  --locale id --locale ja --locale nl --locale pl \
-  --locale pt --locale ru --locale tr --locale zh
+  --locale pt --locale ru --locale tr --locale zh --locale gr
 git add survey/locale/
 ...
 ```

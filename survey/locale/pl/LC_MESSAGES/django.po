@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 14:14+0000\n"
+"POT-Creation-Date: 2023-12-19 14:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -120,28 +120,28 @@ msgstr "prawo"
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
 msgstr "Nie można utworzyć PDF, wymagana instalacja 'xelatex'."
 
-#: survey/exporter/tex/survey2tex.py:79
+#: survey/exporter/tex/survey2tex.py:80
 msgid "We could not render a chart because the type"
 msgstr "Nie można wyrenderować wykresu ze względu na typ"
 
-#: survey/exporter/tex/survey2tex.py:82
+#: survey/exporter/tex/survey2tex.py:83
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
 msgstr "to nie jest standardowy typ ani ścieżka aby importować prawidłowo Question2Texdo klasy podrzędnej. Wybierz pomiędzy 'surowy', 'wykres sankeya', 'kawałek', 'chmura', 'kwadrat', polarny lub 'package.path.MyQuestion2TexCustomClass'"
 
-#: survey/exporter/tex/survey2tex.py:156
+#: survey/exporter/tex/survey2tex.py:153
 msgid "No questions to display in this survey."
 msgstr "Brak pytań do wyświetlenia w tej ankiecie"
 
-#: survey/exporter/tex/survey2tex.py:186
+#: survey/exporter/tex/survey2tex.py:183
 msgid "Cannot export multiple PDF, choose only one."
 msgstr "Nie można eksportować wielu PDF, wybierz tylko jeden."
 
-#: survey/exporter/tex/survey2tex.py:195
+#: survey/exporter/tex/survey2tex.py:192
 #, python-format
 msgid "Error during PDF generation: %s"
 msgstr "Błąd podczas generowania PDF: %s"
 
-#: survey/exporter/tex/survey2tex.py:202
+#: survey/exporter/tex/survey2tex.py:199
 msgid "Export to PDF"
 msgstr "Eksportuj do PDF"
 

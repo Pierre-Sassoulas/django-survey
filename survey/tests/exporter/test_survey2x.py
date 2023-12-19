@@ -49,7 +49,7 @@ class TestSurvey2X(TestManagement):
             self.actual_survey2x.need_update(),
             "No file exported and the survey "
             "contain response : we should need an update. "
-            "{}".format(self.get_fail_info(self.actual_survey2x)),
+            f"{self.get_fail_info(self.actual_survey2x)}",
         )
 
     @patch.object(Survey2Survey, "file_modification_time", RIGHT_NOW)
@@ -59,7 +59,7 @@ class TestSurvey2X(TestManagement):
             self.actual_survey2x.need_update(),
             "We exported the file and there"
             " is no new response, we should not need an update. "
-            "{}".format(self.get_fail_info(self.actual_survey2x)),
+            f"{self.get_fail_info(self.actual_survey2x)}",
         )
 
     @patch.object(Survey2Survey, "file_modification_time", LONG_TIME_AGO)
@@ -69,5 +69,5 @@ class TestSurvey2X(TestManagement):
             self.actual_survey2x.need_update(),
             "We exported the file but there"
             " is a new response, we should need an update. "
-            "{}".format(self.get_fail_info(self.actual_survey2x)),
+            f"{self.get_fail_info(self.actual_survey2x)}",
         )

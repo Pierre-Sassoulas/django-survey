@@ -60,15 +60,15 @@ class Answer(models.Model):
         if question.type == Question.INTEGER and body and body != "":
             try:
                 body = int(body)
-            except ValueError:
+            except ValueError as e:
                 msg = "Answer is not an integer"
-                raise ValidationError(msg)
+                raise ValidationError(msg) from e
         if question.type == Question.FLOAT and body and body != "":
             try:
                 body = float(body)
-            except ValueError:
+            except ValueError as e:
                 msg = "Answer is not a number"
-                raise ValidationError(msg)
+                raise ValidationError(msg) from e
 
     def check_answer_for_select(self, choices, body):
         answers = []

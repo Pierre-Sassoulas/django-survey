@@ -38,8 +38,8 @@ class Survey2X:
             directory_name = f"{self.mime_type.upper()}_DIRECTORY"
             try:
                 self.__directory = str(Path(getattr(settings, directory_name)).absolute())
-            except AttributeError:
-                raise ImproperlyConfigured(f"Please define a value for {directory_name} in your settings")
+            except AttributeError as e:
+                raise ImproperlyConfigured(f"Please define a value for {directory_name} in your settings") from e
         return self.__directory
 
     @property
@@ -101,4 +101,4 @@ class Survey2X:
                 f.write(str(self))
             LOGGER.info("Wrote %s in %s", self.mime_type, self.filename)
         except OSError as exc:
-            raise OSError(f"Unable to create <{self.filename}> : {exc} ")
+            raise OSError(f"Unable to create <{self.filename}> : {exc} ") from exc

@@ -74,7 +74,7 @@ class Question2TexChart(Question2Tex):
                 final_answers.append(answer)
         return "            {}".format(",\n            ".join(final_answers))
 
-    def get_pie_options(self):  # noqa: C901
+    def get_pie_options(self):
         r"""Return the options of the pie for: \pie[options]{data}"""
         options = ""
         if self.pos:

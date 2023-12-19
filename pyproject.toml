@@ -50,7 +50,6 @@ dev = [
     "coveralls",
     "colorama",
     "pylint",
-    "flake8",
     "pre-commit"
 ]
 sankey = [
@@ -59,3 +58,23 @@ sankey = [
 
 [tool.setuptools.dynamic]
 dependencies = {file = "requirements.txt"}
+
+
+
+[tool.ruff]
+
+line-length = 120
+
+select = [
+    "E",  # pycodestyle
+    "F",  # pyflakes
+    "W",  # pycodestyle
+    "B",  # bugbear
+    "I",  # isort
+    "RUF", # ruff
+    "UP", # pyupgrade
+]
+
+ignore = [
+    "RUF012",  # mutable default values in class attributes
+]

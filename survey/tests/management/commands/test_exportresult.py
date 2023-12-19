@@ -30,7 +30,10 @@ class TestExportresult(TestManagement):
             call_command("exportresult", "--pdf", survey_id="1")
             call_command("exportresult", "--pdf", "--force", survey_id="1")
         except XelatexNotInstalled:
-            warn("xelatex is not installed, some features regarding report generation in PDF were not tested!")
+            warn(
+                "xelatex is not installed, some features regarding report generation in PDF were not tested!",
+                stacklevel=0,
+            )
 
     def test_handle(self):
         """The custom command export result create the right csv file."""

@@ -12,7 +12,7 @@ except ModuleNotFoundError as e:
     warnings.warn(
         "Cannot import 'sankey', please install the package using"
         "the sankey extra. (pip install django-survey-and-report[sankey])"
-        ": '{}'".format(e),
+        f": '{e}'",
         stacklevel=2,
     )
     SANKEY = False

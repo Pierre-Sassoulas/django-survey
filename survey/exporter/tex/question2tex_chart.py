@@ -9,7 +9,6 @@ LOGGER = logging.getLogger(__name__)
 
 
 class Question2TexChart(Question2Tex):
-
     """
     This class permit to generate latex code directly from the Question
     object.
@@ -52,11 +51,11 @@ class Question2TexChart(Question2Tex):
             try:
                 colors.append(self.color[answer])
             except (KeyError, ValueError):
-                msg = "Color for '%s' not provided. You could " % answer
-                msg += "add '%s: \"red!50\"', in your color config." % answer
+                msg = f"Color for '{answer}' not provided. You could "
+                msg += f"add '{answer}: \"red!50\"', in your color config."
                 LOGGER.warning(msg)
                 colors.append(settings.SURVEY_DEFAULT_PIE_COLOR)
-        return "{%s}" % ", ".join(colors)
+        return "{{{}}}".format(", ".join(colors))
 
     def get_results(self):
         """Return a formatted string for a tikz pgf-pie chart."""
@@ -78,9 +77,9 @@ class Question2TexChart(Question2Tex):
         r"""Return the options of the pie for: \pie[options]{data}"""
         options = ""
         if self.pos:
-            options += "pos={%s}," % self.pos
+            options += f"pos={{{self.pos}}},"
         if self.explode:
-            options += "explode={%s}," % self.explode
+            options += f"explode={{{self.explode}}},"
         if self.rotate:
             options += f"rotate={self.rotate},"
         if self.radius:

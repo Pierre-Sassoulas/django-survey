@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 14:50+0000\n"
+"POT-Creation-Date: 2024-10-28 22:03+0000\n"
 "PO-Revision-Date: 2020-02-23 14:44+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,50 +54,50 @@ msgstr "Utilisateur"
 msgid "Export to CSV"
 msgstr "Export vers CSV"
 
-#: survey/exporter/tex/question2tex.py:62
+#: survey/exporter/tex/question2tex.py:61
 msgid "with"
 msgstr "avec"
 
-#: survey/exporter/tex/question2tex.py:64
+#: survey/exporter/tex/question2tex.py:63
 #, python-format
 msgid "%(min_cardinality)d respondents or more"
 msgid_plural "%(min_cardinality)d respondent or more"
 msgstr[0] "%(min_cardinality)d réponse ou plus"
 msgstr[1] "%(min_cardinality)d réponses ou plus"
 
-#: survey/exporter/tex/question2tex.py:76
+#: survey/exporter/tex/question2tex.py:75
 msgid "excluding"
 msgstr "excluant"
 
-#: survey/exporter/tex/question2tex.py:81
-#: survey/exporter/tex/question2tex.py:115
-#: survey/exporter/tex/question2tex.py:118
+#: survey/exporter/tex/question2tex.py:80
+#: survey/exporter/tex/question2tex.py:114
+#: survey/exporter/tex/question2tex.py:117
 msgid "and"
 msgstr "et"
 
+#: survey/exporter/tex/question2tex.py:111
 #: survey/exporter/tex/question2tex.py:112
-#: survey/exporter/tex/question2tex.py:113
 msgid "or"
 msgstr "ou"
 
-#: survey/exporter/tex/question2tex.py:127
+#: survey/exporter/tex/question2tex.py:126
 msgid "Repartition of answers"
 msgstr "Répartition des réponses"
 
-#: survey/exporter/tex/question2tex_chart.py:66
+#: survey/exporter/tex/question2tex_chart.py:65
 msgid "Left blank"
 msgstr "Laissé vide"
 
-#: survey/exporter/tex/question2tex_chart.py:111
-#: survey/exporter/tex/question2tex_sankey.py:56
+#: survey/exporter/tex/question2tex_chart.py:110
+#: survey/exporter/tex/question2tex_sankey.py:55
 msgid "for the question"
 msgstr "pour la question"
 
-#: survey/exporter/tex/question2tex_chart.py:121
+#: survey/exporter/tex/question2tex_chart.py:120
 msgid "No answers for this question."
 msgstr "Aucune réponse pour cette question."
 
-#: survey/exporter/tex/question2tex_raw.py:24
+#: survey/exporter/tex/question2tex_raw.py:23
 msgid "Participant"
 msgstr "Participant"
 
@@ -107,15 +107,15 @@ msgstr "Participant"
 msgid "Cannot generate PDF, we need 'pySankeyBeta' to be installed."
 msgstr "Impossible de générer le PDF, 'xelatex' doit être installé."
 
-#: survey/exporter/tex/question2tex_sankey.py:56
+#: survey/exporter/tex/question2tex_sankey.py:55
 msgid "left"
 msgstr "à gauche"
 
-#: survey/exporter/tex/question2tex_sankey.py:58
+#: survey/exporter/tex/question2tex_sankey.py:57
 msgid "in relation with the question"
 msgstr "mise en relation avec la question"
 
-#: survey/exporter/tex/question2tex_sankey.py:60
+#: survey/exporter/tex/question2tex_sankey.py:59
 msgid "right"
 msgstr "à droite"
 
@@ -140,8 +140,9 @@ msgid "Cannot export multiple PDF, choose only one."
 msgstr "Impossible d'exporter plusieurs PDF,  choisissez en un seul."
 
 #: survey/exporter/tex/survey2tex.py:192
-#, python-format
-msgid "Error during PDF generation: %s"
+#, fuzzy
+#| msgid "Error during PDF generation: %s"
+msgid "Error during PDF generation: {}"
 msgstr "Erreur durant la génération du PDF: %s"
 
 #: survey/exporter/tex/survey2tex.py:199
@@ -156,11 +157,11 @@ msgstr "Question"
 msgid "Response"
 msgstr "Réponse"
 
-#: survey/models/answer.py:22 survey/models/response.py:25
+#: survey/models/answer.py:22 survey/models/response.py:24
 msgid "Creation date"
 msgstr "Date de création"
 
-#: survey/models/answer.py:23 survey/models/response.py:26
+#: survey/models/answer.py:23 survey/models/response.py:25
 msgid "Update date"
 msgstr "Date de mise à jour"
 
@@ -173,7 +174,7 @@ msgid "Name"
 msgstr "Nom"
 
 #: survey/models/category.py:10 survey/models/question.py:77
-#: survey/models/response.py:27
+#: survey/models/response.py:26
 msgid "Survey"
 msgstr "Sondage"
 
@@ -269,19 +270,19 @@ msgstr "question"
 msgid "questions"
 msgstr "questions"
 
-#: survey/models/response.py:28
+#: survey/models/response.py:27
 msgid "User"
 msgstr "Utilisateur"
 
-#: survey/models/response.py:29
+#: survey/models/response.py:28
 msgid "Interview unique identifier"
 msgstr "Identifiant unique de la réponse"
 
-#: survey/models/response.py:32
+#: survey/models/response.py:31
 msgid "Set of answers to surveys"
 msgstr "Ensemble de réponse aux sondages"
 
-#: survey/models/response.py:33
+#: survey/models/response.py:32
 msgid "Sets of answers to surveys"
 msgstr "Ensembles de réponse aux sondages"
 

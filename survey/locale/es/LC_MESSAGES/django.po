@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 14:50+0000\n"
+"POT-Creation-Date: 2024-10-28 22:03+0000\n"
 "PO-Revision-Date: 2018-10-06 20:42+0000\n"
 "Last-Translator: Javier Ordóñez <>\n"
 "Language-Team: \n"
@@ -54,52 +54,52 @@ msgstr "usuario"
 msgid "Export to CSV"
 msgstr "Exporta como CSV"
 
-#: survey/exporter/tex/question2tex.py:62
+#: survey/exporter/tex/question2tex.py:61
 msgid "with"
 msgstr "con"
 
 # there is a mistake in the EN singular and plural cases.
 # Entrevistado refers to all surveyed.
-#: survey/exporter/tex/question2tex.py:64
+#: survey/exporter/tex/question2tex.py:63
 #, python-format
 msgid "%(min_cardinality)d respondents or more"
 msgid_plural "%(min_cardinality)d respondent or more"
 msgstr[0] "%(min_cardinality)d entrevistado o más"
 msgstr[1] "%(min_cardinality)d entrevistados o más."
 
-#: survey/exporter/tex/question2tex.py:76
+#: survey/exporter/tex/question2tex.py:75
 msgid "excluding"
 msgstr "excluyendo"
 
-#: survey/exporter/tex/question2tex.py:81
-#: survey/exporter/tex/question2tex.py:115
-#: survey/exporter/tex/question2tex.py:118
+#: survey/exporter/tex/question2tex.py:80
+#: survey/exporter/tex/question2tex.py:114
+#: survey/exporter/tex/question2tex.py:117
 msgid "and"
 msgstr "y"
 
+#: survey/exporter/tex/question2tex.py:111
 #: survey/exporter/tex/question2tex.py:112
-#: survey/exporter/tex/question2tex.py:113
 msgid "or"
 msgstr "o"
 
-#: survey/exporter/tex/question2tex.py:127
+#: survey/exporter/tex/question2tex.py:126
 msgid "Repartition of answers"
 msgstr "Distribución de respuestas"
 
-#: survey/exporter/tex/question2tex_chart.py:66
+#: survey/exporter/tex/question2tex_chart.py:65
 msgid "Left blank"
 msgstr "Dejada en blanco"
 
-#: survey/exporter/tex/question2tex_chart.py:111
-#: survey/exporter/tex/question2tex_sankey.py:56
+#: survey/exporter/tex/question2tex_chart.py:110
+#: survey/exporter/tex/question2tex_sankey.py:55
 msgid "for the question"
 msgstr "para la pregunta"
 
-#: survey/exporter/tex/question2tex_chart.py:121
+#: survey/exporter/tex/question2tex_chart.py:120
 msgid "No answers for this question."
 msgstr "No hay respuestas para esta pregunta."
 
-#: survey/exporter/tex/question2tex_raw.py:24
+#: survey/exporter/tex/question2tex_raw.py:23
 msgid "Participant"
 msgstr "Participante"
 
@@ -108,16 +108,16 @@ msgid "Cannot generate PDF, we need 'pySankeyBeta' to be installed."
 msgstr "No podemos generar el PDF, necesitamos instalar 'pySankeyBeta'"
 
 #  as in "opposite of right"
-#: survey/exporter/tex/question2tex_sankey.py:56
+#: survey/exporter/tex/question2tex_sankey.py:55
 msgid "left"
 msgstr "izquierda"
 
-#: survey/exporter/tex/question2tex_sankey.py:58
+#: survey/exporter/tex/question2tex_sankey.py:57
 msgid "in relation with the question"
 msgstr "en relación con la pregunta"
 
 # as in "opposite of left"
-#: survey/exporter/tex/question2tex_sankey.py:60
+#: survey/exporter/tex/question2tex_sankey.py:59
 msgid "right"
 msgstr "derecha"
 
@@ -142,8 +142,9 @@ msgid "Cannot export multiple PDF, choose only one."
 msgstr "No se pueden exportar varios PDF, elije solo uno."
 
 #: survey/exporter/tex/survey2tex.py:192
-#, python-format
-msgid "Error during PDF generation: %s"
+#, fuzzy
+#| msgid "Error during PDF generation: %s"
+msgid "Error during PDF generation: {}"
 msgstr "Error durante la generación del PDF: %s"
 
 #: survey/exporter/tex/survey2tex.py:199
@@ -158,11 +159,11 @@ msgstr "Pregunta"
 msgid "Response"
 msgstr "Respuesta"
 
-#: survey/models/answer.py:22 survey/models/response.py:25
+#: survey/models/answer.py:22 survey/models/response.py:24
 msgid "Creation date"
 msgstr "Fecha de creación"
 
-#: survey/models/answer.py:23 survey/models/response.py:26
+#: survey/models/answer.py:23 survey/models/response.py:25
 msgid "Update date"
 msgstr "Fecha de actualización"
 
@@ -175,7 +176,7 @@ msgid "Name"
 msgstr "Nombre"
 
 #: survey/models/category.py:10 survey/models/question.py:77
-#: survey/models/response.py:27
+#: survey/models/response.py:26
 msgid "Survey"
 msgstr "Encuesta"
 
@@ -275,19 +276,19 @@ msgstr "pregunta"
 msgid "questions"
 msgstr "preguntas"
 
-#: survey/models/response.py:28
+#: survey/models/response.py:27
 msgid "User"
 msgstr "Usuario"
 
-#: survey/models/response.py:29
+#: survey/models/response.py:28
 msgid "Interview unique identifier"
 msgstr "Identificador único de entrevista"
 
-#: survey/models/response.py:32
+#: survey/models/response.py:31
 msgid "Set of answers to surveys"
 msgstr "Conjunto de respuestas a encuestas"
 
-#: survey/models/response.py:33
+#: survey/models/response.py:32
 msgid "Sets of answers to surveys"
 msgstr "Conjuntos de respuestas a encuestas"
 

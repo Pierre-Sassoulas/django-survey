@@ -14,7 +14,6 @@ LOGGER = logging.getLogger(__name__)
 
 
 class Survey2X:
-
     """Abstract class for Survey exporter."""
 
     def __init__(self, survey=None):

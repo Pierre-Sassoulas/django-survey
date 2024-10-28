@@ -16,7 +16,6 @@ except (ImportError, AttributeError):
 
 
 class Response(models.Model):
-
     """
     A Response object is a collection of questions and answers with a
     unique interview uuid.

@@ -280,7 +280,7 @@ class Question(models.Model):
         user_defined = isinstance(sort_answer, dict)
         valid = user_defined or sort_answer in possibles_values
         if not valid:
-            msg = "Unrecognized option '%s' for 'sort_answer': " % sort_answer
+            msg = f"Unrecognized option '{sort_answer}' for 'sort_answer': "
             msg += "use nothing, a dict (answer: rank),"
             for option in possibles_values:
                 msg += f" '{option}', or"

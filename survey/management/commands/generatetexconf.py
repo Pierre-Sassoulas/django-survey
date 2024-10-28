@@ -5,7 +5,6 @@ from survey.management.survey_command import SurveyCommand
 
 
 class Command(SurveyCommand):
-
     """
     See the "help" var.
     """

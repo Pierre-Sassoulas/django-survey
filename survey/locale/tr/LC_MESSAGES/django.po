@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 14:50+0000\n"
+"POT-Creation-Date: 2024-10-28 22:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,50 +53,50 @@ msgstr "kullanıcı"
 msgid "Export to CSV"
 msgstr "CSV'ye aktar"
 
-#: survey/exporter/tex/question2tex.py:62
+#: survey/exporter/tex/question2tex.py:61
 msgid "with"
 msgstr "ile"
 
-#: survey/exporter/tex/question2tex.py:64
+#: survey/exporter/tex/question2tex.py:63
 #, python-format
 msgid "%(min_cardinality)d respondents or more"
 msgid_plural "%(min_cardinality)d respondent or more"
 msgstr[0] "%(min_cardinality)d veya daha fazla katılımcı"
 msgstr[1] "%(min_cardinality)d veya daha fazla katılımcı"
 
-#: survey/exporter/tex/question2tex.py:76
+#: survey/exporter/tex/question2tex.py:75
 msgid "excluding"
 msgstr "hariç"
 
-#: survey/exporter/tex/question2tex.py:81
-#: survey/exporter/tex/question2tex.py:115
-#: survey/exporter/tex/question2tex.py:118
+#: survey/exporter/tex/question2tex.py:80
+#: survey/exporter/tex/question2tex.py:114
+#: survey/exporter/tex/question2tex.py:117
 msgid "and"
 msgstr "ve"
 
+#: survey/exporter/tex/question2tex.py:111
 #: survey/exporter/tex/question2tex.py:112
-#: survey/exporter/tex/question2tex.py:113
 msgid "or"
 msgstr "veya"
 
-#: survey/exporter/tex/question2tex.py:127
+#: survey/exporter/tex/question2tex.py:126
 msgid "Repartition of answers"
 msgstr "Yanıtların yeniden bölümlendirilmesi"
 
-#: survey/exporter/tex/question2tex_chart.py:66
+#: survey/exporter/tex/question2tex_chart.py:65
 msgid "Left blank"
 msgstr "Boşluk bırak"
 
-#: survey/exporter/tex/question2tex_chart.py:111
-#: survey/exporter/tex/question2tex_sankey.py:56
+#: survey/exporter/tex/question2tex_chart.py:110
+#: survey/exporter/tex/question2tex_sankey.py:55
 msgid "for the question"
 msgstr "soru için"
 
-#: survey/exporter/tex/question2tex_chart.py:121
+#: survey/exporter/tex/question2tex_chart.py:120
 msgid "No answers for this question."
 msgstr "Bu soru için hiç yanıt yok."
 
-#: survey/exporter/tex/question2tex_raw.py:24
+#: survey/exporter/tex/question2tex_raw.py:23
 msgid "Participant"
 msgstr "Katılımcı"
 
@@ -104,15 +104,15 @@ msgstr "Katılımcı"
 msgid "Cannot generate PDF, we need 'pySankeyBeta' to be installed."
 msgstr "PDF oluşturulamıyor, 'pySankeyBeta'nın indilmesine ihtiyacımız var."
 
-#: survey/exporter/tex/question2tex_sankey.py:56
+#: survey/exporter/tex/question2tex_sankey.py:55
 msgid "left"
 msgstr "sol"
 
-#: survey/exporter/tex/question2tex_sankey.py:58
+#: survey/exporter/tex/question2tex_sankey.py:57
 msgid "in relation with the question"
 msgstr "soru ile ilgili olarak"
 
-#: survey/exporter/tex/question2tex_sankey.py:60
+#: survey/exporter/tex/question2tex_sankey.py:59
 msgid "right"
 msgstr "sağ"
 
@@ -137,8 +137,9 @@ msgid "Cannot export multiple PDF, choose only one."
 msgstr "Birden fazla PDF dışa aktarılamıyor, yalnızca birini seçin."
 
 #: survey/exporter/tex/survey2tex.py:192
-#, python-format
-msgid "Error during PDF generation: %s"
+#, fuzzy
+#| msgid "Error during PDF generation: %s"
+msgid "Error during PDF generation: {}"
 msgstr "PDF oluşturma sırasında hata: %s"
 
 #: survey/exporter/tex/survey2tex.py:199
@@ -153,11 +154,11 @@ msgstr "Soru"
 msgid "Response"
 msgstr "Yanıt"
 
-#: survey/models/answer.py:22 survey/models/response.py:25
+#: survey/models/answer.py:22 survey/models/response.py:24
 msgid "Creation date"
 msgstr "Oluşturulma tarihi"
 
-#: survey/models/answer.py:23 survey/models/response.py:26
+#: survey/models/answer.py:23 survey/models/response.py:25
 msgid "Update date"
 msgstr "Güncelleme tarihi"
 
@@ -170,7 +171,7 @@ msgid "Name"
 msgstr "İsim"
 
 #: survey/models/category.py:10 survey/models/question.py:77
-#: survey/models/response.py:27
+#: survey/models/response.py:26
 msgid "Survey"
 msgstr "Anket"
 
@@ -270,19 +271,19 @@ msgstr "soru"
 msgid "questions"
 msgstr "sorular"
 
-#: survey/models/response.py:28
+#: survey/models/response.py:27
 msgid "User"
 msgstr "Kullanıcı"
 
-#: survey/models/response.py:29
+#: survey/models/response.py:28
 msgid "Interview unique identifier"
 msgstr "Görüşmenin benzersiz tanımlayıcısı"
 
-#: survey/models/response.py:32
+#: survey/models/response.py:31
 msgid "Set of answers to surveys"
 msgstr "Anketlere verilen yanıt seti"
 
-#: survey/models/response.py:33
+#: survey/models/response.py:32
 msgid "Sets of answers to surveys"
 msgstr "Anketlere verilen yanıt setleri"
 

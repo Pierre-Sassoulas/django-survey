@@ -1,121 +1,119 @@
 [build-system]
-requires = ["setuptools>=67.5.1", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools.packages.find]
-include = ["survey*"]
+requires = [ "setuptools>=67.5.1", "wheel" ]
 
 [project]
 name = "django-survey-and-report"
-description = "A django survey app that can export results as CSV or PDF using your native language."
 version = "1.4.8"
+description = "A django survey app that can export results as CSV or PDF using your native language."
 readme = "README.md"
+license = { text = "AGPL-3.0" }
 authors = [
-    {email="pierre.sassoulas@gmail.com", name="Pierre SASSOULAS"}
+  { email = "pierre.sassoulas@gmail.com", name = "Pierre SASSOULAS" },
 ]
-license = {text = "AGPL-3.0"}
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Natural Language :: English",
-    "Natural Language :: Russian",
-    "Natural Language :: Spanish",
-    "Natural Language :: French",
-    "Natural Language :: Japanese",
-    "Natural Language :: Dutch",
-    "Natural Language :: Chinese (Traditional)",
-    "Natural Language :: German",
-    "Natural Language :: Indonesian",
-    "Natural Language :: Portuguese",
-    "Natural Language :: Polish",
-    "Topic :: Utilities",
-    "Environment :: Web Environment",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: GNU Affero General Public License v3",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Framework :: Django"
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Web Environment",
+  "Framework :: Django",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: GNU Affero General Public License v3",
+  "Natural Language :: Chinese (Traditional)",
+  "Natural Language :: Dutch",
+  "Natural Language :: English",
+  "Natural Language :: French",
+  "Natural Language :: German",
+  "Natural Language :: Indonesian",
+  "Natural Language :: Japanese",
+  "Natural Language :: Polish",
+  "Natural Language :: Portuguese",
+  "Natural Language :: Russian",
+  "Natural Language :: Spanish",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Utilities",
 ]
 dependencies = [
-    "django>=2.2,<5",
-    "django-bootstrap-form>=3.4",
-    "django-tastypie>=0.14.2",
-    "django-registration>=3.0",
-    "pytz>=2018.9",
-    "ordereddict>=1.1",
-    "pyyaml>=4.2b1",
+  "django>=2.2,<5",
+  "django-bootstrap-form>=3.4",
+  "django-registration>=3",
+  "django-tastypie>=0.14.2",
+  "ordereddict>=1.1",
+  "pytz>=2018.9",
+  "pyyaml>=4.2b1",
 ]
 
-[project.urls]
-"Source Code"       = "https://github.com/Pierre-Sassoulas/django-survey"
-"Bug Tracker"       = "https://github.com/Pierre-Sassoulas/django-survey/issues"
+optional-dependencies.dev = [
+  "colorama",
+  "coverage",
+  "coveralls",
+  "django-rosetta",
+  "pre-commit",
+  "pylint>=3.3.1",
+  "pylint-django",
+  "pysankeybeta~=1.3.0",
+  "python-coveralls",
+]
+optional-dependencies.sankey = [
+  "pysankeybeta~=1.3.0",
+]
+urls."Bug Tracker" = "https://github.com/Pierre-Sassoulas/django-survey/issues"
+urls."Source Code" = "https://github.com/Pierre-Sassoulas/django-survey"
 
-[project.optional-dependencies]
-dev = [
-    "pySankeyBeta~=1.3.0",
-    "django-rosetta",
-    "coverage",
-    "python-coveralls",
-    "coveralls",
-    "colorama",
-    "pylint",
-    "pylint-django",
-    "pre-commit"
-]
-sankey = [
-    "pySankeyBeta~=1.3.0",
-]
+[tool.setuptools.packages.find]
+include = [ "survey*" ]
 
 [tool.ruff]
 
 line-length = 120
-
-select = [
-    "E",  # pycodestyle
-    "F",  # pyflakes
-    "W",  # pycodestyle
-    "B",  # bugbear
-    "I",  # isort
-    "RUF", # ruff
-    "UP", # pyupgrade
+lint.select = [
+  "B",   # bugbear
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "I",   # isort
+  "RUF", # ruff
+  "UP",  # pyupgrade
+  "W",   # pycodestyle
 ]
-
-ignore = [
-    "RUF012",  # mutable default values in class attributes
+lint.ignore = [
+  "RUF012", # mutable default values in class attributes
 ]
 
 [tool.pylint.main]
-load-plugins ="pylint_django"
+load-plugins = "pylint_django"
 
-disable=[
-    # I0011 Warning locally suppressed using disable-msg
-    "I0011",
-    "no-member",
-    "missing-docstring", # We don't want docstring everywhere
-    "too-few-public-methods", # More harmful than beneficial in django project
-    "too-many-arguments",
-    "too-many-instance-attributes",
-    # TODO Fix
-    "unspecified-encoding",
-    "inconsistent-return-statements",
-    "consider-using-with",
-    "fixme",
-    "no-else-return",
-    "imported-auth-user",
-    "unused-argument",
-    "arguments-differ",
-    "consider-using-f-string",
-    "too-many-branches",
-    "redefined-builtin",
-    "superfluous-parens",
-    "useless-parent-delegation",
-    "unused-private-member",
-    "duplicate-code",
-    "attribute-defined-outside-init",
+disable = [
+  # I0011 Warning locally suppressed using disable-msg
+  "I0011",
+  "no-member",
+  "missing-docstring",            # We don't want docstring everywhere
+  "too-few-public-methods",       # More harmful than beneficial in django project
+  "too-many-arguments",
+  "too-many-instance-attributes",
+  # TODO Fix
+  "too-many-positional-arguments",  # Bad API
+  "unspecified-encoding",
+  "inconsistent-return-statements",
+  "consider-using-with",
+  "fixme",
+  "no-else-return",
+  "imported-auth-user",
+  "unused-argument",
+  "arguments-differ",
+  "consider-using-f-string",
+  "too-many-branches",
+  "redefined-builtin",
+  "superfluous-parens",
+  "useless-parent-delegation",
+  "unused-private-member",
+  "duplicate-code",
+  "attribute-defined-outside-init",
 ]
-ignore="migrations"
-good-names="i,j,k,ex,Run,_,f,e,maxDiff"
+ignore = "migrations"
+good-names = "i,j,k,ex,Run,_,f,e,maxDiff"
 max-line-length = 120

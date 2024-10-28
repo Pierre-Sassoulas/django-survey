@@ -10,7 +10,6 @@ from survey.tests.management.test_management import TestManagement
 
 
 class TestExportresult(TestManagement):
-
     """Permit to check if export result is working as intended."""
 
     def get_csv_path(self, survey_name):

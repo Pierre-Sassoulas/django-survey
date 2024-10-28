@@ -10,7 +10,6 @@ LOGGER = logging.getLogger(__name__)
 
 
 class Question2Tex:
-
     """
     This class permit to generate latex code directly from the Question
     object after overriding the tex() function.

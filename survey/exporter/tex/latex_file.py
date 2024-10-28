@@ -5,7 +5,6 @@ LOGGER = logging.getLogger(__name__)
 
 
 class LatexFile:
-
     """Permit to handle the content of a LatexFile"""
 
     def __init__(self, document_class, document_option=None, header=None, intro=None, footer=None, date=None, **kwargs):
@@ -36,11 +35,11 @@ class LatexFile:
         header = "\\documentclass"
         if self.document_option:
             header += f"[{self.document_option}]"
-        header += "{%s}\n" % self.document_class
-        header += "\\date{%s}\n" % self.date
-        header += "%s\n" % self._header
+        header += f"{{{self.document_class}}}\n"
+        header += f"\\date{{{self.date}}}\n"
+        header += f"{self._header}\n"
         header += "\\begin{document}\n"
-        header += "%s\n" % self.intro
+        header += f"{self.intro}\n"
         return header
 
     @property

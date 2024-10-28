@@ -189,7 +189,7 @@ class Survey2Tex(Survey2X):
         try:
             s2tex.generate_pdf()
         except subprocess.CalledProcessError as exc:
-            modeladmin.message_user(request, _("Error during PDF generation: %s" % exc), level=ERROR)
+            modeladmin.message_user(request, _("Error during PDF generation: {}".format(exc)), level=ERROR)
             return
         with open(s2tex.pdf_filename, "rb") as f:
             response.write(f.read())

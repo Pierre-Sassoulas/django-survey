@@ -5,7 +5,6 @@ from survey.tests.management.test_management import TestManagement
 
 
 class TestSurvey2Csv(TestManagement):
-
     """Permit to check if export result is working as intended."""
 
     def setUp(self):

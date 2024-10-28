@@ -4,7 +4,6 @@ from .configuration import Configuration
 
 
 class ConfigurationBuilder(Configuration):
-
     """
     Permit to create serializable uninitialized configuration easily.
     We just use the default dict for a Builder, the user will be able to

@@ -29,7 +29,6 @@ class SankeyNotInstalled(Exception):
 
 
 class Question2TexSankey(Question2Tex):
-
     """
     This class permit to generate latex code directly from the Question
     object.

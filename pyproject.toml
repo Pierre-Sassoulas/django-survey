@@ -60,6 +60,7 @@ optional-dependencies.dev = [
   "pytest",
   "pytest-django",
   "python-coveralls",
+  "setuptools",
 ]
 optional-dependencies.sankey = [
   "pysankeybeta~=1.3.0",

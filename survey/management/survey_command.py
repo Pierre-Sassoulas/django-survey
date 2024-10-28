@@ -28,16 +28,17 @@ class SurveyCommand(BaseCommand):
     def raise_value_error(error_type, value):
         """Raise a ValueError with a clean error message in python 2.7 and 3.
         :param string value: the attempted value."""
+        valid_texts = []
+        base = "--question-id {} / --question-text '{}'\n"
         if error_type in ["question-id", "question-text"]:
-            base = "--question-id {} / --question-text '{}'\n"
-            valids = [(q.pk, q.text) for q in Question.objects.all()]
+            valid_texts = [(q.pk, q.text) for q in Question.objects.all()]
         elif error_type in ["survey-name", "survey-id"]:
             base = "--survey-id {} / --survey-name '{}'\n"
-            valids = [(s.pk, s.name) for s in Survey.objects.all()]
+            valid_texts = [(s.pk, s.name) for s in Survey.objects.all()]
         msg = f"You tried to get --{error_type} '{value}' "
-        if valids:
+        if valid_texts:
             msg += "but is does not exists. Possibles values :\n"
-            for primary_key, name in valids:
+            for primary_key, name in valid_texts:
                 msg += base.format(primary_key, name)
             msg = msg[:-1]  # Remove last \n
         else:

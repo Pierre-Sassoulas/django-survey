@@ -67,7 +67,7 @@ STATICFILES_FINDERS = (
 DEBUG_ADMIN_NAME = "test_admin"
 DEBUG_ADMIN_PASSWORD = "test_password"
 
-STATICFILES_DIRS = [os.path.normpath(os.path.join(ROOT, "..", "survey", "static"))]
+STATICFILES_DIRS = [os.path.normpath(os.path.join(ROOT, "survey", "static"))]
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "js*79rk(+s+x9)8co+10$zghe2f)+33jd1l2m#f)vl+pvtj24e"

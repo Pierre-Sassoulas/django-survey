@@ -1,7 +1,7 @@
 """
-    These type-specific answer models use a text field to allow for flexible
-    field sizes depending on the actual question this answer corresponds to any
-    "required" attribute will be enforced by the form.
+These type-specific answer models use a text field to allow for flexible
+field sizes depending on the actual question this answer corresponds to any
+"required" attribute will be enforced by the form.
 """
 
 import logging

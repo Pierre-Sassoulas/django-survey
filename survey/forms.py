@@ -181,7 +181,7 @@ class ResponseForm(models.ModelForm):
         if data:
             # Initialize the field field from a POST request, if any.
             # Replace values from the database
-            initial = data.get("question_%d" % question.pk)
+            initial = data.get(f"question_{question.pk}")
         return initial
 
     def get_question_widget(self, question):
@@ -243,7 +243,7 @@ class ResponseForm(models.ModelForm):
         if question.type == Question.DATE:
             field.widget.attrs["class"] = "date"
         # logging.debug("Field for %s : %s", question, field.__dict__)
-        self.fields["question_%d" % question.pk] = field
+        self.fields[f"question_{question.pk}"] = field
 
     def has_next_step(self):
         if not self.survey.is_all_in_one_page():

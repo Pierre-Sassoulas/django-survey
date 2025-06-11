@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
+from django.utils.html import mark_safe
 
 from survey.actions import make_published
 from survey.exporter.csv import Survey2Csv
@@ -24,10 +26,22 @@ class CategoryInline(admin.TabularInline):
 
 
 class SurveyAdmin(admin.ModelAdmin):
-    list_display = ("name", "is_published", "need_logged_user", "template")
+    list_display = (
+        "name",
+        "is_published",
+        "page",
+        "need_logged_user",
+        "template",
+    )
     list_filter = ("is_published", "need_logged_user")
+    search_fields = ("name", "description")
     inlines = [CategoryInline, QuestionInline]
     actions = [make_published, Survey2Csv.export_as_csv, Survey2Tex.export_as_tex]
+
+    @admin.display(description="Page")
+    def page(self, obj):
+        url = obj.get_absolute_url()
+        return mark_safe(f"<a target='_blank'  href='{url}'>Page</a>")
 
 
 class AnswerBaseInline(admin.StackedInline):
@@ -39,6 +53,7 @@ class AnswerBaseInline(admin.StackedInline):
     @admin.display(description=_("Is correct"), boolean=True)
     def is_correct(self, obj):
         return obj.is_correct
+
 
 class ResponseAdmin(admin.ModelAdmin):
     list_display = ("interview_uuid", "survey", "created", "user")

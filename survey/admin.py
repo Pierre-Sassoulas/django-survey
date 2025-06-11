@@ -1,6 +1,6 @@
 from django.contrib import admin
-from django.utils.translation import gettext_lazy as _
 from django.utils.html import mark_safe
+from django.utils.translation import gettext_lazy as _
 
 from survey.actions import make_published
 from survey.exporter.csv import Survey2Csv
@@ -45,7 +45,11 @@ class SurveyAdmin(admin.ModelAdmin):
 
 
 class AnswerBaseInline(admin.StackedInline):
-    fields = ("is_correct", "question", "body", )
+    fields = (
+        "is_correct",
+        "question",
+        "body",
+    )
     readonly_fields = ("question", "is_correct")
     extra = 0
     model = Answer
@@ -56,12 +60,32 @@ class AnswerBaseInline(admin.StackedInline):
 
 
 class ResponseAdmin(admin.ModelAdmin):
-    list_display = ("interview_uuid", "survey", "created", "user")
+    list_display = (
+        "interview_uuid",
+        "survey",
+        "created",
+        "user",
+        "correct_answers_display",
+    )
     list_filter = ("survey", "created")
     date_hierarchy = "created"
     inlines = [AnswerBaseInline]
     # specifies the order as well as which fields to act on
-    readonly_fields = ("survey", "created", "updated", "interview_uuid", "user")
+    readonly_fields = (
+        "survey",
+        "created",
+        "updated",
+        "interview_uuid",
+        "user",
+        "correct_answers_display",
+    )
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).prefetch_related("answers__question")
+
+    @admin.display(description=_("Correct answers"))
+    def correct_answers_display(self, obj):
+        return f"{obj.correct_answers_count} / {obj.total_answers_count}"
 
 
 # admin.site.register(Question, QuestionInline)

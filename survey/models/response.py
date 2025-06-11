@@ -31,6 +31,39 @@ class Response(models.Model):
         verbose_name = _("Set of answers to surveys")
         verbose_name_plural = _("Sets of answers to surveys")
 
+    @property
+    def correct_answers_count(self) -> int:
+        """
+        Returns the number of correct answers in the response.
+
+        Returns:
+            int: Number of correct answers
+        """
+        return sum(1 for answer in self.answers.all() if answer.is_correct)
+
+    @property
+    def total_answers_count(self) -> int:
+        """
+        Returns the total number of answers in the response.
+
+        Returns:
+            int: Total number of answers
+        """
+        return self.answers.count()
+
+    @property
+    def correct_answers_percentage(self) -> float:
+        """
+        Returns the percentage of correct answers.
+
+        Returns:
+            float: Percentage of correct answers (0-100)
+        """
+        total = self.total_answers_count
+        if total == 0:
+            return 0.0
+        return (self.correct_answers_count / total) * 100
+
     def __str__(self):
         msg = f"Response to {self.survey} by {self.user}"
         msg += f" on {self.created}"

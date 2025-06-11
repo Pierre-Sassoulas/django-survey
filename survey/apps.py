@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+from django.utils.translation import gettext_lazy as _
 
 
 class DjangoSurveyAndReportConfig(AppConfig):
@@ -8,4 +9,4 @@ class DjangoSurveyAndReportConfig(AppConfig):
 
     name = "survey"
     label = "survey"
-    verbose_name = "Survey and report"
+    verbose_name = _("Survey and report")

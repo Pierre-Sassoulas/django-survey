@@ -41,7 +41,6 @@ classifiers = [
 ]
 dependencies = [
   "django>=2.2,<6",
-  "ordereddict>=1.1",
   "pytz>=2018.9",
   "pyyaml>=4.2b1",
 ]

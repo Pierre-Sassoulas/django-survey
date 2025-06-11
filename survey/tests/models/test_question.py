@@ -7,11 +7,6 @@ from django.utils.translation import gettext_lazy as _
 from survey.models import Answer, Question, Response, Survey
 from survey.tests.models import BaseModelTest
 
-try:
-    from _collections import OrderedDict
-except ImportError:
-    from ordereddict import OrderedDict
-
 
 class TestQuestion(BaseModelTest):
     def setUp(self):
@@ -106,9 +101,9 @@ class TestQuestion(BaseModelTest):
         self.assertEqual(qat, expected)
 
     def test_answer_cardinality_type(self):
-        """We always return an OrderedDict."""
-        self.assertIsInstance(self.card(), OrderedDict)
-        self.assertIsInstance(self.sorted_card(), OrderedDict)
+        """We always return a dict."""
+        self.assertIsInstance(self.card(), dict)
+        self.assertIsInstance(self.sorted_card(), dict)
 
     def test_answers_cardinality(self):
         """We can get the cardinality of each answers."""
@@ -209,7 +204,7 @@ class TestQuestion(BaseModelTest):
             ("1", {"Left blank": 1}),
             ("2", {"Left blank": 1}),
         ]
-        self.assertEqual(questions[0].sorted_answers_cardinality(other_question=questions[1]), OrderedDict(expected))
+        self.assertEqual(questions[0].sorted_answers_cardinality(other_question=questions[1]), dict(expected))
 
     def test_sorted_answers_cardinality(self):
         """We can sort answer with the sort_answer parameter."""
@@ -218,26 +213,26 @@ class TestQuestion(BaseModelTest):
         user_defined = {"dé": 1, "abë-cè": 2, "dë": 3, "abé cé": 4}
         specific = [("dé", 2), ("abë-cè", 1), ("dë", 1), ("abé cé", 2)]
         assert_message = " sorting does not seem to work"
-        self.assertEqual(self.sorted_card(group_by_letter_case=True), OrderedDict(cardinal), "default" + assert_message)
+        self.assertEqual(self.sorted_card(group_by_letter_case=True), dict(cardinal), "default" + assert_message)
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, sort_answer="alphanumeric"),
-            OrderedDict(alphanumeric),
+            dict(alphanumeric),
             "alphanumeric" + assert_message,
         )
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, sort_answer="cardinal"),
-            OrderedDict(cardinal),
+            dict(cardinal),
             "cardinal" + assert_message,
         )
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, sort_answer=user_defined),
-            OrderedDict(specific),
+            dict(specific),
             "user defined" + assert_message,
         )
         other_question_assert_mesage = " when in relation with another question"
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, other_question=self.questions[1]),
-            OrderedDict(
+            dict(
                 [
                     ("abé cé", {"left blank": 2}),
                     ("dé", {"left blank": 2}),
@@ -249,7 +244,7 @@ class TestQuestion(BaseModelTest):
         )
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, sort_answer="alphanumeric", other_question=self.questions[1]),
-            OrderedDict(
+            dict(
                 [
                     ("abé cé", {"left blank": 2}),
                     ("abë-cè", {"left blank": 1}),
@@ -261,7 +256,7 @@ class TestQuestion(BaseModelTest):
         )
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, sort_answer="cardinal", other_question=self.questions[1]),
-            OrderedDict(
+            dict(
                 [
                     ("abé cé", {"left blank": 2}),
                     ("dé", {"left blank": 2}),
@@ -273,7 +268,7 @@ class TestQuestion(BaseModelTest):
         )
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, sort_answer=user_defined, other_question=self.questions[1]),
-            OrderedDict(
+            dict(
                 [
                     ("dé", {"left blank": 2}),
                     ("abë-cè", {"left blank": 1}),

@@ -31,11 +31,14 @@ class SurveyAdmin(admin.ModelAdmin):
 
 
 class AnswerBaseInline(admin.StackedInline):
-    fields = ("question", "body")
-    readonly_fields = ("question",)
+    fields = ("is_correct", "question", "body", )
+    readonly_fields = ("question", "is_correct")
     extra = 0
     model = Answer
 
+    @admin.display(description=_("Is correct"), boolean=True)
+    def is_correct(self, obj):
+        return obj.is_correct
 
 class ResponseAdmin(admin.ModelAdmin):
     list_display = ("interview_uuid", "survey", "created", "user")

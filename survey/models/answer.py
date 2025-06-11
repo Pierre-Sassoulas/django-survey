@@ -8,6 +8,7 @@ import logging
 
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
 from .question import Question
@@ -84,6 +85,58 @@ class Answer(models.Model):
                 msg = f"Impossible answer '{body}'"
                 msg += f" should be in {choices} "
                 raise ValidationError(msg)
+
+    @property
+    def is_correct(self) -> bool:
+        """
+        Checks the correctness of the answer depending on the question type.
+        Takes into account data storage features:
+        - Values can be in lowercase
+        - Spaces can be replaced with hyphens
+        - Multiple answers are stored in list format
+
+        Returns:
+            bool: True if the answer is correct, False otherwise
+        """
+        if not self.body:
+            return not self.question.required
+
+        try:
+            # Get list of valid answer choices
+            choices = self.question.get_clean_choices()
+            answer_values = self.values
+
+            # For questions with answer choices
+            if self.question.type in [Question.RADIO, Question.SELECT, Question.SELECT_MULTIPLE]:
+                # Check that all answer values are in the list of valid choices
+                return all(
+                    any(slugify(value, allow_unicode=True) == slugify(choice, allow_unicode=True) for choice in choices)
+                    for value in answer_values
+                )
+
+            # For numeric questions
+            if self.question.type == Question.INTEGER:
+                try:
+                    return all(int(value) for value in answer_values)
+                except ValueError:
+                    return False
+
+            if self.question.type == Question.FLOAT:
+                try:
+                    return all(float(value) for value in answer_values)
+                except ValueError:
+                    return False
+
+            # For text questions - we consider the answer correct if it is not empty
+            if self.question.type in [Question.TEXT, Question.SHORT_TEXT]:
+                return all(bool(value.strip()) for value in answer_values)
+
+            # For other question types
+            return True
+
+        except Exception:
+            LOGGER.exception("Error checking answer correctness")
+            return False
 
     def __str__(self):
         return f"{self.__class__.__name__} to '{self.question}' : '{self.body}'"

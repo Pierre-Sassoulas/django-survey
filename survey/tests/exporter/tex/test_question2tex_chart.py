@@ -3,18 +3,13 @@ from django.conf import settings
 from survey.exporter.tex.question2tex_chart import Question2TexChart
 from survey.tests.management.test_management import TestManagement
 
-try:
-    from _collections import OrderedDict
-except ImportError:
-    from ordereddict import OrderedDict
-
 
 class TestQuestion2TexChart(TestManagement):
     def test_get_tex(self):
         """The header and order of the question is correct."""
         question = self.survey.questions.get(text="Aèbc?")
         self.assertIsNotNone(Question2TexChart(question).tex())
-        color = OrderedDict()
+        color = {}
         groups = {"1é": ["1e", "1é", "1ë"], "2é": ["2e", "2é", "2ë"], "3é": ["3e", "3é", "3ë"]}
         color["1b"] = "green!80"
         color["1a"] = "cyan!50"

@@ -48,11 +48,11 @@ msgstr "Анонимно"
 
 #: survey/exporter/csv/survey2csv.py:67
 msgid "user"
-msgstr ""
+msgstr "пользователь"
 
 #: survey/exporter/csv/survey2csv.py:111
 msgid "Export to CSV"
-msgstr ""
+msgstr "Экспорт в CSV"
 
 #: survey/exporter/tex/question2tex.py:61
 msgid "with"
@@ -147,7 +147,7 @@ msgstr ""
 
 #: survey/exporter/tex/survey2tex.py:199
 msgid "Export to PDF"
-msgstr ""
+msgstr "Экспорт в PDF"
 
 #: survey/models/answer.py:20
 msgid "Question"
@@ -217,31 +217,31 @@ msgstr "короткий текст (однострочный)"
 
 #: survey/models/question.py:62
 msgid "radio"
-msgstr "radio"
+msgstr "Один из перечня"
 
 #: survey/models/question.py:63
 msgid "select"
-msgstr "выбор"
+msgstr "Один из списка"
 
 #: survey/models/question.py:64
 msgid "Select Multiple"
-msgstr "Множественный выбор"
+msgstr "Несколько из списка"
 
 #: survey/models/question.py:65
 msgid "Select Image"
-msgstr "выбор изображения"
+msgstr "Изображение"
 
 #: survey/models/question.py:66
 msgid "integer"
-msgstr "целое"
+msgstr "Целое"
 
 #: survey/models/question.py:67
 msgid "float"
-msgstr ""
+msgstr "Вещественное"
 
 #: survey/models/question.py:68
 msgid "date"
-msgstr ""
+msgstr "Дата"
 
 #: survey/models/question.py:71
 msgid "Text"
@@ -381,7 +381,7 @@ msgstr "Принять участие в опросе"
 
 #: survey/templates/survey/survey.html:44
 msgid "Answer this part"
-msgstr "Ответьте на эту часть"
+msgstr "Ответить на эти вопросы"
 
 #: survey/templates/survey/survey.html:57
 msgid "Questions"
@@ -389,8 +389,8 @@ msgstr "Ответы"
 
 #: survey/templates/survey/survey.html:67
 msgid "Next!"
-msgstr ""
+msgstr "Дальше!"
 
 #: survey/templates/survey/survey.html:73
 msgid "I'm done!"
-msgstr "Я завершил!"
+msgstr "Завершить!"

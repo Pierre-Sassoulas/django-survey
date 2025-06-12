@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-28 22:03+0000\n"
+"POT-Creation-Date: 2025-06-12 07:27+0000\n"
 "PO-Revision-Date: 2020-10-04 15:40+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -170,7 +170,7 @@ msgstr "Konten"
 msgid "Name"
 msgstr "Nama"
 
-#: survey/models/category.py:10 survey/models/question.py:77
+#: survey/models/category.py:10 survey/models/question.py:72
 #: survey/models/response.py:26
 msgid "Survey"
 msgstr "Survei"
@@ -191,7 +191,7 @@ msgstr "Kategori"
 msgid "categories"
 msgstr "Kategori"
 
-#: survey/models/question.py:21
+#: survey/models/question.py:16
 msgid ""
 "The choices field is only used if the question type\n"
 "if the question type is 'radio', 'select', or\n"
@@ -203,71 +203,71 @@ msgstr ""
 "'pilih beberapa' menyediakan sebuah daftar opsi\n"
 "yang dipisahkan tanda koma untuk pertanyaan ini"
 
-#: survey/models/question.py:60
+#: survey/models/question.py:55
 msgid "text (multiple line)"
 msgstr "teks (beberapa baris)"
 
-#: survey/models/question.py:61
+#: survey/models/question.py:56
 msgid "short text (one line)"
 msgstr "teks pendek (satu baris)"
 
-#: survey/models/question.py:62
+#: survey/models/question.py:57
 msgid "radio"
 msgstr "radio"
 
-#: survey/models/question.py:63
+#: survey/models/question.py:58
 msgid "select"
 msgstr "pilih"
 
-#: survey/models/question.py:64
+#: survey/models/question.py:59
 msgid "Select Multiple"
 msgstr "Pilih beberapa"
 
-#: survey/models/question.py:65
+#: survey/models/question.py:60
 msgid "Select Image"
 msgstr "Pilih Gambar"
 
-#: survey/models/question.py:66
+#: survey/models/question.py:61
 msgid "integer"
 msgstr "bilangan bulat"
 
-#: survey/models/question.py:67
+#: survey/models/question.py:62
 msgid "float"
 msgstr "bilangan desimal"
 
-#: survey/models/question.py:68
+#: survey/models/question.py:63
 msgid "date"
 msgstr "tanggal"
 
-#: survey/models/question.py:71
+#: survey/models/question.py:66
 msgid "Text"
 msgstr "Teks"
 
-#: survey/models/question.py:72
+#: survey/models/question.py:67
 msgid "Order"
 msgstr "Urutan"
 
-#: survey/models/question.py:73
+#: survey/models/question.py:68
 msgid "Required"
 msgstr "Diperlukan"
 
-#: survey/models/question.py:75
+#: survey/models/question.py:70
 msgid "Category"
 msgstr "Kategori"
 
-#: survey/models/question.py:78
+#: survey/models/question.py:73
 msgid "Type"
 msgstr "Tipe"
 
-#: survey/models/question.py:79
+#: survey/models/question.py:74
 msgid "Choices"
 msgstr "Pilihan"
 
-#: survey/models/question.py:82
+#: survey/models/question.py:77
 msgid "question"
 msgstr "pertanyaan"
 
-#: survey/models/question.py:83
+#: survey/models/question.py:78
 msgid "questions"
 msgstr "pertanyaan-pertanyaan"
 

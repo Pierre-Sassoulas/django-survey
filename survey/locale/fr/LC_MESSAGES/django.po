@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-28 22:03+0000\n"
+"POT-Creation-Date: 2025-06-12 07:27+0000\n"
 "PO-Revision-Date: 2020-02-23 14:44+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -173,7 +173,7 @@ msgstr "Contenu"
 msgid "Name"
 msgstr "Nom"
 
-#: survey/models/category.py:10 survey/models/question.py:77
+#: survey/models/category.py:10 survey/models/question.py:72
 #: survey/models/response.py:26
 msgid "Survey"
 msgstr "Sondage"
@@ -194,7 +194,7 @@ msgstr "catégorie"
 msgid "categories"
 msgstr "catégories"
 
-#: survey/models/question.py:21
+#: survey/models/question.py:16
 msgid ""
 "The choices field is only used if the question type\n"
 "if the question type is 'radio', 'select', or\n"
@@ -202,71 +202,71 @@ msgid ""
 "options for this question ."
 msgstr "Le champ choix est utilisé seulement si la question est de type 'bouton radio', 'liste déroulante', ou 'liste à choix multiple', il faut fournir la liste des options pour cette question sous la forme d'une liste séparée par des virgules."
 
-#: survey/models/question.py:60
+#: survey/models/question.py:55
 msgid "text (multiple line)"
 msgstr "Texte (plusieurs lignes)"
 
-#: survey/models/question.py:61
+#: survey/models/question.py:56
 msgid "short text (one line)"
 msgstr "Texte court (une ligne)"
 
-#: survey/models/question.py:62
+#: survey/models/question.py:57
 msgid "radio"
 msgstr "Bouton radio"
 
-#: survey/models/question.py:63
+#: survey/models/question.py:58
 msgid "select"
 msgstr "Liste déroulante"
 
-#: survey/models/question.py:64
+#: survey/models/question.py:59
 msgid "Select Multiple"
 msgstr "Liste à choix multiple"
 
-#: survey/models/question.py:65
+#: survey/models/question.py:60
 msgid "Select Image"
 msgstr "Séléctionnez l'image"
 
-#: survey/models/question.py:66
+#: survey/models/question.py:61
 msgid "integer"
 msgstr "Chiffre"
 
-#: survey/models/question.py:67
+#: survey/models/question.py:62
 msgid "float"
 msgstr "Décimal"
 
-#: survey/models/question.py:68
+#: survey/models/question.py:63
 msgid "date"
 msgstr ""
 
-#: survey/models/question.py:71
+#: survey/models/question.py:66
 msgid "Text"
 msgstr "Texte"
 
-#: survey/models/question.py:72
+#: survey/models/question.py:67
 msgid "Order"
 msgstr "Ordre"
 
-#: survey/models/question.py:73
+#: survey/models/question.py:68
 msgid "Required"
 msgstr "Requise"
 
-#: survey/models/question.py:75
+#: survey/models/question.py:70
 msgid "Category"
 msgstr "Catégorie"
 
-#: survey/models/question.py:78
+#: survey/models/question.py:73
 msgid "Type"
 msgstr "Type"
 
-#: survey/models/question.py:79
+#: survey/models/question.py:74
 msgid "Choices"
 msgstr "Choix"
 
-#: survey/models/question.py:82
+#: survey/models/question.py:77
 msgid "question"
 msgstr "question"
 
-#: survey/models/question.py:83
+#: survey/models/question.py:78
 msgid "questions"
 msgstr "questions"
 

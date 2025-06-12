@@ -263,15 +263,38 @@ class Question(models.Model):
 
         The ordering is reversed for same cardinality value so we have aa
         before zz."""
+        # pylint: disable=too-many-locals
         cardinality = self.answers_cardinality(
             min_cardinality, group_together, group_by_letter_case, group_by_slugify, filter, other_question
         )
         # We handle SortAnswer without enum because using "type" as a variable
-        # name in the function header is broken in Python
-        if sort_answer == SortAnswer.CARDINAL:
-            sorted_cardinality = sorted(list(cardinality.items()), key=lambda x: (-x[1], x[0]))
-        else:
-            sorted_cardinality = sorted(list(cardinality.items()))
+        # name break the enum module and we want to use type in
+        # answer_cardinality for simplicity
+        possibles_values = [SortAnswer.ALPHANUMERIC, SortAnswer.CARDINAL, None]
+        undefined = sort_answer is None
+        user_defined = isinstance(sort_answer, dict)
+        valid = user_defined or sort_answer in possibles_values
+        if not valid:
+            msg = f"Unrecognized option '{sort_answer}' for 'sort_answer': "
+            msg += "use nothing, a dict (answer: rank),"
+            for option in possibles_values:
+                msg += f" '{option}', or"
+            msg = msg[:-4]
+            msg += ". We used the default cardinal sorting."
+            LOGGER.warning(msg)
+        if undefined or not valid:
+            sort_answer = SortAnswer.CARDINAL
+        sorted_cardinality = None
+        if user_defined:
+            sorted_cardinality = sorted(list(cardinality.items()), key=lambda x: sort_answer.get(x[0], 0))
+        elif sort_answer == SortAnswer.ALPHANUMERIC:
+            sorted_cardinality = sorted(cardinality.items())
+        elif sort_answer == SortAnswer.CARDINAL:
+            if other_question is None:
+                sorted_cardinality = sorted(list(cardinality.items()), key=lambda x: (-x[1], x[0]))
+            else:
+                # There is a dict instead of an int
+                sorted_cardinality = sorted(list(cardinality.items()), key=lambda x: (-sum(x[1].values()), x[0]))
         return dict(sorted_cardinality)
 
     def _cardinality_plus_answer(self, cardinality, value, other_question_value):

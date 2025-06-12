@@ -47,7 +47,7 @@ TEMPLATES = [
 ]
 
 
-INSTALLED_APPS = ("survey", "bootstrapform")
+INSTALLED_APPS = ("survey",)
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-28 22:03+0000\n"
+"POT-Creation-Date: 2025-06-12 07:27+0000\n"
 "PO-Revision-Date: 2018-04-09 00:52+0000\n"
 "Last-Translator: b'  <nsuzue@me.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -168,7 +168,7 @@ msgstr "内容"
 msgid "Name"
 msgstr "名前"
 
-#: survey/models/category.py:10 survey/models/question.py:77
+#: survey/models/category.py:10 survey/models/question.py:72
 #: survey/models/response.py:26
 msgid "Survey"
 msgstr "調査"
@@ -189,7 +189,7 @@ msgstr "分類"
 msgid "categories"
 msgstr "分類"
 
-#: survey/models/question.py:21
+#: survey/models/question.py:16
 msgid ""
 "The choices field is only used if the question type\n"
 "if the question type is 'radio', 'select', or\n"
@@ -197,71 +197,71 @@ msgid ""
 "options for this question ."
 msgstr "選択肢フィールドは、質問のタイプが「ラジオボタン」、「リスト（単一選択）」、「リスト（複数選択）」の場合のみ有効です。選択肢はカンマで区切ってください。"
 
-#: survey/models/question.py:60
+#: survey/models/question.py:55
 msgid "text (multiple line)"
 msgstr "テキスト（複数行）"
 
-#: survey/models/question.py:61
+#: survey/models/question.py:56
 msgid "short text (one line)"
 msgstr "テキスト（一行）"
 
-#: survey/models/question.py:62
+#: survey/models/question.py:57
 msgid "radio"
 msgstr "ラジオボタン"
 
-#: survey/models/question.py:63
+#: survey/models/question.py:58
 msgid "select"
 msgstr "リスト（単一選択）"
 
-#: survey/models/question.py:64
+#: survey/models/question.py:59
 msgid "Select Multiple"
 msgstr "リスト（複数選択）"
 
-#: survey/models/question.py:65
+#: survey/models/question.py:60
 msgid "Select Image"
 msgstr "イメージ選択"
 
-#: survey/models/question.py:66
+#: survey/models/question.py:61
 msgid "integer"
 msgstr "整数"
 
-#: survey/models/question.py:67
+#: survey/models/question.py:62
 msgid "float"
 msgstr ""
 
-#: survey/models/question.py:68
+#: survey/models/question.py:63
 msgid "date"
 msgstr ""
 
-#: survey/models/question.py:71
+#: survey/models/question.py:66
 msgid "Text"
 msgstr "テキスト"
 
-#: survey/models/question.py:72
+#: survey/models/question.py:67
 msgid "Order"
 msgstr "順序"
 
-#: survey/models/question.py:73
+#: survey/models/question.py:68
 msgid "Required"
 msgstr "必須"
 
-#: survey/models/question.py:75
+#: survey/models/question.py:70
 msgid "Category"
 msgstr "分類"
 
-#: survey/models/question.py:78
+#: survey/models/question.py:73
 msgid "Type"
 msgstr "タイプ"
 
-#: survey/models/question.py:79
+#: survey/models/question.py:74
 msgid "Choices"
 msgstr "選択肢"
 
-#: survey/models/question.py:82
+#: survey/models/question.py:77
 msgid "question"
 msgstr "質問"
 
-#: survey/models/question.py:83
+#: survey/models/question.py:78
 msgid "questions"
 msgstr "質問"
 

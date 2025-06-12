@@ -32,6 +32,7 @@ class SurveyAdmin(admin.ModelAdmin):
         "page",
         "need_logged_user",
         "template",
+        "total_questions_display",
     )
     list_filter = ("is_published", "need_logged_user")
     search_fields = ("name", "description")
@@ -42,6 +43,10 @@ class SurveyAdmin(admin.ModelAdmin):
     def page(self, obj):
         url = obj.get_absolute_url()
         return mark_safe(f"<a target='_blank'  href='{url}'>Page</a>")
+
+    @admin.display(description=_("Total questions"))
+    def total_questions_display(self, obj):
+        return obj.total_questions
 
 
 class AnswerBaseInline(admin.StackedInline):

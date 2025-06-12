@@ -64,3 +64,13 @@ class Survey(models.Model):
 
     def is_all_in_one_page(self):
         return self.display_method == self.ALL_IN_ONE_PAGE
+
+    @property
+    def total_questions(self) -> int:
+        """
+        Returns the total number of questions in the survey.
+
+        Returns:
+            int: The total number of questions
+        """
+        return self.questions.count()

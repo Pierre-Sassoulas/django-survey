@@ -69,6 +69,10 @@ urls."Source Code" = "https://github.com/Pierre-Sassoulas/django-survey"
 [tool.setuptools.packages.find]
 include = [ "survey*" ]
 
+[tool.poetry]
+package-mode = true
+packages = [{include="survey"}]
+
 [tool.ruff]
 
 line-length = 120

@@ -75,14 +75,7 @@ Add a URL entry to your project’s urls.py, for example:
 
 ```python
 from django.conf import settings
-from django.conf.urls import include
-
-try:
-    from django.conf.urls import url
-except ImportError:
-    # Django 4.0 replaced url by something else
-    # See https://stackoverflow.com/a/70319607/2519059
-    from django.urls import re_path as url
+from django.urls import include, path
 
 urlpatterns = [
     # Your own url pattern here
@@ -90,7 +83,7 @@ urlpatterns = [
 
 if 'survey' in settings.INSTALLED_APPS:
     urlpatterns += [
-        url(r'^survey/', include('survey.urls'))
+        path('survey/', include('survey.urls'))
     ]
 ```
 

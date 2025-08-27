@@ -53,7 +53,7 @@ optional-dependencies.dev = [
   "pre-commit",
   "pylint>=3.3.5",
   "pylint-django",
-  "pysankeybeta~=1.3.0",
+  "pysankeybeta>=1.3,<1.5",
   "pytest",
   "pytest-django",
   "python-coveralls",
@@ -61,7 +61,7 @@ optional-dependencies.dev = [
 ]
 
 optional-dependencies.sankey = [
-  "pysankeybeta~=1.3.0",
+  "pysankeybeta>=1.3,<1.5",
 ]
 urls."Bug Tracker" = "https://github.com/Pierre-Sassoulas/django-survey/issues"
 urls."Source Code" = "https://github.com/Pierre-Sassoulas/django-survey"

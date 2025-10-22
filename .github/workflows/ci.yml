@@ -20,6 +20,8 @@ jobs:
             django-version: 3.2.25
           - python-version: 3.9
             django-version: 4.2.20
+          - python-version: 3.14
+            django-version: 5.2
     steps:
       - uses: actions/checkout@v5
       - name: Python ${{ matrix.python-version }} django ${{ matrix.django-version }}

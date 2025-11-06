@@ -5,7 +5,6 @@ from django import forms
 from django.conf import settings
 from django.forms import models
 from django.urls import reverse
-from django.utils.text import slugify
 
 from survey.models import Answer, Category, Question, Response, Survey
 from survey.signals import survey_completed
@@ -164,18 +163,15 @@ class ResponseForm(models.ModelForm):
         if answer:
             # Initialize the field with values from the database if any
             if question.type == Question.SELECT_MULTIPLE:
-                initial = []
                 if answer.body == "[]":
-                    pass
-                elif "[" in answer.body and "]" in answer.body:
                     initial = []
-                    unformated_choices = answer.body[1:-1].strip()
-                    for unformated_choice in unformated_choices.split(settings.CHOICES_SEPARATOR):
-                        choice = unformated_choice.split("'")[1]
-                        initial.append(slugify(choice))
+                elif answer.body[0] == "[" and answer.body[-1] == "]":
+                    initial = [
+                        choice.strip(" '") for choice in answer.body.strip("[]").split(settings.CHOICES_SEPARATOR)
+                    ]
                 else:
                     # Only one element
-                    initial.append(slugify(answer.body))
+                    initial = [answer.body]
             else:
                 initial = answer.body
         if data:

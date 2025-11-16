@@ -1,5 +1,9 @@
 import os
 
+ROOT = os.path.dirname(os.path.abspath(__file__))
+CSV_DIRECTORY = os.path.join(ROOT, "csv")
+TEX_DIRECTORY = os.path.join(ROOT, "tex")
+
 SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = bool(os.environ.get("DEBUG", default=0))
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(",")
@@ -15,3 +19,104 @@ DATABASES = {
         "PORT": "",  # Set to empty string for default. Not used with sqlite3
     }
 }
+
+USER_DID_NOT_ANSWER = "Left blank"
+
+TEX_CONFIGURATION_FILE = os.path.join(ROOT, "doc", "example_conf.yaml")
+SURVEY_DEFAULT_PIE_COLOR = "red!50"
+
+CHOICES_SEPARATOR = ","
+
+
+SITE_ID = 1
+TIME_ZONE = "UTC"
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+
+DEFAULT_SURVEY_PUBLISHING_DURATION = 7  # in days
+
+MEDIA_URL = "/media/"
+STATIC_URL = "/static/"
+
+MEDIA_ROOT = os.path.join(ROOT, "media")
+STATIC_ROOT = os.path.join(ROOT, "static")
+
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+)
+
+DEBUG_ADMIN_NAME = "test_admin"
+DEBUG_ADMIN_PASSWORD = "test_password"
+
+STATICFILES_DIRS = [os.path.normpath(os.path.join(ROOT, "survey", "static"))]
+
+TEMPLATES = [
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [os.path.join(ROOT, "survey", "templates"), os.path.join(ROOT, "dev", "templates")],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "debug": DEBUG,
+            "context_processors": [
+                # Default
+                "django.contrib.auth.context_processors.auth",
+                "django.template.context_processors.debug",
+                "django.template.context_processors.i18n",
+                "django.template.context_processors.media",
+                "django.template.context_processors.static",
+                "django.template.context_processors.tz",
+                "django.template.context_processors.request",
+                "django.contrib.messages.context_processors.messages",
+            ],
+        },
+    }
+]
+
+MIDDLEWARE = (
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+)
+
+ROOT_URLCONF = "survey.urls"
+WSGI_APPLICATION = "survey.wsgi.application"
+
+INSTALLED_APPS = (
+    "django.contrib.admin",
+    "django.contrib.admindocs",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "survey",
+)
+
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+
+LOCALE_PATHS = (os.path.join(ROOT, "survey", "locale"),)
+LANGUAGE_CODE = "en-us"
+LANGUAGES = (
+    ("en", "english"),
+    ("ru", "russian"),
+    ("es", "spanish"),
+    ("fr", "french"),
+    ("ja", "Japanese"),
+    ("nl", "Dutch"),
+    ("zh", "Chinese"),
+    ("de", "German"),
+    ("id", "Indonesian"),
+    ("pt", "Portuguese"),
+    ("pl", "Polish"),
+    ("tr", "Turkish"),
+    ("gr", "Greek"),
+)
+
+LOGIN_REDIRECT_URL = "/"

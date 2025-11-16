@@ -5,9 +5,8 @@ RUN mkdir -p app/tex
 COPY manage.py pyproject.toml setup.py docker/settings.py .
 COPY survey/. /app/survey/
 
-RUN pip3 install -e .
-COPY docker/settings.py .
-RUN python3 /app/manage.py makemigrations \
+RUN pip3 install -e . \
+    && python3 /app/manage.py makemigrations \
     && python3 /app/manage.py migrate
 
 # TODO Use daphne

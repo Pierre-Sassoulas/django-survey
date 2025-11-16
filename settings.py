@@ -1,12 +1,15 @@
 import logging
 import os
 
-try:
-    import colorama
-except ImportError:
-    from pip._vendor import colorama
+DEBUG = False
 
-colorama.init()
+if DEBUG:
+    try:
+        import colorama
+    except ImportError:
+        from pip._vendor import colorama
+
+    colorama.init()
 
 print(
     "\033[33m"
@@ -18,7 +21,6 @@ print(
     "\033[39m"
 )
 
-DEBUG = True
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CSV_DIRECTORY = os.path.join(ROOT, "csv")
 TEX_DIRECTORY = os.path.join(ROOT, "tex")

@@ -1,0 +1,14 @@
+FROM python:3.14-slim
+
+WORKDIR /app
+RUN mkdir -p app/tex
+COPY manage.py pyproject.toml setup.py docker/settings.py .
+COPY survey/. /app/survey/
+
+RUN pip3 install -e ".[sankey]" \
+    && python3 /app/manage.py makemigrations \
+    && python3 /app/manage.py migrate
+
+# TODO Use daphne
+EXPOSE 8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

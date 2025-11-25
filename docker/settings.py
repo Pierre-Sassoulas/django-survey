@@ -1,31 +1,15 @@
-import logging
 import os
-
-DEBUG = False
-
-if DEBUG:
-    try:
-        import colorama
-    except ImportError:
-        from pip._vendor import colorama
-
-    colorama.init()
-
-print(
-    "\033[33m"
-    "You're using a dev settings file. It includes django rosetta (in order "
-    " for dev to update translations) that is only useful for dev. "
-    "If you're a developer you need to 'pip3 install -e \".[dev]\"', "
-    "If you want to use the app without doing your own settings you should"
-    " remove django-rosetta from the installed apps in the settings."
-    "\033[39m"
-)
+import random
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CSV_DIRECTORY = os.path.join(ROOT, "csv")
 TEX_DIRECTORY = os.path.join(ROOT, "tex")
 
-logging.basicConfig(level=logging.DEBUG, format="%(name)s.%(funcName)s() l.%(lineno)s -\033[32m %(message)s \033[39m")
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY", default=random.choices("abcdefghijklmnopqrstuvwxyz123456798&é(-è_çà)=^$ù*,;:!")
+)
+DEBUG = bool(os.environ.get("DEBUG", default=0))
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 DATABASES = {
     "default": {
@@ -71,9 +55,6 @@ DEBUG_ADMIN_PASSWORD = "test_password"
 
 STATICFILES_DIRS = [os.path.normpath(os.path.join(ROOT, "survey", "static"))]
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = "js*79rk(+s+x9)8co+10$zghe2f)+33jd1l2m#f)vl+pvtj24e"
-
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -106,8 +87,8 @@ MIDDLEWARE = (
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 )
 
-ROOT_URLCONF = "urls"
-WSGI_APPLICATION = "wsgi.application"
+ROOT_URLCONF = "survey.urls"
+WSGI_APPLICATION = "survey.wsgi.application"
 
 INSTALLED_APPS = (
     "django.contrib.admin",
@@ -119,7 +100,6 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "survey",
-    "rosetta",
 )
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
@@ -143,17 +123,3 @@ LANGUAGES = (
 )
 
 LOGIN_REDIRECT_URL = "/"
-
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "filters": {"require_debug_false": {"()": "django.utils.log.RequireDebugFalse"}},
-    "handlers": {
-        "mail_admins": {
-            "level": "ERROR",
-            "filters": ["require_debug_false"],
-            "class": "django.utils.log.AdminEmailHandler",
-        }
-    },
-    "loggers": {"django.request": {"handlers": ["mail_admins"], "level": "ERROR", "propagate": True}},
-}

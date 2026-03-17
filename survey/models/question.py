@@ -50,6 +50,7 @@ class Question(models.Model):
     INTEGER = "integer"
     FLOAT = "float"
     DATE = "date"
+    MAX = "maximum-coices"
 
     QUESTION_TYPES = (
         (TEXT, _("text (multiple line)")),
@@ -72,6 +73,7 @@ class Question(models.Model):
     survey = models.ForeignKey(Survey, on_delete=models.CASCADE, verbose_name=_("Survey"), related_name="questions")
     type = models.CharField(_("Type"), max_length=200, choices=QUESTION_TYPES, default=TEXT)
     choices = models.TextField(_("Choices"), blank=True, null=True, help_text=CHOICES_HELP_TEXT)
+    maximum_choices = models.IntegerField(_("Maximum possible Answers"), blank=True, null=True)
 
     class Meta:
         verbose_name = _("question")

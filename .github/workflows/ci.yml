@@ -29,7 +29,7 @@ jobs:
           - python-version: 3.14
             django-version: 6.0
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Python ${{ matrix.python-version }} django ${{ matrix.django-version }}
         uses: actions/setup-python@v6
         with:

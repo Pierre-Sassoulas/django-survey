@@ -164,17 +164,18 @@ class Question(models.Model):
                 msg += f" '{other_question}' (a '{other_question.__class__.__name__}')"
                 raise TypeError(msg)
         return self.__answers_cardinality(
-            min_cardinality,
-            group_together,
-            group_by_letter_case,
-            group_by_slugify,
-            filter,
-            standardized_filter,
-            other_question,
+            min_cardinality=min_cardinality,
+            group_together=group_together,
+            group_by_letter_case=group_by_letter_case,
+            group_by_slugify=group_by_slugify,
+            excluded=filter,
+            standardized_filter=standardized_filter,
+            other_question=other_question,
         )
 
     def __answers_cardinality(
         self,
+        *,
         min_cardinality,
         group_together,
         group_by_letter_case,
@@ -197,26 +198,26 @@ class Question(models.Model):
                         self._cardinality_plus_n(cardinality, value, 1)
                     else:
                         self.__add_user_cardinality(
-                            cardinality,
-                            answer.response.user,
-                            value,
-                            other_question,
-                            group_by_letter_case,
-                            group_by_slugify,
-                            group_together,
-                            excluded,
-                            standardized_filter,
+                            cardinality=cardinality,
+                            user=answer.response.user,
+                            value=value,
+                            other_question=other_question,
+                            group_by_letter_case=group_by_letter_case,
+                            group_by_slugify=group_by_slugify,
+                            group_together=group_together,
+                            excluded=excluded,
+                            standardized_filter=standardized_filter,
                         )
         cardinality = self.filter_by_min_cardinality(cardinality, min_cardinality)
         if other_question is not None:
             self.__handle_other_question_cardinality(
-                cardinality,
-                excluded,
-                group_by_letter_case,
-                group_by_slugify,
-                group_together,
-                other_question,
-                standardized_filter,
+                cardinality=cardinality,
+                excluded=excluded,
+                group_by_letter_case=group_by_letter_case,
+                group_by_slugify=group_by_slugify,
+                group_together=group_together,
+                other_question=other_question,
+                standardized_filter=standardized_filter,
             )
         return cardinality
 
@@ -233,6 +234,7 @@ class Question(models.Model):
 
     def __handle_other_question_cardinality(
         self,
+        *,
         cardinality,
         excluded,
         group_by_letter_case,
@@ -265,7 +267,12 @@ class Question(models.Model):
         before zz."""
         # pylint: disable=too-many-locals
         cardinality = self.answers_cardinality(
-            min_cardinality, group_together, group_by_letter_case, group_by_slugify, filter, other_question
+            min_cardinality=min_cardinality,
+            group_together=group_together,
+            group_by_letter_case=group_by_letter_case,
+            group_by_slugify=group_by_slugify,
+            filter=filter,
+            other_question=other_question,
         )
         # We handle SortAnswer without enum because using "type" as a variable
         # name break the enum module and we want to use type in
@@ -330,6 +337,7 @@ class Question(models.Model):
 
     def __add_user_cardinality(
         self,
+        *,
         cardinality,
         user,
         value,

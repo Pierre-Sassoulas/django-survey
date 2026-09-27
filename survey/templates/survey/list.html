@@ -1,23 +1,19 @@
 {% extends 'survey/base.html' %}
 {% load i18n %}
-
 {% block body %}
-<div id="intro">
-	<h1>{% trans "Welcome to the Django Survey app"%}</h1>
-    {% if messages %}
-        <p>
-            {% for message in messages %}
-                <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}">
-                    {{ message }}
-                </div>
+    <div id="intro">
+        <h1>{% trans "Welcome to the Django Survey app" %}</h1>
+        {% if messages %}
+            <p>
+                {% for message in messages %}
+                    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+                {% endfor %}
+            </p>
+        {% endif %}
+        <ul>
+            {% for survey in surveys %}
+                <li><a href="{{ survey.get_absolute_url }}">{% trans "Take the Survey" %} {{ survey.name }}</a></li>
             {% endfor %}
-        </p>
-    {% endif %}
-
-	<ul>
-		{% for survey in surveys %}
-		<li><a href="{{ survey.get_absolute_url }}">{% trans "Take the Survey"%} {{survey.name}}</a></li>
-		{% endfor %}
-	</ul>
-</div>
+        </ul>
+    </div>
 {% endblock %}

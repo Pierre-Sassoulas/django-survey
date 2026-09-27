@@ -23,7 +23,7 @@ msgstr ""
 msgid "en"
 msgstr "es"
 
-#: dev/templates/base.html:5
+#: dev/templates/base.html:7
 msgid "DEVELOPMENT django-Survey"
 msgstr "DESARROLLO django-Survey"
 
@@ -360,34 +360,34 @@ msgstr "Regresa a la lista de encuestas"
 msgid "Survey submitted"
 msgstr "Encuesta enviada"
 
-#: survey/templates/survey/confirm.html:10
+#: survey/templates/survey/confirm.html:9
 msgid "Thanks! Your answers have been saved"
 msgstr "¡Gracias¡ Hemos guardado tus respuestas"
 
-#: survey/templates/survey/confirm.html:14
+#: survey/templates/survey/confirm.html:11
 msgid "You can always come back and change them."
 msgstr "Siempre puedes regresar y hacer cambios."
 
-#: survey/templates/survey/list.html:6
+#: survey/templates/survey/list.html:5
 msgid "Welcome to the Django Survey app"
 msgstr "Bienvenido a Django Survey"
 
-#: survey/templates/survey/list.html:19
+#: survey/templates/survey/list.html:15
 msgid "Take the Survey"
 msgstr "Toma la encuesta"
 
-#: survey/templates/survey/survey.html:44
+#: survey/templates/survey/survey.html:41
 msgid "Answer this part"
 msgstr "Reponde esta sección"
 
-#: survey/templates/survey/survey.html:58
+#: survey/templates/survey/survey.html:53
 msgid "Questions"
 msgstr "Preguntas"
 
-#: survey/templates/survey/survey.html:68
+#: survey/templates/survey/survey.html:61
 msgid "Next!"
 msgstr "Siguiente!"
 
-#: survey/templates/survey/survey.html:74
+#: survey/templates/survey/survey.html:65
 msgid "I'm done!"
 msgstr "¡Terminé!"

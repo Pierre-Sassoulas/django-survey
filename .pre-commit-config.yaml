@@ -16,6 +16,12 @@ repos:
       - id: ruff-check
         args: ["--fix"]
       - id: ruff-format
+  - repo: https://github.com/djlint/djlint
+    rev: "v1.44.2"
+    hooks:
+      - id: djlint-django
+        args: ["--reformat"]
+      - id: djlint-django
   - repo: https://github.com/tox-dev/pyproject-fmt
     rev: "v2.29.4"
     hooks:

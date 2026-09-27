@@ -22,7 +22,7 @@ msgstr ""
 msgid "en"
 msgstr "ja"
 
-#: dev/templates/base.html:5
+#: dev/templates/base.html:7
 msgid "DEVELOPMENT django-Survey"
 msgstr "django-Surveyの開発"
 
@@ -355,34 +355,34 @@ msgstr "調査一覧に戻る"
 msgid "Survey submitted"
 msgstr "調査が終了しました"
 
-#: survey/templates/survey/confirm.html:10
+#: survey/templates/survey/confirm.html:9
 msgid "Thanks! Your answers have been saved"
 msgstr "ありがとうございました。回答内容が保存されました。"
 
-#: survey/templates/survey/confirm.html:14
+#: survey/templates/survey/confirm.html:11
 msgid "You can always come back and change them."
 msgstr "あとで回答内容を変更することが出来ます。"
 
-#: survey/templates/survey/list.html:6
+#: survey/templates/survey/list.html:5
 msgid "Welcome to the Django Survey app"
 msgstr "Django Surveyアプリケーションにようこそ"
 
-#: survey/templates/survey/list.html:19
+#: survey/templates/survey/list.html:15
 msgid "Take the Survey"
 msgstr "この調査に回答する"
 
-#: survey/templates/survey/survey.html:44
+#: survey/templates/survey/survey.html:41
 msgid "Answer this part"
 msgstr "この質問に回答する"
 
-#: survey/templates/survey/survey.html:58
+#: survey/templates/survey/survey.html:53
 msgid "Questions"
 msgstr "質問"
 
-#: survey/templates/survey/survey.html:68
+#: survey/templates/survey/survey.html:61
 msgid "Next!"
 msgstr ""
 
-#: survey/templates/survey/survey.html:74
+#: survey/templates/survey/survey.html:65
 msgid "I'm done!"
 msgstr "回答を終了する"

@@ -23,7 +23,7 @@ msgstr ""
 msgid "en"
 msgstr "id"
 
-#: dev/templates/base.html:5
+#: dev/templates/base.html:7
 msgid "DEVELOPMENT django-Survey"
 msgstr "Pengembangan django-survey"
 
@@ -355,34 +355,34 @@ msgstr "Kembali ke daftar survei"
 msgid "Survey submitted"
 msgstr "Survei terkirim"
 
-#: survey/templates/survey/confirm.html:10
+#: survey/templates/survey/confirm.html:9
 msgid "Thanks! Your answers have been saved"
 msgstr "Terima kasih, jawaban Anda telah disimpan"
 
-#: survey/templates/survey/confirm.html:14
+#: survey/templates/survey/confirm.html:11
 msgid "You can always come back and change them."
 msgstr "Anda dapat kembali dan mengubahnya kapanpun."
 
-#: survey/templates/survey/list.html:6
+#: survey/templates/survey/list.html:5
 msgid "Welcome to the Django Survey app"
 msgstr "Selamat datang di aplikasi Django Survey"
 
-#: survey/templates/survey/list.html:19
+#: survey/templates/survey/list.html:15
 msgid "Take the Survey"
 msgstr "Ambil bagian pada survei"
 
-#: survey/templates/survey/survey.html:44
+#: survey/templates/survey/survey.html:41
 msgid "Answer this part"
 msgstr "Jawab bagian ini"
 
-#: survey/templates/survey/survey.html:58
+#: survey/templates/survey/survey.html:53
 msgid "Questions"
 msgstr "Pertanyaan"
 
-#: survey/templates/survey/survey.html:68
+#: survey/templates/survey/survey.html:61
 msgid "Next!"
 msgstr ""
 
-#: survey/templates/survey/survey.html:74
+#: survey/templates/survey/survey.html:65
 msgid "I'm done!"
 msgstr "Saya sudah selesai!"

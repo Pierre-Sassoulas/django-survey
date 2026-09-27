@@ -197,7 +197,7 @@ class TestQuestion(BaseModelTest):
         for j in range(3):
             response = Response.objects.create(survey=survey)
             for i, question in enumerate(questions):
-                Answer.objects.create(response=response, question=question, body=(j + i))
+                Answer.objects.create(response=response, question=question, body=j + i)
         expected = [
             ("Left blank", {"1": 1, "2": 1, "3": 1}),
             ("0", {"Left blank": 1}),

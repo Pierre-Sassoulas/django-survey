@@ -1,6 +1,5 @@
 [build-system]
 build-backend = "setuptools.build_meta"
-
 requires = [ "setuptools>=67.5.1", "wheel" ]
 
 [project]
@@ -10,7 +9,7 @@ description = "A django survey app that can export results as CSV or PDF using y
 readme = "README.md"
 license = { text = "AGPL-3.0" }
 authors = [
-  { email = "pierre.sassoulas@gmail.com", name = "Pierre SASSOULAS" },
+  { name = "Pierre SASSOULAS", email = "pierre.sassoulas@gmail.com" },
 ]
 requires-python = ">=3.9"
 classifiers = [
@@ -38,6 +37,7 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
   "Topic :: Utilities",
 ]
 dependencies = [
@@ -45,7 +45,6 @@ dependencies = [
   "pytz>=2018.9",
   "pyyaml>=4.2b1",
 ]
-
 optional-dependencies.dev = [
   "colorama",
   "coverage",
@@ -60,18 +59,16 @@ optional-dependencies.dev = [
   "python-coveralls",
   "setuptools",
 ]
-
 optional-dependencies.sankey = [
   "pysankeybeta>=1.3,<1.5",
 ]
 urls."Bug Tracker" = "https://github.com/Pierre-Sassoulas/django-survey/issues"
 urls."Source Code" = "https://github.com/Pierre-Sassoulas/django-survey"
 
-[tool.setuptools.packages.find]
-include = [ "survey*" ]
+[tool.setuptools]
+packages.find.include = [ "survey*" ]
 
 [tool.ruff]
-
 line-length = 120
 lint.select = [
   "B",   # bugbear
@@ -86,36 +83,34 @@ lint.ignore = [
   "RUF012", # mutable default values in class attributes
 ]
 
-[tool.pylint.main]
-load-plugins = "pylint_django"
-
-disable = [
+[tool.pylint]
+main.disable = [
+  "arguments-differ",               # TODO fix
+  "attribute-defined-outside-init", # TODO fix
+  "consider-using-f-string",        # TODO fix
+  "consider-using-with",            # TODO fix
+  "duplicate-code",                 # TODO fix
+  "fixme",                          # TODO fix
   # I0011 Warning locally suppressed using disable-msg
   "I0011",
+  "imported-auth-user",             # TODO fix
+  "inconsistent-return-statements", # TODO fix
+  "missing-docstring",              # We don't want docstring everywhere
+  "no-else-return",                 # TODO fix
   "no-member",
-  "missing-docstring",            # We don't want docstring everywhere
-  "too-few-public-methods",       # More harmful than beneficial in django project
+  "redefined-builtin",              # TODO fix
+  "superfluous-parens",             # TODO fix
+  "too-few-public-methods",         # More harmful than beneficial in django project
   "too-many-arguments",
+  "too-many-branches",              # TODO fix
   "too-many-instance-attributes",
-  # TODO Fix
-  "too-many-positional-arguments",  # Bad API
-  "unspecified-encoding",
-  "inconsistent-return-statements",
-  "consider-using-with",
-  "fixme",
-  "no-else-return",
-  "imported-auth-user",
-  "unused-argument",
-  "arguments-differ",
-  "consider-using-f-string",
-  "too-many-branches",
-  "redefined-builtin",
-  "superfluous-parens",
-  "useless-parent-delegation",
-  "unused-private-member",
-  "duplicate-code",
-  "attribute-defined-outside-init",
+  "too-many-positional-arguments",  # TODO fix, bad API
+  "unspecified-encoding",           # TODO fix
+  "unused-argument",                # TODO fix
+  "unused-private-member",          # TODO fix
+  "useless-parent-delegation",      # TODO fix
 ]
-ignore = "migrations"
-good-names = "i,j,k,ex,Run,_,f,e,maxDiff"
-max-line-length = 120
+main.good-names = "i,j,k,ex,Run,_,f,e,maxDiff"
+main.ignore = "migrations"
+main.load-plugins = "pylint_django"
+main.max-line-length = 120

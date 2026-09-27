@@ -59,17 +59,15 @@ Add `survey` in the `INSTALLED_APPS` in your settings :
 
 ```python
 INSTALLED_APPS = [
-	# Your own installed apps here
+    # Your own installed apps here
 ]
 
 from pathlib import Path
 
-CSV_DIRECTORY = Path("csv") # Define the directory where csv are exported
-TEX_DIRECTORY = Path("tex") # Define the directory where tex files and pdf are exported
+CSV_DIRECTORY = Path("csv")  # Define the directory where csv are exported
+TEX_DIRECTORY = Path("tex")  # Define the directory where tex files and pdf are exported
 
-INSTALLED_APPS += [
-	'survey'
-]
+INSTALLED_APPS += ["survey"]
 ```
 
 Add a URL entry to your project’s urls.py, for example:
@@ -82,10 +80,8 @@ urlpatterns = [
     # Your own url pattern here
 ]
 
-if 'survey' in settings.INSTALLED_APPS:
-    urlpatterns += [
-        path('survey/', include('survey.urls'))
-    ]
+if "survey" in settings.INSTALLED_APPS:
+    urlpatterns += [path("survey/", include("survey.urls"))]
 ```
 
 Note: you can use whatever you wish as the URL prefix.
@@ -105,6 +101,7 @@ USER_DID_NOT_ANSWER = "NAA"
 
 # Path to the Tex configuration file (default to an internal file that should be sufficient)
 from pathlib import Path
+
 TEX_CONFIGURATION_FILE = Path("tex", "tex.conf")
 
 # Default color for exported pdf pie (default to "red!50")
@@ -255,7 +252,6 @@ from survey.exporter.tex.question2tex_chart import Question2TexChart
 
 
 class CustomQuestion2TexChild(Question2TexChart):
-
     def get_results(self):
         self.type = "polar"
         return """        2/There were no answer at all,

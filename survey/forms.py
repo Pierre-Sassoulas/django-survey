@@ -3,15 +3,33 @@ import uuid
 
 from django import forms
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.forms import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django.utils.translation import ngettext
 
 from survey.models import Answer, Category, Question, Response, Survey
 from survey.signals import survey_completed
 from survey.widgets import ImageSelectWidget
 
 LOGGER = logging.getLogger(__name__)
+
+
+class MaximumChoicesValidator:
+    """Refuse an answer when more choices than allowed are selected."""
+
+    def __init__(self, maximum_choices):
+        self.maximum_choices = maximum_choices
+
+    def __call__(self, value):
+        if len(value) > self.maximum_choices:
+            msg = ngettext(
+                "Select at most %(maximum)d choice.",
+                "Select at most %(maximum)d choices.",
+                self.maximum_choices,
+            )
+            raise ValidationError(msg, code="maximum_choices", params={"maximum": self.maximum_choices})
 
 
 class ResponseForm(models.ModelForm):
@@ -247,6 +265,8 @@ class ResponseForm(models.ModelForm):
 
         if question.type == Question.DATE:
             field.widget.attrs["class"] = "date"
+        if question.type == Question.SELECT_MULTIPLE and question.maximum_choices:
+            field.validators.append(MaximumChoicesValidator(question.maximum_choices))
         # logging.debug("Field for %s : %s", question, field.__dict__)
         self.fields[f"question_{question.pk}"] = field
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 09:31+0000\n"
+"POT-Creation-Date: 2026-09-27 09:46+0000\n"
 "PO-Revision-Date: 2020-02-23 14:44+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,6 +147,13 @@ msgstr "Erreur durant la génération du PDF: %s"
 msgid "Export to PDF"
 msgstr "Export vers PDF"
 
+#: survey/forms.py:28
+#, python-format
+msgid "Select at most %(maximum)d choice."
+msgid_plural "Select at most %(maximum)d choices."
+msgstr[0] "Sélectionnez au plus %(maximum)d choix."
+msgstr[1] "Sélectionnez au plus %(maximum)d choix."
+
 #: survey/models/answer.py:21
 msgid "Question"
 msgstr "Question"
@@ -171,7 +178,7 @@ msgstr "Contenu"
 msgid "Name"
 msgstr "Nom"
 
-#: survey/models/category.py:10 survey/models/question.py:72
+#: survey/models/category.py:10 survey/models/question.py:73
 #: survey/models/response.py:16
 msgid "Survey"
 msgstr "Sondage"
@@ -192,7 +199,7 @@ msgstr "catégorie"
 msgid "categories"
 msgstr "catégories"
 
-#: survey/models/question.py:16
+#: survey/models/question.py:17
 msgid ""
 "The choices field is only used if the question type\n"
 "if the question type is 'radio', 'select', or\n"
@@ -200,71 +207,79 @@ msgid ""
 "options for this question ."
 msgstr "Le champ choix est utilisé seulement si la question est de type 'bouton radio', 'liste déroulante', ou 'liste à choix multiple', il faut fournir la liste des options pour cette question sous la forme d'une liste séparée par des virgules."
 
-#: survey/models/question.py:55
+#: survey/models/question.py:56
 msgid "text (multiple line)"
 msgstr "Texte (plusieurs lignes)"
 
-#: survey/models/question.py:56
+#: survey/models/question.py:57
 msgid "short text (one line)"
 msgstr "Texte court (une ligne)"
 
-#: survey/models/question.py:57
+#: survey/models/question.py:58
 msgid "radio"
 msgstr "Bouton radio"
 
-#: survey/models/question.py:58
+#: survey/models/question.py:59
 msgid "select"
 msgstr "Liste déroulante"
 
-#: survey/models/question.py:59
+#: survey/models/question.py:60
 msgid "Select Multiple"
 msgstr "Liste à choix multiple"
 
-#: survey/models/question.py:60
+#: survey/models/question.py:61
 msgid "Select Image"
 msgstr "Séléctionnez l'image"
 
-#: survey/models/question.py:61
+#: survey/models/question.py:62
 msgid "integer"
 msgstr "Chiffre"
 
-#: survey/models/question.py:62
+#: survey/models/question.py:63
 msgid "float"
 msgstr "Décimal"
 
-#: survey/models/question.py:63
+#: survey/models/question.py:64
 msgid "date"
 msgstr ""
 
-#: survey/models/question.py:66
+#: survey/models/question.py:67
 msgid "Text"
 msgstr "Texte"
 
-#: survey/models/question.py:67
+#: survey/models/question.py:68
 msgid "Order"
 msgstr "Ordre"
 
-#: survey/models/question.py:68
+#: survey/models/question.py:69
 msgid "Required"
 msgstr "Requise"
 
-#: survey/models/question.py:70
+#: survey/models/question.py:71
 msgid "Category"
 msgstr "Catégorie"
 
-#: survey/models/question.py:73
+#: survey/models/question.py:74
 msgid "Type"
 msgstr "Type"
 
-#: survey/models/question.py:74
+#: survey/models/question.py:75
 msgid "Choices"
 msgstr "Choix"
 
 #: survey/models/question.py:77
+msgid "Maximum number of choices"
+msgstr "Nombre maximum de choix"
+
+#: survey/models/question.py:81
+msgid "Only used for 'select multiple' questions. Leave empty for no limit."
+msgstr "Utilisé seulement pour les questions de type 'liste à choix multiple'. Laisser vide pour ne pas avoir de limite."
+
+#: survey/models/question.py:85
 msgid "question"
 msgstr "question"
 
-#: survey/models/question.py:78
+#: survey/models/question.py:86
 msgid "questions"
 msgstr "questions"
 

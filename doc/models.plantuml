@@ -29,6 +29,7 @@ package models {
         +Boolean required
         +String type
         +String choices
+        +int maximum_choices
     }
 
     class Response {

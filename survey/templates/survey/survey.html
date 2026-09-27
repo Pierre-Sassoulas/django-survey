@@ -2,78 +2,69 @@
 {% load i18n %}
 {% load survey_extras %}
 {% load static %}
-
-{% block title %} {{survey.name}} {% endblock title %}
-
+{% block title %} {{ survey.name }} {% endblock title %}
 {% block extrajs %}
-  {{response_form.media}}
-  {% if asset_context.flatpickr %}
-    <script type="text/javascript" src="{% static 'survey/js/flatpickr.min.js' %}"></script>
-  {% endif %}
+    {{ response_form.media }}
+    {% if asset_context.flatpickr %}
+        <script type="text/javascript"
+                src="{% static 'survey/js/flatpickr.min.js' %}"></script>
+    {% endif %}
 {% endblock %}
-
 {% block extracss %}
-  {% if asset_context.flatpickr %}
-    {{ block.super }}
-    <link href="{% static 'survey/css/flatpickr.min.css'%}" rel="stylesheet" type="text/css"/>
-  {% endif %}
+    {% if asset_context.flatpickr %}
+        {{ block.super }}
+        <link href="{% static 'survey/css/flatpickr.min.css' %}"
+              rel="stylesheet"
+              type="text/css" />
+    {% endif %}
 {% endblock %}
-
-
-
 {% block body %}
-	<h1> {{survey.name}} </h1>
-	<div class="survey-description"> {{survey.description|safe}} </div>
-	<div>
-      {% if step and step != 0 %}
-		<form action="{% url 'survey-detail-step' id=survey.id step=step %}" method="post">
-	{% else %}
-		<form action="{% url 'survey-detail' id=survey.id %}" method="post">
-	{% endif %}
-	    {% csrf_token %}
-        {% for category in categories %}
-            <h3> {{category}} </h3>
-            <p> {{category.description|default_if_none:""}} </p>
-			<div class="panel-group" id="accordion">
-				<div class="panel panel-default">
-				    <div class="panel-heading">
-				        <h3 class="panel-title"> <a
-				        data-toggle="collapse show"
-				        data-parent="#accordion"
-				        href="#collapse{{category.slugify}}">
-				            {% trans "Answer this part" %}
-			            </a></h3>
-				    </div>
-                    <div class="category-container">
-				        <div id="collapse{{category.slugify}}" class="panel-collapse collapse show {% if not survey.editable_answers and response_form.response is not None %}in{% endif %}
-				        {{ response_form|collapse_form:category }}">
-				            <div class="panel-body">
-	                           {% include "survey/question.html" %}
+    <h1>{{ survey.name }}</h1>
+    <div class="survey-description">{{ survey.description|safe }}</div>
+    <div>
+        {% if step and step != 0 %}
+            <form action="{% url 'survey-detail-step' id=survey.id step=step %}"
+                  method="post">
+        {% else %}
+            <form action="{% url 'survey-detail' id=survey.id %}" method="post">
+        {% endif %}
+            {% csrf_token %}
+            {% for category in categories %}
+                <h3>{{ category }}</h3>
+                <p>{{ category.description|default_if_none:"" }}</p>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a data-toggle="collapse show"
+                                   data-parent="#accordion"
+                                   href="#collapse{{ category.slugify }}">{% trans "Answer this part" %}</a>
+                            </h3>
+                        </div>
+                        <div class="category-container">
+                            <div id="collapse{{ category.slugify }}"
+                                 class="panel-collapse collapse show {% if not survey.editable_answers and response_form.response is not None %}in{% endif %} {{ response_form|collapse_form:category }}">
+                                <div class="panel-body">{% include "survey/question.html" %}</div>
                             </div>
-		                </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-			</div>
-        {% empty %}
-            <h3> {% trans "Questions" %} </h3>
-            {% include "survey/question.html" %}
-        {% endfor %}
-
-        <br>
-		{% if survey.editable_answers or response_form.response is None %}
-	    {% if response_form.has_next_step %}
-				    <input
-  			          class="btn btn-default btn-lg"
-				        type="submit"
-				        value="{% trans "Next!" %}"
-        			>
-				{% else %}
-				    <input
-  			          class="btn btn-default btn-lg"
-				        type="submit"
-				        value="{% trans "I'm done!" %}"
-        			>
-				{% endif %}
-		{% endif %}
-	</form></div>
+            {% empty %}
+                <h3>{% trans "Questions" %}</h3>
+                {% include "survey/question.html" %}
+            {% endfor %}
+            <br>
+            {% if survey.editable_answers or response_form.response is None %}
+                {% if response_form.has_next_step %}
+                    <input class="btn btn-default btn-lg"
+                           type="submit"
+                           value="{% trans "Next!" %}">
+                {% else %}
+                    <input class="btn btn-default btn-lg"
+                           type="submit"
+                           value="{% trans "I'm done!" %}">
+                {% endif %}
+            {% endif %}
+        </form>
+    </div>
 {% endblock %}

@@ -67,6 +67,11 @@ urls."Source Code" = "https://github.com/Pierre-Sassoulas/django-survey"
 [tool.setuptools]
 packages.find.include = [ "survey*" ]
 
+[tool.djlint]
+# H021: inline styles, H030/H031: meta description/keywords. Templates are
+# meant to be overridden by the host project, which owns styling and <head>.
+ignore = "H006,H021,H030,H031"
+
 [tool.ruff]
 line-length = 120
 lint.select = [

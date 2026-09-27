@@ -1,31 +1,40 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{% block title %}{% endblock title %}</title>
-    <link rel="icon" href="{% static 'img/favicon.ico'%}"/>
-    <link href="{% static 'survey/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css"/>
-	  <link rel="stylesheet" type="text/css" href="{% static 'survey/css/custom.css' %}" />
-    {% block extracss %}{% endblock %}
-  </head>
-  <body>
-    <div class="container" id="wrap">
-	   {% block wrapper %}{% endblock %}
-     <div class="well" id="container-main">
-      {% block body %}{% endblock %}
-	   </div>
-	</div>
-	<div class="footer">
-    <div class="container">
-     {% block footer %}{% endblock %}
-    </div>
-  </div>
-  <script type="text/javascript" src="{% static 'survey/js/jquery.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'survey/js/jquery-ui.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'survey/js/bootstrap.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'survey/js/custom.js' %}"></script>
-  {% block extrajs %}{% endblock %}
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            {% block title %}
+            {% endblock title %}
+        </title>
+        <link rel="icon" href="{% static 'img/favicon.ico' %}" />
+        <link href="{% static 'survey/css/bootstrap.min.css' %}"
+              rel="stylesheet"
+              type="text/css" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="{% static 'survey/css/custom.css' %}" />
+        {% block extracss %}{% endblock %}
+    </head>
+    <body>
+        <div class="container" id="wrap">
+            {% block wrapper %}{% endblock %}
+            <div class="well" id="container-main">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                {% block footer %}{% endblock %}
+            </div>
+        </div>
+        <script type="text/javascript" src="{% static 'survey/js/jquery.min.js' %}"></script>
+        <script type="text/javascript"
+                src="{% static 'survey/js/jquery-ui.min.js' %}"></script>
+        <script type="text/javascript"
+                src="{% static 'survey/js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'survey/js/custom.js' %}"></script>
+        {% block extrajs %}{% endblock %}
+    </body>
 </html>

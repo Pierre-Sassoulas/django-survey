@@ -20,7 +20,7 @@ msgstr ""
 msgid "en"
 msgstr "gr"
 
-#: dev/templates/base.html:5
+#: dev/templates/base.html:7
 msgid "DEVELOPMENT django-Survey"
 msgstr "ΑΝΑΠΤΥΞΗ django-survey"
 
@@ -353,34 +353,34 @@ msgstr "Επιστροφή στη λίστα ερευνών"
 msgid "Survey submitted"
 msgstr "Η έρευνα υποβλήθηκε"
 
-#: survey/templates/survey/confirm.html:10
+#: survey/templates/survey/confirm.html:9
 msgid "Thanks! Your answers have been saved"
 msgstr "Ευχαριστούμε! Οι απαντήσεις σας έχουν αποθηκευτεί"
 
-#: survey/templates/survey/confirm.html:14
+#: survey/templates/survey/confirm.html:11
 msgid "You can always come back and change them."
 msgstr "Μπορείτε πάντα να επιστρέψετε και να τα αλλάξετε."
 
-#: survey/templates/survey/list.html:6
+#: survey/templates/survey/list.html:5
 msgid "Welcome to the Django Survey app"
 msgstr "Καλωσήρθατε στο Django Survey app"
 
-#: survey/templates/survey/list.html:19
+#: survey/templates/survey/list.html:15
 msgid "Take the Survey"
 msgstr "Λάβετε μέρος στην έρευνα"
 
-#: survey/templates/survey/survey.html:44
+#: survey/templates/survey/survey.html:41
 msgid "Answer this part"
 msgstr "Απαντήστε σε αυτό το κομμάτι"
 
-#: survey/templates/survey/survey.html:58
+#: survey/templates/survey/survey.html:53
 msgid "Questions"
 msgstr "Ερωτήσεις"
 
-#: survey/templates/survey/survey.html:68
+#: survey/templates/survey/survey.html:61
 msgid "Next!"
 msgstr "Επόμενο!"
 
-#: survey/templates/survey/survey.html:74
+#: survey/templates/survey/survey.html:65
 msgid "I'm done!"
 msgstr "Τέλος!"

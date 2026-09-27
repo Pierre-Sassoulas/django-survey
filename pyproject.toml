@@ -85,17 +85,16 @@ lint.ignore = [
 
 [tool.pylint]
 main.disable = [
-  "duplicate-code",                 # TODO fix
-  "fixme",                          # TODO fix
+  "duplicate-code",                # TODO fix
+  "fixme",                         # TODO fix
   # I0011 Warning locally suppressed using disable-msg
   "I0011",
-  "missing-docstring",              # We don't want docstring everywhere
+  "missing-docstring",             # We don't want docstring everywhere
   "no-member",
-  "redefined-builtin",              # TODO fix
-  "too-few-public-methods",         # More harmful than beneficial in django project
+  "too-few-public-methods",        # More harmful than beneficial in django project
   "too-many-arguments",
   "too-many-instance-attributes",
-  "too-many-positional-arguments",  # TODO fix, bad API
+  "too-many-positional-arguments", # TODO fix, bad API
 ]
 main.good-names = "i,j,k,ex,Run,_,f,e,maxDiff"
 main.ignore = "migrations"

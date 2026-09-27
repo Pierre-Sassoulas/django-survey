@@ -57,30 +57,20 @@ class TestQuestion2TexChart(TestManagement):
         """We can create a filtered chart with a proper caption."""
         question = self.survey.questions.get(text="Cède?")
 
-        def get_options(
-            min_cardinality=0,
-            filter=None,
-            group_together=None,
-            group_by_slugify=None,
-            group_by_lettercase=None,
-            cardinality=None,
-        ):
+        def get_options(**options):
             """Permit to have default options while defining specific options
             explicitely."""
-            if filter is None:
-                filter = {}
-            if group_together is None:
-                group_together = {}
             return {
                 "question": question,
-                "min_cardinality": min_cardinality,
-                "filter": filter,
-                "group_together": group_together,
-                "group_by_slugify": group_by_slugify,
-                "group_by_lettercase": group_by_lettercase,
+                "min_cardinality": 0,
+                "filter": {},
+                "group_together": {},
+                "group_by_slugify": None,
+                "group_by_lettercase": None,
                 # We do not have cardinality in get_caption but we want to be
                 # able to change the question cardinality
-                "cardinality": cardinality,
+                "cardinality": None,
+                **options,
             }
 
         def get_result(**options):

@@ -53,6 +53,18 @@ repos:
         exclude: "survey/static/|dev/templates/|survey/templates/|survey/locale/|survey/tests/"
   - repo: local
     hooks:
+      - id: import-linter
+        name: import-linter (no circular imports)
+        # Contracts live in .importlinter. Declared local with language: python
+        # so the hook env needs nothing from the project: grimp reads the source
+        # statically. Version is pinned here, not by a rev, so `pre-commit
+        # autoupdate` won't move it: bump it by hand.
+        entry: lint-imports
+        language: python
+        additional_dependencies: ["import-linter==2.15"]
+        pass_filenames: false
+        require_serial: true
+        types: [python]
       - id: pylint
         name: pylint
         entry: pylint

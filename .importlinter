@@ -1,0 +1,12 @@
+# Import Linter contracts — https://import-linter.readthedocs.io
+# Run by the `import-linter` pre-commit hook. Kept out of pyproject.toml
+# because pyproject-fmt collapses the contract tables onto one line.
+[importlinter]
+root_package = survey
+exclude_type_checking_imports = True
+
+[importlinter:contract:no-cycles]
+name = No circular imports
+type = acyclic_siblings
+ancestors =
+    survey

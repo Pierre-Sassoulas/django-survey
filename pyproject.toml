@@ -103,7 +103,6 @@ main.disable = [
   "too-many-branches",              # TODO fix
   "too-many-instance-attributes",
   "too-many-positional-arguments",  # TODO fix, bad API
-  "unspecified-encoding",           # TODO fix
   "unused-argument",                # TODO fix
   "unused-private-member",          # TODO fix
   "useless-parent-delegation",      # TODO fix

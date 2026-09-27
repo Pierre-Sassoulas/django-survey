@@ -83,7 +83,7 @@ class Survey2Csv(Survey2X):
         return "\n".join(csv)
 
     @staticmethod
-    def export_as_csv(modeladmin, request, queryset):
+    def export_as_csv(_modeladmin, request, queryset):
         response = HttpResponse(content_type="text/csv")
         response.write(codecs.BOM_UTF8)
         filename = ""

@@ -28,5 +28,5 @@ class CounterNode(template.Node):
 
 
 @register.tag
-def counter(parser, token):
+def counter(_parser, _token):
     return CounterNode()

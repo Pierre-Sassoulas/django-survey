@@ -18,7 +18,7 @@ class LatexFile:
         self.intro = self.set_value(intro)
         self._footer = self.set_value(footer)
         if date is None:
-            date = datetime.now().strftime("%B %d, %Y")
+            date = datetime.now().astimezone().strftime("%B %d, %Y")
         self.date = date
 
     def set_value(self, value):

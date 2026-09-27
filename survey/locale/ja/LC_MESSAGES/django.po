@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 09:46+0000\n"
+"POT-Creation-Date: 2026-09-27 11:43+0000\n"
 "PO-Revision-Date: 2018-04-09 00:52+0000\n"
 "Last-Translator: b'  <nsuzue@me.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr[1] "%(count)d つの調査が「公開」に設定されました"
 msgid "Mark selected surveys as published"
 msgstr "選択した調査を公開する"
 
-#: survey/decorators.py:29
+#: survey/decorators.py:31
 msgid "This survey has expired for new submissions."
 msgstr ""
 
@@ -114,31 +114,31 @@ msgstr "質問に関連して"
 msgid "right"
 msgstr "右"
 
-#: survey/exporter/tex/survey2tex.py:30
+#: survey/exporter/tex/survey2tex.py:29
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
 msgstr ""
 
-#: survey/exporter/tex/survey2tex.py:79
+#: survey/exporter/tex/survey2tex.py:76
 msgid "We could not render a chart because the type"
 msgstr "チャートを描画できません。何故ならタイプ"
 
-#: survey/exporter/tex/survey2tex.py:81
+#: survey/exporter/tex/survey2tex.py:78
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
 msgstr "は標準タイプでもインポート可能で有効なQuestion2Tex子クラスへのパスでもありません。 「raw」、「sankey」、「pie」、「cloud」、 「square」、「polar」または「package.path.MyQuestion2TexCustomClass」の中から選択してください。"
 
-#: survey/exporter/tex/survey2tex.py:153
+#: survey/exporter/tex/survey2tex.py:148
 msgid "No questions to display in this survey."
 msgstr ""
 
-#: survey/exporter/tex/survey2tex.py:183
+#: survey/exporter/tex/survey2tex.py:178
 msgid "Cannot export multiple PDF, choose only one."
 msgstr ""
 
-#: survey/exporter/tex/survey2tex.py:192
+#: survey/exporter/tex/survey2tex.py:187
 msgid "Error during PDF generation: {}"
 msgstr ""
 
-#: survey/exporter/tex/survey2tex.py:199
+#: survey/exporter/tex/survey2tex.py:194
 msgid "Export to PDF"
 msgstr ""
 

@@ -1,9 +1,8 @@
 import logging
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
-import pytz
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.text import slugify
@@ -53,9 +52,7 @@ class Survey2X:
             mtime = earliest_working_timestamp_for_windows
         else:
             mtime = os.path.getmtime(self.filename)
-        mtime = datetime.utcfromtimestamp(mtime)
-        mtime = mtime.replace(tzinfo=pytz.timezone("UTC"))
-        return mtime
+        return datetime.fromtimestamp(mtime, tz=timezone.utc)
 
     @property
     def latest_answer_date(self):

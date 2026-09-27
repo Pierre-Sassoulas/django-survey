@@ -82,7 +82,7 @@ class ResponseForm(models.ModelForm):
         self._get_preexisting_response()
 
         if not self.survey.editable_answers and self.response is not None:
-            for name in self.fields.keys():
+            for name in self.fields:
                 self.fields[name].widget.attrs["disabled"] = True
 
     def add_questions(self, data):
@@ -227,7 +227,7 @@ class ResponseForm(models.ModelForm):
             # add an empty option at the top so that the user has to explicitly
             # select one of the options
             if question.type in [Question.SELECT, Question.SELECT_IMAGE]:
-                qchoices = tuple([("", "-------------")]) + qchoices
+                qchoices = (("", "-------------"), *qchoices)
         return qchoices
 
     def get_question_field(self, question, **kwargs):
@@ -271,10 +271,7 @@ class ResponseForm(models.ModelForm):
         self.fields[f"question_{question.pk}"] = field
 
     def has_next_step(self):
-        if not self.survey.is_all_in_one_page():
-            if self.step < self.steps_count - 1:
-                return True
-        return False
+        return not self.survey.is_all_in_one_page() and self.step < self.steps_count - 1
 
     def next_step_url(self):
         if self.has_next_step():

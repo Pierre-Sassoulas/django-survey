@@ -110,8 +110,7 @@ class Question(models.Model):
         """
         answers_as_text = []
         for answer in self.answers.all():
-            for value in answer.values:
-                answers_as_text.append(value)
+            answers_as_text.extend(answer.values)
         return answers_as_text
 
     @staticmethod
@@ -167,12 +166,11 @@ class Question(models.Model):
             standardized_filter = []
         else:
             standardized_filter = Question.standardize_list(filter, group_by_letter_case, group_by_slugify)
-        if other_question is not None:
-            if not isinstance(other_question, Question):
-                msg = "Question.answer_cardinality expect a 'Question' for "
-                msg += "the 'other_question' parameter and got"
-                msg += f" '{other_question}' (a '{other_question.__class__.__name__}')"
-                raise TypeError(msg)
+        if other_question is not None and not isinstance(other_question, Question):
+            msg = "Question.answer_cardinality expect a 'Question' for "
+            msg += "the 'other_question' parameter and got"
+            msg += f" '{other_question}' (a '{other_question.__class__.__name__}')"
+            raise TypeError(msg)
         return self.__answers_cardinality(
             min_cardinality=min_cardinality,
             group_together=group_together,
@@ -260,9 +258,8 @@ class Question(models.Model):
         for answer in other_question.answers.all():
             for value in answer.values:
                 value = self.__get_cardinality_value(value, group_by_letter_case, group_by_slugify, group_together)
-                if value not in excluded + standardized_filter:
-                    if answer.response.user is None:
-                        self._cardinality_plus_answer(cardinality, _(settings.USER_DID_NOT_ANSWER), value)
+                if value not in excluded + standardized_filter and answer.response.user is None:
+                    self._cardinality_plus_answer(cardinality, _(settings.USER_DID_NOT_ANSWER), value)
 
     def sorted_answers_cardinality(
         self,
@@ -307,15 +304,15 @@ class Question(models.Model):
             sort_answer = SortAnswer.CARDINAL
         sorted_cardinality = None
         if user_defined:
-            sorted_cardinality = sorted(list(cardinality.items()), key=lambda x: sort_answer.get(x[0], 0))
+            sorted_cardinality = sorted(cardinality.items(), key=lambda x: sort_answer.get(x[0], 0))
         elif sort_answer == SortAnswer.ALPHANUMERIC:
             sorted_cardinality = sorted(cardinality.items())
         elif sort_answer == SortAnswer.CARDINAL:
             if other_question is None:
-                sorted_cardinality = sorted(list(cardinality.items()), key=lambda x: (-x[1], x[0]))
+                sorted_cardinality = sorted(cardinality.items(), key=lambda x: (-x[1], x[0]))
             else:
                 # There is a dict instead of an int
-                sorted_cardinality = sorted(list(cardinality.items()), key=lambda x: (-sum(x[1].values()), x[0]))
+                sorted_cardinality = sorted(cardinality.items(), key=lambda x: (-sum(x[1].values()), x[0]))
         return dict(sorted_cardinality)
 
     def _cardinality_plus_answer(self, cardinality, value, other_question_value):

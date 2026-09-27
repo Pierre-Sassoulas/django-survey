@@ -8,6 +8,8 @@ from pathlib import Path
 from django import __version__ as django_version
 from django.conf import settings
 
+LOGGER = logging.getLogger(__name__)
+
 
 class TestLocaleNormalization(unittest.TestCase):
     LOCALE_PATH = Path("survey", "locale").absolute()
@@ -27,7 +29,7 @@ class TestLocaleNormalization(unittest.TestCase):
             for x in settings.LANGUAGES:
                 if x[0] not in ["en"]:
                     makemessages_command += ["--locale", x[0]]
-            logging.warning("Command to launch for makemessages is : %s", " ".join(makemessages_command))
+            LOGGER.warning("Command to launch for makemessages is : %s", " ".join(makemessages_command))
 
         subprocess.check_call(makemessages_command)
         compile_message_command = python_3 + compile_message_base_command

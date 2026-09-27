@@ -1,6 +1,6 @@
 <input id="id_{{ name }}" name="{{ name }}" type="hidden" value=""/>
 {% for choice in choices %}
 	<a href="#" onclick="setResponse('id_{{ name }}', '{{ choice.full_value }}');">
-		<img id="img_{{ name }}_{{ choice.index }}" src="{{ choice.img_src }}"/>
+		<img id="img_{{ name }}_{{ choice.index }}" src="{{ choice.img_src }}" alt="{{ choice.value }}"/>
 	</a>
 {% endfor %}

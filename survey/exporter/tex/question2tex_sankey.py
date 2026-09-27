@@ -67,8 +67,8 @@ class Question2TexSankey(Question2Tex):
 
         See this question https://tex.stackexchange.com/questions/40159/
         in order for it to work with your latex file.
-
-        :param Question other_question: the question we compare to."""
+        :param Question other_question: the question we compare to.
+        """
         if not SANKEY:
             raise SankeyNotInstalled()
         self.cardinality = self.get_sorted_answers_cardinality(other_question=self.other_question)

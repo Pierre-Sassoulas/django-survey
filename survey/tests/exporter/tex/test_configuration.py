@@ -27,7 +27,7 @@ class TestConfiguration(TestManagement):
         self.assertIsNotNone(conf.get(survey_name=name))
 
     def test_str(self):
-        """No error for str"""
+        """No error for str."""
         self.assertIsNotNone(str(self.conf))
 
     def test_wrong_type(self):

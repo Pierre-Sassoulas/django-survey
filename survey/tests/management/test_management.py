@@ -51,7 +51,8 @@ class TestManagement(BaseTest):
 
     def create_big_ranking_survey(self, with_user=False):
         """Load a big survey with Anonymous user rating question from 1 to
-        5 à la Amazon review."""
+        5 à la Amazon review.
+        """
         ranking_survey_name = "Big ranking survey"
         number_of_question = 10
         number_of_participant = 100

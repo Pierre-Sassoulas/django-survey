@@ -13,7 +13,9 @@ class TestLocaleNormalization(unittest.TestCase):
     LOCALE_PATH = Path("survey", "locale").absolute()
 
     def test_normalization(self):
-        """Messages need to be created with the proper 'makemessages' then 'compilemessages'."""
+        """Messages need to be created with the proper 'makemessages' then
+        'compilemessages'.
+        """
         if platform.system() == "Windows":
             python_3 = ["py", "-3"]
         else:

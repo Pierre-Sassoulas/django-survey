@@ -5,7 +5,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 class LatexFile:
-    """Permit to handle the content of a LatexFile"""
+    """Permit to handle the content of a LatexFile."""
 
     def __init__(self, document_class, document_option=None, header=None, intro=None, footer=None, date=None, **kwargs):
         LOGGER.debug(
@@ -31,7 +31,8 @@ class LatexFile:
     def header(self):
         """Return the header of a .tex file.
 
-        :rtype: String"""
+        :rtype: String
+        """
         header = "\\documentclass"
         if self.document_option:
             header += f"[{self.document_option}]"
@@ -46,7 +47,8 @@ class LatexFile:
     def footer(self):
         """Return the footer of a .tex file.
 
-        :rtype: String"""
+        :rtype: String
+        """
         end = """
 \\end{document}
 """
@@ -63,5 +65,6 @@ class LatexFile:
     def document(self):
         """Return the full text of the LatexFile.
 
-        :rtype: String"""
+        :rtype: String
+        """
         return f"{self.header}{self.text}{self.footer}"

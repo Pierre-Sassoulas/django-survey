@@ -47,8 +47,8 @@ class Question2Tex:
         adding more than 12 Mo to the virtualenv size and 8 dependencies !
             (Jinja (378kB), Pillow (7.5MB), lxml (3.5MB), pyenchant (60kB),
              redis (62kB), selenium (2.6MB), ipython (2.8MB) nose (154kB)
-
-        :param String html_text: Some html text."""
+        :param String html_text: Some html text.
+        """
         html_text = html_text.replace("<strong>", "\\textbf{")
         html_text = html_text.replace("</strong>", "}")
         html_text = html_text.replace("<code>", "$")

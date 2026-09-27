@@ -41,7 +41,8 @@ class Configuration:
     def check_survey_exists(self, survey_name):
         """Check if the survey name exists.
 
-        :param String survey_name: The name of a survey."""
+        :param String survey_name: The name of a survey.
+        """
         LOGGER.info("Checking that '%s' is an existing survey.", survey_name)
         if not isinstance(survey_name, str):
             msg = f"Expecting a string for 'survey_name' and got a {type(survey_name)} "
@@ -63,7 +64,8 @@ class Configuration:
         """Return a configuration from a filepath.
 
         :param String filepath: The path of the yaml configuration file.
-        :rtype: Dict"""
+        :rtype: Dict
+        """
         with open(filepath, encoding="UTF-8") as f:
             configuration = yaml.load(f, Loader=yaml.FullLoader)
         for survey_name in list(configuration.keys()):
@@ -81,7 +83,9 @@ class Configuration:
             pass
 
     def recursive_update(self, dict_, update_dict):
-        """Update a dict recursively. It permits to keep the default value by
+        """Update a dict recursively.
+
+        It permits to keep the default value by
         default and to be able to replace them by dictionaries.
         """
         if dict_ is None:
@@ -130,7 +134,8 @@ class Configuration:
 
         :param String key: The key we want to get.
         :param String survey_name: The name of a specific survey.
-        :param String question_text: The text of a specific question."""
+        :param String question_text: The text of a specific question.
+        """
         # We create a new dictionary from a deepcopy of the default conf
         conf = copy.deepcopy(self._default["generic"])
         # We update it with the generic configuration of the user if it exists

@@ -27,7 +27,7 @@ class Survey2Csv(Survey2X):
 
     @staticmethod
     def get_user_line(question_order, response):
-        """Creating a line for a user"""
+        """Creating a line for a user."""
         LOGGER.debug("\tTreating answer from %s", response.user)
         user_answers = {}
         try:

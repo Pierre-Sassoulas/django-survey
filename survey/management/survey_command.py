@@ -27,7 +27,9 @@ class SurveyCommand(BaseCommand):
     @staticmethod
     def raise_value_error(error_type, value):
         """Raise a ValueError with a clean error message in python 2.7 and 3.
-        :param string value: the attempted value."""
+
+        :param string value: the attempted value.
+        """
         valid_texts = []
         base = "--question-id {} / --question-text '{}'\n"
         if error_type in ["question-id", "question-text"]:
@@ -47,7 +49,9 @@ class SurveyCommand(BaseCommand):
 
     @staticmethod
     def check_mutually_exclusive(opts):
-        """We could use the ArgParse option for this, but the case is simple enough to be treated this way."""
+        """We could use the ArgParse option for this, but the case is simple enough to
+        be treated this way.
+        """
         all_questions = opts.get("question_all")
         some_questions = opts.get("question_text") or opts.get("question_id")
         all_surveys = opts.get("survey_all")

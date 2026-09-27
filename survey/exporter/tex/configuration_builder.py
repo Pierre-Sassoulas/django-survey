@@ -6,6 +6,7 @@ from .configuration import Configuration
 class ConfigurationBuilder(Configuration):
     """
     Permit to create serializable uninitialized configuration easily.
+
     We just use the default dict for a Builder, the user will be able to
     modify value from the default.
 
@@ -17,7 +18,8 @@ class ConfigurationBuilder(Configuration):
         """Initialize a configuration file.
 
         :param Survey survey: If survey is defined we generate configuration
-        only for this survey."""
+        only for this survey.
+        """
         super().__init__(self.DEFAULT_PATH)
         self._init_default()
         if survey:

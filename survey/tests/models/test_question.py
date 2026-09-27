@@ -146,7 +146,7 @@ class TestQuestion(BaseModelTest):
         self.assertEqual(self.card(filter=["abé cé", "Abë-cè"]), {"Abé Cé": 1, "dé": 1, "dë": 1, "Dé": 1})
 
     def test_answers_cardinality_linked(self):
-        """We can get the answer to another question instead"""
+        """We can get the answer to another question instead."""
         abc_together = {"ABC": ["abé cé", "Abë-cè", "Abé Cé"]}
         abcd_together = {"ABC": ["abé cé", "Abë-cè", "Abé Cé"], "D": ["dé", "Dé", "dë"]}
         self.assertRaises(TypeError, self.card, other_question="str")
@@ -185,7 +185,8 @@ class TestQuestion(BaseModelTest):
 
     def test_answers_cardinality_linked_without_link(self):
         """When we want to link to another question and there is no link at
-        all, we still have a dict."""
+        all, we still have a dict.
+        """
         survey = Survey.objects.create(
             name="name", is_published=True, need_logged_user=False, display_method=Survey.BY_QUESTION
         )

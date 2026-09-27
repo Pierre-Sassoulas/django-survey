@@ -24,7 +24,7 @@ class TestSurveyCommand(BaseTest):
         self.assertRaises(ValueError, self.handle, survey_id=[1])
 
     def test_mutually_exclusive(self):
-        """Some options are mutually exclusive"""
+        """Some options are mutually exclusive."""
         self.assertRaises(SystemExit, self.handle, question_all=True, question_text=["Lorem?"])
         self.assertRaises(SystemExit, self.handle, question_all=True, question_id=[1])
         self.assertRaises(SystemExit, self.handle, survey_all=True, survey_name=["Test survëy"])

@@ -11,7 +11,7 @@ class TestAnswer(BaseModelTest):
             self.assertIsNotNone(str(answer))
 
     def test_init(self):
-        """We raise validation error if the answer is not a possible choice"""
+        """We raise validation error if the answer is not a possible choice."""
         self.assertRaises(ValidationError, Answer, response=self.response, question=self.questions[4], body="Dd")
         self.assertRaises(
             ValidationError, Answer, response=self.response, question=self.questions[5], body="not an int"

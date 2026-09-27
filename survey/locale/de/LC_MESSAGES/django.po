@@ -27,18 +27,18 @@ msgstr "de"
 msgid "DEVELOPMENT django-Survey"
 msgstr "Entwicklung django-survey"
 
-#: survey/actions.py:11
+#: survey/actions.py:9
 #, python-format
 msgid "%(count)d survey was successfully marked as published."
 msgid_plural "%(count)d surveys were successfully marked as published"
 msgstr[0] "%(count)d Umfrage erfolgreich als veröffentlicht markiert."
 msgstr[1] "%(count)d Umfragen erfolgreich als veröffentlicht markiert."
 
-#: survey/actions.py:18
+#: survey/actions.py:16
 msgid "Mark selected surveys as published"
 msgstr "Markiere ausgewählte Umfragen als veröffentlicht"
 
-#: survey/decorators.py:27
+#: survey/decorators.py:29
 msgid "This survey has expired for new submissions."
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr "Frei gelassen"
 msgid "for the question"
 msgstr "für die Frage"
 
-#: survey/exporter/tex/question2tex_chart.py:109
+#: survey/exporter/tex/question2tex_chart.py:110
 msgid "No answers for this question."
 msgstr "Keine Antwort auf diese Frage."
 
@@ -127,41 +127,41 @@ msgstr "Wir konnten eine Grafik nicht erstellen, weil der Typ"
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
 msgstr "kein Standard Typ und auch kein Pfad zu einer importierbaren Question2Tex child class ist. Wähle zwischen  'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' oder 'package.path.MyQuestion2TexCustomClass'"
 
-#: survey/exporter/tex/survey2tex.py:151
+#: survey/exporter/tex/survey2tex.py:153
 msgid "No questions to display in this survey."
 msgstr "In dieser Umfrage sind keine Fragen die angezeigt werden können."
 
-#: survey/exporter/tex/survey2tex.py:181
+#: survey/exporter/tex/survey2tex.py:183
 msgid "Cannot export multiple PDF, choose only one."
 msgstr "Kann nicht mehrere PDFs exportieren. Es kann nur eins ausgewählt werden."
 
-#: survey/exporter/tex/survey2tex.py:190
+#: survey/exporter/tex/survey2tex.py:192
 #, fuzzy
 #| msgid "Error during PDF generation: %s"
 msgid "Error during PDF generation: {}"
 msgstr "Fehler beim erstellen des PDFs: %s"
 
-#: survey/exporter/tex/survey2tex.py:197
+#: survey/exporter/tex/survey2tex.py:199
 msgid "Export to PDF"
 msgstr "Exportiere als PDF"
 
-#: survey/models/answer.py:20
+#: survey/models/answer.py:21
 msgid "Question"
 msgstr "Frage"
 
-#: survey/models/answer.py:21
+#: survey/models/answer.py:22
 msgid "Response"
 msgstr "Antwort"
 
-#: survey/models/answer.py:22 survey/models/response.py:14
+#: survey/models/answer.py:23 survey/models/response.py:14
 msgid "Creation date"
 msgstr "Datum der Erstellung"
 
-#: survey/models/answer.py:23 survey/models/response.py:15
+#: survey/models/answer.py:24 survey/models/response.py:15
 msgid "Update date"
 msgstr "Datum der letzten Bearbeitung"
 
-#: survey/models/answer.py:24
+#: survey/models/answer.py:25
 msgid "Content"
 msgstr "Inhalt"
 

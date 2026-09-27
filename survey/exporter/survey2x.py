@@ -59,12 +59,13 @@ class Survey2X:
 
     @property
     def latest_answer_date(self):
-        """The date at which the last answer was given"""
+        """The date at which the last answer was given."""
         return self.survey.latest_answer_date()
 
     def need_update(self):
         """Does a file need an update ?
-        If the file was generated before the last answer was given, it needs update."""
+        If the file was generated before the last answer was given, it needs update.
+        """
         latest_answer_date = self.latest_answer_date
         no_response_at_all = latest_answer_date is None
         if no_response_at_all:

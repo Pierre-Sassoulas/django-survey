@@ -86,7 +86,6 @@ lint.ignore = [
 [tool.pylint]
 main.disable = [
   "arguments-differ",               # TODO fix
-  "attribute-defined-outside-init", # TODO fix
   "consider-using-f-string",        # TODO fix
   "consider-using-with",            # TODO fix
   "duplicate-code",                 # TODO fix

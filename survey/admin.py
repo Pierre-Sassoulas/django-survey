@@ -11,10 +11,10 @@ class QuestionInline(admin.StackedInline):
     ordering = ("order", "category")
     extra = 1
 
-    def get_formset(self, request, survey_obj, *args, **kwargs):
-        formset = super().get_formset(request, survey_obj, *args, **kwargs)
-        if survey_obj:
-            formset.form.base_fields["category"].queryset = survey_obj.categories.all()
+    def get_formset(self, request, obj=None, **kwargs):
+        formset = super().get_formset(request, obj, **kwargs)
+        if obj:
+            formset.form.base_fields["category"].queryset = obj.categories.all()
         return formset
 
 

@@ -9,7 +9,7 @@ class ImageSelectWidget(forms.widgets.Widget):
         js = (
             "http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js",
             "http://maps.googleapis.com/maps/api/js?sensor=false",
-            "js/survey.js",
+            "survey/js/survey.js",
         )
 
     def render(self, name, value, *args, **kwargs):

@@ -2,6 +2,7 @@ import copy
 import logging
 from collections.abc import Mapping
 from pathlib import Path
+from typing import NoReturn
 
 import yaml
 
@@ -161,7 +162,7 @@ class Configuration:
             self.__raise_get_error(conf, key, question_text, survey_name)
 
     @staticmethod
-    def __raise_get_error(conf, key, question_text, survey_name):
+    def __raise_get_error(conf, key, question_text, survey_name) -> NoReturn:
         msg = ""
         if survey_name:
             msg += f"for survey '{survey_name}', "

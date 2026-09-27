@@ -90,7 +90,6 @@ main.disable = [
   "fixme",                          # TODO fix
   # I0011 Warning locally suppressed using disable-msg
   "I0011",
-  "inconsistent-return-statements", # TODO fix
   "missing-docstring",              # We don't want docstring everywhere
   "no-member",
   "redefined-builtin",              # TODO fix

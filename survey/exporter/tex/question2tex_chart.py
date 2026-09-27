@@ -75,33 +75,21 @@ class Question2TexChart(Question2Tex):
 
     def get_pie_options(self):
         r"""Return the options of the pie for: \pie[options]{data}"""
-        options = ""
-        if self.pos:
-            options += f"pos={{{self.pos}}},"
-        if self.explode:
-            options += f"explode={{{self.explode}}},"
-        if self.rotate:
-            options += f"rotate={self.rotate},"
-        if self.radius:
-            options += f"radius={self.radius},"
-        if self.color:
-            options += f"color={self.get_colors()},"
-        if self.sum:
-            options += f"sum={self.sum},"
-        if self.after_number:
-            options += f"after number={self.after_number},"
-        if self.before_number:
-            options += f"before number={self.before_number},"
-        if self.scale_font:
-            options += "scale font, "
-        if self.text:
-            options += f"text={self.text},"
-        if self.style:
-            options += f"style={self.style},"
-        if self.type and self.type != "pie":
-            options += f"{self.type},"
-        # Removing last ','
-        options = options[:-1]
+        options = [
+            f"pos={{{self.pos}}}" if self.pos else "",
+            f"explode={{{self.explode}}}" if self.explode else "",
+            f"rotate={self.rotate}" if self.rotate else "",
+            f"radius={self.radius}" if self.radius else "",
+            f"color={self.get_colors()}" if self.color else "",
+            f"sum={self.sum}" if self.sum else "",
+            f"after number={self.after_number}" if self.after_number else "",
+            f"before number={self.before_number}" if self.before_number else "",
+            "scale font" if self.scale_font else "",
+            f"text={self.text}" if self.text else "",
+            f"style={self.style}" if self.style else "",
+            f"{self.type}" if self.type and self.type != "pie" else "",
+        ]
+        options = ",".join(option for option in options if option)
         if options:
             return f"[{options}]"
         return ""

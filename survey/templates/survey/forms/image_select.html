@@ -1,8 +1,11 @@
-<input id="id_{{ name }}" name="{{ name }}" type="hidden" value="" />
-{% for choice in choices %}
+<input id="id_{{ widget.name }}"
+       name="{{ widget.name }}"
+       type="hidden"
+       value="{{ widget.value|default_if_none:'' }}" />
+{% for choice in widget.image_choices %}
     <a href="#"
-       onclick="setResponse('id_{{ name }}', '{{ choice.full_value }}');">
-        <img id="img_{{ name }}_{{ choice.index }}"
+       onclick="setResponse('id_{{ widget.name }}', '{{ choice.full_value }}'); return false;">
+        <img id="img_{{ widget.name }}_{{ choice.index }}"
              src="{{ choice.img_src }}"
              alt="{{ choice.value }}" />
     </a>

@@ -29,8 +29,8 @@ class TestIssue70(TestCase):
             "adminebd,user@example.com,Ed Davison,2020-02-03,Left blank,0,0,8,['Admin'; 'Calls'; 'Events'],0,"
             "Left blank,100,"
         )
-        self.expected_content = f"{header}\n{content}"
-        self.assertEqual(str(self.s2csv), self.expected_content)
+        expected_content = f"{header}\n{content}"
+        self.assertEqual(str(self.s2csv), expected_content)
 
     @override_settings(USER_DID_NOT_ANSWER=None)
     def test_get_survey_as_csv_wrong_settings(self):

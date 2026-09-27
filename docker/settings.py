@@ -1,13 +1,12 @@
 import os
-import random
+
+from django.core.management.utils import get_random_secret_key
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CSV_DIRECTORY = os.path.join(ROOT, "csv")
 TEX_DIRECTORY = os.path.join(ROOT, "tex")
 
-SECRET_KEY = os.environ.get(
-    "SECRET_KEY", default=random.choices("abcdefghijklmnopqrstuvwxyz123456798&é(-è_çà)=^$ù*,;:!")
-)
+SECRET_KEY = os.environ.get("SECRET_KEY", default=get_random_secret_key())
 DEBUG = bool(os.environ.get("DEBUG", default=0))
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 

@@ -11,7 +11,9 @@ from survey.models import Survey
 
 def survey_available(func):
     """
-    Checks if a survey is available (published and not expired). Use this as a decorator for view functions.
+    Checks if a survey is available (published and not expired).
+
+    Use this as a decorator for view functions.
     """
 
     @wraps(func)

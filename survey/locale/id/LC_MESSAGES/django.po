@@ -27,18 +27,18 @@ msgstr "id"
 msgid "DEVELOPMENT django-Survey"
 msgstr "Pengembangan django-survey"
 
-#: survey/actions.py:11
+#: survey/actions.py:9
 #, python-format
 msgid "%(count)d survey was successfully marked as published."
 msgid_plural "%(count)d surveys were successfully marked as published"
 msgstr[0] "%(count)d survei berhasil ditandai sebagai diterbitkan"
 msgstr[1] "%(count)d survei berhasil ditandai sebagai diterbitkan"
 
-#: survey/actions.py:18
+#: survey/actions.py:16
 msgid "Mark selected surveys as published"
 msgstr "Tandai survei yang dipilih sebagai diterbitkan"
 
-#: survey/decorators.py:27
+#: survey/decorators.py:29
 msgid "This survey has expired for new submissions."
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr "Dikosongkan saja"
 msgid "for the question"
 msgstr "untuk pertanyaan"
 
-#: survey/exporter/tex/question2tex_chart.py:109
+#: survey/exporter/tex/question2tex_chart.py:110
 msgid "No answers for this question."
 msgstr "Tidak ada jawaban untuk pertanyaan ini."
 
@@ -126,41 +126,41 @@ msgstr "Tidak dapat memuat sebuah diagram karena tipe"
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
 msgstr "bukan tipe standar ataupun path menuju kelas turunan Question2Tex yang dapat diimpor tidak valid. Plih antara 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' atau 'package.path.MyQuestion2TexCustomClass'"
 
-#: survey/exporter/tex/survey2tex.py:151
+#: survey/exporter/tex/survey2tex.py:153
 msgid "No questions to display in this survey."
 msgstr "Tidak ada pertanyaan untuk ditampilkan pada survei ini."
 
-#: survey/exporter/tex/survey2tex.py:181
+#: survey/exporter/tex/survey2tex.py:183
 msgid "Cannot export multiple PDF, choose only one."
 msgstr "Tidak dapat ekspor beberapa PDF sekaligus, pilih satu saja."
 
-#: survey/exporter/tex/survey2tex.py:190
+#: survey/exporter/tex/survey2tex.py:192
 #, fuzzy
 #| msgid "Error during PDF generation: %s"
 msgid "Error during PDF generation: {}"
 msgstr "Terjadi kesalahan dalam membuat berkas PDF: %s"
 
-#: survey/exporter/tex/survey2tex.py:197
+#: survey/exporter/tex/survey2tex.py:199
 msgid "Export to PDF"
 msgstr "Ekspor sebagai PDF"
 
-#: survey/models/answer.py:20
+#: survey/models/answer.py:21
 msgid "Question"
 msgstr "Pertanyaan"
 
-#: survey/models/answer.py:21
+#: survey/models/answer.py:22
 msgid "Response"
 msgstr "Respon"
 
-#: survey/models/answer.py:22 survey/models/response.py:14
+#: survey/models/answer.py:23 survey/models/response.py:14
 msgid "Creation date"
 msgstr "Tanggal pembuatan"
 
-#: survey/models/answer.py:23 survey/models/response.py:15
+#: survey/models/answer.py:24 survey/models/response.py:15
 msgid "Update date"
 msgstr "Tanggal pembaruan"
 
-#: survey/models/answer.py:24
+#: survey/models/answer.py:25
 msgid "Content"
 msgstr "Konten"
 

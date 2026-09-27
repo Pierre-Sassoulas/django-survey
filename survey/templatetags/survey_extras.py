@@ -5,7 +5,8 @@ register = template.Library()
 
 def collapse_form(form, category):
     """Permit to return the class of the collapsible according to errors in
-    the form."""
+    the form.
+    """
     categories_with_error = set()
     for field in form:
         if field.errors:

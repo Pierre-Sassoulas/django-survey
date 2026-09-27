@@ -12,9 +12,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 class Command(SurveyCommand):
-    """
-    See the "help" var.
-    """
+    """See the "help" var."""
 
     help = """This command permit to export all survey in the database as csv and tex."""
 

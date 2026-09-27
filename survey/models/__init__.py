@@ -1,6 +1,4 @@
-"""
-Permit to import everything from survey.models without knowing the details.
-"""
+"""Permit to import everything from survey.models without knowing the details."""
 
 from .answer import Answer
 from .category import Category

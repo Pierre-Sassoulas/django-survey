@@ -98,7 +98,8 @@ class Question(models.Model):
     def answers_as_text(self):
         """Return answers as a list of text.
 
-        :rtype: List"""
+        :rtype: List
+        """
         answers_as_text = []
         for answer in self.answers.all():
             for value in answer.values:
@@ -107,7 +108,7 @@ class Question(models.Model):
 
     @staticmethod
     def standardize(value, group_by_letter_case=None, group_by_slugify=None):
-        """Standardize a value in order to group by slugify or letter case"""
+        """Standardize a value in order to group by slugify or letter case."""
         if group_by_slugify:
             value = slugify(value)
         if group_by_letter_case:
@@ -129,7 +130,7 @@ class Question(models.Model):
         other_question=None,
     ):
         """Return a dictionary with answers as key and cardinality (int or
-            dict) as value
+            dict) as value.
 
         :param int min_cardinality: The minimum of answer we need to take it
             into account.
@@ -147,7 +148,8 @@ class Question(models.Model):
             person that answered the key as value, we will give the cardinality
             for another answer taking only the user that answered the key into
             account.
-        :rtype: Dict"""
+        :rtype: Dict
+        """
         if min_cardinality is None:
             min_cardinality = 0
         if group_together is None:
@@ -188,7 +190,8 @@ class Question(models.Model):
         the related manager (ie question.answers).
 
         If you want something sorted use sorted_answers_cardinality with a set
-        sort_answer parameter."""
+        sort_answer parameter.
+        """
         cardinality = {}
         for answer in self.answers.all():
             for value in answer.values:
@@ -243,7 +246,9 @@ class Question(models.Model):
         other_question,
         standardized_filter,
     ):
-        """Treating the value for Other question that were not answered in this question"""
+        """Treating the value for Other question that were not answered in this
+        question.
+        """
         for answer in other_question.answers.all():
             for value in answer.values:
                 value = self.__get_cardinality_value(value, group_by_letter_case, group_by_slugify, group_together)
@@ -264,7 +269,8 @@ class Question(models.Model):
         """Mostly to have reliable tests, but marginally nicer too...
 
         The ordering is reversed for same cardinality value so we have aa
-        before zz."""
+        before zz.
+        """
         # pylint: disable=too-many-locals
         cardinality = self.answers_cardinality(
             min_cardinality=min_cardinality,
@@ -306,7 +312,8 @@ class Question(models.Model):
 
     def _cardinality_plus_answer(self, cardinality, value, other_question_value):
         """The user answered 'value' to our question and
-        'other_question_value' to the other question."""
+        'other_question_value' to the other question.
+        """
         if cardinality.get(value) is None:
             cardinality[value] = {other_question_value: 1}
         elif isinstance(cardinality[value], int):
@@ -320,7 +327,8 @@ class Question(models.Model):
 
     def _cardinality_plus_n(self, cardinality, value, n):
         """We don't know what is the answer to other question but the
-        user answered 'value'."""
+        user answered 'value'.
+        """
         if cardinality.get(value) is None:
             cardinality[value] = n
         else:

@@ -103,7 +103,8 @@ class Question2TexChart(Question2Tex):
 
         You must use pgf-pie in your latex file for this to works ::
             \\usepackage{pgf-pie}
-        See http://pgf-pie.googlecode.com/ for detail and arguments doc."""
+        See http://pgf-pie.googlecode.com/ for detail and arguments doc.
+        """
         results = self.get_results()
         if not results:
             return str(_("No answers for this question."))

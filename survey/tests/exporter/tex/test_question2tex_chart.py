@@ -59,7 +59,8 @@ class TestQuestion2TexChart(TestManagement):
 
         def get_options(**options):
             """Permit to have default options while defining specific options
-            explicitely."""
+            explicitely.
+            """
             return {
                 "question": question,
                 "min_cardinality": 0,
@@ -75,7 +76,9 @@ class TestQuestion2TexChart(TestManagement):
 
         def get_result(**options):
             """Return the result of get_caption using options.
-            If cardinality is set we change the cardinality of the question."""
+
+            If cardinality is set we change the cardinality of the question.
+            """
             q2c = Question2TexChart(**options)
             if options.get("cardinality") is not None:
                 q2c.cardinality = options.get("cardinality")

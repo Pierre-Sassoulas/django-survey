@@ -38,7 +38,7 @@ class ResponseForm(models.ModelForm):
         fields = ()
 
     def __init__(self, *args, **kwargs):
-        """Expects a survey object to be passed in initially"""
+        """Expects a survey object to be passed in initially."""
         self.survey = kwargs.pop("survey")
         self.user = kwargs.pop("user")
         try:
@@ -102,8 +102,8 @@ class ResponseForm(models.ModelForm):
 
         The user must be logged. Will store the response retrieved in an attribute
         to avoid multiple db calls.
-
-        :rtype: Response or None"""
+        :rtype: Response or None
+        """
         if self.response:
             return self.response
 
@@ -125,8 +125,8 @@ class ResponseForm(models.ModelForm):
         The user must be logged. A Response containing the Answer must exists.
         Will create an attribute containing the answers retrieved to avoid multiple
         db calls.
-
-        :rtype: dict of Answer or None"""
+        :rtype: dict of Answer or None
+        """
         if self.answers:
             return self.answers
 
@@ -148,16 +148,18 @@ class ResponseForm(models.ModelForm):
 
         :param Question question: The question we want to recover in the
         response.
-        :rtype: Answer or None"""
+        :rtype: Answer or None
+        """
         answers = self._get_preexisting_answers()
         return answers.get(question.id, None)
 
     def get_question_initial(self, question, data):
-        """Get the initial value that we should use in the Form
+        """Get the initial value that we should use in the Form.
 
         :param Question question: The question
         :param dict data: Value from a POST request.
-        :rtype: String or None"""
+        :rtype: String or None
+        """
         initial = None
         answer = self._get_preexisting_answer(question)
         if answer:
@@ -187,7 +189,8 @@ class ResponseForm(models.ModelForm):
         """Return the widget we should use for a question.
 
         :param Question question: The question
-        :rtype: django.forms.widget or None"""
+        :rtype: django.forms.widget or None
+        """
         try:
             return self.WIDGETS[question.type]
         except KeyError:
@@ -198,7 +201,8 @@ class ResponseForm(models.ModelForm):
         """Return the choices we should use for a question.
 
         :param Question question: The question
-        :rtype: List of String or None"""
+        :rtype: List of String or None
+        """
         qchoices = None
         if question.type not in [Question.TEXT, Question.SHORT_TEXT, Question.INTEGER, Question.FLOAT, Question.DATE]:
             qchoices = question.get_choices()
@@ -214,7 +218,8 @@ class ResponseForm(models.ModelForm):
         :param Question question: The question
         :param **kwargs: A dict of parameter properly initialized in
             add_question.
-        :rtype: django.forms.fields"""
+        :rtype: django.forms.fields
+        """
         # logging.debug("Args passed to field %s", kwargs)
         try:
             return self.FIELDS[question.type](**kwargs)
@@ -225,7 +230,8 @@ class ResponseForm(models.ModelForm):
         """Add a question to the form.
 
         :param Question question: The question to add.
-        :param dict data: The pre-existing values from a post request."""
+        :param dict data: The pre-existing values from a post request.
+        """
         kwargs = {"label": question.text, "required": question.required}
         initial = self.get_question_initial(question, data)
         if initial:
@@ -260,7 +266,7 @@ class ResponseForm(models.ModelForm):
         return reverse("survey-detail-step", kwargs={"id": self.survey.id, "step": self.step})
 
     def save(self, commit=True):
-        """Save the response object"""
+        """Save the response object."""
         # Recover an existing response from the database if any
         #  There is only one response by logged user.
         response = self._get_preexisting_response()

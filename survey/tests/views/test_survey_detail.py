@@ -65,9 +65,7 @@ class TestSurveyDetail(BaseTest):
         self.assertRedirects(response, reverse("survey-list"))
 
     def test_multipage_survey(self):
-        """
-        Checks that multipage survey is working.
-        """
+        """Checks that multipage survey is working."""
         self.login()
         response = self.client.post(reverse("survey-detail", args=(5,)), data={"question_11": 42})
         self.assertEqual(response.status_code, 302)
@@ -85,9 +83,7 @@ class TestSurveyDetail(BaseTest):
         self.assertRedirects(response, reverse("survey-confirmation", args=(response_saved[0].interview_uuid,)))
 
     def test_multipage_survey_edit(self):
-        """
-        Checks that a multipage survey can be rightfully edited.
-        """
+        """Checks that a multipage survey can be rightfully edited."""
         self.login()
         # first creates the initial response
         response = self.client.post(reverse("survey-detail", args=(5,)), data={"question_11": 42})
@@ -117,24 +113,28 @@ class TestSurveyDetail(BaseTest):
         self.assertEqual(answer_saved[0].body, "yes")
 
     def test_when_expiration_date_is_in_past_survey_is_not_visible(self):
-        """when expiration_date is in the past the survey should be hidden"""
+        """When expiration_date is in the past the survey should be hidden."""
         response = self.client.get(reverse("survey-detail", args=(6,)))
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse("survey-list"))
 
     def test_when_publication_date_is_in_future_survey_is_not_visible(self):
-        """when publish_date is in the future the survey should be hidden"""
+        """When publish_date is in the future the survey should be hidden."""
         response = self.client.get(reverse("survey-detail", args=(7,)))
         self.assertEqual(response.status_code, 404)
 
     def test_when_expiration_date_is_in_past_survey_is_not_visible_via_post(self):
-        """when expiration_date is in the past the survey should be hidden for post requests"""
+        """When expiration_date is in the past the survey should be hidden for post
+        requests.
+        """
         response = self.client.post(reverse("survey-detail", args=(6,)))
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse("survey-list"))
 
     def test_when_publication_date_is_in_future_survey_is_not_visible_via_post(self):
-        """when publish_date is in the future the survey should be hidden for post requests"""
+        """When publish_date is in the future the survey should be hidden for post
+        requests.
+        """
         response = self.client.post(reverse("survey-detail", args=(7,)))
         self.assertEqual(response.status_code, 404)
 
@@ -145,19 +145,21 @@ class TestSurveyDetail(BaseTest):
     #     self.assertEqual(response.status_code, 200)
 
     def test_the_survey_should_be_visible_while_no_expiration(self):
-        """when publish_date is in the past and no expiration date is set
-        the survey should be visible"""
+        """When publish_date is in the past and no expiration date is set
+        the survey should be visible.
+        """
         response = self.client.get(reverse("survey-detail", args=(9,)))
         self.assertEqual(response.status_code, 200)
 
     def test_the_survey_should_be_visible_while_no_publication_date(self):
-        """when expiration_date is in the future and no publication_date is set
-        the survey should be visible"""
+        """When expiration_date is in the future and no publication_date is set
+        the survey should be visible.
+        """
         response = self.client.get(reverse("survey-detail", args=(10,)))
         self.assertEqual(response.status_code, 200)
 
     def test_when_the_survey_has_redirect_url(self):
-        """when a survey has redirect url, should redirect to redirect_url"""
+        """When a survey has redirect url, should redirect to redirect_url."""
         response = self.client.post(
             reverse("survey-detail", args=(12,)),
             data={

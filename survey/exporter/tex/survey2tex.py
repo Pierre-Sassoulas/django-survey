@@ -128,7 +128,9 @@ class Survey2Tex(Survey2X):
         return Path(self.directory, f"{slugify(self.survey.name)}.pdf")
 
     def generate_pdf(self):
-        """Compile the pdf from the tex file. Can raise subprocess.CalledProcessError"""
+        """Compile the pdf from the tex file. Can raise
+        subprocess.CalledProcessError.
+        """
         if not self.need_update():
             LOGGER.info("<%s> is already generated and up to date.", self.pdf_filename)
             return

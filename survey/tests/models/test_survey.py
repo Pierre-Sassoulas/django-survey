@@ -21,19 +21,19 @@ class TestSurvey(BaseModelTest):
         self.assertIsNotNone(self.survey.get_absolute_url())
 
     def test_latest_answer(self):
-        """the lastest answer date is returned."""
+        """The lastest answer date is returned."""
         self.assertIsInstance(self.survey.latest_answer_date(), date)
 
     def test_publish_date(self):
-        """the pblish date must be None or datetime date instance."""
+        """The pblish date must be None or datetime date instance."""
         self.assertIsInstance(self.survey.publish_date, date)
 
     def test_expiration_date(self):
-        """expirationdate must be datetime date instance or None"""
+        """Expirationdate must be datetime date instance or None."""
         self.assertIsInstance(self.survey.expire_date, date)
 
     def test_expiration_date_is_in_future(self):
-        """by default the expiration should be a week in the future"""
+        """By default the expiration should be a week in the future."""
         self.assertGreater(self.survey.expire_date, now())
 
     def test_redirect_url(self):

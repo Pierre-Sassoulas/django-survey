@@ -5,9 +5,7 @@ from survey.management.survey_command import SurveyCommand
 
 
 class Command(SurveyCommand):
-    """
-    See the "help" var.
-    """
+    """See the "help" var."""
 
     help = """This command permit to generate the latex configuration in order
     to manage the survey report generation. """

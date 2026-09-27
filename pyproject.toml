@@ -87,7 +87,6 @@ lint.ignore = [
 main.disable = [
   "arguments-differ",               # TODO fix
   "consider-using-f-string",        # TODO fix
-  "consider-using-with",            # TODO fix
   "duplicate-code",                 # TODO fix
   "fixme",                          # TODO fix
   # I0011 Warning locally suppressed using disable-msg

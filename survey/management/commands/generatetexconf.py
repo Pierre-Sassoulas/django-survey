@@ -17,9 +17,8 @@ class Command(SurveyCommand):
         parser.add_argument("output", nargs="+", type=str, help="Output prefix.")
 
     def write_conf(self, name, conf):
-        file_ = open(name, "w", encoding="UTF-8")
-        file_.write(str(conf))
-        file_.close()
+        with open(name, "w", encoding="UTF-8") as file_:
+            file_.write(str(conf))
 
     def handle(self, *args, **options):
         super().handle(*args, **options)

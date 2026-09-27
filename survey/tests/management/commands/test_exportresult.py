@@ -17,10 +17,8 @@ class TestExportresult(TestManagement):
         return Path(settings.CSV_DIRECTORY, csv_name)
 
     def get_file_content(self, path):
-        file_ = open(path, encoding="UTF-8")
-        content = file_.read()
-        file_.close()
-        return content
+        with open(path, encoding="UTF-8") as file_:
+            return file_.read()
 
     def test_no_options(self):
         """If no options are given there are warning and error messages."""

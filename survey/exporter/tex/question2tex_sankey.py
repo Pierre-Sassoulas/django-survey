@@ -71,15 +71,7 @@ class Question2TexSankey(Question2Tex):
         :param Question other_question: the question we compare to."""
         if not SANKEY:
             raise SankeyNotInstalled()
-        self.cardinality = self.question.sorted_answers_cardinality(
-            self.min_cardinality,
-            self.group_together,
-            self.group_by_letter_case,
-            self.group_by_slugify,
-            self.filter,
-            self.sort_answer,
-            other_question=self.other_question,
-        )
+        self.cardinality = self.get_sorted_answers_cardinality(other_question=self.other_question)
         q1 = []
         q2 = []
         for answer_to_q1, cardinality_to_q2 in list(self.cardinality.items()):

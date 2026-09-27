@@ -25,13 +25,17 @@ class Question2Tex:
         self.group_together = options.get("group_together")
         self.sort_answer = options.get("sort_answer")
         self.filter = options.get("filter")
-        self.cardinality = self.question.sorted_answers_cardinality(
-            self.min_cardinality,
-            self.group_together,
-            self.group_by_letter_case,
-            self.group_by_slugify,
-            self.filter,
-            self.sort_answer,
+        self.cardinality = self.get_sorted_answers_cardinality()
+
+    def get_sorted_answers_cardinality(self, other_question=None):
+        return self.question.sorted_answers_cardinality(
+            min_cardinality=self.min_cardinality,
+            group_together=self.group_together,
+            group_by_letter_case=self.group_by_letter_case,
+            group_by_slugify=self.group_by_slugify,
+            filter=self.filter,
+            sort_answer=self.sort_answer,
+            other_question=other_question,
         )
 
     @staticmethod

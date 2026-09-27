@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:12+0000\n"
+"POT-Creation-Date: 2026-09-27 08:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,31 +53,31 @@ msgstr "użytkownik"
 msgid "Export to CSV"
 msgstr "Eksportuj do CSV"
 
-#: survey/exporter/tex/question2tex.py:60
+#: survey/exporter/tex/question2tex.py:64
 msgid "with"
 msgstr "z"
 
-#: survey/exporter/tex/question2tex.py:62
+#: survey/exporter/tex/question2tex.py:66
 #, python-format
 msgid "%(min_cardinality)d respondents or more"
 msgid_plural "%(min_cardinality)d respondent or more"
 msgstr[0] "%(min_cardinality)d respondentów lub więcej"
 msgstr[1] "%(min_cardinality)d respondent lub więcej"
 
-#: survey/exporter/tex/question2tex.py:73
+#: survey/exporter/tex/question2tex.py:77
 msgid "excluding"
 msgstr "wyłączając"
 
-#: survey/exporter/tex/question2tex.py:73
-#: survey/exporter/tex/question2tex.py:93
+#: survey/exporter/tex/question2tex.py:77
+#: survey/exporter/tex/question2tex.py:97
 msgid "and"
 msgstr "i"
 
-#: survey/exporter/tex/question2tex.py:93
+#: survey/exporter/tex/question2tex.py:97
 msgid "or"
 msgstr "lub"
 
-#: survey/exporter/tex/question2tex.py:126
+#: survey/exporter/tex/question2tex.py:130
 msgid "Repartition of answers"
 msgstr "Podział odpowiedzi"
 

@@ -1,3 +1,4 @@
+# pylint: disable=duplicate-code # Each settings file must be self-contained
 import os
 
 from django.core.management.utils import get_random_secret_key

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:12+0000\n"
+"POT-Creation-Date: 2026-09-27 08:20+0000\n"
 "PO-Revision-Date: 2020-10-04 15:40+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,30 +54,30 @@ msgstr "pengguna"
 msgid "Export to CSV"
 msgstr "Ekspor sebagai CSV"
 
-#: survey/exporter/tex/question2tex.py:60
+#: survey/exporter/tex/question2tex.py:64
 msgid "with"
 msgstr "dengan"
 
-#: survey/exporter/tex/question2tex.py:62
+#: survey/exporter/tex/question2tex.py:66
 #, python-format
 msgid "%(min_cardinality)d respondents or more"
 msgid_plural "%(min_cardinality)d respondent or more"
 msgstr[0] "%(min_cardinality)d responden atau lebih"
 
-#: survey/exporter/tex/question2tex.py:73
+#: survey/exporter/tex/question2tex.py:77
 msgid "excluding"
 msgstr "selain"
 
-#: survey/exporter/tex/question2tex.py:73
-#: survey/exporter/tex/question2tex.py:93
+#: survey/exporter/tex/question2tex.py:77
+#: survey/exporter/tex/question2tex.py:97
 msgid "and"
 msgstr "dan"
 
-#: survey/exporter/tex/question2tex.py:93
+#: survey/exporter/tex/question2tex.py:97
 msgid "or"
 msgstr "atau"
 
-#: survey/exporter/tex/question2tex.py:126
+#: survey/exporter/tex/question2tex.py:130
 msgid "Repartition of answers"
 msgstr "Partisi ulang respon-respon"
 

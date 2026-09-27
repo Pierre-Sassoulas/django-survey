@@ -1,1 +1,1 @@
-recursive-include survey *html *png *gif *js *jpg *jpeg *svg *py *po *sty *yaml
+recursive-include survey *css *eot *html *js *json *mo *po *py *sty *svg *ttf *woff *yaml

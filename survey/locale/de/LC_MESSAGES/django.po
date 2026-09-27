@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-12 07:27+0000\n"
+"POT-Creation-Date: 2026-09-27 08:01+0000\n"
 "PO-Revision-Date: 2021-01-23 11:53+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -155,11 +155,11 @@ msgstr "Frage"
 msgid "Response"
 msgstr "Antwort"
 
-#: survey/models/answer.py:22 survey/models/response.py:24
+#: survey/models/answer.py:22 survey/models/response.py:14
 msgid "Creation date"
 msgstr "Datum der Erstellung"
 
-#: survey/models/answer.py:23 survey/models/response.py:25
+#: survey/models/answer.py:23 survey/models/response.py:15
 msgid "Update date"
 msgstr "Datum der letzten Bearbeitung"
 
@@ -172,7 +172,7 @@ msgid "Name"
 msgstr "Name"
 
 #: survey/models/category.py:10 survey/models/question.py:72
-#: survey/models/response.py:26
+#: survey/models/response.py:16
 msgid "Survey"
 msgstr "Umfrage"
 
@@ -268,19 +268,19 @@ msgstr "Frage"
 msgid "questions"
 msgstr "Fragen"
 
-#: survey/models/response.py:27
+#: survey/models/response.py:18
 msgid "User"
 msgstr "Benutzer"
 
-#: survey/models/response.py:28
+#: survey/models/response.py:20
 msgid "Interview unique identifier"
 msgstr "Interview eindeutiger Identifizierer"
 
-#: survey/models/response.py:31
+#: survey/models/response.py:23
 msgid "Set of answers to surveys"
 msgstr "Satz an Antworten zu Umfragen"
 
-#: survey/models/response.py:32
+#: survey/models/response.py:24
 msgid "Sets of answers to surveys"
 msgstr "Sätze von Antworten zu Umfragen"
 

@@ -1,9 +1,11 @@
 from pathlib import Path
 
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 from survey.models import Answer, Question, Response, Survey
 from survey.tests import BaseTest
+
+User = get_user_model()
 
 HERE = Path(__file__).parent
 

@@ -56,8 +56,7 @@ class SurveyDetail(View):
             return redirect(reverse("survey-list"))
         context = {"response_form": form, "survey": survey, "categories": categories}
         if form.is_valid():
-            if form.clean_choices(survey):
-                return self.treat_valid_form(form, kwargs, request, survey)
+            return self.treat_valid_form(form, kwargs, request, survey)
         return self.handle_invalid_form(context, form, request, survey)
 
     @staticmethod
@@ -88,10 +87,7 @@ class SurveyDetail(View):
             if not form.has_next_step():
                 save_form = ResponseForm(request.session[session_key], survey=survey, user=request.user)
                 if save_form.is_valid():
-                    if form.clean_choices(survey):
-                        response = save_form.save()
-                    else:
-                        return self.handle_invalid_form("context", form, request, survey)
+                    response = save_form.save()
                 else:
                     LOGGER.warning("A step of the multipage form failed but should have been discovered before.")
         # if there is a next step

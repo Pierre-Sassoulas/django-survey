@@ -3,9 +3,11 @@ import uuid
 
 from django import forms
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.forms import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django.utils.translation import ngettext
 
 from survey.models import Answer, Category, Question, Response, Survey
 from survey.signals import survey_completed
@@ -14,8 +16,23 @@ from survey.widgets import ImageSelectWidget
 LOGGER = logging.getLogger(__name__)
 
 
-class ResponseForm(models.ModelForm):
+class MaximumChoicesValidator:
+    """Refuse an answer when more choices than allowed are selected."""
 
+    def __init__(self, maximum_choices):
+        self.maximum_choices = maximum_choices
+
+    def __call__(self, value):
+        if len(value) > self.maximum_choices:
+            msg = ngettext(
+                "Select at most %(maximum)d choice.",
+                "Select at most %(maximum)d choices.",
+                self.maximum_choices,
+            )
+            raise ValidationError(msg, code="maximum_choices", params={"maximum": self.maximum_choices})
+
+
+class ResponseForm(models.ModelForm):
     FIELDS = {
         Question.TEXT: forms.CharField,
         Question.SHORT_TEXT: forms.CharField,
@@ -23,7 +40,6 @@ class ResponseForm(models.ModelForm):
         Question.INTEGER: forms.IntegerField,
         Question.FLOAT: forms.FloatField,
         Question.DATE: forms.DateField,
-        Question.MAX: forms.IntegerField,
     }
 
     WIDGETS = {
@@ -249,6 +265,8 @@ class ResponseForm(models.ModelForm):
 
         if question.type == Question.DATE:
             field.widget.attrs["class"] = "date"
+        if question.type == Question.SELECT_MULTIPLE and question.maximum_choices:
+            field.validators.append(MaximumChoicesValidator(question.maximum_choices))
         # logging.debug("Field for %s : %s", question, field.__dict__)
         self.fields[f"question_{question.pk}"] = field
 
@@ -306,20 +324,3 @@ class ResponseForm(models.ModelForm):
                 answer.save()
         survey_completed.send(sender=Response, instance=response, data=data)
         return response
-
-    def clean_choices(self, s):
-        value = self.cleaned_data
-        print(value)
-        for q in s.questions.all():
-            if q.type in ["select-multiple"] and q.maximum_choices:
-                # Only for SELECT_MULTIPlE and if maximum_choices is set
-                question = q
-                max = question.maximum_choices
-                if value.get(f"question_{question.id}"):
-                    """Only if some answers are checked at all."""
-                    number_of_choices = len(value.get(f"question_{question.id}"))
-                    if number_of_choices > max:
-                        LOGGER.info("Selected more Answers than allowed! Maximum is %d.", max)
-                        # TODO create a meaningful dialog for the user!
-                        return None
-        return value

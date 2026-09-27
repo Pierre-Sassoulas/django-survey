@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 09:31+0000\n"
+"POT-Creation-Date: 2026-09-27 09:46+0000\n"
 "PO-Revision-Date: 2020-10-04 15:40+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -144,6 +144,12 @@ msgstr "Terjadi kesalahan dalam membuat berkas PDF: %s"
 msgid "Export to PDF"
 msgstr "Ekspor sebagai PDF"
 
+#: survey/forms.py:28
+#, python-format
+msgid "Select at most %(maximum)d choice."
+msgid_plural "Select at most %(maximum)d choices."
+msgstr[0] ""
+
 #: survey/models/answer.py:21
 msgid "Question"
 msgstr "Pertanyaan"
@@ -168,7 +174,7 @@ msgstr "Konten"
 msgid "Name"
 msgstr "Nama"
 
-#: survey/models/category.py:10 survey/models/question.py:72
+#: survey/models/category.py:10 survey/models/question.py:73
 #: survey/models/response.py:16
 msgid "Survey"
 msgstr "Survei"
@@ -189,7 +195,7 @@ msgstr "Kategori"
 msgid "categories"
 msgstr "Kategori"
 
-#: survey/models/question.py:16
+#: survey/models/question.py:17
 msgid ""
 "The choices field is only used if the question type\n"
 "if the question type is 'radio', 'select', or\n"
@@ -201,71 +207,79 @@ msgstr ""
 "'pilih beberapa' menyediakan sebuah daftar opsi\n"
 "yang dipisahkan tanda koma untuk pertanyaan ini"
 
-#: survey/models/question.py:55
+#: survey/models/question.py:56
 msgid "text (multiple line)"
 msgstr "teks (beberapa baris)"
 
-#: survey/models/question.py:56
+#: survey/models/question.py:57
 msgid "short text (one line)"
 msgstr "teks pendek (satu baris)"
 
-#: survey/models/question.py:57
+#: survey/models/question.py:58
 msgid "radio"
 msgstr "radio"
 
-#: survey/models/question.py:58
+#: survey/models/question.py:59
 msgid "select"
 msgstr "pilih"
 
-#: survey/models/question.py:59
+#: survey/models/question.py:60
 msgid "Select Multiple"
 msgstr "Pilih beberapa"
 
-#: survey/models/question.py:60
+#: survey/models/question.py:61
 msgid "Select Image"
 msgstr "Pilih Gambar"
 
-#: survey/models/question.py:61
+#: survey/models/question.py:62
 msgid "integer"
 msgstr "bilangan bulat"
 
-#: survey/models/question.py:62
+#: survey/models/question.py:63
 msgid "float"
 msgstr "bilangan desimal"
 
-#: survey/models/question.py:63
+#: survey/models/question.py:64
 msgid "date"
 msgstr "tanggal"
 
-#: survey/models/question.py:66
+#: survey/models/question.py:67
 msgid "Text"
 msgstr "Teks"
 
-#: survey/models/question.py:67
+#: survey/models/question.py:68
 msgid "Order"
 msgstr "Urutan"
 
-#: survey/models/question.py:68
+#: survey/models/question.py:69
 msgid "Required"
 msgstr "Diperlukan"
 
-#: survey/models/question.py:70
+#: survey/models/question.py:71
 msgid "Category"
 msgstr "Kategori"
 
-#: survey/models/question.py:73
+#: survey/models/question.py:74
 msgid "Type"
 msgstr "Tipe"
 
-#: survey/models/question.py:74
+#: survey/models/question.py:75
 msgid "Choices"
 msgstr "Pilihan"
 
 #: survey/models/question.py:77
+msgid "Maximum number of choices"
+msgstr ""
+
+#: survey/models/question.py:81
+msgid "Only used for 'select multiple' questions. Leave empty for no limit."
+msgstr ""
+
+#: survey/models/question.py:85
 msgid "question"
 msgstr "pertanyaan"
 
-#: survey/models/question.py:78
+#: survey/models/question.py:86
 msgid "questions"
 msgstr "pertanyaan-pertanyaan"
 

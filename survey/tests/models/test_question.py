@@ -235,49 +235,41 @@ class TestQuestion(BaseModelTest):
         other_question_assert_mesage = " when in relation with another question"
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, other_question=self.questions[1]),
-            dict(
-                [
-                    ("abé cé", {"left blank": 2}),
-                    ("dé", {"left blank": 2}),
-                    ("abë-cè", {"left blank": 1}),
-                    ("dë", {"left blank": 1}),
-                ]
-            ),
+            {
+                "abé cé": {"left blank": 2},
+                "dé": {"left blank": 2},
+                "abë-cè": {"left blank": 1},
+                "dë": {"left blank": 1},
+            },
             "default" + assert_message + other_question_assert_mesage,
         )
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, sort_answer="alphanumeric", other_question=self.questions[1]),
-            dict(
-                [
-                    ("abé cé", {"left blank": 2}),
-                    ("abë-cè", {"left blank": 1}),
-                    ("dé", {"left blank": 2}),
-                    ("dë", {"left blank": 1}),
-                ]
-            ),
+            {
+                "abé cé": {"left blank": 2},
+                "abë-cè": {"left blank": 1},
+                "dé": {"left blank": 2},
+                "dë": {"left blank": 1},
+            },
             "alphanumeric" + assert_message + other_question_assert_mesage,
         )
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, sort_answer="cardinal", other_question=self.questions[1]),
-            dict(
-                [
-                    ("abé cé", {"left blank": 2}),
-                    ("dé", {"left blank": 2}),
-                    ("abë-cè", {"left blank": 1}),
-                    ("dë", {"left blank": 1}),
-                ]
-            ),
+            {
+                "abé cé": {"left blank": 2},
+                "dé": {"left blank": 2},
+                "abë-cè": {"left blank": 1},
+                "dë": {"left blank": 1},
+            },
             "cardinal" + assert_message + other_question_assert_mesage,
         )
         self.assertEqual(
             self.sorted_card(group_by_letter_case=True, sort_answer=user_defined, other_question=self.questions[1]),
-            dict(
-                [
-                    ("dé", {"left blank": 2}),
-                    ("abë-cè", {"left blank": 1}),
-                    ("dë", {"left blank": 1}),
-                    ("abé cé", {"left blank": 2}),
-                ]
-            ),
+            {
+                "dé": {"left blank": 2},
+                "abë-cè": {"left blank": 1},
+                "dë": {"left blank": 1},
+                "abé cé": {"left blank": 2},
+            },
             "user defined" + assert_message + other_question_assert_mesage,
         )

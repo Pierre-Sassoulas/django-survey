@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 09:46+0000\n"
+"POT-Creation-Date: 2026-09-27 11:43+0000\n"
 "PO-Revision-Date: 2019-03-10 22:53+0230\n"
 "Last-Translator: b'  <vladm.ru@gmail.com>'\n"
 "Language-Team: \n"
@@ -38,7 +38,7 @@ msgstr[1] "опросы %(count)d помечены как опубликован
 msgid "Mark selected surveys as published"
 msgstr "Помечено как опублиовано"
 
-#: survey/decorators.py:29
+#: survey/decorators.py:31
 msgid "This survey has expired for new submissions."
 msgstr ""
 
@@ -119,31 +119,31 @@ msgstr "в связи с вопросом"
 msgid "right"
 msgstr "правильно"
 
-#: survey/exporter/tex/survey2tex.py:30
+#: survey/exporter/tex/survey2tex.py:29
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
 msgstr ""
 
-#: survey/exporter/tex/survey2tex.py:79
+#: survey/exporter/tex/survey2tex.py:76
 msgid "We could not render a chart because the type"
 msgstr "Мы не смогли отобразить диаграмму, потому что тип"
 
-#: survey/exporter/tex/survey2tex.py:81
+#: survey/exporter/tex/survey2tex.py:78
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
 msgstr "не является стандартным типом или путем к импортируемому допустимому текстовому дочернему классу Question2Tex. Выбрать между 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' o 'package.path.MyQuestion2TexCustomClass'"
 
-#: survey/exporter/tex/survey2tex.py:153
+#: survey/exporter/tex/survey2tex.py:148
 msgid "No questions to display in this survey."
 msgstr ""
 
-#: survey/exporter/tex/survey2tex.py:183
+#: survey/exporter/tex/survey2tex.py:178
 msgid "Cannot export multiple PDF, choose only one."
 msgstr ""
 
-#: survey/exporter/tex/survey2tex.py:192
+#: survey/exporter/tex/survey2tex.py:187
 msgid "Error during PDF generation: {}"
 msgstr ""
 
-#: survey/exporter/tex/survey2tex.py:199
+#: survey/exporter/tex/survey2tex.py:194
 msgid "Export to PDF"
 msgstr ""
 

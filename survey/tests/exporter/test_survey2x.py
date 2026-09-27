@@ -1,5 +1,5 @@
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
@@ -18,9 +18,9 @@ class Survey2Survey(Survey2X):
         pass
 
 
-LONG_TIME_AGO = datetime(1990, 1, 1, 0, 0, 0)
-SHORT_TIME_AGO = datetime(2000, 1, 1, 0, 0, 0)
-RIGHT_NOW = datetime(2010, 1, 1, 0, 0, 0)
+LONG_TIME_AGO = datetime(1990, 1, 1, 0, 0, 0, tzinfo=timezone.utc)
+SHORT_TIME_AGO = datetime(2000, 1, 1, 0, 0, 0, tzinfo=timezone.utc)
+RIGHT_NOW = datetime(2010, 1, 1, 0, 0, 0, tzinfo=timezone.utc)
 
 
 @override_settings(SURVEY_DIRECTORY=Path(ROOT, "survey"))

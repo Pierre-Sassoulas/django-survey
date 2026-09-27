@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 09:46+0000\n"
+"POT-Creation-Date: 2026-09-27 11:43+0000\n"
 "PO-Revision-Date: 2021-01-23 11:53+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr[1] "%(count)d surveys zijn succes gemarkeerd als gepubliceerd."
 msgid "Mark selected surveys as published"
 msgstr "Markeer geselecteerde surveys als gepubliceerd"
 
-#: survey/decorators.py:29
+#: survey/decorators.py:31
 msgid "This survey has expired for new submissions."
 msgstr ""
 
@@ -114,33 +114,33 @@ msgstr "in relatie met de vraag"
 msgid "right"
 msgstr "rechts"
 
-#: survey/exporter/tex/survey2tex.py:30
+#: survey/exporter/tex/survey2tex.py:29
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
 msgstr "Kan geen PDF genereren. Installeer 'xelatex' door middel van 'sudo apt-get install texlive-xetex'."
 
-#: survey/exporter/tex/survey2tex.py:79
+#: survey/exporter/tex/survey2tex.py:76
 msgid "We could not render a chart because the type"
 msgstr "We kunnen de grafiek niet maken omdat het type"
 
-#: survey/exporter/tex/survey2tex.py:81
+#: survey/exporter/tex/survey2tex.py:78
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
 msgstr "geen standaard type of niet in het pad naar een importeerbaar geldig Question kind klasse. Kies uit 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' of 'package.path.MyQuestion2TexCustomClass'"
 
-#: survey/exporter/tex/survey2tex.py:153
+#: survey/exporter/tex/survey2tex.py:148
 msgid "No questions to display in this survey."
 msgstr "Geen vragen van deze survey kunnen getoond worden."
 
-#: survey/exporter/tex/survey2tex.py:183
+#: survey/exporter/tex/survey2tex.py:178
 msgid "Cannot export multiple PDF, choose only one."
 msgstr "Kan geen meerdere PDF bestanden exporteren. Kies er een."
 
-#: survey/exporter/tex/survey2tex.py:192
+#: survey/exporter/tex/survey2tex.py:187
 #, fuzzy
 #| msgid "Error during PDF generation: %s"
 msgid "Error during PDF generation: {}"
 msgstr "Fout tijdens het genereren van PDFs: %s"
 
-#: survey/exporter/tex/survey2tex.py:199
+#: survey/exporter/tex/survey2tex.py:194
 msgid "Export to PDF"
 msgstr "Exporteer naar PDF"
 

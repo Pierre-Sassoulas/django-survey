@@ -95,7 +95,7 @@ class Configuration:
                 result = self.recursive_update(dict_.get(key, {}), value)
                 dict_[key] = result
             else:
-                dict_[key] = update_dict[key]
+                dict_[key] = value
         return dict_
 
     @staticmethod

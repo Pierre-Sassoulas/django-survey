@@ -1,12 +1,11 @@
 import logging
 import os
 import subprocess
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from pydoc import locate
 from shutil import copy, which
 
-import pytz
 from django.contrib.messages import ERROR
 from django.http import HttpResponse
 from django.utils.text import slugify
@@ -55,9 +54,7 @@ class Survey2Tex(Survey2X):
         if not multiple_charts:
             multiple_charts = {"": options.get("chart")}
         question_synthesis = ""
-        i = 0
-        for chart_title, opts in list(multiple_charts.items()):
-            i += 1
+        for i, (chart_title, opts) in enumerate(multiple_charts.items(), start=1):
             if chart_title:
                 # "" is False, by default we do not add section or anything
                 mct = options["multiple_chart_type"]
@@ -113,9 +110,7 @@ class Survey2Tex(Survey2X):
             mtime = earliest_working_timestamp_for_windows
         else:
             mtime = os.path.getmtime(self.pdf_filename)
-        mtime = datetime.utcfromtimestamp(mtime)
-        mtime = mtime.replace(tzinfo=pytz.timezone("UTC"))
-        return mtime
+        return datetime.fromtimestamp(mtime, tz=timezone.utc)
 
     def _generation_done_once(self):
         return os.path.exists(self.pdf_filename)

@@ -74,7 +74,7 @@ ignore = "H006,H021,H030,H031"
 
 [tool.ruff]
 line-length = 120
-lint.select = [
+lint.extend-select = [
   "B",   # bugbear
   "E",   # pycodestyle
   "F",   # pyflakes

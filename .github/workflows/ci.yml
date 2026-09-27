@@ -53,3 +53,14 @@ jobs:
       - name: pylint
         run: |
           pre-commit run pylint --all-files
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Build documentation
+        run: |
+          pip3 install ".[docs]"
+          sphinx-build --fail-on-warning --nitpicky doc doc/_build/html

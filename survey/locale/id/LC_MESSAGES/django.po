@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:09+0000\n"
+"POT-Creation-Date: 2026-09-27 08:12+0000\n"
 "PO-Revision-Date: 2020-10-04 15:40+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,28 +54,26 @@ msgstr "pengguna"
 msgid "Export to CSV"
 msgstr "Ekspor sebagai CSV"
 
-#: survey/exporter/tex/question2tex.py:61
+#: survey/exporter/tex/question2tex.py:60
 msgid "with"
 msgstr "dengan"
 
-#: survey/exporter/tex/question2tex.py:63
+#: survey/exporter/tex/question2tex.py:62
 #, python-format
 msgid "%(min_cardinality)d respondents or more"
 msgid_plural "%(min_cardinality)d respondent or more"
 msgstr[0] "%(min_cardinality)d responden atau lebih"
 
-#: survey/exporter/tex/question2tex.py:75
+#: survey/exporter/tex/question2tex.py:73
 msgid "excluding"
 msgstr "selain"
 
-#: survey/exporter/tex/question2tex.py:80
-#: survey/exporter/tex/question2tex.py:114
-#: survey/exporter/tex/question2tex.py:117
+#: survey/exporter/tex/question2tex.py:73
+#: survey/exporter/tex/question2tex.py:93
 msgid "and"
 msgstr "dan"
 
-#: survey/exporter/tex/question2tex.py:111
-#: survey/exporter/tex/question2tex.py:112
+#: survey/exporter/tex/question2tex.py:93
 msgid "or"
 msgstr "atau"
 
@@ -92,7 +90,7 @@ msgstr "Dikosongkan saja"
 msgid "for the question"
 msgstr "untuk pertanyaan"
 
-#: survey/exporter/tex/question2tex_chart.py:108
+#: survey/exporter/tex/question2tex_chart.py:109
 msgid "No answers for this question."
 msgstr "Tidak ada jawaban untuk pertanyaan ini."
 
@@ -108,11 +106,11 @@ msgstr "Tidak dapat menghasilkan PDF, 'pySankeyBeta' perlu dipasang terlebih dah
 msgid "left"
 msgstr "kiri"
 
-#: survey/exporter/tex/question2tex_sankey.py:57
+#: survey/exporter/tex/question2tex_sankey.py:56
 msgid "in relation with the question"
 msgstr "hubungannya dengan pertanyaan"
 
-#: survey/exporter/tex/question2tex_sankey.py:59
+#: survey/exporter/tex/question2tex_sankey.py:56
 msgid "right"
 msgstr "kanan"
 
@@ -120,29 +118,29 @@ msgstr "kanan"
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
 msgstr "Tidak dapat menghasilkan PDF, 'xelatex' perlu dipasang terlebih dahulu"
 
-#: survey/exporter/tex/survey2tex.py:80
+#: survey/exporter/tex/survey2tex.py:79
 msgid "We could not render a chart because the type"
 msgstr "Tidak dapat memuat sebuah diagram karena tipe"
 
-#: survey/exporter/tex/survey2tex.py:83
+#: survey/exporter/tex/survey2tex.py:81
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
 msgstr "bukan tipe standar ataupun path menuju kelas turunan Question2Tex yang dapat diimpor tidak valid. Plih antara 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' atau 'package.path.MyQuestion2TexCustomClass'"
 
-#: survey/exporter/tex/survey2tex.py:153
+#: survey/exporter/tex/survey2tex.py:151
 msgid "No questions to display in this survey."
 msgstr "Tidak ada pertanyaan untuk ditampilkan pada survei ini."
 
-#: survey/exporter/tex/survey2tex.py:183
+#: survey/exporter/tex/survey2tex.py:181
 msgid "Cannot export multiple PDF, choose only one."
 msgstr "Tidak dapat ekspor beberapa PDF sekaligus, pilih satu saja."
 
-#: survey/exporter/tex/survey2tex.py:192
+#: survey/exporter/tex/survey2tex.py:190
 #, fuzzy
 #| msgid "Error during PDF generation: %s"
 msgid "Error during PDF generation: {}"
 msgstr "Terjadi kesalahan dalam membuat berkas PDF: %s"
 
-#: survey/exporter/tex/survey2tex.py:199
+#: survey/exporter/tex/survey2tex.py:197
 msgid "Export to PDF"
 msgstr "Ekspor sebagai PDF"
 

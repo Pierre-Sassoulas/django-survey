@@ -85,7 +85,6 @@ lint.ignore = [
 
 [tool.pylint]
 main.disable = [
-  "consider-using-f-string",        # TODO fix
   "duplicate-code",                 # TODO fix
   "fixme",                          # TODO fix
   # I0011 Warning locally suppressed using disable-msg

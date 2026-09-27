@@ -76,17 +76,15 @@ class Survey2Tex(Survey2X):
                 q2tex = Question2TexChart(question, latex_label=i, **opts)
                 question_synthesis += q2tex.tex()
             elif locate(tex_type) is None:
-                msg = "{} '{}' {}".format(
-                    _("We could not render a chart because the type"),
-                    tex_type,
-                    _(
-                        "is not a standard type nor the path to an "
-                        "importable valid Question2Tex child class. "
-                        "Choose between 'raw', 'sankey', 'pie', 'cloud', "
-                        "'square', 'polar' or 'package.path.MyQuestion2Tex"
-                        "CustomClass'"
-                    ),
+                could_not_render = _("We could not render a chart because the type")
+                not_a_standard_type = _(
+                    "is not a standard type nor the path to an "
+                    "importable valid Question2Tex child class. "
+                    "Choose between 'raw', 'sankey', 'pie', 'cloud', "
+                    "'square', 'polar' or 'package.path.MyQuestion2Tex"
+                    "CustomClass'"
                 )
+                msg = f"{could_not_render} '{tex_type}' {not_a_standard_type}"
                 LOGGER.error(msg)
                 question_synthesis += msg
             else:
@@ -127,7 +125,7 @@ class Survey2Tex(Survey2X):
 
     @property
     def pdf_filename(self) -> Path:
-        return Path(self.directory, "{}.{}".format(slugify(self.survey.name), "pdf"))
+        return Path(self.directory, f"{slugify(self.survey.name)}.pdf")
 
     def generate_pdf(self):
         """Compile the pdf from the tex file. Can raise subprocess.CalledProcessError"""
@@ -189,7 +187,7 @@ class Survey2Tex(Survey2X):
         try:
             s2tex.generate_pdf()
         except subprocess.CalledProcessError as exc:
-            modeladmin.message_user(request, _("Error during PDF generation: {}".format(exc)), level=ERROR)
+            modeladmin.message_user(request, _("Error during PDF generation: {}").format(exc), level=ERROR)
             return None
         with open(s2tex.pdf_filename, "rb") as f:
             response.write(f.read())

@@ -57,27 +57,26 @@ class Question2Tex:
         """A descriptive text for the min_cardinality option."""
         caption = ""
         if self.min_cardinality > 0:
-            caption += "{} {} ".format(
-                _("with"),
-                ngettext(
-                    "%(min_cardinality)d respondents or more",
-                    "%(min_cardinality)d respondent or more",
-                    self.min_cardinality,
-                )
-                % {"min_cardinality": self.min_cardinality},
-            )
+            with_ = _("with")
+            respondents = ngettext(
+                "%(min_cardinality)d respondents or more",
+                "%(min_cardinality)d respondent or more",
+                self.min_cardinality,
+            ) % {"min_cardinality": self.min_cardinality}
+            caption += f"{with_} {respondents} "
         return caption
 
     def get_caption_filter(self):
         """A descriptive text for the filter option."""
         caption = ""
         if self.filter:
-            caption += "{} ".format(_("excluding"))
+            excluding, and_ = _("excluding"), _("and")
+            caption += f"{excluding} "
             for i, excluded in enumerate(self.filter):
                 excluded = Question2Tex.get_clean_answer(excluded)
                 caption += f"'{excluded}', "
                 if len(self.filter) >= 2 and i == len(self.filter) - 2:
-                    caption += "{} ".format(_("and"))
+                    caption += f"{and_} "
             caption = f"{caption[:-2]} "
         return caption
 
@@ -91,6 +90,7 @@ class Question2Tex:
                 # Looping only on the value really used in the answers
                 loop_dict = self.cardinality
             has_and = False
+            or_, and_ = _("or"), _("and")
             for key in loop_dict:
                 values = self.group_together.get(key)
                 if values is None:
@@ -108,13 +108,13 @@ class Question2Tex:
                 # We duplicate the translations so makemessage find it
                 caption += f"with '{key}' standing for "
                 for value in values:
-                    caption += "'{}' {} ".format(value, _("or"))
-                caption = caption[: -len("{} ".format(_("or")))]
+                    caption += f"'{value}' {or_} "
+                caption = caption[: -len(f"{or_} ")]
                 has_and = True
-                caption += "{} ".format(_("and"))
+                caption += f"{and_} "
             if has_and:
                 # We remove the final "and " if there is one
-                caption = caption[: -len("{} ".format(_("and")))]
+                caption = caption[: -len(f"{and_} ")]
         return caption
 
     def get_caption_specifics(self):
@@ -123,7 +123,8 @@ class Question2Tex:
 
     def get_caption(self):
         """Return a caption with an appropriate description of the figure."""
-        caption = "{} ".format(_("Repartition of answers"))
+        repartition = _("Repartition of answers")
+        caption = f"{repartition} "
         caption += self.get_caption_min_cardinality()
         caption += self.get_caption_filter()
         caption += self.get_caption_specifics()

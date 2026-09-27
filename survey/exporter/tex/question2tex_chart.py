@@ -55,7 +55,7 @@ class Question2TexChart(Question2Tex):
                 msg += f"add '{answer}: \"red!50\"', in your color config."
                 LOGGER.warning(msg)
                 colors.append(settings.SURVEY_DEFAULT_PIE_COLOR)
-        return "{{{}}}".format(", ".join(colors))
+        return f"{{{', '.join(colors)}}}"
 
     def get_results(self):
         """Return a formatted string for a tikz pgf-pie chart."""
@@ -95,7 +95,8 @@ class Question2TexChart(Question2Tex):
         return ""
 
     def get_caption_specifics(self):
-        return "{} '{}' ".format(_("for the question"), Question2Tex.html2latex(self.question.text))
+        for_the_question = _("for the question")
+        return f"{for_the_question} '{Question2Tex.html2latex(self.question.text)}' "
 
     def tex(self):
         """Return a pfg-pie pie chart of a question.

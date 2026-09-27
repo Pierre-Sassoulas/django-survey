@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:09+0000\n"
+"POT-Creation-Date: 2026-09-27 08:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,29 +53,27 @@ msgstr "kullanıcı"
 msgid "Export to CSV"
 msgstr "CSV'ye aktar"
 
-#: survey/exporter/tex/question2tex.py:61
+#: survey/exporter/tex/question2tex.py:60
 msgid "with"
 msgstr "ile"
 
-#: survey/exporter/tex/question2tex.py:63
+#: survey/exporter/tex/question2tex.py:62
 #, python-format
 msgid "%(min_cardinality)d respondents or more"
 msgid_plural "%(min_cardinality)d respondent or more"
 msgstr[0] "%(min_cardinality)d veya daha fazla katılımcı"
 msgstr[1] "%(min_cardinality)d veya daha fazla katılımcı"
 
-#: survey/exporter/tex/question2tex.py:75
+#: survey/exporter/tex/question2tex.py:73
 msgid "excluding"
 msgstr "hariç"
 
-#: survey/exporter/tex/question2tex.py:80
-#: survey/exporter/tex/question2tex.py:114
-#: survey/exporter/tex/question2tex.py:117
+#: survey/exporter/tex/question2tex.py:73
+#: survey/exporter/tex/question2tex.py:93
 msgid "and"
 msgstr "ve"
 
-#: survey/exporter/tex/question2tex.py:111
-#: survey/exporter/tex/question2tex.py:112
+#: survey/exporter/tex/question2tex.py:93
 msgid "or"
 msgstr "veya"
 
@@ -92,7 +90,7 @@ msgstr "Boşluk bırak"
 msgid "for the question"
 msgstr "soru için"
 
-#: survey/exporter/tex/question2tex_chart.py:108
+#: survey/exporter/tex/question2tex_chart.py:109
 msgid "No answers for this question."
 msgstr "Bu soru için hiç yanıt yok."
 
@@ -108,11 +106,11 @@ msgstr "PDF oluşturulamıyor, 'pySankeyBeta'nın indilmesine ihtiyacımız var.
 msgid "left"
 msgstr "sol"
 
-#: survey/exporter/tex/question2tex_sankey.py:57
+#: survey/exporter/tex/question2tex_sankey.py:56
 msgid "in relation with the question"
 msgstr "soru ile ilgili olarak"
 
-#: survey/exporter/tex/question2tex_sankey.py:59
+#: survey/exporter/tex/question2tex_sankey.py:56
 msgid "right"
 msgstr "sağ"
 
@@ -120,29 +118,29 @@ msgstr "sağ"
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
 msgstr "PDF oluşturulamıyor, 'xelatex'in indilmesine ihtiyacımız var."
 
-#: survey/exporter/tex/survey2tex.py:80
+#: survey/exporter/tex/survey2tex.py:79
 msgid "We could not render a chart because the type"
 msgstr "Tipi nedeniyle bir grafik oluşturamadık"
 
-#: survey/exporter/tex/survey2tex.py:83
+#: survey/exporter/tex/survey2tex.py:81
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
 msgstr "standart bir tip veya içe aktarılabilir geçerli bir Question2Tex alt sınıfının yolu değil.'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' veya 'package.path.MyQuestion2TexCustomClass'tan birini seç"
 
-#: survey/exporter/tex/survey2tex.py:153
+#: survey/exporter/tex/survey2tex.py:151
 msgid "No questions to display in this survey."
 msgstr "Bu ankette görüntülenecek bir soru yok."
 
-#: survey/exporter/tex/survey2tex.py:183
+#: survey/exporter/tex/survey2tex.py:181
 msgid "Cannot export multiple PDF, choose only one."
 msgstr "Birden fazla PDF dışa aktarılamıyor, yalnızca birini seçin."
 
-#: survey/exporter/tex/survey2tex.py:192
+#: survey/exporter/tex/survey2tex.py:190
 #, fuzzy
 #| msgid "Error during PDF generation: %s"
 msgid "Error during PDF generation: {}"
 msgstr "PDF oluşturma sırasında hata: %s"
 
-#: survey/exporter/tex/survey2tex.py:199
+#: survey/exporter/tex/survey2tex.py:197
 msgid "Export to PDF"
 msgstr "PDF'e aktar"
 

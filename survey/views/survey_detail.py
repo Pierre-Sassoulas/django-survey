@@ -72,7 +72,7 @@ class SurveyDetail(View):
         return render(request, template_name, context)
 
     def treat_valid_form(self, form, kwargs, request, survey):
-        session_key = "survey_{}".format(kwargs["id"])
+        session_key = f"survey_{kwargs['id']}"
         if session_key not in request.session:
             request.session[session_key] = {}
         for key, value in list(form.cleaned_data.items()):

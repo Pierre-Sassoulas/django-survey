@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:09+0000\n"
+"POT-Creation-Date: 2026-09-27 08:12+0000\n"
 "PO-Revision-Date: 2018-04-09 00:52+0000\n"
 "Last-Translator: Zhu Sheng Li <digglife@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,29 +54,27 @@ msgstr "用户"
 msgid "Export to CSV"
 msgstr "导出为CSV"
 
-#: survey/exporter/tex/question2tex.py:61
+#: survey/exporter/tex/question2tex.py:60
 msgid "with"
 msgstr "和"
 
-#: survey/exporter/tex/question2tex.py:63
+#: survey/exporter/tex/question2tex.py:62
 #, python-format
 msgid "%(min_cardinality)d respondents or more"
 msgid_plural "%(min_cardinality)d respondent or more"
 msgstr[0] "%(min_cardinality)d 位参与者或更多"
 msgstr[1] "%(min_cardinality)d 位参与者或更多"
 
-#: survey/exporter/tex/question2tex.py:75
+#: survey/exporter/tex/question2tex.py:73
 msgid "excluding"
 msgstr "除了"
 
-#: survey/exporter/tex/question2tex.py:80
-#: survey/exporter/tex/question2tex.py:114
-#: survey/exporter/tex/question2tex.py:117
+#: survey/exporter/tex/question2tex.py:73
+#: survey/exporter/tex/question2tex.py:93
 msgid "and"
 msgstr "和"
 
-#: survey/exporter/tex/question2tex.py:111
-#: survey/exporter/tex/question2tex.py:112
+#: survey/exporter/tex/question2tex.py:93
 msgid "or"
 msgstr "或"
 
@@ -93,7 +91,7 @@ msgstr "留空"
 msgid "for the question"
 msgstr "为此问题"
 
-#: survey/exporter/tex/question2tex_chart.py:108
+#: survey/exporter/tex/question2tex_chart.py:109
 msgid "No answers for this question."
 msgstr "该问题尚无回答"
 
@@ -111,11 +109,11 @@ msgstr "无法生成PDF，我们需要安装“ xelatex”。"
 msgid "left"
 msgstr "左"
 
-#: survey/exporter/tex/question2tex_sankey.py:57
+#: survey/exporter/tex/question2tex_sankey.py:56
 msgid "in relation with the question"
 msgstr "和此问题相关"
 
-#: survey/exporter/tex/question2tex_sankey.py:59
+#: survey/exporter/tex/question2tex_sankey.py:56
 msgid "right"
 msgstr "右"
 
@@ -123,29 +121,29 @@ msgstr "右"
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
 msgstr "无法生成PDF，我们需要安装“ xelatex”。"
 
-#: survey/exporter/tex/survey2tex.py:80
+#: survey/exporter/tex/survey2tex.py:79
 msgid "We could not render a chart because the type"
 msgstr "我们无法生成图表，因为类型"
 
-#: survey/exporter/tex/survey2tex.py:83
+#: survey/exporter/tex/survey2tex.py:81
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
 msgstr "既不是标准类型，也不是可导入的有效 Question2Tex 子类的路径。请在'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' 或 'package.path.MyQuestion2TexCustomClass' 中选择。"
 
-#: survey/exporter/tex/survey2tex.py:153
+#: survey/exporter/tex/survey2tex.py:151
 msgid "No questions to display in this survey."
 msgstr ""
 
-#: survey/exporter/tex/survey2tex.py:183
+#: survey/exporter/tex/survey2tex.py:181
 msgid "Cannot export multiple PDF, choose only one."
 msgstr "无法导出多个PDF，只能选择一个。"
 
-#: survey/exporter/tex/survey2tex.py:192
+#: survey/exporter/tex/survey2tex.py:190
 #, fuzzy
 #| msgid "Error during PDF generation: %s"
 msgid "Error during PDF generation: {}"
 msgstr "PDF生成期间发生错误：%s"
 
-#: survey/exporter/tex/survey2tex.py:199
+#: survey/exporter/tex/survey2tex.py:197
 msgid "Export to PDF"
 msgstr "导出为PDF"
 

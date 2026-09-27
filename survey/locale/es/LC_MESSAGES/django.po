@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:09+0000\n"
+"POT-Creation-Date: 2026-09-27 08:12+0000\n"
 "PO-Revision-Date: 2018-10-06 20:42+0000\n"
 "Last-Translator: Javier Ordóñez <>\n"
 "Language-Team: \n"
@@ -54,31 +54,29 @@ msgstr "usuario"
 msgid "Export to CSV"
 msgstr "Exporta como CSV"
 
-#: survey/exporter/tex/question2tex.py:61
+#: survey/exporter/tex/question2tex.py:60
 msgid "with"
 msgstr "con"
 
 # there is a mistake in the EN singular and plural cases.
 # Entrevistado refers to all surveyed.
-#: survey/exporter/tex/question2tex.py:63
+#: survey/exporter/tex/question2tex.py:62
 #, python-format
 msgid "%(min_cardinality)d respondents or more"
 msgid_plural "%(min_cardinality)d respondent or more"
 msgstr[0] "%(min_cardinality)d entrevistado o más"
 msgstr[1] "%(min_cardinality)d entrevistados o más."
 
-#: survey/exporter/tex/question2tex.py:75
+#: survey/exporter/tex/question2tex.py:73
 msgid "excluding"
 msgstr "excluyendo"
 
-#: survey/exporter/tex/question2tex.py:80
-#: survey/exporter/tex/question2tex.py:114
-#: survey/exporter/tex/question2tex.py:117
+#: survey/exporter/tex/question2tex.py:73
+#: survey/exporter/tex/question2tex.py:93
 msgid "and"
 msgstr "y"
 
-#: survey/exporter/tex/question2tex.py:111
-#: survey/exporter/tex/question2tex.py:112
+#: survey/exporter/tex/question2tex.py:93
 msgid "or"
 msgstr "o"
 
@@ -95,7 +93,7 @@ msgstr "Dejada en blanco"
 msgid "for the question"
 msgstr "para la pregunta"
 
-#: survey/exporter/tex/question2tex_chart.py:108
+#: survey/exporter/tex/question2tex_chart.py:109
 msgid "No answers for this question."
 msgstr "No hay respuestas para esta pregunta."
 
@@ -112,12 +110,12 @@ msgstr "No podemos generar el PDF, necesitamos instalar 'pySankeyBeta'"
 msgid "left"
 msgstr "izquierda"
 
-#: survey/exporter/tex/question2tex_sankey.py:57
+#: survey/exporter/tex/question2tex_sankey.py:56
 msgid "in relation with the question"
 msgstr "en relación con la pregunta"
 
 # as in "opposite of left"
-#: survey/exporter/tex/question2tex_sankey.py:59
+#: survey/exporter/tex/question2tex_sankey.py:56
 msgid "right"
 msgstr "derecha"
 
@@ -125,29 +123,29 @@ msgstr "derecha"
 msgid "Cannot generate PDF, we need 'xelatex' to be installed."
 msgstr "No podemos generar el PDF, necesitamos instalar 'xelatex'"
 
-#: survey/exporter/tex/survey2tex.py:80
+#: survey/exporter/tex/survey2tex.py:79
 msgid "We could not render a chart because the type"
 msgstr "No pudimos generar un gráfico porque el tipo"
 
-#: survey/exporter/tex/survey2tex.py:83
+#: survey/exporter/tex/survey2tex.py:81
 msgid "is not a standard type nor the path to an importable valid Question2Tex child class. Choose between 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' or 'package.path.MyQuestion2TexCustomClass'"
 msgstr "no es un tipo estándar ni ruta a una subclase importable válida de Question2Tex. Escoje entre 'raw', 'sankey', 'pie', 'cloud', 'square', 'polar' o 'package.path.MyQuestion2TexCustomClass'"
 
-#: survey/exporter/tex/survey2tex.py:153
+#: survey/exporter/tex/survey2tex.py:151
 msgid "No questions to display in this survey."
 msgstr "No hay preguntas para mostrar en esta encuesta."
 
-#: survey/exporter/tex/survey2tex.py:183
+#: survey/exporter/tex/survey2tex.py:181
 msgid "Cannot export multiple PDF, choose only one."
 msgstr "No se pueden exportar varios PDF, elije solo uno."
 
-#: survey/exporter/tex/survey2tex.py:192
+#: survey/exporter/tex/survey2tex.py:190
 #, fuzzy
 #| msgid "Error during PDF generation: %s"
 msgid "Error during PDF generation: {}"
 msgstr "Error durante la generación del PDF: %s"
 
-#: survey/exporter/tex/survey2tex.py:199
+#: survey/exporter/tex/survey2tex.py:197
 msgid "Export to PDF"
 msgstr "Exportación al formato PDF"
 

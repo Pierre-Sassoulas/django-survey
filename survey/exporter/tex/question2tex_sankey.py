@@ -52,13 +52,11 @@ class Question2TexSankey(Question2Tex):
         self.other_question = other_question
 
     def get_caption_specifics(self):
-        caption = "{} '{}' ({}) ".format(_("for the question"), Question2Tex.html2latex(self.question.text), _("left"))
-        caption += "{} '{}' ({}) ".format(
-            _("in relation with the question"),
-            Question2Tex.html2latex(self.other_question.text),
-            _("right"),
-        )
-        return caption
+        for_the_question, left = _("for the question"), _("left")
+        in_relation, right = _("in relation with the question"), _("right")
+        question_text = Question2Tex.html2latex(self.question.text)
+        other_question_text = Question2Tex.html2latex(self.other_question.text)
+        return f"{for_the_question} '{question_text}' ({left}) {in_relation} '{other_question_text}' ({right}) "
 
     def tex(self):
         """Return a tikz Sankey Diagram of two questions.

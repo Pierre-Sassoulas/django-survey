@@ -1,3 +1,4 @@
+# pylint: disable=duplicate-code # Each settings file must be self-contained
 """
 Django settings for example_project project.
 

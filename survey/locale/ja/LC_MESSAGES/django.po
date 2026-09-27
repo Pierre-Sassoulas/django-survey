@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:12+0000\n"
+"POT-Creation-Date: 2026-09-27 08:20+0000\n"
 "PO-Revision-Date: 2018-04-09 00:52+0000\n"
 "Last-Translator: b'  <nsuzue@me.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,31 +53,31 @@ msgstr ""
 msgid "Export to CSV"
 msgstr ""
 
-#: survey/exporter/tex/question2tex.py:60
+#: survey/exporter/tex/question2tex.py:64
 msgid "with"
 msgstr "と一緒に"
 
-#: survey/exporter/tex/question2tex.py:62
+#: survey/exporter/tex/question2tex.py:66
 #, python-format
 msgid "%(min_cardinality)d respondents or more"
 msgid_plural "%(min_cardinality)d respondent or more"
 msgstr[0] "%(min_cardinality)d 回答者数またはそれ以上"
 msgstr[1] "%(min_cardinality)d 回答者数またはそれ以上"
 
-#: survey/exporter/tex/question2tex.py:73
+#: survey/exporter/tex/question2tex.py:77
 msgid "excluding"
 msgstr "除く"
 
-#: survey/exporter/tex/question2tex.py:73
-#: survey/exporter/tex/question2tex.py:93
+#: survey/exporter/tex/question2tex.py:77
+#: survey/exporter/tex/question2tex.py:97
 msgid "and"
 msgstr "かつ"
 
-#: survey/exporter/tex/question2tex.py:93
+#: survey/exporter/tex/question2tex.py:97
 msgid "or"
 msgstr "または"
 
-#: survey/exporter/tex/question2tex.py:126
+#: survey/exporter/tex/question2tex.py:130
 msgid "Repartition of answers"
 msgstr "回答の再分割"
 

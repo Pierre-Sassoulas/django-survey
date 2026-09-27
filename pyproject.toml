@@ -58,11 +58,17 @@ optional-dependencies.dev = [
   "python-coveralls",
   "setuptools",
 ]
+optional-dependencies.docs = [
+  "furo",
+  "myst-parser",
+  "sphinx",
+]
 optional-dependencies.sankey = [
   "pysankeybeta>=1.3,<1.5",
 ]
 urls."Bug Tracker" = "https://github.com/Pierre-Sassoulas/django-survey/issues"
 urls."Source Code" = "https://github.com/Pierre-Sassoulas/django-survey"
+urls.Documentation = "https://django-survey-and-report.readthedocs.io/"
 
 [tool.setuptools]
 packages.find.include = [ "survey*" ]

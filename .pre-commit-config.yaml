@@ -79,4 +79,5 @@ repos:
             "--load-plugins=pylint_django",
             "--fail-on=I",
           ]
-        exclude: "survey/migrations/"
+        # doc/conf.py uses the lowercase names required by Sphinx
+        exclude: "survey/migrations/|doc/conf.py"

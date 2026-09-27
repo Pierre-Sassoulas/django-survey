@@ -105,7 +105,6 @@ main.disable = [
   "too-many-positional-arguments",  # TODO fix, bad API
   "unused-argument",                # TODO fix
   "unused-private-member",          # TODO fix
-  "useless-parent-delegation",      # TODO fix
 ]
 main.good-names = "i,j,k,ex,Run,_,f,e,maxDiff"
 main.ignore = "migrations"

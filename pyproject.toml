@@ -96,7 +96,6 @@ main.disable = [
   "imported-auth-user",             # TODO fix
   "inconsistent-return-statements", # TODO fix
   "missing-docstring",              # We don't want docstring everywhere
-  "no-else-return",                 # TODO fix
   "no-member",
   "redefined-builtin",              # TODO fix
   "too-few-public-methods",         # More harmful than beneficial in django project

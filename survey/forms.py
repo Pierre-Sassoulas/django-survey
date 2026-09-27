@@ -91,12 +91,11 @@ class ResponseForm(models.ModelForm):
             if self.step is not None and self.step < len(self.categories):
                 return [self.categories[self.step]]
             return [Category(name="No category", description="No cat desc")]
-        else:
-            extras = []
-            if self.qs_with_no_cat:
-                extras = [Category(name="No category", description="No cat desc")]
+        extras = []
+        if self.qs_with_no_cat:
+            extras = [Category(name="No category", description="No cat desc")]
 
-            return self.categories + extras
+        return self.categories + extras
 
     def _get_preexisting_response(self):
         """Recover a pre-existing response in database.

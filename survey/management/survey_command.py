@@ -43,11 +43,6 @@ class SurveyCommand(BaseCommand):
             msg = msg[:-1]  # Remove last \n
         else:
             msg += "but there is nothing in the database."
-        # Compatibility for python 2.7 and 3
-        # See: https://stackoverflow.com/questions/46076279/
-        if sys.version_info.major == 2:  # pragma: no cover
-            raise ValueError(msg.encode("utf-8"))
-        # pragma: no cover
         raise ValueError(msg)
 
     @staticmethod

@@ -99,7 +99,6 @@ main.disable = [
   "no-else-return",                 # TODO fix
   "no-member",
   "redefined-builtin",              # TODO fix
-  "superfluous-parens",             # TODO fix
   "too-few-public-methods",         # More harmful than beneficial in django project
   "too-many-arguments",
   "too-many-branches",              # TODO fix

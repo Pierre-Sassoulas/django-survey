@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:01+0000\n"
+"POT-Creation-Date: 2026-09-27 08:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,12 +87,12 @@ msgstr "Podział odpowiedzi"
 msgid "Left blank"
 msgstr "Pozostaw puste"
 
-#: survey/exporter/tex/question2tex_chart.py:110
+#: survey/exporter/tex/question2tex_chart.py:98
 #: survey/exporter/tex/question2tex_sankey.py:55
 msgid "for the question"
 msgstr "dla pytania"
 
-#: survey/exporter/tex/question2tex_chart.py:120
+#: survey/exporter/tex/question2tex_chart.py:108
 msgid "No answers for this question."
 msgstr "Brak odpowiedzi na to pytanie."
 

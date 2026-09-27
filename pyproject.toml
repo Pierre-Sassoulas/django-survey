@@ -95,7 +95,6 @@ main.disable = [
   "redefined-builtin",              # TODO fix
   "too-few-public-methods",         # More harmful than beneficial in django project
   "too-many-arguments",
-  "too-many-branches",              # TODO fix
   "too-many-instance-attributes",
   "too-many-positional-arguments",  # TODO fix, bad API
 ]

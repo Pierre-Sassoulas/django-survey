@@ -1,23 +1,21 @@
 from django import forms
-from django.template.loader import render_to_string
 
 
 class ImageSelectWidget(forms.widgets.Widget):
     template_name = "survey/forms/image_select.html"
 
     class Media:
-        js = (
-            "http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js",
-            "http://maps.googleapis.com/maps/api/js?sensor=false",
-            "survey/js/survey.js",
-        )
+        js = ("survey/js/survey.js",)
 
-    def render(self, name, value, *args, **kwargs):
-        choices = []
-        for index, choice in enumerate(self.choices):
-            if choice[0] != "":
-                value, img_src = choice[0].split(":", 1)
-                choices.append({"img_src": img_src, "value": value, "full_value": choice[0], "index": index})
-        context = {"name": name, "choices": choices}
-        html = render_to_string(self.template_name, context)
-        return html
+    def get_context(self, name, value, attrs):
+        context = super().get_context(name, value, attrs)
+        image_choices = []
+        for index, (full_value, label) in enumerate(self.choices):
+            if full_value != "":
+                # Choices are written as 'value:image_url', but the key is slugified
+                choice_value, img_src = label.split(":", 1)
+                image_choices.append(
+                    {"img_src": img_src, "value": choice_value, "full_value": full_value, "index": index}
+                )
+        context["widget"]["image_choices"] = image_choices
+        return context

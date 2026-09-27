@@ -1,10 +1,9 @@
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = [ "setuptools>=67.5.1", "wheel" ]
+requires = [ "setuptools>=67.5.1", "setuptools-scm>=8" ]
 
 [project]
 name = "django-survey-and-report"
-version = "1.4.12"
 description = "A django survey app that can export results as CSV or PDF using your native language."
 readme = "README.md"
 license = { text = "AGPL-3.0" }
@@ -39,6 +38,7 @@ classifiers = [
   "Programming Language :: Python :: 3.15",
   "Topic :: Utilities",
 ]
+dynamic = [ "version" ]
 dependencies = [
   "django>=2.2,<7",
   "pytz>=2018.9",
@@ -66,6 +66,10 @@ urls."Source Code" = "https://github.com/Pierre-Sassoulas/django-survey"
 
 [tool.setuptools]
 packages.find.include = [ "survey*" ]
+
+[tool.setuptools_scm]
+# Used when there is no git metadata, for example when building the docker image
+fallback_version = "0.0.0"
 
 [tool.djlint]
 # H021: inline styles, H030/H031: meta description/keywords. Templates are

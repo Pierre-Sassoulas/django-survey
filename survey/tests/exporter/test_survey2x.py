@@ -1,6 +1,7 @@
 import logging
 from datetime import datetime
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
 from django.test.utils import override_settings
@@ -71,3 +72,15 @@ class TestSurvey2X(TestManagement):
             " is a new response, we should need an update. "
             f"{self.get_fail_info(self.actual_survey2x)}",
         )
+
+    @patch.object(Survey2Survey, "latest_answer_date", None)
+    def test_no_response_need_update_if_never_generated(self):
+        with TemporaryDirectory() as directory, override_settings(SURVEY_DIRECTORY=directory):
+            self.assertTrue(Survey2Survey(self.survey).need_update())
+
+    @patch.object(Survey2Survey, "latest_answer_date", None)
+    def test_no_response_no_update_if_already_generated(self):
+        with TemporaryDirectory() as directory, override_settings(SURVEY_DIRECTORY=directory):
+            survey2x = Survey2Survey(self.survey)
+            survey2x.filename.touch()
+            self.assertFalse(survey2x.need_update())

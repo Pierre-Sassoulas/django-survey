@@ -125,7 +125,7 @@ class Question(models.Model):
         group_together=None,
         group_by_letter_case=None,
         group_by_slugify=None,
-        filter=None,
+        filter=None,  # pylint: disable=redefined-builtin # Public API
         other_question=None,
     ):
         """Return a dictionary with answers as key and cardinality (int or
@@ -179,7 +179,7 @@ class Question(models.Model):
         group_together,
         group_by_letter_case,
         group_by_slugify,
-        filter,
+        excluded,
         standardized_filter,
         other_question,
     ):
@@ -192,7 +192,7 @@ class Question(models.Model):
         for answer in self.answers.all():
             for value in answer.values:
                 value = self.__get_cardinality_value(value, group_by_letter_case, group_by_slugify, group_together)
-                if value not in filter and value not in standardized_filter:
+                if value not in excluded and value not in standardized_filter:
                     if other_question is None:
                         self._cardinality_plus_n(cardinality, value, 1)
                     else:
@@ -204,14 +204,14 @@ class Question(models.Model):
                             group_by_letter_case,
                             group_by_slugify,
                             group_together,
-                            filter,
+                            excluded,
                             standardized_filter,
                         )
         cardinality = self.filter_by_min_cardinality(cardinality, min_cardinality)
         if other_question is not None:
             self.__handle_other_question_cardinality(
                 cardinality,
-                filter,
+                excluded,
                 group_by_letter_case,
                 group_by_slugify,
                 group_together,
@@ -234,7 +234,7 @@ class Question(models.Model):
     def __handle_other_question_cardinality(
         self,
         cardinality,
-        filter,
+        excluded,
         group_by_letter_case,
         group_by_slugify,
         group_together,
@@ -245,7 +245,7 @@ class Question(models.Model):
         for answer in other_question.answers.all():
             for value in answer.values:
                 value = self.__get_cardinality_value(value, group_by_letter_case, group_by_slugify, group_together)
-                if value not in filter + standardized_filter:
+                if value not in excluded + standardized_filter:
                     if answer.response.user is None:
                         self._cardinality_plus_answer(cardinality, _(settings.USER_DID_NOT_ANSWER), value)
 
@@ -255,7 +255,7 @@ class Question(models.Model):
         group_together=None,
         group_by_letter_case=None,
         group_by_slugify=None,
-        filter=None,
+        filter=None,  # pylint: disable=redefined-builtin # Public API
         sort_answer=None,
         other_question=None,
     ):
@@ -337,7 +337,7 @@ class Question(models.Model):
         group_by_letter_case,
         group_by_slugify,
         group_together,
-        filter,
+        excluded,
         standardized_filter,
     ):
         values = [_(settings.USER_DID_NOT_ANSWER)]
@@ -354,7 +354,7 @@ class Question(models.Model):
             other_value = self.__get_cardinality_value(
                 other_value, group_by_letter_case, group_by_slugify, group_together
             )
-            if other_value not in filter + standardized_filter:
+            if other_value not in excluded + standardized_filter:
                 self._cardinality_plus_answer(cardinality, value, other_value)
 
     def get_choices(self):

@@ -254,6 +254,7 @@ class ResponseForm(models.ModelForm):
         if self.has_next_step():
             context = {"id": self.survey.id, "step": self.step + 1}
             return reverse("survey-detail-step", kwargs=context)
+        return None
 
     def current_step_url(self):
         return reverse("survey-detail-step", kwargs={"id": self.survey.id, "step": self.step})

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:20+0000\n"
+"POT-Creation-Date: 2026-09-27 09:31+0000\n"
 "PO-Revision-Date: 2022-04-10 22:53+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: \n"
@@ -373,14 +373,14 @@ msgstr "Λάβετε μέρος στην έρευνα"
 msgid "Answer this part"
 msgstr "Απαντήστε σε αυτό το κομμάτι"
 
-#: survey/templates/survey/survey.html:57
+#: survey/templates/survey/survey.html:58
 msgid "Questions"
 msgstr "Ερωτήσεις"
 
-#: survey/templates/survey/survey.html:67
+#: survey/templates/survey/survey.html:68
 msgid "Next!"
 msgstr "Επόμενο!"
 
-#: survey/templates/survey/survey.html:73
+#: survey/templates/survey/survey.html:74
 msgid "I'm done!"
 msgstr "Τέλος!"

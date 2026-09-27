@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:20+0000\n"
+"POT-Creation-Date: 2026-09-27 09:31+0000\n"
 "PO-Revision-Date: 2021-01-23 11:53+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -372,14 +372,14 @@ msgstr "An der Umfrage Teilnehmen"
 msgid "Answer this part"
 msgstr "Diesen Teil beantworten"
 
-#: survey/templates/survey/survey.html:57
+#: survey/templates/survey/survey.html:58
 msgid "Questions"
 msgstr "Fragen"
 
-#: survey/templates/survey/survey.html:67
+#: survey/templates/survey/survey.html:68
 msgid "Next!"
 msgstr "Weiter!"
 
-#: survey/templates/survey/survey.html:73
+#: survey/templates/survey/survey.html:74
 msgid "I'm done!"
 msgstr "Fertig!"

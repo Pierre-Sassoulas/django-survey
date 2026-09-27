@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:20+0000\n"
+"POT-Creation-Date: 2026-09-27 09:31+0000\n"
 "PO-Revision-Date: 2018-10-06 20:42+0000\n"
 "Last-Translator: Javier Ordóñez <>\n"
 "Language-Team: \n"
@@ -380,14 +380,14 @@ msgstr "Toma la encuesta"
 msgid "Answer this part"
 msgstr "Reponde esta sección"
 
-#: survey/templates/survey/survey.html:57
+#: survey/templates/survey/survey.html:58
 msgid "Questions"
 msgstr "Preguntas"
 
-#: survey/templates/survey/survey.html:67
+#: survey/templates/survey/survey.html:68
 msgid "Next!"
 msgstr "Siguiente!"
 
-#: survey/templates/survey/survey.html:73
+#: survey/templates/survey/survey.html:74
 msgid "I'm done!"
 msgstr "¡Terminé!"

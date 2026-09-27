@@ -36,7 +36,8 @@ class Command(SurveyCommand):
             "--language", help="Permit to change the language used for generation (default is defined in the settings)."
         )
 
-    def check_nothing_at_all(self, options):
+    @staticmethod
+    def check_nothing_at_all(options):
         SurveyCommand.check_nothing_at_all(options)
         if not options["csv"] and not options["tex"] and not options["pdf"]:
             sys.exit("Nothing to do : add option --tex or --pdf, --csv,  or both.")
